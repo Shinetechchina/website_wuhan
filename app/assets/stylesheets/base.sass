@@ -37,12 +37,19 @@ body
   overflow: hidden
   height: 602px
 
+$box-width: 276px
+$box-height: 288px
+$box-gap-width: 12px
+$box-gap-height: 13px
+$box-double-width: $box-width * 2 + $box-gap-width
+$box-double-height: $box-height * 2 + $box-gap-height
+
 .box
-  width: 276px
+  width: $box-width
   height: 288px
   float: left
   margin-left: 12px
   margin-top: 13px
   background: gray
-.box.box-w2
-  width: 564px
+.box-double
+  width: $box-double-width
