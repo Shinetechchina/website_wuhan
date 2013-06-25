@@ -43,6 +43,7 @@ $box-gap-width: 12px
 $box-gap-height: 13px
 $box-double-width: $box-width * 2 + $box-gap-width
 $box-double-height: $box-height * 2 + $box-gap-height
+$box-triple-width: $box-width * 3 + $box-gap-width * 2
 .box
   width: $box-width
   height: 288px
@@ -58,5 +59,8 @@ $box-double-height: $box-height * 2 + $box-gap-height
 
 .box-double
   width: $box-double-width
-
-
+.box-triple
+  width: $box-triple-width
+.box-expanded
+  width: $box-double-width
+  height: $box-double-height
