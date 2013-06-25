@@ -1,8 +1,11 @@
-body
+html
   background-color: #f5f1ed
   font-size: 14px
+  font-family: 'proxima-nova','Helvetica Neue',Arial,Helvetica,sans-serif
+
 h3
   font-size: 16px
+
 .hide
   display: none
 
@@ -19,7 +22,6 @@ h3
 
 .nav
   font-size: 12px
-  font-family: 'proxima-nova','Helvetica Neue',Arial,Helvetica,sans-serif
   font-weight: 600
   margin: 21px auto
   line-height: 16px
@@ -37,63 +39,70 @@ h3
     li.active a
       color: #f7941e
 
-.boxes.isotope
+.box-container
   position: relative
   overflow: hidden
   height: 602px
 
 $box-width: 276px
 $box-height: 288px
-$box-gap-width: 12px
-$box-gap-height: 13px
-$box-double-width: $box-width * 2 + $box-gap-width
-$box-double-height: $box-height * 2 + $box-gap-height
-$box-triple-width: $box-width * 3 + $box-gap-width * 2
+$box-gap: 12px
+$box-double-width: $box-width * 2 + $box-gap
+$box-double-height: $box-height * 2 + $box-gap
+$box-triple-width: $box-width * 3 + $box-gap * 2
+
 .box
+  position: relative
   width: $box-width
   height: 288px
   background-color: white
-  float: left
   margin-left: 12px
   margin-top: 13px
   text-align: center
   cursor: pointer
+
   .icon-lightbulb
     font-size: 140px
   p
     font-size: 14px
     padding: 0 15px
+
   .name
     color: #f4f2ed
     line-height: 25px
     position: relative
     top: $box-width/2
+
   .left-name
     left: 30px
     text-align: left
+
   .right-name
     right: 30px
     text-align: right
+
   .show-more-link
     background-color: transparent
-    background: rgba(255,255,255,.4)
+    background: rgba(255, 255, 255, .4)
     color: white
     padding: 20px 0
+
   .image-text
-    text-shadow: 0 1px 3px rgba(0,0,0,.25)
-    font-family: 'proxima-nova','Helvetica Neue',Arial,Helvetica,sans-serif
+    text-shadow: 0 1px 3px rgba(0, 0, 0, .25)
     text-transform: uppercase
     position: relative
     top: 90px
     font-size: 30px
     color: white
-    background: rgba(223,124,6,.4)
+    background: rgba(223, 124, 6, .4)
     padding: 25px 0
 
 .box-double
   width: $box-double-width
+
 .box-triple
   width: $box-triple-width
+
 .box-expanded
   width: $box-double-width
   height: $box-double-height
