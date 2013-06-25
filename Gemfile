@@ -19,6 +19,7 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 gem 'slim'
+gem 'font-awesome-sass-rails'
 
 gem 'jquery-rails'
 
