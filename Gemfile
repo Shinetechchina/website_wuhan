@@ -1,4 +1,4 @@
-source 'https://rubygems.org'
+source 'http://ruby.taobao.org'
 
 gem 'rails', '3.2.13'
 
@@ -18,6 +18,7 @@ group :assets do
 
   gem 'uglifier', '>= 1.0.3'
 end
+gem 'slim'
 
 gem 'jquery-rails'
 
