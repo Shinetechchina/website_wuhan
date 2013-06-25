@@ -1,5 +1,6 @@
 WebsiteWuhan::Application.routes.draw do
   root to: 'home#index'
+  get '/if_forefront' => 'home#if_forefront'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
