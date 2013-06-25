@@ -1,5 +1,10 @@
 body
   background-color: #f5f1ed
+  font-size: 14px
+h3
+  font-size: 16px
+.hide
+  display: none
 
 #wrapper
   margin: 0 auto
@@ -47,15 +52,43 @@ $box-triple-width: $box-width * 3 + $box-gap-width * 2
 .box
   width: $box-width
   height: 288px
+  background-color: white
   float: left
   margin-left: 12px
   margin-top: 13px
-  background: gray
   text-align: center
+  cursor: pointer
   .icon-lightbulb
     font-size: 140px
   p
+    font-size: 14px
     padding: 0 15px
+  .name
+    color: #f4f2ed
+    line-height: 25px
+    position: relative
+    top: $box-width/2
+  .left-name
+    left: 30px
+    text-align: left
+  .right-name
+    right: 30px
+    text-align: right
+  .show-more-link
+    background-color: transparent
+    background: rgba(255,255,255,.4)
+    color: white
+    padding: 20px 0
+  .image-text
+    text-shadow: 0 1px 3px rgba(0,0,0,.25)
+    font-family: 'proxima-nova','Helvetica Neue',Arial,Helvetica,sans-serif
+    text-transform: uppercase
+    position: relative
+    top: 90px
+    font-size: 30px
+    color: white
+    background: rgba(223,124,6,.4)
+    padding: 25px 0
 
 .box-double
   width: $box-double-width
@@ -64,3 +97,13 @@ $box-triple-width: $box-width * 3 + $box-gap-width * 2
 .box-expanded
   width: $box-double-width
   height: $box-double-height
+
+#work_the_line
+  background-image: url('/assets/walk_the_line.jpg')
+
+#box-074
+  background-image: url('/assets/074.png')
+
+#box-107
+  background-image: url('/assets/107.png')
+  background-position: -261px 0
