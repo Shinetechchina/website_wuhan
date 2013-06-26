@@ -73,7 +73,7 @@ $box-triple-width: $box-width * 3 + $box-gap * 2
     color: #f4f2ed
     line-height: 25px
     position: relative
-    top: $box-width/2
+    top: 75px
 
   .left-name
     left: 30px
@@ -83,11 +83,25 @@ $box-triple-width: $box-width * 3 + $box-gap * 2
     right: 30px
     text-align: right
 
+
   .show-more-link
     background-color: transparent
     background: rgba(255, 255, 255, .4)
     color: white
     padding: 20px 0
+    opacity: 0
+    -webkit-transition-property: -webkit-transform, opacity
+    -moz-transition-property: -moz-transform, opacity
+    -ms-transition-property: -ms-transform, opacity
+    -o-transition-property: -o-transform, opacity
+    transition-property: transform, opacity
+    -moz-transition-duration: 0.8s
+    -o-transition-duration: 0.8s
+    transition-duration: 0.8s
+
+  &:hover
+    .show-more-link
+      opacity: 1
 
   .image-text
     text-shadow: 0 1px 3px rgba(0, 0, 0, .25)
