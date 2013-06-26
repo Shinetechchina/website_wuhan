@@ -72,8 +72,8 @@ $box-triple-width: $box-width * 3 + $box-gap * 2
   .name
     color: #f4f2ed
     line-height: 25px
-    position: relative
-    top: 75px
+    position: absolute
+    top: 130px
 
   .left-name
     left: 30px
@@ -123,13 +123,57 @@ $box-triple-width: $box-width * 3 + $box-gap * 2
   width: $box-double-width
   height: $box-double-height
 
+.employ-box
+  .shade
+    background-color: transparent
+    background: rgba(223,124,6,.9)
+    height: 100%
+    width: 100%
+    color: white
+    opacity: 0
+    -webkit-transition-property: -webkit-transform, opacity
+    -moz-transition-property: -moz-transform, opacity
+    -ms-transition-property: -ms-transform, opacity
+    -o-transition-property: -o-transform, opacity
+    transition-property: transform, opacity
+    -moz-transition-duration: 0.5s
+    -o-transition-duration: 0.5s
+    transition-duration: 0.5s
+
+  &:hover
+    .shade
+      opacity: 1
+    .name
+      display: none
+
+  .employment-number
+    position: absolute
+    font-weight: 300
+    font-size: 72px
+    top: 100px
+    width: 100%
+
+  .employment-details
+    position: absolute
+    font-size: 14px
+    font-style: italic
+    line-height: 2
+    bottom: 15px
+    width: 100%
+    a
+      color: #fff!important
+      text-decoration: none
+      padding-bottom: 3px
+      &:hover
+        border-bottom: 1px solid #fff
+
 #work_the_line
   background-image: url('/assets/walk_the_line.jpg')
 
-#box-074
+.employ-074
   background-image: url('/assets/074.png')
 
-#box-107
+.employ-107
   background-image: url('/assets/107.png')
   background-position: -261px 0
 
