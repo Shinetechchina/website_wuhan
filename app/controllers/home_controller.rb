@@ -13,6 +13,9 @@ class HomeController < ApplicationController
   def services
   end
 
+  def references
+  end
+
   def frontiers
   end
 

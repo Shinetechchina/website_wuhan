@@ -12,7 +12,7 @@ $ ->
   registerPath = (url) ->
     Path.map("#/#{url}").to -> boxManager.load("/#{url}")
 
-  registerPath(url) for url in ['home', 'if_forefront', 'services', 'frontiers', 'blog']
+  registerPath(url) for url in ['home', 'if_forefront', 'services', 'references', 'frontiers', 'blog']
 
   Path.root('#/home')
 
