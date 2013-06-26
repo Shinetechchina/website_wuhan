@@ -1,5 +1,3 @@
-#= require jquery.isotope.min
-
 window.boxManager =
   init: ->
     self = @
@@ -24,3 +22,15 @@ window.boxManager =
 
   reLayout: ->
     @$container.isotope('reLayout')
+
+  load: (url) ->
+    self = @
+    $container = @$container
+
+    $.get(url).success (result) ->
+      html = $(result)
+      html.filter('.box').each -> $container.isotope('insert', $(@))
+
+      # $container.html(result)
+      # $container.isotope('reloadItems')
+      # self.reLayout()

@@ -2,6 +2,10 @@ WebsiteWuhan::Application.routes.draw do
   root to: 'home#index'
   get '/if_forefront' => 'home#if_forefront'
 
+  with_options constraints: -> (request) { request.xhr? } do |opts|
+    opts.get '/home' => 'home#home'
+  end
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
