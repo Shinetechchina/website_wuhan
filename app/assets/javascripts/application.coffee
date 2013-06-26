@@ -23,7 +23,7 @@ $ ->
     ).enter ->
       activeCurrentNavItem(url)
 
-  registerPath(url) for url in ['home', 'if_forefront', 'references', 'services', 'frontiers', 'blog']
+  registerPath(url) for url in ['home', 'if_forefront', 'services', 'references', 'frontiers', 'blog']
 
   Path.root('#/home')
 

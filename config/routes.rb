@@ -1,6 +1,5 @@
 WebsiteWuhan::Application.routes.draw do
   root to: 'home#index'
-  get '/if_forefront' => 'home#if_forefront'
 
   with_options constraints: -> (request) { request.xhr? } do |opts|
     %w[home if_forefront services references frontiers blog].each do |action|
