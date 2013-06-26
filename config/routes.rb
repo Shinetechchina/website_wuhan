@@ -3,7 +3,7 @@ WebsiteWuhan::Application.routes.draw do
   get '/if_forefront' => 'home#if_forefront'
 
   with_options constraints: -> (request) { request.xhr? } do |opts|
-    %w[home if_forefront services frontiers blog].each do |action|
+    %w[home if_forefront services references frontiers blog].each do |action|
       opts.get "/#{action}" => "home##{action}"
     end
   end

@@ -9,10 +9,21 @@
 $ ->
   boxManager.init()
 
-  registerPath = (url) ->
-    Path.map("#/#{url}").to -> boxManager.load("/#{url}")
+  # TODO refactor after finishing functionalities
+  activeCurrentNavItem = (url) ->
+    nav = $('.nav ul')
+    nav.find('li').removeClass('active')
+    nav.find('li').each ->
+      li = $(@)
+      li.addClass('active') if li.find('a').attr('href') == "/#/#{url}"
 
-  registerPath(url) for url in ['home', 'if_forefront', 'services', 'frontiers', 'blog']
+  registerPath = (url) ->
+    Path.map("#/#{url}").to(->
+      boxManager.load("/#{url}")
+    ).enter ->
+      activeCurrentNavItem(url)
+
+  registerPath(url) for url in ['home', 'if_forefront', 'references', 'services', 'frontiers', 'blog']
 
   Path.root('#/home')
 
