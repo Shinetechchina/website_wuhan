@@ -9,8 +9,10 @@
 $ ->
   boxManager.init()
 
-  Path.map('#/home').to ->
-    boxManager.load('/home')
+  registerPath = (url) ->
+    Path.map("#/#{url}").to -> boxManager.load("/#{url}")
+
+  registerPath(url) for url in ['home', 'if_forefront', 'services', 'frontiers', 'blog']
 
   Path.root('#/home')
 
