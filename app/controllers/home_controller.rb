@@ -9,4 +9,13 @@ class HomeController < ApplicationController
 
   def if_forefront
   end
+
+  def services
+  end
+
+  def frontiers
+  end
+
+  def blog
+  end
 end

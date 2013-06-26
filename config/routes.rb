@@ -3,7 +3,9 @@ WebsiteWuhan::Application.routes.draw do
   get '/if_forefront' => 'home#if_forefront'
 
   with_options constraints: -> (request) { request.xhr? } do |opts|
-    opts.get '/home' => 'home#home'
+    %w[home if_forefront services frontiers blog].each do |action|
+      opts.get "/#{action}" => "home##{action}"
+    end
   end
 
   # The priority is based upon order of creation:

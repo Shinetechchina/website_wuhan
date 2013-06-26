@@ -28,9 +28,6 @@ window.boxManager =
     $container = @$container
 
     $.get(url).success (result) ->
-      html = $(result)
-      html.filter('.box').each -> $container.isotope('insert', $(@))
-
-      # $container.html(result)
-      # $container.isotope('reloadItems')
-      # self.reLayout()
+      $container
+        .isotope('remove', $container.find('.box'))
+        .isotope('insert', $(result).filter('.box'))
