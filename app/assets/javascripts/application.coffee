@@ -3,6 +3,7 @@
 #= require jquery.isotope.min
 #= require path.min
 #= require box_manager
+#= require responsiveslides.min
 #= require_self
 
 $ ->
