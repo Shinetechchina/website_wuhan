@@ -27,7 +27,15 @@ window.boxManager =
     self = @
     $container = @$container
 
+    @showLoading()
     $.get(url).success (result) ->
+      self.hideLoading()
       $container
         .isotope('remove', $container.find('.box'))
         .isotope('insert', $(result).filter('.box'))
+
+  showLoading: ->
+    $('.loading').fadeIn()
+
+  hideLoading: ->
+    $('.loading').fadeOut()
