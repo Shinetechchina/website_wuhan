@@ -28,3 +28,5 @@ $ ->
   Path.root('#/home')
 
   Path.listen()
+
+  $(".rslides").responsiveSlides()
