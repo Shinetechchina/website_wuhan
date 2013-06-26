@@ -1,0 +1,16 @@
+doctype html
+html
+  head
+    title WebsiteWuhan
+    = stylesheet_link_tag "application", media: "all"
+    = javascript_include_tag "application"
+    = csrf_meta_tags
+  body
+    .loading.hide
+      .loading-mask
+
+    #wrapper
+      #main
+        = render 'home/header'
+        .box-container.isotope
+          = yield
