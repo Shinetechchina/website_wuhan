@@ -9,7 +9,10 @@
   <body>
     <div id="wrapper">
       <div id="main">
-        <%= yield %>
+        <%= render 'home/header' %>
+        <div class="box-container isotope">
+          <%= yield %>
+        </div>
       </div>
     </div>
   </body>
