@@ -3,22 +3,4 @@ class HomeController < ApplicationController
 
   def index
   end
-
-  def home
-  end
-
-  def if_forefront
-  end
-
-  def services
-  end
-
-  def references
-  end
-
-  def frontiers
-  end
-
-  def blog
-  end
 end

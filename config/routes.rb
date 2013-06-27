@@ -2,7 +2,7 @@ WebsiteWuhan::Application.routes.draw do
   root to: 'home#index'
 
   with_options constraints: -> (request) { request.xhr? } do |opts|
-    %w[home if_forefront services references frontiers blog].each do |action|
+    %w[home company services references staff blog].each do |action|
       opts.get "/#{action}" => "home##{action}"
     end
   end
