@@ -6,13 +6,13 @@
 .tabs
   margin-bottom: 2em
   font-size: 12px
+  color: #ccc9c0
 
   li
-    color: #ccc9c0
     display: inline
     margin: 0 2em 0 0
 
-  li.active
+  .active
     color: #f7941e
 
 .tab-contents
@@ -27,7 +27,6 @@
   top: 0
   left: 100%
   width: 100%
-  color: #969289
   opacity: 0
 
   &.active
@@ -42,10 +41,25 @@
 .bullets
   margin-top: 20px
   text-align: center
+  color: rgba(204, 201, 192, .5)
 
   li
-    color: #ccc9c0
     padding: 0 4px
 
   li.active
     color: #f7941e
+
+// in blue box
+.box-blue
+  .slide
+    .tabs
+      color: #768588
+
+      .active
+        color: white
+
+    .bullets
+      color: rgba(118, 133, 136, .5)
+
+      .active
+        color: white
