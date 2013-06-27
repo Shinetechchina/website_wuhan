@@ -274,6 +274,17 @@ $box-triple-width: $box-width * 3 + $box-gap * 2
 .box-triple
   width: $box-triple-width
 
+.box-expandable
+  .maxi
+    display: none
+
+  &.box-expanded
+    .mini
+      display: none
+
+    .maxi
+      display: block
+
 .box-expanded
   width: $box-double-width
   height: $box-double-height
