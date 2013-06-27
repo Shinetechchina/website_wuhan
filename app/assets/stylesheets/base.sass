@@ -125,7 +125,11 @@ $box-triple-width: $box-width * 3 + $box-gap * 2
   width: $box-double-width
   height: $box-double-height
 
-.employ-box
+.shade-box>*
+  position: absolute
+  width: 100%
+
+.shade-box
   .shade
     background-color: transparent
     background: rgba(223,124,6,.9)
@@ -169,6 +173,28 @@ $box-triple-width: $box-width * 3 + $box-gap * 2
       &:hover
         border-bottom: 1px solid #fff
 
+  .posted-date
+    position: absolute
+    top: 120px
+    font-weight: 600
+    width: 100%
+    font-size: 12px
+
+  .first-comment
+    position: absolute
+    top: 150px
+    left: 50%
+    margin-left: -123px
+    width: 246px
+    font-size: 16px
+    font-style: italic
+    line-height: 1.5
+
+  .nick-name
+    position: absolute
+    width: 100%
+    bottom: 30px
+
 #work_the_line
   background-image: url('/assets/walk_the_line.jpg')
 
@@ -178,6 +204,12 @@ $box-triple-width: $box-width * 3 + $box-gap * 2
 .employ-107
   background-image: url('/assets/107.png')
   background-position: -261px 0
+
+.image-flag
+  background-image: url('/assets/flag.jpg')
+
+.image-ued
+  background-image: url('/assets/ued.jpg')
 
 .icon-box
   i, h3
