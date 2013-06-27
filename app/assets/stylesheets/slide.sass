@@ -1,37 +1,51 @@
 .slide
-  margin: 0
-  padding-top: 50px
-  min-height: 204px
-  float: left
-  width: 100%
+  padding: 50px 40px 0
+  // padding: 50px 40px 0
   text-align: left
 
-  .tabs
-    margin: 0 40px 2em 40px!important
+.tabs
+  margin-bottom: 2em
+  font-size: 12px
 
-    li
-      color: #ccc9c0
-      display: inline
-      margin: 0 2em 0 0
-    li.active
-      color: #f7941e
+  li
+    color: #ccc9c0
+    display: inline
+    margin: 0 2em 0 0
 
-  .tab
-    padding: 0 40px
-    display: none
-    color: #969289
-  .tab.active
-    display: block
+  li.active
+    color: #f7941e
 
-  .bullets
-    position: absolute
-    bottom: 10px
-    text-align: center
-    width: 100%
+.tab-contents
+  position: relative
+  overflow: hidden
+  height: 140px
+  font-size: 16px
+  line-height: 1.5
 
-    li
-      color: #ccc9c0
-      padding: 0 3px
+.tab-content
+  position: absolute
+  top: 0
+  left: 100%
+  width: 100%
+  color: #969289
+  opacity: 0
 
-    li.active
-      color: #f7941e
+  &.active
+    opacity: 1
+    transition: left .6s, opacity .8s
+    left: 0
+
+  &.slide-out
+    transition: left, .5s
+    left: -100%
+
+.bullets
+  margin-top: 20px
+  text-align: center
+
+  li
+    color: #ccc9c0
+    padding: 0 4px
+
+  li.active
+    color: #f7941e
