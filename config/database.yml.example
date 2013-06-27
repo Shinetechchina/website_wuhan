@@ -1,0 +1,14 @@
+common: &common
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+  username: USERNAME
+  password:
+
+development:
+  <<: *common
+  database: website_wuhan_dev
+
+test:
+  <<: *common
+  database: website_wuhan_test
