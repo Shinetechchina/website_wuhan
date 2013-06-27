@@ -56,20 +56,16 @@ $box-double-width: $box-width * 2 + $box-gap
 $box-double-height: $box-height * 2 + $box-gap
 $box-triple-width: $box-width * 3 + $box-gap * 2
 
+.item
+  margin-left: 12px
+  margin-top: 12px
+
 .box
   position: relative
   width: $box-width
   height: 288px
   background-color: white
-  margin-left: 12px
-  margin-top: 12px
   text-align: center
-
-  .icon-lightbulb
-    font-size: 140px
-  p
-    font-size: 14px
-    padding: 0 15px
 
   .name
     color: #f4f2ed
@@ -84,7 +80,6 @@ $box-triple-width: $box-width * 3 + $box-gap * 2
   .right-name
     right: 30px
     text-align: right
-
 
   .show-more-link
     background-color: transparent
@@ -114,16 +109,6 @@ $box-triple-width: $box-width * 3 + $box-gap * 2
     color: white
     background: rgba(223, 124, 6, .4)
     padding: 25px 0
-
-.box-double
-  width: $box-double-width
-
-.box-triple
-  width: $box-triple-width
-
-.box-expanded
-  width: $box-double-width
-  height: $box-double-height
 
 .shade-box>*
   position: absolute
@@ -211,6 +196,45 @@ $box-triple-width: $box-width * 3 + $box-gap * 2
 .image-ued
   background-image: url('/assets/ued.jpg')
 
-.icon-box
-  i, h3
+.box-icon
+  border: 1px solid white
+  width: $box-width - 2px
+  height: $box-height - 2px
+  -webkit-transition-property: -webkit-transform, border-color
+  -moz-transition-property: -moz-transform, border-color
+  -ms-transition-property: -ms-transform, border-color
+  -o-transition-property: -o-transform, border-color
+  transition-property: transform, border-color
+  -moz-transition-duration: 0.5s
+  -o-transition-duration: 0.5s
+  transition-duration: 0.5s
+
+  .mini
+    top: 25px
+    position: absolute
+  .icon
+    font-size: 120px
+  h3
+    font-size: 14px
+  p
+    font-size: 14px
+    padding: 0 15px
+    color: #969289
+
+.box-icon-origin
+  &:hover
+    border-color: #df7c06
+  .icon, h3
     color: #e1733d
+
+
+.box-double
+  width: $box-double-width
+
+.box-triple
+  width: $box-triple-width
+
+.box-expanded
+  width: $box-double-width
+  height: $box-double-height
+  border-width: 0

@@ -5,7 +5,7 @@ window.boxManager =
     @$container = $('.box-container')
 
     @$container.isotope
-      itemSelector: '.box'
+      itemSelector: '.item'
 
     @$container.on 'click', '.box-expandable', ->
       self.expandBox(@)
@@ -31,8 +31,8 @@ window.boxManager =
     $.get(url).success (result) ->
       self.hideLoading()
       $container
-        .isotope('remove', $container.find('.box'))
-        .isotope('insert', $(result).filter('.box'))
+        .isotope('remove', $container.find('.item'))
+        .isotope('insert', $(result).filter('.item'))
 
   showLoading: ->
     $('.loading').fadeIn()
