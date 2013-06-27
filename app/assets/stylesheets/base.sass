@@ -54,6 +54,32 @@ a
     li.active a
       color: #f7941e
 
+.footer
+  font-size: 11px
+  margin-top: 30px
+  padding-bottom: 50px
+  border-top: 1px solid #ddd
+  text-transform: uppercase
+
+.footer-wrapper
+  text-align: center
+  line-height: 2
+  h1
+    font-size: 13px
+    letter-spacing: 1px
+    margin-bottom: 15px
+    font-weight: normal
+  a
+    color: #f7941e!important
+    padding-bottom: 3px
+    &:hover
+      text-decoration: none
+      border-border: solid 1px rgba(223,124,6,.9)
+  .copyright
+    font-size: 10px
+    margin-top: 15px
+    color: rgba(150,146,137,.6)!important
+
 .box-container
   position: relative
   overflow: hidden
@@ -107,9 +133,9 @@ $box-triple-width: $box-width * 3 + $box-gap * 2
     -ms-transition-property: -ms-transform, opacity
     -o-transition-property: -o-transform, opacity
     transition-property: transform, opacity
-    -moz-transition-duration: 0.8s
-    -o-transition-duration: 0.8s
-    transition-duration: 0.8s
+    -moz-transition-duration: 0.5s
+    -o-transition-duration: 0.5s
+    transition-duration: 0.5s
 
   &:hover
     .show-more-link
@@ -256,17 +282,35 @@ $box-triple-width: $box-width * 3 + $box-gap * 2
       font-size: 16px
       line-height: 1.5
 
-.box-icon-origin
+.box-icon-darkorigin
   &:hover
-    border-color: #df7c06
+    border-color: #e1733d
   .icon, h3
     color: #e1733d
 
-.box-icon-cfc4a5
+.box-icon-origin
+  &:hover
+    border-color: #f7941e
+  .icon, h3
+    color: #f7941e
+
+.box-icon-brown
   &:hover
     border-color: #cfc4a5
   .icon, h3
     color: #cfc4a5
+
+.box-icon-coffee
+  &:hover
+    border-color: #a58c85
+  .icon, h3
+    color: #a58c85
+
+.box-icon-jasper
+  &:hover
+    border-color: #c1caaf
+  .icon, h3
+    color: #c1caaf
 
 .box-double
   width: $box-double-width
