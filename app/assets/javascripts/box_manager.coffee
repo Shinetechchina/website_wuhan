@@ -32,7 +32,7 @@ window.boxManager =
       self.hideLoading()
       $container
         .isotope('remove', $container.find('.item'))
-        .isotope('insert', $(result).filter('.item'))
+        .isotope('insert', $(result).find('.item'))
 
   showLoading: ->
     $('.loading').fadeIn()
