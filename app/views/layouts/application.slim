@@ -2,6 +2,7 @@ doctype html
 html
   head
     title WebsiteWuhan
+    = render '/refinery/head'
     = stylesheet_link_tag "application", media: "all"
     = javascript_include_tag "application"
     = csrf_meta_tags
@@ -11,7 +12,9 @@ html
 
     #wrapper
       #main
-        = render 'home/header'
+        /= render 'home/header'
+        = render '/refinery/site_bar'
+        = render '/refinery/header'
 
         .box-container.isotope
           = yield
