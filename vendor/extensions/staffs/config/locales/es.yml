@@ -1,0 +1,33 @@
+es:
+  refinery:
+    plugins:
+      staffs:
+        title: Staffs
+#        article: masculino/femenino
+    staffs:
+      admin:
+        staffs:
+          actions:
+            create_new: Crear nuevo staff
+            reorder: Reordenar staffs
+            reorder_done: Reordenación de staffs completada
+          records:
+            title: Staffs
+            sorry_no_results: Lo siento, no hay resultados
+            no_items_yet: No hay staffs todavía. Pulsa en "Crear nuevo Staff" para crear tu primer staff.
+          staff:
+            view_live_html: Ver este staff como abierto al público <br/><em>(abre en ventana nueva)</em>
+            edit: Editar este staff
+            delete: Borrar este staff para siempre
+      staffs:
+        show:
+          other: Otros staffs
+  activerecord:
+    attributes:
+      'refinery/staffs/staff':
+        name: Name
+        email: Email
+        number: Number
+        title: Title
+        image: Image
+        description: Description

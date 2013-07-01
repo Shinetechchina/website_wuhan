@@ -1,0 +1,32 @@
+en:
+  refinery:
+    plugins:
+      staffs:
+        title: Staffs
+    staffs:
+      admin:
+        staffs:
+          actions:
+            create_new: Add New Staff
+            reorder: Reorder Staffs
+            reorder_done: Done Reordering Staffs
+          records:
+            title: Staffs
+            sorry_no_results: Sorry! There are no results found.
+            no_items_yet: There are no Staffs yet. Click "Add New Staff" to add your first staff.
+          staff:
+            view_live_html: View this staff live <br/><em>(opens in a new window)</em>
+            edit: Edit this staff
+            delete: Remove this staff forever
+      staffs:
+        show:
+          other: Other Staffs
+  activerecord:
+    attributes:
+      'refinery/staffs/staff':
+        name: Name
+        email: Email
+        number: Number
+        title: Title
+        image: Image
+        description: Description

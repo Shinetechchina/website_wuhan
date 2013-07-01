@@ -1,3 +1,9 @@
+PATH
+  remote: vendor/extensions
+  specs:
+    refinerycms-staffs (1.0)
+      refinerycms-core (~> 2.0.10)
+
 GEM
   remote: http://ruby.taobao.org/
   specs:
@@ -193,6 +199,7 @@ DEPENDENCIES
   pry-rails
   rails (= 3.2.13)
   refinerycms (~> 2.0.0)
+  refinerycms-staffs!
   sass-rails (~> 3.2.3)
   slim
   uglifier (>= 1.0.3)

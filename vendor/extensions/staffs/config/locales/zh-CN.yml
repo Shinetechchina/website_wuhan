@@ -1,0 +1,34 @@
+zh-CN:
+  refinery:
+    plugins:
+      staffs:
+        title: Staffs
+    staffs:
+      admin:
+        staffs:
+          actions:
+            create_new: 建立新的 Staff
+            reorder: 对 Staffs 重新排序
+            reorder_done: 对 Staffs 的重新排序结束
+          records:
+            title: Staffs
+            sorry_no_results: 对不起，未找到结果。 #Sorry! There are no results found.
+
+            # There are no Staffs yet. Click "Add New Staff" to add your first staff.
+            no_items_yet: 目前没有 Staffs . 点击 "Add New Staff" 创建一个staff.
+          staff:
+            view_live_html: 查看 staff 的最新内容.<br/><em>(新窗口中打开)</em>
+            edit: 编辑 staff
+            delete: 永久删除 staff
+      staffs:
+        show:
+          other: 其他 Staffs
+  activerecord:
+    attributes:
+      'refinery/staffs/staff':
+        name: Name
+        email: Email
+        number: Number
+        title: Title
+        image: Image
+        description: Description
