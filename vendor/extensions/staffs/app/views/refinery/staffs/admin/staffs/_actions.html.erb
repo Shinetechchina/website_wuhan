@@ -1,0 +1,25 @@
+<ul>
+  <% if ::Refinery::Staffs::Admin::StaffsController.searchable? %>
+    <li>
+      <%= render '/refinery/admin/search', :url => refinery.staffs_admin_staffs_path %>
+    </li>
+  <% end %>
+  <li>
+    <%= link_to t('.create_new'), refinery.new_staffs_admin_staff_path,
+                 :class => "add_icon" %>
+  </li>
+<% if !searching? && ::Refinery::Staffs::Admin::StaffsController.sortable? && ::Refinery::Staffs::Staff.any? %>
+  <li>
+    <%= link_to t('.reorder', :what => "Staffs"),
+                 refinery.staffs_admin_staffs_path,
+                 :id => "reorder_action",
+                 :class => "reorder_icon" %>
+
+    <%= link_to t('.reorder_done', :what => "Staffs"),
+                 refinery.staffs_admin_staffs_path,
+                 :id => "reorder_action_done",
+                 :style => "display: none;",
+                 :class => "reorder_icon" %>
+  </li>
+<% end %>
+</ul>

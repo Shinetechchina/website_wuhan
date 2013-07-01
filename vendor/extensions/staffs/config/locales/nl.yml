@@ -1,0 +1,32 @@
+nl:
+  refinery:
+    plugins:
+      staffs:
+        title: Staffs
+    staffs:
+      admin:
+        staffs:
+          actions:
+            create_new: Maak een nieuwe Staff
+            reorder: Wijzig de volgorde van de Staffs
+            reorder_done: Klaar met het wijzingen van de volgorde van de Staffs
+          records:
+            title: Staffs
+            sorry_no_results: Helaas! Er zijn geen resultaten gevonden.
+            no_items_yet: Er zijn nog geen Staffs. Druk op 'Maak een nieuwe Staff' om de eerste aan te maken.
+          staff:
+            view_live_html: Bekijk deze staff op de website <br/><em>(opent een nieuw venster)</em>
+            edit: Bewerk deze staff
+            delete: Verwijder deze staff voor eeuwig
+      staffs:
+        show:
+          other: Andere Staffs
+  activerecord:
+    attributes:
+      'refinery/staffs/staff':
+        name: Name
+        email: Email
+        number: Number
+        title: Title
+        image: Image
+        description: Description

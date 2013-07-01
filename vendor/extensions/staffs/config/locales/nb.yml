@@ -1,0 +1,32 @@
+nb:
+  refinery:
+    plugins:
+      staffs:
+        title: Staffs
+    staffs:
+      admin:
+        staffs:
+          actions:
+            create_new: Lag en ny Staff
+            reorder: Endre rekkefølgen på Staffs
+            reorder_done: Ferdig å endre rekkefølgen Staffs
+          records:
+            title: Staffs
+            sorry_no_results: Beklager! Vi fant ikke noen resultater.
+            no_items_yet: Det er ingen Staffs enda. Klikk på "Lag en ny Staff" for å legge til din første staff.
+          staff:
+            view_live_html: Vis hvordan denne staff ser ut offentlig <br/><em>(åpner i et nytt vindu)</em>
+            edit: Rediger denne staff
+            delete: Fjern denne staff permanent
+      staffs:
+        show:
+          other: Andre Staffs
+  activerecord:
+    attributes:
+      'refinery/staffs/staff':
+        name: Name
+        email: Email
+        number: Number
+        title: Title
+        image: Image
+        description: Description

@@ -44,3 +44,5 @@ end
 
 # To use debugger
 # gem 'debugger'
+
+gem 'refinerycms-staffs', :path => 'vendor/extensions'

@@ -1,0 +1,32 @@
+fr:
+  refinery:
+    plugins:
+      staffs:
+        title: Staffs
+    staffs:
+      admin:
+        staffs:
+          actions:
+            create_new: Créer un(e) nouve(au/l/lle) Staff
+            reorder: Réordonner les Staffs
+            reorder_done: Fin de réordonnancement des Staffs
+          records:
+            title: Staffs
+            sorry_no_results: "Désolé ! Aucun résultat."
+            no_items_yet: 'Il n''y a actuellement aucun(e) Staff. Cliquer sur "Créer un(e) nouve(au/l/lle) Staff" pour créer votre premi(er/ère) staff.'
+          staff:
+            view_live_html: Voir ce(t/tte) staff <br/><em>(Ouvre une nouvelle fenêtre)</em>
+            edit: Modifier ce(t/tte) staff
+            delete: Supprimer définitivement ce(t/tte) staff
+      staffs:
+        show:
+          other: Autres Staffs
+  activerecord:
+    attributes:
+      'refinery/staffs/staff':
+        name: Name
+        email: Email
+        number: Number
+        title: Title
+        image: Image
+        description: Description
