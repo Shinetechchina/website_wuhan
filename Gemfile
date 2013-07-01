@@ -18,11 +18,16 @@ group :assets do
 
   gem 'uglifier', '>= 1.0.3'
 end
+
 gem 'slim'
 gem 'font-awesome-sass-rails'
 
 gem 'jquery-rails', '~> 2.0.0'
 gem 'refinerycms', '~> 2.0.0'
+
+group :development do
+  gem 'pry-rails'
+end
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
