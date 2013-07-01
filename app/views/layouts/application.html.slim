@@ -2,7 +2,8 @@ doctype html
 html
   head
     = render '/refinery/head'
-    = javascript_include_tag "application"
+    - unless response.status == 404
+      = javascript_include_tag "application"
   body
     .loading.hide
       .loading-mask

@@ -27,6 +27,7 @@ gem 'refinerycms', '~> 2.0.0'
 
 group :development do
   gem 'pry-rails'
+  gem 'quiet_assets'
 end
 
 # To use ActiveModel has_secure_password
