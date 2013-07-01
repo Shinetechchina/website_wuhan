@@ -7,12 +7,6 @@ WebsiteWuhan::Application.routes.draw do
   # We ask that you don't use the :as option here, as Refinery relies on it being the default of "refinery"
   mount Refinery::Core::Engine, :at => '/'
 
-  # with_options constraints: -> (request) { request.xhr? } do |opts|
-  #   %w[home company services references staff blog].each do |action|
-  #     opts.get "/#{action}" => "home##{action}"
-  #   end
-  # end
-
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
