@@ -1,0 +1,32 @@
+zh-CN:
+  refinery:
+    plugins:
+      services:
+        title: Services
+    services:
+      admin:
+        services:
+          actions:
+            create_new: 建立新的 Service
+            reorder: 对 Services 重新排序
+            reorder_done: 对 Services 的重新排序结束
+          records:
+            title: Services
+            sorry_no_results: 对不起，未找到结果。 #Sorry! There are no results found.
+
+            # There are no Services yet. Click "Add New Service" to add your first service.
+            no_items_yet: 目前没有 Services . 点击 "Add New Service" 创建一个service.
+          service:
+            view_live_html: 查看 service 的最新内容.<br/><em>(新窗口中打开)</em>
+            edit: 编辑 service
+            delete: 永久删除 service
+      services:
+        show:
+          other: 其他 Services
+  activerecord:
+    attributes:
+      'refinery/services/service':
+        title: Title
+        color: Color
+        image: Image
+        content: Content

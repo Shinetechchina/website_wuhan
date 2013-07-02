@@ -1,0 +1,30 @@
+sk:
+  refinery:
+    plugins:
+      services:
+        title: Services
+    services:
+      admin:
+        services:
+          actions:
+            create_new: Pridať Service
+            reorder: Preusporiadať Services
+            reorder_done: Koniec radenia Services
+          records:
+            title: Services
+            sorry_no_results: Ľutujeme, ale neboli nájdené žiadne výsledky.
+            no_items_yet: Nie sú vytvorené žiadne Services. Kliknite na "Pridať Service" pre pridanie prvého service.
+          service:
+            view_live_html: Zobraziť náhľad service<br/><em>(otvorí sa v novom okne)</em>
+            edit: Upraviť service
+            delete: Zmazať service
+      services:
+        show:
+          other: Daľšie Services
+  activerecord:
+    attributes:
+      'refinery/services/service':
+        title: Title
+        color: Color
+        image: Image
+        content: Content

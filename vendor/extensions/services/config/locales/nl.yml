@@ -1,0 +1,30 @@
+nl:
+  refinery:
+    plugins:
+      services:
+        title: Services
+    services:
+      admin:
+        services:
+          actions:
+            create_new: Maak een nieuwe Service
+            reorder: Wijzig de volgorde van de Services
+            reorder_done: Klaar met het wijzingen van de volgorde van de Services
+          records:
+            title: Services
+            sorry_no_results: Helaas! Er zijn geen resultaten gevonden.
+            no_items_yet: Er zijn nog geen Services. Druk op 'Maak een nieuwe Service' om de eerste aan te maken.
+          service:
+            view_live_html: Bekijk deze service op de website <br/><em>(opent een nieuw venster)</em>
+            edit: Bewerk deze service
+            delete: Verwijder deze service voor eeuwig
+      services:
+        show:
+          other: Andere Services
+  activerecord:
+    attributes:
+      'refinery/services/service':
+        title: Title
+        color: Color
+        image: Image
+        content: Content

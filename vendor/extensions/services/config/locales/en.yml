@@ -1,0 +1,30 @@
+en:
+  refinery:
+    plugins:
+      services:
+        title: Services
+    services:
+      admin:
+        services:
+          actions:
+            create_new: Add New Service
+            reorder: Reorder Services
+            reorder_done: Done Reordering Services
+          records:
+            title: Services
+            sorry_no_results: Sorry! There are no results found.
+            no_items_yet: There are no Services yet. Click "Add New Service" to add your first service.
+          service:
+            view_live_html: View this service live <br/><em>(opens in a new window)</em>
+            edit: Edit this service
+            delete: Remove this service forever
+      services:
+        show:
+          other: Other Services
+  activerecord:
+    attributes:
+      'refinery/services/service':
+        title: Title
+        color: Color
+        image: Image
+        content: Content

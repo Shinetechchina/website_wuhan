@@ -1,0 +1,31 @@
+es:
+  refinery:
+    plugins:
+      services:
+        title: Services
+#        article: masculino/femenino
+    services:
+      admin:
+        services:
+          actions:
+            create_new: Crear nuevo service
+            reorder: Reordenar services
+            reorder_done: Reordenación de services completada
+          records:
+            title: Services
+            sorry_no_results: Lo siento, no hay resultados
+            no_items_yet: No hay services todavía. Pulsa en "Crear nuevo Service" para crear tu primer service.
+          service:
+            view_live_html: Ver este service como abierto al público <br/><em>(abre en ventana nueva)</em>
+            edit: Editar este service
+            delete: Borrar este service para siempre
+      services:
+        show:
+          other: Otros services
+  activerecord:
+    attributes:
+      'refinery/services/service':
+        title: Title
+        color: Color
+        image: Image
+        content: Content

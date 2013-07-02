@@ -46,3 +46,5 @@ end
 # gem 'debugger'
 
 gem 'refinerycms-staffs', :path => 'vendor/extensions'
+
+gem 'refinerycms-services', :path => 'vendor/extensions'
