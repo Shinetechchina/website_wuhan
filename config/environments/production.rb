@@ -46,7 +46,28 @@ WebsiteWuhan::Application.configure do
   # config.action_controller.asset_host = "http://assets.example.com"
 
   # Precompile additional assets (application.js, application.css, and all non-JS/CSS are already added)
-  # config.assets.precompile += %w( search.js )
+  config.assets.precompile += %w[
+    codemirror.css
+    codemirror/codemirror.js
+    codemirror/editor.js
+    codemirror/highlight.js
+    codemirror/mirrorframe.js
+    codemirror/parsecss.js
+    codemirror/parsedummy.js
+    codemirror/parsehtmlmixed.js
+    codemirror/parsejavascript.js
+    codemirror/parsesparql.js
+    codemirror/parsexml.js
+    codemirror/select.js
+    codemirror/stringstream.js
+    codemirror/tokenize.js
+    codemirror/tokenizejavascript.js
+    codemirror/undo.js
+    codemirror/util.js
+    parseliquid.js
+    codemirror/liquidcolors.css
+    codemirror/xmlcolors.css
+  ]
 
   # Disable delivery errors, bad email addresses will be ignored
   # config.action_mailer.raise_delivery_errors = false
