@@ -1,12 +1,7 @@
 Refinery::Core::Engine.routes.append do
-
-  # Frontend routes
-  namespace :staffs do
-    resources :staffs, :path => '', :only => [:index, :show]
-  end
-
-  # Admin routes
   namespace :staffs, :path => '' do
+    get '/staff' => 'staffs#index'
+
     namespace :admin, :path => 'refinery' do
       resources :staffs, :except => :show do
         collection do
@@ -15,5 +10,4 @@ Refinery::Core::Engine.routes.append do
       end
     end
   end
-
 end

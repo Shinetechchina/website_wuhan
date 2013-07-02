@@ -11,6 +11,8 @@ module Refinery
       validates_presence_of :name, :email, :image
 
       belongs_to :image, :class_name => '::Refinery::Image'
+
+      liquid_methods :name, :email, :number, :title, :description
     end
   end
 end

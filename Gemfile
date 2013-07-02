@@ -24,6 +24,7 @@ gem 'font-awesome-sass-rails'
 
 gem 'jquery-rails', '~> 2.0.0'
 gem 'refinerycms', '~> 2.0.0'
+gem 'liquid', '~> 2.5.0'
 
 group :development do
   gem 'pry-rails'
