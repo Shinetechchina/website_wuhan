@@ -1,0 +1,31 @@
+zh-CN:
+  refinery:
+    plugins:
+      references:
+        title: References
+    references:
+      admin:
+        references:
+          actions:
+            create_new: 建立新的 Reference
+            reorder: 对 References 重新排序
+            reorder_done: 对 References 的重新排序结束
+          records:
+            title: References
+            sorry_no_results: 对不起，未找到结果。 #Sorry! There are no results found.
+
+            # There are no References yet. Click "Add New Reference" to add your first reference.
+            no_items_yet: 目前没有 References . 点击 "Add New Reference" 创建一个reference.
+          reference:
+            view_live_html: 查看 reference 的最新内容.<br/><em>(新窗口中打开)</em>
+            edit: 编辑 reference
+            delete: 永久删除 reference
+      references:
+        show:
+          other: 其他 References
+  activerecord:
+    attributes:
+      'refinery/references/reference':
+        title: Title
+        image: Image
+        content: Content

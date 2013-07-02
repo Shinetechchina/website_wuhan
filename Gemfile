@@ -48,3 +48,4 @@ end
 gem 'refinerycms-staffs', :path => 'vendor/extensions'
 
 gem 'refinerycms-services', :path => 'vendor/extensions'
+gem 'refinerycms-references', :path => 'vendor/extensions'
