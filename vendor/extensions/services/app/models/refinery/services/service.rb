@@ -11,6 +11,8 @@ module Refinery
       validates_uniqueness_of :title
 
       belongs_to :image, :class_name => '::Refinery::Image'
+
+      liquid_methods :title, :color, :content
     end
   end
 end

@@ -11,6 +11,8 @@ module Refinery
       validates_presence_of :image, :content
 
       belongs_to :image, :class_name => '::Refinery::Image'
+
+      liquid_methods :title, :content
     end
   end
 end

@@ -1,12 +1,7 @@
 Refinery::Core::Engine.routes.append do
-
-  # Frontend routes
-  namespace :services do
-    resources :services, :path => '', :only => [:index, :show]
-  end
-
-  # Admin routes
   namespace :services, :path => '' do
+    get '/services' => 'services#index'
+
     namespace :admin, :path => 'refinery' do
       resources :services, :except => :show do
         collection do
@@ -15,5 +10,4 @@ Refinery::Core::Engine.routes.append do
       end
     end
   end
-
 end
