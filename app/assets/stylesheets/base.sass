@@ -106,6 +106,7 @@ $box-triple-width: $box-width * 3 + $box-gap * 2
   height: 288px
   background-color: white
   text-align: center
+  overflow: hidden
 
 .box-blue
   background: #9dc0c8
@@ -243,9 +244,9 @@ $box-triple-width: $box-width * 3 + $box-gap * 2
   background-image: url('/assets/ued.jpg')
 
 .box-icon
-  border: 1px solid white
-  width: $box-width - 2px
-  height: $box-height - 2px
+  // border: 1px solid white
+  // width: $box-width - 2px
+  // height: $box-height - 2px
   -webkit-transition-property: -webkit-transform, border-color
   -moz-transition-property: -moz-transform, border-color
   -ms-transition-property: -ms-transform, border-color
@@ -336,6 +337,29 @@ $box-triple-width: $box-width * 3 + $box-gap * 2
   width: $box-double-width
   height: $box-double-height
   border-width: 0
+
+
+.box-hover-content
+  position: absolute
+  top: 0
+  left: 0
+  border: 1px solid #df7c06
+  width: $box-width - 2px
+  height: $box-height - 2px
+  cursor: pointer
+  transition: opacity .3s
+  z-index: 10
+
+.box
+  .box-hover-content
+    opacity: 0
+
+  &:hover .box-hover-content
+    opacity: 1
+
+  &.box-expanded:hover .box-hover-content
+    opacity: 0
+
 
 .page-not-found
   text-align: center

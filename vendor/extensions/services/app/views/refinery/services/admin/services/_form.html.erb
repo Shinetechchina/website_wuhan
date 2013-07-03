@@ -10,18 +10,23 @@
   </div>
 
   <div class='field'>
+    <%= f.label :color -%>
+    <%= f.text_field :color, :class => 'widest'  -%>
+  </div>
+
+  <div class='field'>
+    <%= f.label :icon -%>
+    <%= f.text_field :icon, class: 'widest', placeholder: 'Use fontawsome icon name, like "coffee", "pencil", etc' -%>
+  </div>
+
+  <div class='field'>
     <%= f.label :expanded -%>
     <%= f.check_box :expanded %>
   </div>
 
-  <div class='field'>
-    <%= f.label :image -%>
-    <%= render '/refinery/admin/image_picker',
-               :f => f,
-               :field => :image_id,
-               :image => @service.image,
-               :toggle_image_display => false %>
-
+  <div class="field">
+    <%= f.label :short_content %>
+    <%= f.text_field :short_content, class: 'widest' %>
   </div>
 
   <div class='field'>
