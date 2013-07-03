@@ -1,4 +1,4 @@
-class AddExpandedToRefineryServices < ActiveRecord::Migration
+class AddExpandedToServices < ActiveRecord::Migration
   def up
     add_column :refinery_services, :expanded, :boolean, default: false
   end
