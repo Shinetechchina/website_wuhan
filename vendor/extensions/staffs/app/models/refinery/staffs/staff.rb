@@ -9,6 +9,7 @@ module Refinery
 
       validates_uniqueness_of :name, :number, :email
       validates_presence_of :name, :email, :image
+      validates_numericality_of :number, greater_than: 0
 
       belongs_to :image, :class_name => '::Refinery::Image'
 
