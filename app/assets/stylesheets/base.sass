@@ -1,8 +1,11 @@
+$main-color: #0099CC
+$font-color: #969289
+
 html
-  background-color: #f5f1ed
+  background-color: rgb(240, 245, 255)
   font-family: 'proxima-nova','Helvetica Neue',Arial,Helvetica,sans-serif
   font-size: 14px
-  color: #969289
+  color: $font-color
 
 h3
   font-size: 16px
@@ -16,7 +19,7 @@ a
   text-decoration: none
 
 ::selection
-  background-color: #f7941e
+  background-color: $main-color
   color: white
 
 .hide
@@ -35,13 +38,15 @@ a
   margin-top: 40px
   text-align: center
   border-bottom: 1px solid #ddd
-  font-size: 14px
+  font-size: 16px
   a
-    color: #f7941e!important
+    color: $main-color!important
 
 #menu
-  font-size: 12px
-  font-weight: 600
+  font-family: Palatino, Georgia, serif
+  font-weight: bold
+  font-size: 14px
+  font-style: italic
   margin: 21px auto
   line-height: 16px
   text-align: center
@@ -53,10 +58,11 @@ a
       display: inline-block
       vertical-align: baseline
       a
-        color: #969289
+        color: $font-color
         padding: 8px 12px
     li.selected a
-      color: #f7941e
+      color: #fff
+      background: $main-color
 
 .footer
   font-size: 11px
@@ -74,7 +80,7 @@ a
     margin-bottom: 15px
     font-weight: normal
   a
-    color: #f7941e!important
+    color: $main-color!important
     padding-bottom: 3px
     &:hover
       text-decoration: none
@@ -164,7 +170,7 @@ $box-triple-width: $box-width * 3 + $box-gap * 2
 .shade-box
   .shade
     background-color: transparent
-    background: rgba(223,124,6,.9)
+    background: $main-color
     height: 100%
     width: 100%
     color: white
@@ -180,7 +186,7 @@ $box-triple-width: $box-width * 3 + $box-gap * 2
 
   &:hover
     .shade
-      opacity: 1
+      opacity: 0.9
     .name
       display: none
 
@@ -262,7 +268,7 @@ $box-triple-width: $box-width * 3 + $box-gap * 2
     font-size: 14px
     font-weight: 400
   p
-    color: #969289
+    color: $font-color
 
   .mini, .maxi
     top: 25px
@@ -294,9 +300,9 @@ $box-triple-width: $box-width * 3 + $box-gap * 2
 
 .box-icon-origin
   &:hover
-    border-color: #f7941e
+    border-color: $main-color
   .icon, h3
-    color: #f7941e
+    color: $main-color
 
 .box-icon-brown
   &:hover
@@ -371,4 +377,4 @@ $box-triple-width: $box-width * 3 + $box-gap * 2
     font-size: 16px
 
   a
-    color: #f7941e
+    color: $main-color
