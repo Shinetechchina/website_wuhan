@@ -16,4 +16,12 @@ Refinery::Image.class_eval do
       return 'large'
     end
   end
+
+  # Define methods that are image per size's url
+  Refinery::Images.config[:user_image_sizes].keys.each do |size_name|
+    define_method "#{size_name}_size" do
+      self.thumbnail(size_name).url
+    end
+  end
+
 end
