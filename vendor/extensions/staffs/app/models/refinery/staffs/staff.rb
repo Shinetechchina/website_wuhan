@@ -13,7 +13,12 @@ module Refinery
 
       belongs_to :image, :class_name => '::Refinery::Image'
 
-      liquid_methods :name, :email, :number, :title, :description
+      liquid_methods :name, :email, :number, :title, :description, :image_url
+
+      #retunr box size's image url
+      def image_url
+        self.image.box_size_url
+      end
     end
   end
 end
