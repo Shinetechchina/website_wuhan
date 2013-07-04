@@ -12,6 +12,8 @@ module Refinery
 
       belongs_to :image, :class_name => '::Refinery::Image'
 
+      include ImageExt
+
       liquid_methods :title, :content
     end
   end
