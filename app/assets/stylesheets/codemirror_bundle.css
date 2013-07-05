@@ -1,0 +1,10 @@
+/*
+ *= require codemirror
+ *= require codemirror/modes/liquid
+ *= require_self
+ */
+
+.CodeMirror * {
+  font-family: monospace; /* override Refinery CMS font-family */
+  line-height: 1.3;       /* wider the default line-height */
+}

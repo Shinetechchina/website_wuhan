@@ -48,6 +48,7 @@ window.App =
       ).enter ->
         self.activeMenuItem(url)
 
+    # TODO calculate urls from database or from menu html
     registerPath(url) for url in ['home', 'company', 'services', 'references', 'staff', 'blog']
 
     Path.root('#/home')

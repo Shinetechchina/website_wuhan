@@ -45,9 +45,8 @@ Refinery::Core.configure do |config|
   # config.wymeditor_whitelist_tags = {}
 
   # Register extra javascript for backend
-  config.register_javascript "codemirror/codemirror"
-  config.register_javascript "liquid_editor"
+  config.register_javascript "codemirror_bundle"
 
   # Register extra stylesheet for backend (optional options)
-  config.register_stylesheet "codemirror", :media => 'screen'
+  config.register_stylesheet "codemirror_bundle", media: 'screen'
 end
