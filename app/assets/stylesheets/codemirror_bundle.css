@@ -4,6 +4,10 @@
  *= require_self
  */
 
+.CodeMirror {
+  border: 1px solid #CCC;
+}
+
 .CodeMirror * {
   font-family: monospace; /* override Refinery CMS font-family */
   line-height: 1.3;       /* wider the default line-height */
