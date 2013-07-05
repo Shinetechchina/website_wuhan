@@ -6,13 +6,18 @@
 //= require codemirror/modes/htmlmixed
 //= require codemirror/modes/liquid
 
+// Initialze codemirror editors
 // The liquid mode is from [https://github.com/axtro/codemirror_liquid_mod]
 $(function() {
-  $('.liquid-editor').each(function() {
+  $('.codemirror-editor').each(function() {
+    var textarea = $(this);
+
     CodeMirror.fromTextArea(this, {
-      mode: {name: 'htmlmixedliquid'},
+      mode: {name: textarea.data('mode')},
       tabSize: 2,
       lineNumbers: true
+    }).on('change', function(cm) {
+      cm.save();
     });
   });
 });
