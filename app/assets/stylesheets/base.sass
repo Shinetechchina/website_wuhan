@@ -111,6 +111,7 @@ $box-triple-width: $box-width * 3 + $box-gap * 2
   width: $box-width
   height: 288px
   background-color: white
+  background-repeat: no-repeat
   text-align: center
   overflow: hidden
 
@@ -119,6 +120,7 @@ $box-triple-width: $box-width * 3 + $box-gap * 2
   color: white
 
 .box-profile
+  background-position-x: 100%
   .name
     color: #f4f2ed
     line-height: 25px
@@ -187,6 +189,7 @@ $box-triple-width: $box-width * 3 + $box-gap * 2
   &:hover
     .shade
       opacity: 0.9
+      cursor: pointer
     .name
       display: none
 
@@ -264,63 +267,6 @@ $box-triple-width: $box-width * 3 + $box-gap * 2
 
   .icon
     font-size: 120px
-  h3
-    font-size: 14px
-    font-weight: 400
-  p
-    color: $font-color
-
-  .mini, .maxi
-    top: 25px
-    position: absolute
-
-  .mini
-    p
-      font-size: 14px
-      padding: 0 15px
-
-  .maxi
-    text-align: left
-    padding-left: 30px
-    padding-right: 60px
-    .icon
-      float: right
-      margin: 0 0 25px 25px
-    h3
-      margin-bottom: 30px
-    p
-      font-size: 16px
-      line-height: 1.5
-
-.box-icon-darkorigin
-  &:hover
-    border-color: #e1733d
-  .icon, h3
-    color: #e1733d
-
-.box-icon-origin
-  &:hover
-    border-color: $main-color
-  .icon, h3
-    color: $main-color
-
-.box-icon-brown
-  &:hover
-    border-color: #cfc4a5
-  .icon, h3
-    color: #cfc4a5
-
-.box-icon-coffee
-  &:hover
-    border-color: #a58c85
-  .icon, h3
-    color: #a58c85
-
-.box-icon-jasper
-  &:hover
-    border-color: #c1caaf
-  .icon, h3
-    color: #c1caaf
 
 .box-double
   width: $box-double-width
@@ -329,13 +275,36 @@ $box-triple-width: $box-width * 3 + $box-gap * 2
   width: $box-triple-width
 
 .box-expandable
+  p
+    color: $font-color
+
+  .mini
+    padding-top: 25px
+    p
+      font-size: 14px
+      padding: 0 15px
+
   .maxi
     display: none
+    text-align: left
+    .icon
+      float: right
+      padding-right: 15px
+    h3
+      padding-top: 15px
+      padding-left: 30px
+      font-size: 16px
+    p
+      padding-left: 30px
+      padding-right: 15px
+      font-size: 16px
+      line-height: 1.5
+    img
+      float: right
 
   &.box-expanded
     .mini
       display: none
-
     .maxi
       display: block
 
@@ -343,7 +312,6 @@ $box-triple-width: $box-width * 3 + $box-gap * 2
   width: $box-double-width
   height: $box-double-height
   border-width: 0
-
 
 .box-hover-content
   position: absolute
