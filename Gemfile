@@ -20,7 +20,7 @@ group :assets do
 end
 
 gem 'slim'
-gem 'font-awesome-sass-rails'
+gem 'font-awesome-rails'
 
 gem 'jquery-rails', '~> 2.0.0'
 gem 'refinerycms', '~> 2.0.0'
