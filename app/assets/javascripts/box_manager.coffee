@@ -10,6 +10,8 @@ window.boxManager =
     @$container.on 'click', '.box-expandable', ->
       self.expandBox(@)
 
+    @initBoxVideo()
+
   # 展开box，只有class为box-expandable的box才会响应这个方法
   expandBox: (el) ->
     $el = $(el)
@@ -27,15 +29,15 @@ window.boxManager =
     self = @
     $container = @$container
 
-    @showLoading()
+    App.showLoading()
     $.get(url).success (result) ->
-      self.hideLoading()
+      App.hideLoading()
       $container
         .isotope('remove', $container.find('.item'))
         .isotope('insert', $(result).filter('.item'))
 
-  showLoading: ->
-    $('.loading').fadeIn()
-
-  hideLoading: ->
-    $('.loading').fadeOut()
+  initBoxVideo: ->
+    self = @
+    $(document.body).on 'click', '.box-video .btn-play', ->
+      box = $(@).parents('.box-video:first')
+      App.VideoModal.show(url: box.data('video'))
