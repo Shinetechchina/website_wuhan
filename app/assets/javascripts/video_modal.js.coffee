@@ -5,7 +5,7 @@ App.VideoModal =
     modal = @_getOrCreateModal()
     iframe = $("<iframe width=\"853\" height=\"480\" frameborder=\"0\" allowfullscreen></iframe>")
     modal.find('.video-modal-content').html('').append(iframe)
-    iframe.attr('src', opts.url)
+    iframe.attr('src', "#{opts.url}?autoplay=1&showinfo=0")
     modal.show()
     @
 
