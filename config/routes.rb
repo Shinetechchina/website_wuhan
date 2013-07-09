@@ -7,6 +7,15 @@ WebsiteWuhan::Application.routes.draw do
   # We ask that you don't use the :as option here, as Refinery relies on it being the default of "refinery"
   mount Refinery::Core::Engine, :at => '/'
 
+  Refinery::Core::Engine.routes.draw do
+    devise_scope :refinery_user do
+      get '/auth/:provider/callback', to: 'sessions#auth'
+      get '/auth/failure', to: 'sessions#failure'
+      get '/auth', to: 'sessions#auth_link'
+      #post '/refinery/users/create_with_auth/:auth_id', to: 'users#create_with_auth'
+    end
+  end
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

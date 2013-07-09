@@ -66,20 +66,27 @@ GEM
     erubis (2.7.0)
     execjs (1.4.0)
       multi_json (~> 1.0)
-    font-awesome-rails (3.2.1.2)
-      railties (>= 3.2, < 5.0)
+    faraday (0.8.7)
+      multipart-post (~> 1.1)
+    font-awesome-sass-rails (3.0.2.2)
+      railties (>= 3.1.1)
+      sass-rails (>= 3.1.1)
     friendly_id (4.0.9)
     globalize3 (0.3.0)
       activemodel (>= 3.0.0)
       activerecord (>= 3.0.0)
       paper_trail (~> 2)
+    hashie (2.0.5)
     hike (1.2.3)
+    httpauth (0.2.0)
     i18n (0.6.1)
     journey (1.0.4)
     jquery-rails (2.0.3)
       railties (>= 3.1.0, < 5.0)
       thor (~> 0.14)
     json (1.8.0)
+    jwt (0.1.8)
+      multi_json (>= 1.5)
     liquid (2.5.0)
     mail (2.5.4)
       mime-types (~> 1.16)
@@ -87,6 +94,22 @@ GEM
     method_source (0.8.1)
     mime-types (1.23)
     multi_json (1.7.7)
+    multipart-post (1.2.0)
+    oauth2 (0.8.1)
+      faraday (~> 0.8)
+      httpauth (~> 0.1)
+      jwt (~> 0.1.4)
+      multi_json (~> 1.0)
+      rack (~> 1.2)
+    omniauth (1.1.4)
+      hashie (>= 1.2, < 3)
+      rack
+    omniauth-oauth2 (1.1.1)
+      oauth2 (~> 0.8.0)
+      omniauth (~> 1.0)
+    omniauth-weibo-oauth2 (0.3.0)
+      omniauth (~> 1.0)
+      omniauth-oauth2 (~> 1.0)
     orm_adapter (0.0.7)
     paper_trail (2.7.2)
       activerecord (~> 3.0)
@@ -202,9 +225,11 @@ PLATFORMS
 DEPENDENCIES
   codemirror-rails
   coffee-rails (~> 3.2.1)
-  font-awesome-rails
+  font-awesome-sass-rails
   jquery-rails (~> 2.0.0)
   liquid (~> 2.5.0)
+  omniauth
+  omniauth-weibo-oauth2
   pg
   pry-rails
   quiet_assets
