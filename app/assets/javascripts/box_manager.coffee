@@ -30,14 +30,21 @@ window.boxManager =
     $container = @$container
 
     App.Overlay.show(mask: true)
+
     $.get(url).success (result) ->
       App.Overlay.hide()
+
       $container
         .isotope('remove', $container.find('.item'))
         .isotope('insert', $(result).filter('.item'))
+
+      $container.find('.box-video').each ->
+        el = $(@)
+        if el.data('video-id')
+          el.css('background-image', "url(http://img.youtube.com/vi/#{el.data('video-id')}/hqdefault.jpg)")
 
   initBoxVideo: ->
     self = @
     $(document.body).on 'click', '.box-video .btn-play', ->
       box = $(@).parents('.box-video:first')
-      App.VideoModal.show(url: box.data('video'))
+      App.VideoModal.show(videoId: box.data('video-id'))
