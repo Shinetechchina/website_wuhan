@@ -5,6 +5,7 @@
 #= require box_manager
 #= require app
 #= require video_modal
+#= require overlay
 #= require_self
 
 $ ->

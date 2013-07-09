@@ -29,9 +29,9 @@ window.boxManager =
     self = @
     $container = @$container
 
-    App.showLoading()
+    App.Overlay.show(mask: true)
     $.get(url).success (result) ->
-      App.hideLoading()
+      App.Overlay.hide()
       $container
         .isotope('remove', $container.find('.item'))
         .isotope('insert', $(result).filter('.item'))

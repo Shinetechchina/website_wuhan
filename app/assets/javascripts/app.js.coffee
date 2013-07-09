@@ -54,9 +54,3 @@ window.App = App =
       .find('li').each ->
         li = $(@)
         li.addClass('selected') if li.find('a').attr('href') == "/#/#{url}"
-
-  showLoading: ->
-    $('.loading').fadeIn()
-
-  hideLoading: ->
-    $('.loading').fadeOut()
