@@ -1,18 +1,6 @@
-.logo
-  = link_to '/' do
-    | Shinetechchina Wuhan Outsourcing
-
-.nav
-  ul
-    li class="active"
-      = link_to 'HOME', '/#/home'
-    li
-      = link_to 'COMPANY', '/#/company'
-    li
-      = link_to 'SERVICES', '/#/services'
-    li
-      = link_to 'REFERENCES', '/#/references'
-    li
-      = link_to 'STAFF', '/#/staff'
-    li
-      = link_to 'BLOG', '/#/blog'
+#flash_container
+  - flash.each do |key, value|
+    #flash.flash.flash_message
+      h2 style = "display: inline;"
+        = value
+      = link_to 'Close This Message', "", id: 'flash_close'

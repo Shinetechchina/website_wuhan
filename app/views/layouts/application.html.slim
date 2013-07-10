@@ -6,8 +6,12 @@ html
     - unless response.status == 404
       = javascript_include_tag "application"
   body
+    .loading.hide
+      .loading-mask
+
     #wrapper
       #main
+        = render '/home/header'
         = render '/refinery/site_bar'
         = render '/refinery/header'
 

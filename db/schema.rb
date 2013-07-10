@@ -13,6 +13,16 @@
 
 ActiveRecord::Schema.define(:version => 20130710081815) do
 
+  create_table "authentications", :force => true do |t|
+    t.string   "provider"
+    t.string   "uid"
+    t.integer  "user_id"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+    t.string   "access_token"
+    t.datetime "expires_in"
+  end
+
   create_table "refinery_images", :force => true do |t|
     t.string   "image_mime_type"
     t.string   "image_name"
@@ -170,6 +180,7 @@ ActiveRecord::Schema.define(:version => 20130710081815) do
     t.datetime "reset_password_sent_at"
     t.datetime "created_at",             :null => false
     t.datetime "updated_at",             :null => false
+    t.string   "nickname"
   end
 
   add_index "refinery_users", ["id"], :name => "index_refinery_users_on_id"
