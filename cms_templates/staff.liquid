@@ -1,0 +1,29 @@
+{% for s in staffs %}
+<div class="item">
+  <div class="box box-staff box-expandable" data-expanded-class="box-triple">
+    <div class="mini">
+      <div class="staff-thumb" style="background-image: url('{{ s.image_url }}');">
+        <div class="staff-name">{{ s.name }}</div>
+      </div>
+    </div>
+
+    <div class="maxi">
+      <div class="staff-thumb" style="background-image: url('{{ s.image_url }}');">
+        <div class="staff-name">{{ s.name }}</div>
+      </div>
+
+      <div class="staff-info">
+        <h2>{{ s.name }}</h2>
+        <div class="staff-description">{{ s.description }}</div>
+        <div class="social-links">
+          {% if s.github_url? %}<a href="{{ s.github_url }}" target="_blank"><i class="icon-github icon-large"></i>Github</a>{% endif %}
+          {% if s.linkedin_url? %}<a href="{{ s.linkedin_url }}" target="_blank"><i class="icon-linkedin icon-large"></i>LinkedIn</a>{% endif %}
+          {% if s.twitter_url? %}<a href="{{ s.twitter_url }}" target="_blank"><i class="icon-twitter icon-large"></i>Twitter</a>{% endif %}
+          {% if s.weibo_url? %}<a href="{{ s.weibo_url }}" target="_blank"><i class="icon-weibo icon-large"></i>Weibo</a>{% endif %}
+          {% if s.email? %}<a href="mailto:{{ s.email }}" target="_blank"><i class="icon icon-envelope"></i>Email</a>{% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endfor %}
