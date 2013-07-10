@@ -4,6 +4,7 @@ Refinery::SessionsController.class_eval do
     auth_hash = request.env['omniauth.auth']
     #username = auth_hash['info']['name']||auth_hash['info']['nickname']
     ::Authentication.find_or_create_from_auth_hash(auth_hash)
+    auth_hash["credentials"]["token"]
     flash[:message] = "Welcome #{auth_hash['info']['name']}, weibo authenticate successful"
     redirect_to '/'
     #if current_refinery_user
