@@ -1,12 +1,19 @@
 // $main-color: #0099cc
 $main-color: #00aff0
-$font-color: #969289
 
 html
   background-color: #E7F1F5
-  font-family: 'proxima-nova','Helvetica Neue',Arial,Helvetica,sans-serif
+  font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif
   font-size: 14px
-  color: $font-color
+  line-height: 1.5em
+  color: $color-font
+
+h2, h3
+  color: $color-heading
+
+h2
+  font-size: 20px
+  margin-bottom: 30px
 
 h3
   font-size: 16px
@@ -17,6 +24,7 @@ ul
   list-style-type: none
 
 a
+  color: $color-link
   text-decoration: none
 
 ::selection
@@ -59,7 +67,7 @@ a
       display: inline-block
       vertical-align: baseline
       a
-        color: $font-color
+        color: $color-font
         padding: 8px 12px
     li.selected a
       color: #fff
@@ -277,7 +285,6 @@ $box-triple-width: $box-width * 3 + $box-gap * 2
 
 .box-expandable
   p
-    color: $font-color
 
   .mini
     padding-top: 25px
