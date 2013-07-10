@@ -15,10 +15,11 @@ window.boxManager =
   # 展开box，只有class为box-expandable的box才会响应这个方法
   expandBox: (el) ->
     $el = $(el)
+    expandedClass = $el.data('expanded-class')
     return if $el.hasClass('box-expanded')
 
-    @$container.find('.box-expanded').removeClass('box-expanded')
-    $el.toggleClass('box-expanded')
+    @$container.find(".box-expandable").removeClass('box-expanded').removeClass(expandedClass)
+    $el.addClass('box-expanded').addClass(expandedClass)
 
     @reLayout()
 

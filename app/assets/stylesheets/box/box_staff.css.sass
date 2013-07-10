@@ -1,11 +1,11 @@
 .box-staff
 
 .staff-thumb
+  float: left
   width: $box-width
   height: $box-height
   background-image: image-url('staff/staff_1.jpg')
   background-size: cover
-  float: left
 
 .staff-name
   position: absolute
@@ -15,6 +15,10 @@
   color: white
   background: rgba($main-color, .7)
   line-height: 2
+  transition: background .3s
+
+.staff-thumb:hover .staff-name
+  background: $main-color
 
 .staff-info
   margin-left: $box-width
@@ -23,7 +27,6 @@
   p
     max-height: 143px
     overflow: hidden
-
 
 .social-links
   margin-top: 20px

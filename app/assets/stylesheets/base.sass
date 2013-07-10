@@ -104,13 +104,6 @@ a
   overflow: hidden
   height: 602px
 
-$box-width: 276px
-$box-height: 288px
-$box-gap: 12px
-$box-double-width: $box-width * 2 + $box-gap
-$box-double-height: $box-height * 2 + $box-gap
-$box-triple-width: $box-width * 3 + $box-gap * 2
-
 .item
   margin-left: 12px
   margin-top: 12px
@@ -282,39 +275,6 @@ $box-triple-width: $box-width * 3 + $box-gap * 2
 
 .box-triple
   width: $box-triple-width
-
-.box-expandable
-  p
-
-  .mini
-    padding-top: 25px
-    p
-      font-size: 14px
-      padding: 0 15px
-
-  .maxi
-    display: none
-    text-align: left
-    .maxi-inner
-      padding-top: 15px
-      padding-right: 20px
-      padding-left: 30px
-      font-size: 16px
-      line-height: 1.5
-    img, .icon
-      float: right
-      padding-left: 15px
-
-  &.box-expanded
-    .mini
-      display: none
-    .maxi
-      display: block
-
-.box-expanded
-  width: $box-double-width
-  height: $box-double-height
-  border-width: 0
 
 .box-hover-content
   position: absolute

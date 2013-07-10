@@ -10,11 +10,12 @@
 
   </div>
   
-  <div class='field'>
-    <%= f.label :email -%>
-    <%= f.text_field :email  -%>
-
-  </div>
+  <% [:email, :github_url, :linkedin_url, :twitter_url, :weibo_url].each do |attr| %>
+    <div class='field'>
+      <%= f.label attr -%>
+      <%= f.text_field attr -%>
+    </div>
+  <% end %>
   
   <div class='field'>
     <%= f.label :number -%>
