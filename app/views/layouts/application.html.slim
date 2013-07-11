@@ -8,13 +8,11 @@ html
   body
     .loading.hide
       .loading-mask
-
+    = render '/home/header'
+    = render '/refinery/site_bar'
+    = render '/refinery/header'
     #wrapper
       #main
-        = render '/home/header'
-        = render '/refinery/site_bar'
-        = render '/refinery/header'
-
         .box-container.isotope
           = yield
 

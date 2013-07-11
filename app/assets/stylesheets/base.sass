@@ -1,5 +1,6 @@
 // $main-color: #0099cc
 $main-color: #00aff0
+$main-width: 1152px
 
 html
   background-color: #E7F1F5
@@ -38,7 +39,7 @@ a
 
 #wrapper
   margin: 0 auto
-  width: 1152px
+  width: $main-width
   overflow: hidden
 
 #logo
@@ -50,14 +51,18 @@ a
   a
     color: $main-color!important
 
+#menu-wrapper
+  background-color: #252525
 #menu
+  width: $main-width
+  background-color: #252525
+  margin: 0 auto
+  padding: 8px 0
   font-family: Palatino, Georgia, serif
   font-weight: bold
-  font-size: 14px
+  font-size: 13px
   font-style: italic
-  margin: 21px auto
   line-height: 16px
-  text-align: center
   text-shadow: 0 1px 0 rgba(255, 255, 255, .6)
   text-transform: uppercase
   ul
@@ -66,11 +71,13 @@ a
       display: inline-block
       vertical-align: baseline
       a
-        color: $color-font
+        color: #999
         padding: 8px 12px
+        &:hover
+          color: #fff
     li.selected a
       color: #fff
-      background: $main-color
+      background: #111
 
 .footer
   font-size: 11px
