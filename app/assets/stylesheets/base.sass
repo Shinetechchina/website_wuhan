@@ -33,7 +33,18 @@ a
 .pointer
   cursor: pointer
 
-#wrapper
+.masthead
+  margin-bottom: 20px
+  padding: 50px 0
+  color: white
+  background: $color-link
+  @include linear-gradient(90deg, $color-link, darken($color-link, 20%))
+
+  h1
+    font-size: 50px
+    line-height: 50px
+
+.wrapper
   margin: 0 auto
   width: $main-width
   overflow: hidden

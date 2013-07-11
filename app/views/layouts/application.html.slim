@@ -11,7 +11,13 @@ html
     = render '/home/header'
     = render '/refinery/site_bar'
     = render '/refinery/header'
-    #wrapper
+
+    .masthead
+      .wrapper
+        h1 Shinetech Wuhan
+        p Welcome to Shinetech Wuhan. Our clients are solving some of the most pressing problems of our time. We deliver disruptive thinking and empowering technology to help them succeed.
+
+    .wrapper
       #main
         .box-container.isotope
           = yield
