@@ -3,6 +3,7 @@
 Gem::Specification.new do |s|
   s.platform          = Gem::Platform::RUBY
   s.name              = 'refinerycms-staffs'
+  s.authors           = ['Aaron Liu', 'David Chen']
   s.version           = '1.0'
   s.description       = 'Ruby on Rails Staffs extension for Refinery CMS'
   s.date              = '2013-07-01'
