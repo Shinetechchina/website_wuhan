@@ -32,11 +32,11 @@
 
   &.active
     opacity: 1
-    transition: left .6s, opacity .8s
+    @include transition(left .6s, opacity .8s)
     left: 0
 
   &.slide-out
-    transition: left, .5s
+    @include transition(left, .5s)
     left: -100%
 
 .bullets

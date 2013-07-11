@@ -142,14 +142,7 @@ a
     color: white
     padding: 20px 0
     opacity: 0
-    -webkit-transition-property: -webkit-transform, opacity
-    -moz-transition-property: -moz-transform, opacity
-    -ms-transition-property: -ms-transform, opacity
-    -o-transition-property: -o-transform, opacity
-    transition-property: transform, opacity
-    -moz-transition-duration: 0.5s
-    -o-transition-duration: 0.5s
-    transition-duration: 0.5s
+    @include transition(transform .5s, opacity .5s)
 
   &:hover
     .show-more-link
@@ -178,14 +171,7 @@ a
     width: 100%
     color: white
     opacity: 0
-    -webkit-transition-property: -webkit-transform, opacity
-    -moz-transition-property: -moz-transform, opacity
-    -ms-transition-property: -ms-transform, opacity
-    -o-transition-property: -o-transform, opacity
-    transition-property: transform, opacity
-    -moz-transition-duration: 0.5s
-    -o-transition-duration: 0.5s
-    transition-duration: 0.5s
+    @include transition(transform .5s, opacity .5s)
 
   &:hover
     .shade
@@ -257,14 +243,7 @@ a
   // border: 1px solid white
   // width: $box-width - 2px
   // height: $box-height - 2px
-  -webkit-transition-property: -webkit-transform, border-color
-  -moz-transition-property: -moz-transform, border-color
-  -ms-transition-property: -ms-transform, border-color
-  -o-transition-property: -o-transform, border-color
-  transition-property: transform, border-color
-  -moz-transition-duration: 0.5s
-  -o-transition-duration: 0.5s
-  transition-duration: 0.5s
+  @include transition(transform .5s, border-color .5s)
 
   .icon
     font-size: 120px
@@ -283,8 +262,8 @@ a
   width: $box-width - 2px
   height: $box-height - 2px
   cursor: pointer
-  transition: opacity .3s
   z-index: 10
+  @include transition(opacity .3s)
 
 .box
   .box-hover-content
@@ -314,8 +293,8 @@ a
     margin-top: -40px
     margin-left: -50px
     opacity: .8
-    transition: opacity .5s
     text-shadow: 0 0 20px rgba(black, .5)
+    @include transition(opacity .5s)
 
     &:hover
       opacity: 1
