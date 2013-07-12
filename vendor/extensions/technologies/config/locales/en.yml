@@ -1,0 +1,29 @@
+en:
+  refinery:
+    plugins:
+      technologies:
+        title: Technologies
+    technologies:
+      admin:
+        technologies:
+          actions:
+            create_new: Add New Technology
+            reorder: Reorder Technologies
+            reorder_done: Done Reordering Technologies
+          records:
+            title: Technologies
+            sorry_no_results: Sorry! There are no results found.
+            no_items_yet: There are no Technologies yet. Click "Add New Technology" to add your first technology.
+          technology:
+            view_live_html: View this technology live <br/><em>(opens in a new window)</em>
+            edit: Edit this technology
+            delete: Remove this technology forever
+      technologies:
+        show:
+          other: Other Technologies
+  activerecord:
+    attributes:
+      'refinery/technologies/technology':
+        title: Title
+        image: Image
+        description: Description

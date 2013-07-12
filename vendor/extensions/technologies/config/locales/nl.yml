@@ -1,0 +1,29 @@
+nl:
+  refinery:
+    plugins:
+      technologies:
+        title: Technologies
+    technologies:
+      admin:
+        technologies:
+          actions:
+            create_new: Maak een nieuwe Technology
+            reorder: Wijzig de volgorde van de Technologies
+            reorder_done: Klaar met het wijzingen van de volgorde van de Technologies
+          records:
+            title: Technologies
+            sorry_no_results: Helaas! Er zijn geen resultaten gevonden.
+            no_items_yet: Er zijn nog geen Technologies. Druk op 'Maak een nieuwe Technology' om de eerste aan te maken.
+          technology:
+            view_live_html: Bekijk deze technology op de website <br/><em>(opent een nieuw venster)</em>
+            edit: Bewerk deze technology
+            delete: Verwijder deze technology voor eeuwig
+      technologies:
+        show:
+          other: Andere Technologies
+  activerecord:
+    attributes:
+      'refinery/technologies/technology':
+        title: Title
+        image: Image
+        description: Description

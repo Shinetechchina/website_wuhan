@@ -1,0 +1,29 @@
+fr:
+  refinery:
+    plugins:
+      technologies:
+        title: Technologies
+    technologies:
+      admin:
+        technologies:
+          actions:
+            create_new: Créer un(e) nouve(au/l/lle) Technology
+            reorder: Réordonner les Technologies
+            reorder_done: Fin de réordonnancement des Technologies
+          records:
+            title: Technologies
+            sorry_no_results: "Désolé ! Aucun résultat."
+            no_items_yet: 'Il n''y a actuellement aucun(e) Technology. Cliquer sur "Créer un(e) nouve(au/l/lle) Technology" pour créer votre premi(er/ère) technology.'
+          technology:
+            view_live_html: Voir ce(t/tte) technology <br/><em>(Ouvre une nouvelle fenêtre)</em>
+            edit: Modifier ce(t/tte) technology
+            delete: Supprimer définitivement ce(t/tte) technology
+      technologies:
+        show:
+          other: Autres Technologies
+  activerecord:
+    attributes:
+      'refinery/technologies/technology':
+        title: Title
+        image: Image
+        description: Description

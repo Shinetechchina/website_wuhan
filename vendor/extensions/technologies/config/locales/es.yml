@@ -1,0 +1,30 @@
+es:
+  refinery:
+    plugins:
+      technologies:
+        title: Technologies
+#        article: masculino/femenino
+    technologies:
+      admin:
+        technologies:
+          actions:
+            create_new: Crear nuevo technology
+            reorder: Reordenar technologies
+            reorder_done: Reordenación de technologies completada
+          records:
+            title: Technologies
+            sorry_no_results: Lo siento, no hay resultados
+            no_items_yet: No hay technologies todavía. Pulsa en "Crear nuevo Technology" para crear tu primer technology.
+          technology:
+            view_live_html: Ver este technology como abierto al público <br/><em>(abre en ventana nueva)</em>
+            edit: Editar este technology
+            delete: Borrar este technology para siempre
+      technologies:
+        show:
+          other: Otros technologies
+  activerecord:
+    attributes:
+      'refinery/technologies/technology':
+        title: Title
+        image: Image
+        description: Description

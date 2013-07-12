@@ -17,3 +17,6 @@ Refinery::Services::Engine.load_seed
 
 # Added by Refinery CMS References extension
 Refinery::References::Engine.load_seed
+
+# Added by Refinery CMS Technologies extension
+Refinery::Technologies::Engine.load_seed
