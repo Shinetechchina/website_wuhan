@@ -1,0 +1,31 @@
+zh-CN:
+  refinery:
+    plugins:
+      customers:
+        title: Customers
+    customers:
+      admin:
+        customers:
+          actions:
+            create_new: 建立新的 Customer
+            reorder: 对 Customers 重新排序
+            reorder_done: 对 Customers 的重新排序结束
+          records:
+            title: Customers
+            sorry_no_results: 对不起，未找到结果。 #Sorry! There are no results found.
+
+            # There are no Customers yet. Click "Add New Customer" to add your first customer.
+            no_items_yet: 目前没有 Customers . 点击 "Add New Customer" 创建一个customer.
+          customer:
+            view_live_html: 查看 customer 的最新内容.<br/><em>(新窗口中打开)</em>
+            edit: 编辑 customer
+            delete: 永久删除 customer
+      customers:
+        show:
+          other: 其他 Customers
+  activerecord:
+    attributes:
+      'refinery/customers/customer':
+        name: Name
+        image: Image
+        description: Description

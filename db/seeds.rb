@@ -20,3 +20,6 @@ Refinery::References::Engine.load_seed
 
 # Added by Refinery CMS Technologies extension
 Refinery::Technologies::Engine.load_seed
+
+# Added by Refinery CMS Customers extension
+Refinery::Customers::Engine.load_seed
