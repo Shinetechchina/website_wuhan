@@ -1,0 +1,19 @@
+{% for s in services %}
+<div class="item">
+  <div class="box box-expandable {% if s.expanded %}box-expanded{% endif %} box-icon">
+    <div class="box-hover-content" style="border-color: {{ s.color }}"></div>
+    <div class="mini">
+      <em class="icon icon-{{ s.icon }}" style="color: {{ s.color }}"></em>
+      <h3 style="color: {{ s.color }}">{{ s.title }}</h3>
+      <p>{{ s.short_content }}</p>
+    </div>
+    <div class="maxi">
+      <div class="maxi-inner">
+      	<em class="icon icon-{{ s.icon }}" style="color: {{ s.color }}"></em>
+      	<h3 style="color: {{ s.color }}">{{ s.title }}</h3>
+      	{{ s.content }}
+      </div>
+    </div>
+  </div>
+</div>
+{% endfor %}
