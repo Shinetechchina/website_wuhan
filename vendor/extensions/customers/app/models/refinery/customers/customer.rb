@@ -12,6 +12,10 @@ module Refinery
       acts_as_taggable
 
       belongs_to :image, :class_name => '::Refinery::Image'
+
+      liquid_methods :name, :description
+
+      include ImageExt
     end
   end
 end
