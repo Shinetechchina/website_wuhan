@@ -1,0 +1,11 @@
+<% content_for :body do %>
+  <ul id="technologies">
+    <% @technologies.each do |technology| %>
+      <li>
+        <%= link_to technology.title, refinery.technologies_technology_path(technology) %>
+      </li>
+    <% end %>
+  </ul>
+<% end %>
+
+<%= render '/refinery/content_page' %>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130712020237) do
+ActiveRecord::Schema.define(:version => 20130712034652) do
 
   create_table "authentications", :force => true do |t|
     t.string   "provider"
@@ -155,6 +155,15 @@ ActiveRecord::Schema.define(:version => 20130712020237) do
     t.string   "linkedin_url"
     t.string   "twitter_url"
     t.string   "weibo_url"
+  end
+
+  create_table "refinery_technologies", :force => true do |t|
+    t.string   "title"
+    t.integer  "image_id"
+    t.text     "description"
+    t.integer  "position"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
   create_table "refinery_user_plugins", :force => true do |t|

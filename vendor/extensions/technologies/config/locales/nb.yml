@@ -1,0 +1,29 @@
+nb:
+  refinery:
+    plugins:
+      technologies:
+        title: Technologies
+    technologies:
+      admin:
+        technologies:
+          actions:
+            create_new: Lag en ny Technology
+            reorder: Endre rekkefølgen på Technologies
+            reorder_done: Ferdig å endre rekkefølgen Technologies
+          records:
+            title: Technologies
+            sorry_no_results: Beklager! Vi fant ikke noen resultater.
+            no_items_yet: Det er ingen Technologies enda. Klikk på "Lag en ny Technology" for å legge til din første technology.
+          technology:
+            view_live_html: Vis hvordan denne technology ser ut offentlig <br/><em>(åpner i et nytt vindu)</em>
+            edit: Rediger denne technology
+            delete: Fjern denne technology permanent
+      technologies:
+        show:
+          other: Andre Technologies
+  activerecord:
+    attributes:
+      'refinery/technologies/technology':
+        title: Title
+        image: Image
+        description: Description

@@ -1,0 +1,31 @@
+zh-CN:
+  refinery:
+    plugins:
+      technologies:
+        title: Technologies
+    technologies:
+      admin:
+        technologies:
+          actions:
+            create_new: 建立新的 Technology
+            reorder: 对 Technologies 重新排序
+            reorder_done: 对 Technologies 的重新排序结束
+          records:
+            title: Technologies
+            sorry_no_results: 对不起，未找到结果。 #Sorry! There are no results found.
+
+            # There are no Technologies yet. Click "Add New Technology" to add your first technology.
+            no_items_yet: 目前没有 Technologies . 点击 "Add New Technology" 创建一个technology.
+          technology:
+            view_live_html: 查看 technology 的最新内容.<br/><em>(新窗口中打开)</em>
+            edit: 编辑 technology
+            delete: 永久删除 technology
+      technologies:
+        show:
+          other: 其他 Technologies
+  activerecord:
+    attributes:
+      'refinery/technologies/technology':
+        title: Title
+        image: Image
+        description: Description
