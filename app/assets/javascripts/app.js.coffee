@@ -37,8 +37,11 @@ window.App = App =
   initRoutes: ->
     self = @
     registerPath = (url) ->
-      Path.map("#/#{url}").to(->
-        boxManager.load("/#{url}")
+      Path.map("#/#{url}(/:tag)").to(->
+        if @params.tag
+          boxManager.load("/#{url}?tag=#{@params.tag}")
+        else
+          boxManager.load("/#{url}")
       ).enter ->
         self.activeMenuItem(url)
 
