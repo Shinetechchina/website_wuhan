@@ -4,6 +4,7 @@ window.App = App =
   init: ->
     @boxManager = boxManager
     boxManager.init()
+
     @initMenu()
     @initSlide()
     @initRoutes()

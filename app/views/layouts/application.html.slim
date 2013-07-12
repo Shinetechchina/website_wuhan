@@ -6,8 +6,6 @@ html
     - unless response.status == 404
       = javascript_include_tag "application"
   body
-    .loading.hide
-      .loading-mask
     = render '/home/header'
     = render '/refinery/site_bar'
     = render '/refinery/header'
@@ -19,7 +17,7 @@ html
 
     .wrapper
       #main
-        .box-container.isotope
+        .box-container
           = yield
 
         = render 'home/footer'
