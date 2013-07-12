@@ -4,8 +4,10 @@ window.boxManager =
 
     @$container = $('.box-container')
 
-    @$container.isotope
-      itemSelector: '.item'
+    @$container.masonry
+      itemSelector: '.box'
+      columnWidth: 276
+      gutter: 12
 
     @$container.on 'click', '.box-expandable', ->
       self.expandBox(@)
@@ -24,7 +26,7 @@ window.boxManager =
     @reLayout()
 
   reLayout: ->
-    @$container.isotope('reLayout')
+    @$container.masonry('layout')
 
   load: (url) ->
     self = @
@@ -35,9 +37,14 @@ window.boxManager =
     $.get(url).success (result) ->
       App.Overlay.hide()
 
-      $container
-        .isotope('remove', $container.find('.item'))
-        .isotope('insert', $(result).filter('.item'))
+      # Remove old boxes when page changing
+      boxes = $container.children()
+      $container.masonry('remove', boxes).masonry('layout') if (boxes[0])
+
+      # new boxes must be add one by one, or Masonry will calculate box container height wrong
+      $(result).filter('.box').each ->
+        $container.append(@)
+        $container.masonry('appended', @)
 
       $container.find('.box-video').each ->
         el = $(@)

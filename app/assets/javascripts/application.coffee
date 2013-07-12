@@ -1,6 +1,6 @@
 #= require jquery
 #= require jquery_ujs
-#= require jquery.isotope.min
+#= require masonry.pkgd.min
 #= require path.min
 #= require box_manager
 #= require app
