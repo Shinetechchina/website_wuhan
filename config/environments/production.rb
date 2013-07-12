@@ -49,6 +49,9 @@ WebsiteWuhan::Application.configure do
   config.assets.precompile += %w[
     codemirror_bundle.css
     codemirror_bundle.js
+    jquery.tagsinput.css
+    jquery.tagsinput.js
+    backend.js.coffee
   ]
 
   # Disable delivery errors, bad email addresses will be ignored

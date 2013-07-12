@@ -38,7 +38,12 @@
                :toggle_image_display => false %>
 
   </div>
-  
+
+  <div class='field'>
+    <%= f.label :tags -%>
+    <%= f.text_field :tag_list, class: 'tags-input', value: @staff.tag_list %>
+  </div>
+
   <div class='field'>
     <div id='page-tabs' class='clearfix ui-tabs ui-widget ui-widget-content ui-corner-all'>
       <ul id='page_parts'>
@@ -63,8 +68,8 @@
              :continue_editing => false,
              :delete_title => t('delete', :scope => 'refinery.staffs.admin.staffs.staff'),
              :delete_confirmation => t('message', :scope => 'refinery.admin.delete', :title => @staff.name) %>
-<% end -%>
 <% content_for :javascripts do %>
+<% end -%>
   <script>
     $(document).ready(function(){
       page_options.init(false, '', '');
