@@ -14,6 +14,8 @@ WebsiteWuhan::Application.routes.draw do
       get '/auth', to: 'sessions#auth_link'
       #post '/refinery/users/create_with_auth/:auth_id', to: 'users#create_with_auth'
     end
+
+    get '/home' => 'site#home'
   end
 
   # The priority is based upon order of creation:
