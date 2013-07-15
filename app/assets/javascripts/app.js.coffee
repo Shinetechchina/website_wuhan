@@ -5,13 +5,10 @@ window.App = App =
     @boxManager = boxManager
     boxManager.init()
 
-    @initMenu()
     @initSlide()
     @initRoutes()
 
   initMenu: ->
-    @$menu = $('#menu')
-    @$menu.find('li a').each -> $(@).attr 'href', $(@).attr('href').replace(/^\//, '/#/')
 
   initSlide: ->
     $(document.body).on 'click', '.slide .tabs li, .slide .bullets li', ->
@@ -37,16 +34,19 @@ window.App = App =
   initRoutes: ->
     self = @
     registerPath = (url) ->
-      Path.map("#/#{url}(/:tag)").to(->
+      Path.map("##{url}(/:tag)").to(->
         if @params.tag
-          boxManager.load("/#{url}?tag=#{@params.tag}")
+          boxManager.load("#{url}?tag=#{@params.tag}")
         else
-          boxManager.load("/#{url}")
+          boxManager.load("#{url}")
       ).enter ->
         self.activeMenuItem(url)
 
-    # TODO calculate urls from database or from menu html
-    registerPath(url) for url in ['home', 'company', 'services', 'references', 'staff', 'blog']
+    @$menu = $('#menu')
+    @$menu.find('li a').each ->
+      el = $(@)
+      registerPath $(@).attr('href')
+      el.attr 'href', el.attr('href').replace(/^\//, '/#/')
 
     Path.root('#/home')
 
@@ -57,4 +57,4 @@ window.App = App =
       .find('li').removeClass('selected').end()
       .find('li').each ->
         li = $(@)
-        li.addClass('selected') if li.find('a').attr('href') == "/#/#{url}"
+        li.addClass('selected') if li.find('a').attr('href') == "/##{url}"
