@@ -1,6 +1,14 @@
 - unless response.status == 404
   #menu-wrapper
-    = render partial: "/refinery/menu", locals: {dom_id: 'menu', css: 'menu'}
-/h1#logo
-  = link_to Refinery::Core.site_name, refinery.root_path
+    .wrapper style="position: relative;"
+      = render partial: "/refinery/menu", locals: {dom_id: 'menu', css: 'menu'}
 
+      .dropdown.dropdown-tag
+        a.dropdown-toggle data-toggle="dropdown" href="#" = cookies[:tag]
+        ul.dropdown-menu.pull-right role="menu" aria-labelledby="dLabel"
+          li
+            a data-tag="all" all
+          li
+            a data-tag="ruby" ruby
+          li
+            a data-tag="javascript" javascript

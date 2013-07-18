@@ -1,5 +1,7 @@
 #= require jquery
 #= require jquery_ujs
+#= require jquery.cookie
+#= require bootstrap-dropdown
 #= require masonry.pkgd.min
 #= require path.min
 #= require box_manager

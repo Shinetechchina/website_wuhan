@@ -6,7 +6,8 @@ window.App = App =
     boxManager.init()
 
     @initSlide()
-    @initRoutes()
+    @initTagList()
+    # @initRoutes()
 
   initMenu: ->
 
@@ -58,3 +59,10 @@ window.App = App =
       .find('li').each ->
         li = $(@)
         li.addClass('selected') if li.find('a').attr('href') == "/##{url}"
+
+  initTagList: ->
+    $('.dropdown-tag .dropdown-menu a').on 'click', (e) ->
+      e.preventDefault()
+      el = $(@)
+      $.cookie('tag', el.data('tag'))
+      location.reload()

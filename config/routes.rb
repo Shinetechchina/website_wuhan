@@ -8,14 +8,14 @@ WebsiteWuhan::Application.routes.draw do
   mount Refinery::Core::Engine, :at => '/'
 
   Refinery::Core::Engine.routes.draw do
+    root to: 'site#home'
+
     devise_scope :refinery_user do
       get '/auth/:provider/callback', to: 'sessions#auth'
       get '/auth/failure', to: 'sessions#failure'
       get '/auth', to: 'sessions#auth_link'
       #post '/refinery/users/create_with_auth/:auth_id', to: 'users#create_with_auth'
     end
-
-    get '/home' => 'site#home'
   end
 
   # The priority is based upon order of creation:
