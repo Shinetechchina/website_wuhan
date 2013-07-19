@@ -23,15 +23,6 @@ ActiveRecord::Schema.define(:version => 20130719032618) do
     t.datetime "expires_in"
   end
 
-  create_table "refinery_customers", :force => true do |t|
-    t.string   "name"
-    t.integer  "image_id"
-    t.text     "description"
-    t.integer  "position"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
-  end
-
   create_table "refinery_images", :force => true do |t|
     t.string   "image_mime_type"
     t.string   "image_name"
