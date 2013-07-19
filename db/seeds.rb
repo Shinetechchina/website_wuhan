@@ -23,3 +23,6 @@ Refinery::Technologies::Engine.load_seed
 
 # Added by Refinery CMS Customers extension
 Refinery::Customers::Engine.load_seed
+
+# Added by Refinery CMS Clients extension
+Refinery::Shinetech::Engine.load_seed

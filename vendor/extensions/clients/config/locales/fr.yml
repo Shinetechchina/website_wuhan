@@ -1,0 +1,29 @@
+fr:
+  refinery:
+    plugins:
+      clients:
+        title: Clients
+    shinetech:
+      admin:
+        clients:
+          actions:
+            create_new: Créer un(e) nouve(au/l/lle) Client
+            reorder: Réordonner les Clients
+            reorder_done: Fin de réordonnancement des Clients
+          records:
+            title: Clients
+            sorry_no_results: "Désolé ! Aucun résultat."
+            no_items_yet: 'Il n''y a actuellement aucun(e) Client. Cliquer sur "Créer un(e) nouve(au/l/lle) Client" pour créer votre premi(er/ère) client.'
+          client:
+            view_live_html: Voir ce(t/tte) client <br/><em>(Ouvre une nouvelle fenêtre)</em>
+            edit: Modifier ce(t/tte) client
+            delete: Supprimer définitivement ce(t/tte) client
+      clients:
+        show:
+          other: Autres Clients
+  activerecord:
+    attributes:
+      'refinery/shinetech/client':
+        name: Name
+        description: Description
+        logo: Logo

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130712035640) do
+ActiveRecord::Schema.define(:version => 20130719032618) do
 
   create_table "authentications", :force => true do |t|
     t.string   "provider"
@@ -148,6 +148,15 @@ ActiveRecord::Schema.define(:version => 20130712035640) do
     t.string   "short_content"
     t.string   "color",         :limit => 50
     t.string   "icon",          :limit => 30
+  end
+
+  create_table "refinery_shinetech_clients", :force => true do |t|
+    t.string   "name"
+    t.text     "description"
+    t.integer  "logo_id"
+    t.integer  "position"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
   create_table "refinery_staffs", :force => true do |t|

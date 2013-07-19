@@ -1,0 +1,29 @@
+nl:
+  refinery:
+    plugins:
+      clients:
+        title: Clients
+    shinetech:
+      admin:
+        clients:
+          actions:
+            create_new: Maak een nieuwe Client
+            reorder: Wijzig de volgorde van de Clients
+            reorder_done: Klaar met het wijzingen van de volgorde van de Clients
+          records:
+            title: Clients
+            sorry_no_results: Helaas! Er zijn geen resultaten gevonden.
+            no_items_yet: Er zijn nog geen Clients. Druk op 'Maak een nieuwe Client' om de eerste aan te maken.
+          client:
+            view_live_html: Bekijk deze client op de website <br/><em>(opent een nieuw venster)</em>
+            edit: Bewerk deze client
+            delete: Verwijder deze client voor eeuwig
+      clients:
+        show:
+          other: Andere Clients
+  activerecord:
+    attributes:
+      'refinery/shinetech/client':
+        name: Name
+        description: Description
+        logo: Logo
