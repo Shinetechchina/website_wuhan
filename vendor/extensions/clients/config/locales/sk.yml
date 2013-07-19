@@ -1,0 +1,29 @@
+sk:
+  refinery:
+    plugins:
+      clients:
+        title: Clients
+    shinetech:
+      admin:
+        clients:
+          actions:
+            create_new: Pridať Client
+            reorder: Preusporiadať Clients
+            reorder_done: Koniec radenia Clients
+          records:
+            title: Clients
+            sorry_no_results: Ľutujeme, ale neboli nájdené žiadne výsledky.
+            no_items_yet: Nie sú vytvorené žiadne Clients. Kliknite na "Pridať Client" pre pridanie prvého client.
+          client:
+            view_live_html: Zobraziť náhľad client<br/><em>(otvorí sa v novom okne)</em>
+            edit: Upraviť client
+            delete: Zmazať client
+      clients:
+        show:
+          other: Daľšie Clients
+  activerecord:
+    attributes:
+      'refinery/shinetech/client':
+        name: Name
+        description: Description
+        logo: Logo

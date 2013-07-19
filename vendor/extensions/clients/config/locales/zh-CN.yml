@@ -1,0 +1,31 @@
+zh-CN:
+  refinery:
+    plugins:
+      clients:
+        title: Clients
+    shinetech:
+      admin:
+        clients:
+          actions:
+            create_new: 建立新的 Client
+            reorder: 对 Clients 重新排序
+            reorder_done: 对 Clients 的重新排序结束
+          records:
+            title: Clients
+            sorry_no_results: 对不起，未找到结果。 #Sorry! There are no results found.
+
+            # There are no Clients yet. Click "Add New Client" to add your first client.
+            no_items_yet: 目前没有 Clients . 点击 "Add New Client" 创建一个client.
+          client:
+            view_live_html: 查看 client 的最新内容.<br/><em>(新窗口中打开)</em>
+            edit: 编辑 client
+            delete: 永久删除 client
+      clients:
+        show:
+          other: 其他 Clients
+  activerecord:
+    attributes:
+      'refinery/shinetech/client':
+        name: Name
+        description: Description
+        logo: Logo

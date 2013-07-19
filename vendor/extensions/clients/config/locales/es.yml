@@ -1,0 +1,30 @@
+es:
+  refinery:
+    plugins:
+      clients:
+        title: Clients
+#        article: masculino/femenino
+    shinetech:
+      admin:
+        clients:
+          actions:
+            create_new: Crear nuevo client
+            reorder: Reordenar clients
+            reorder_done: Reordenación de clients completada
+          records:
+            title: Clients
+            sorry_no_results: Lo siento, no hay resultados
+            no_items_yet: No hay clients todavía. Pulsa en "Crear nuevo Client" para crear tu primer client.
+          client:
+            view_live_html: Ver este client como abierto al público <br/><em>(abre en ventana nueva)</em>
+            edit: Editar este client
+            delete: Borrar este client para siempre
+      clients:
+        show:
+          other: Otros clients
+  activerecord:
+    attributes:
+      'refinery/shinetech/client':
+        name: Name
+        description: Description
+        logo: Logo

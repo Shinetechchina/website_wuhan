@@ -65,3 +65,4 @@ gem 'refinerycms-references', :path => 'vendor/extensions'
 
 gem 'refinerycms-technologies', :path => 'vendor/extensions'
 gem 'refinerycms-customers', :path => 'vendor/extensions'
+gem 'refinerycms-clients', path: 'vendor/extensions'

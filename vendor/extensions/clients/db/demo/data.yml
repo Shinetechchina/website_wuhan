@@ -1,0 +1,38 @@
+-
+  name: REA
+  logo: realestate-australia-logo.png
+  description: "<p>REA (Real Estate Australia) Group is a market-leading online advertising business. They have 13 sites globally, all ranking first in their respective markets. They use continuous innovation and great user experience to achieve their growth goals.</p>\r\n<p>ThoughtWorks helped REA to introduce a Continuous Design approach to reduce concept to market time.</p>\r\n<p>We facilitated multi-disciplinary teams on product envisioning, planning and high-level design. Following a six week pilot we helped kick off several new and innovative products using Continuous Design and helped REA set up a new internal design group.</p>"
+  commenter: Richard Durnall, Head of IT Delivery, REA
+  comment: "We work closely with our delivery centre in ThoughtWorks China to produce software with a great user experience through continual collaboration and timely feedback."
+-
+  name: Verivox
+  logo: verivox-logo.png
+  description: "<p>Anyone who researches inexpensive rates for electricity, gas, mobile telephones, landlines or DSL on the internet inescapably comes upon the independent consumer portal of Verivox. There, one can call up thousands of providers with tens of thousands of rates and compare them equally. “We are in a highly competitive market environment in which customer satisfaction provides a decisive competitive advantage,” says Tom Haida (CIO): “For that reason we want to make the process of changing providers even more transparent, easier and simpler.”</p>\r\n<p>Management decided to focus software development on the business model and on its customers and partners more heavily in the future. New functions should be more rapidly available than in the past, programming overall should be more flexible. In 2010, Verivox, together with the American IT-consulting firm, ThoughtWorks, introduced agile software development – and did not just stop there.</p>"
+  commenter:
+  comment:
+-
+  name: Measured Progress
+  logo: measured-progress-logo.png
+  description: "<p>Measured Progress is an industry leader in the development of customised, K-12 student assessments for schools, districts, and states; writing tests, scoring them, and in many cases delivering them online. Their flagship product, developed using Agile methods in a hybrid delivery model with ThoughtWorks Brazil, features a world class user interface.</p>\r\n<p>With the rising use of online resources in classrooms, Measured Progress recognised the need to build a next generation, balanced student assessment platform. Measured Progress CIO Thomas Squeo was hired to drive strategic initiatives and enhance collaboration of the company’s business and technology divisions. The game-changing nature of this new online assessment platform, named Nimble Item Banking, led Mr. Squeo to partner with ThoughtWorks, having experienced ThoughtWorks’ delivery track record at a previous organization. He also wanted ThoughtWorks to bring in its best-in-class Agile practices and techniques to unleash a collaborative way of working and delivering software.</p>"
+  commenter: Thomas Squeo, CIO,Measured Progress
+  comment: "ThoughtWorks was instrumental in our adoption of agile and development of the Nimble Item Banking system. It has been a success and will continue to be a valuable asset in our portfolio."
+-
+  name: Jobsite
+  logo: jobsite-logo.png
+  description: "<p>Jobsite.co.uk is one of the UK’s leading online recruitment organizations. They had a vision of a refreshingly straight-forward job board which would enable them to serve smaller organizations, and bring in a new revenue stream.</p>\r\n<p>The project was challenging given the complexities and unknowns in integrating with many cloud-based third party products. Our distributed agile development approach gave the team great flexibility and ensured we were able to respond as the project evolved. High levels of collaboration enabled the Jobsite team to maintain and update the application as customer needs change.</p>"
+  commenter: Gemma Cooney, Sales Director, JobsiteWhite
+  comment: "The level of expertise that we required and a track record of on-time delivery. Equally important, even in the sales process, they constantly challenged our thinking to ensure we had planned this initiative for the long term."
+-
+  name: JustGiving
+  logo: just-giving.png
+  description: "<p>JustGiving are a UK-based online fundraising organization with technology that makes it simple, safe and inspiring to give money to causes. Founded in 2001, JustGiving built the world’s first online fundraising page, a radically easy way for member organizations to raise money and collect Gift Aid. JustGiving also help fundraisers create and build a community of supporters, using social media to get their stories out. More than 13,000 charitable organizations raise funds using the JustGiving platform.</p>\r\n
+    <p>JustGiving wanted to make it simple and fast for mobile users to give money, and discover new (and old) causes related to their interests and affiliations through a process of personalization. They also wanted to let fundraisers provide rich content directly to users’ phones, to inspire people to give by showing how their generosity could change the world.</p>\r\n
+    <p>JustGiving engaged ThoughtWorks to run an eight week innovation lab to get their app to market.</p>"
+  commenter: Zarine Kharas and Anne-Marie Huby, Founders, Just Giving
+  comment: "We were the world’s first online fundraising business, making donations simpler and safer for everyone. And we’re proud to say we’ve been growing the world of giving ever since: innovating with companies, charities and developers; investing our fees in world-class technology; and helping raise over £1 billion for thousands of charities."
+-
+  name: GetUp!
+  logo: neat-logo.jpg
+  description: "<p>The Neat Company, a leader in digital filing systems, in partnership with ThoughtWorks, delivered new mobile and cloud-based apps using a hybrid technical approach that meant faster time-to-market and lower development costs. Custom software puts Neat’s capabilities into a cloud-based service, and gives customers ubiquitous access from their own wireless devices as well as desktops. This expands The Neat Company’s market and provides a new recurring revenue stream from service subscriptions.</p>"
+  commenter: Rick Carragher, CTO, The Neat Company
+  comment: "ThoughtWorks helped us scale our development team faster than we could have done through internal hiring and greatly helped us deliver and launch this complex software product."

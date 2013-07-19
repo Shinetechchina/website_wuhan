@@ -1,0 +1,29 @@
+nb:
+  refinery:
+    plugins:
+      clients:
+        title: Clients
+    shinetech:
+      admin:
+        clients:
+          actions:
+            create_new: Lag en ny Client
+            reorder: Endre rekkefølgen på Clients
+            reorder_done: Ferdig å endre rekkefølgen Clients
+          records:
+            title: Clients
+            sorry_no_results: Beklager! Vi fant ikke noen resultater.
+            no_items_yet: Det er ingen Clients enda. Klikk på "Lag en ny Client" for å legge til din første client.
+          client:
+            view_live_html: Vis hvordan denne client ser ut offentlig <br/><em>(åpner i et nytt vindu)</em>
+            edit: Rediger denne client
+            delete: Fjern denne client permanent
+      clients:
+        show:
+          other: Andre Clients
+  activerecord:
+    attributes:
+      'refinery/shinetech/client':
+        name: Name
+        description: Description
+        logo: Logo
