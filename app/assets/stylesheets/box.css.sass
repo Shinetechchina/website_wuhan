@@ -8,10 +8,10 @@
   text-align: center
   overflow: hidden
 
-.box-container
+#box-container
   position: relative
   overflow: hidden
-  height: 602px
+  // min-height: 602px
 
 .box-blue
   background: #9dc0c8
@@ -122,10 +122,10 @@
     bottom: 30px
 
 .box-double
-  width: $box-double-width
+  @include span-columns(6)
 
 .box-triple
-  width: $box-triple-width
+  @include span-columns(9)
 
 .box-hover-content
   position: absolute
