@@ -27,7 +27,15 @@
   <h2>Who we work with:</h2>
 </div>
 <% @clients.each do |client| %>
-  <div class="box" style="background-image: url('<%= client.logo.url %>'); background-position: center;" onclick="location = '/clients'"></div>
+  <div class="box box-client">
+    <div class="mini">
+      <a href="/clients">
+        <div class="client-logo">
+          <%= image_tag client.logo.url %>
+        </div>
+      </a>
+    </div>
+  </div>
 <% end %>
 <%= fill_with_boxes 3 - @clients.size if @clients.size < 3 %>
 
