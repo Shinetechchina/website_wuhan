@@ -1,11 +1,30 @@
-<% content_for :body do %>
-  <ul id="clients">
-    <% @clients.each do |client| %>
-      <li>
-        <%= link_to client.name, refinery.shinetech_client_path(client) %>
-      </li>
-    <% end %>
-  </ul>
+<% @clients.each_with_index do |client, i| %>
+  <div class="box box-client box-expandable">
+    <div class="mini">
+      <div class="client-logo">
+        <%= image_tag client.logo.url %>
+      </div>
+    </div>
+    <div class="maxi">
+      <div class="client-content">
+        <h1><%= client.name %></h1>
+        <div class="description">
+          <%= client.description.html_safe %>
+        </div>
+        <% if client.comment? and client.commenter? %>
+          <div class="comment">
+            " <%= client.comment %> "
+          </div>
+          <div class="commenter">
+            <%= client.commenter %>
+          </div>
+        <% end %>
+      </div>
+      <div class="client-aside">
+        <div class="client-logo">
+          <%= image_tag client.logo.url %>
+        </div>
+      </div>
+    </div>
+  </div>
 <% end %>
-
-<%= render '/refinery/content_page' %>

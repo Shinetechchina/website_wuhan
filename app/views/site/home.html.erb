@@ -26,10 +26,18 @@
 <div class="box box-title" style="background-color: rgb(238, 95, 91)">
   <h2>Who we work with:</h2>
 </div>
-<% @customers.each do |customer| %>
-  <div class="box" style="background-image: url('<%= customer.image.url %>'); background-position: center;" onclick="location = '/clients'"></div>
+<% @clients.each do |client| %>
+  <div class="box box-client">
+    <div class="mini">
+      <a href="/clients">
+        <div class="client-logo">
+          <%= image_tag client.logo.url %>
+        </div>
+      </a>
+    </div>
+  </div>
 <% end %>
-<%= fill_with_boxes 3 - @customers.size if @customers.size < 3 %>
+<%= fill_with_boxes 3 - @clients.size if @clients.size < 3 %>
 
 <div class="box box-title" style="background-color: rgb(248, 148, 6)">
   <h2>How we work:</h2>

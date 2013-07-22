@@ -11,6 +11,7 @@ module Refinery
 
       belongs_to :logo, :class_name => '::Refinery::Image'
 
+      default_scope order(:position)
     end
   end
 end

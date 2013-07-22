@@ -1,3 +1,180 @@
+.box
+  @include span-columns(3)
+  @include omega(4n)
+  position: relative
+  height: $box-height
+  margin-bottom: $gutter
+  background-color: white
+  text-align: center
+  overflow: hidden
+
+#box-container
+  position: relative
+  overflow: hidden
+  // min-height: 602px
+
+.box-blue
+  background: #9dc0c8
+  color: white
+
+.box-profile
+  background-position-x: 100%
+  .name
+    color: #f4f2ed
+    line-height: 25px
+    position: absolute
+    top: 130px
+
+  .left-name
+    left: 30px
+    text-align: left
+
+  .right-name
+    right: 30px
+    text-align: right
+
+  .show-more-link
+    background-color: transparent
+    background: rgba(255, 255, 255, .4)
+    color: white
+    padding: 20px 0
+    opacity: 0
+    @include transition(transform .5s, opacity .5s)
+
+  &:hover
+    .show-more-link
+      opacity: 1
+
+.box-image
+  .image-text
+    text-shadow: 0 1px 3px rgba(0, 0, 0, .25)
+    text-transform: uppercase
+    position: relative
+    top: 90px
+    font-size: 30px
+    color: white
+    background: rgba(223, 124, 6, .4)
+    padding: 25px 0
+
+.shade-box>*
+  position: absolute
+  width: 100%
+
+.shade-box
+  .shade
+    background-color: transparent
+    background: $main-color
+    height: 100%
+    width: 100%
+    color: white
+    opacity: 0
+    @include transition(transform .5s, opacity .5s)
+
+  &:hover
+    .shade
+      opacity: 0.9
+      cursor: pointer
+    .name
+      display: none
+
+  a
+    color: #fff!important
+    text-decoration: none
+    padding-bottom: 3px
+    &:hover
+      border-bottom: 1px solid #fff
+
+  .employment-number
+    position: absolute
+    font-weight: 300
+    font-size: 72px
+    top: 100px
+    width: 100%
+
+  .employment-details
+    position: absolute
+    font-size: 14px
+    font-style: italic
+    line-height: 2
+    bottom: 15px
+    width: 100%
+
+  .posted-date
+    position: absolute
+    top: 120px
+    font-weight: 600
+    width: 100%
+    font-size: 12px
+
+  .first-comment
+    position: absolute
+    top: 150px
+    left: 50%
+    margin-left: -123px
+    width: 246px
+    font-size: 16px
+    font-style: italic
+    line-height: 1.5
+
+  .nick-name
+    position: absolute
+    width: 100%
+    bottom: 30px
+
+.box-double
+  @include span-columns(6)
+
+.box-triple
+  @include span-columns(9)
+
+.box-hover-content
+  position: absolute
+  top: 0
+  left: 0
+  border: 1px solid #df7c06
+  width: $box-width - 2px
+  height: $box-height - 2px
+  cursor: pointer
+  z-index: 10
+  @include transition(opacity .3s)
+
+.box
+  .box-hover-content
+    opacity: 0
+
+  &:hover .box-hover-content
+    opacity: 1
+
+  &.box-expanded:hover .box-hover-content
+    opacity: 0
+
+.box-video
+  background-repeat: no-repeat
+  background-position: center center
+  background-size: cover
+
+  .btn-play
+    display: inline-block
+    color: lighten($main-color, 5%)
+    font-size: 80px
+    line-height: 80px
+    width: 100px
+    height: 80px
+    position: absolute
+    top: 50%
+    left: 50%
+    margin-top: -40px
+    margin-left: -50px
+    opacity: .8
+    text-shadow: 0 0 20px rgba(black, .5)
+    @include transition(opacity .5s)
+
+    &:hover
+      opacity: 1
+
+
+
+
 .box-about
   h3, p
     padding: 0 45px
@@ -23,3 +200,4 @@
     float: left
     padding-right: 20px
     padding-bottom: 10px
+
