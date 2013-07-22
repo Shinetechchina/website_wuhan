@@ -2,6 +2,7 @@ doctype html
 html
   head
     = render '/refinery/head'
+    link href='http://fonts.googleapis.com/css?family=Quintessential' rel='stylesheet' type='text/css'
     meta property="wb:webmaster" content="60b0b8733880e339"
     - unless response.status == 404
       = javascript_include_tag "application"
@@ -10,13 +11,12 @@ html
     = render '/refinery/header'
 
     .masthead
-      .wrapper
+      .container
         h1 Shinetech Wuhan
         p Welcome to Shinetech Wuhan. Our clients are solving some of the most pressing problems of our time. We deliver disruptive thinking and empowering technology to help them succeed.
 
-    .wrapper
-      #main
-        .box-container
-          = yield
+    .container
+      = yield
 
-        = render 'home/footer'
+    .container
+      = render 'home/footer'
