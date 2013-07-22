@@ -1,5 +1,5 @@
 <% @clients.each_with_index do |client, i| %>
-  <div class="box box-client box-expandable <%= 'box-expanded' if i == 0 %>">
+  <div class="box box-client box-expandable">
     <div class="mini">
       <div class="client-logo">
         <%= image_tag client.logo.url %>

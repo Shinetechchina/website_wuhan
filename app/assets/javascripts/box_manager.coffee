@@ -2,12 +2,12 @@ window.boxManager =
   init: ->
     self = @
 
-    @$container = $('.box-container')
+    @$container = $('#box-container')
 
     @$container.masonry
       itemSelector: '.box'
-      columnWidth: 276
-      gutter: 12
+      columnWidth: 279
+      gutter: 18
 
     @$container.on 'click', '.box-expandable', ->
       self.expandBox(@)
@@ -20,8 +20,8 @@ window.boxManager =
     expandedClass = $el.data('expanded-class')
     return if $el.hasClass('box-expanded')
 
-    @$container.find(".box-expandable").removeClass('box-expanded').removeClass(expandedClass)
-    $el.addClass('box-expanded').addClass(expandedClass)
+    @$container.find(".box-expandable").removeClass('box-expanded') #.removeClass(expandedClass)
+    $el.addClass('box-expanded') #.addClass(expandedClass)
 
     @reLayout()
 
