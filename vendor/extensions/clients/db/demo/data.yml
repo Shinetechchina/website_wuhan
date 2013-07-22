@@ -8,8 +8,8 @@
   name: Verivox
   logo: verivox-logo.png
   description: "<p>Anyone who researches inexpensive rates for electricity, gas, mobile telephones, landlines or DSL on the internet inescapably comes upon the independent consumer portal of Verivox. There, one can call up thousands of providers with tens of thousands of rates and compare them equally. “We are in a highly competitive market environment in which customer satisfaction provides a decisive competitive advantage,” says Tom Haida (CIO): “For that reason we want to make the process of changing providers even more transparent, easier and simpler.”</p>\r\n<p>Management decided to focus software development on the business model and on its customers and partners more heavily in the future. New functions should be more rapidly available than in the past, programming overall should be more flexible. In 2010, Verivox, together with the American IT-consulting firm, ThoughtWorks, introduced agile software development – and did not just stop there.</p>"
-  commenter:
-  comment:
+  commenter: Thomas Haida, CIO, Verivox
+  comment: "We deliver code much faster now and keep up with business changes. Go is a significant part of the success story."
 -
   name: Measured Progress
   logo: measured-progress-logo.png

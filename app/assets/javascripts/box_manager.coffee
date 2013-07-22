@@ -23,7 +23,12 @@ window.boxManager =
     @$container.find(".box-expandable").removeClass('box-expanded') #.removeClass(expandedClass)
     $el.addClass('box-expanded') #.addClass(expandedClass)
 
+    onLayoutComplete = ->
+      $(document.body).animate scrollTop: $el.offset().top - 40
+      true
+
     @reLayout()
+    @$container.masonry 'on', 'layoutComplete', onLayoutComplete
 
   reLayout: ->
     @$container.masonry('layout')
