@@ -131,12 +131,8 @@
   @include span-columns(9)
 
 .box-hover-content
-  position: absolute
-  top: 0
-  left: 0
+  @include position(absolute, 0px 0px 0px 0px)
   border: 1px solid #df7c06
-  width: $box-width - 2px
-  height: $box-height - 2px
   cursor: pointer
   z-index: 10
   @include transition(opacity .3s)

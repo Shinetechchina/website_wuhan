@@ -5,11 +5,10 @@
   <div class="box box-service">
     <div class="mini">
       <a href="/services">
-        <!--
-        <i class="icon icon-lightbulb"></i>
-        <h3>OUTSOURCING DESIGN</h3>
-        <p>Shinetech is the leader in next-generation global application outsourcing.</p>
-        -->
+        <div class="box-hover-content" style="border-color: <%= service.color %>"></div>
+        <i class="icon icon-<%= service.icon %>" style="color: <%= service.color %>"></i>
+        <h3 style="color: <%= service.color %>"><%= service.title %></h3>
+        <p><%= service.short_content %></p>
       </a>
     </div>
   </div>
