@@ -2,12 +2,11 @@ window.App = App =
   $menu: null
 
   init: ->
-    @boxManager = boxManager
-    boxManager.init()
+    App.BoxManager.init()
+    App.Router.init()
 
     @initSlide()
     @initTagList()
-    # @initRoutes()
 
   initMenu: ->
 
@@ -31,34 +30,6 @@ window.App = App =
       setTimeout(->
         currentContent.removeClass('slide-out')
       , 500)
-
-  initRoutes: ->
-    self = @
-    registerPath = (url) ->
-      Path.map("##{url}(/:tag)").to(->
-        if @params.tag
-          boxManager.load("#{url}?tag=#{@params.tag}")
-        else
-          boxManager.load("#{url}")
-      ).enter ->
-        self.activeMenuItem(url)
-
-    @$menu = $('#menu')
-    @$menu.find('li a').each ->
-      el = $(@)
-      registerPath $(@).attr('href')
-      el.attr 'href', el.attr('href').replace(/^\//, '/#/')
-
-    Path.root('#/home')
-
-    Path.listen()
-
-  activeMenuItem: (url) ->
-    @$menu
-      .find('li').removeClass('selected').end()
-      .find('li').each ->
-        li = $(@)
-        li.addClass('selected') if li.find('a').attr('href') == "/##{url}"
 
   initTagList: ->
     $('.dropdown-tag .dropdown-menu a').on 'click', (e) ->
