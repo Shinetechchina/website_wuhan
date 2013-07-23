@@ -7,6 +7,7 @@ App.Router =
     @elMenu = $('#menu')
 
     @registerRoute '/'
+    @registerRoute '/services'
     @registerRoute '/clients'
 
     Path.history.listen()

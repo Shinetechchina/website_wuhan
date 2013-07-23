@@ -3,6 +3,7 @@ class SiteController < ApplicationController
 
   def home
     @clients = Refinery::Shinetech::Client.limit(3)
+    @services = Refinery::Services::Service.limit(3)
 
     @techs = Refinery::Technologies::Technology.order('title').limit(3)
     @staffs = Refinery::Staffs::Staff.order('name').limit(3)
