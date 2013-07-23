@@ -12,4 +12,8 @@ class SiteController < ApplicationController
       @staffs = @staffs.tagged_with(tag, any: true)
     end
   end
+
+  def blog
+    @blogs = Blog.all
+  end
 end

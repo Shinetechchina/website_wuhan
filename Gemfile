@@ -42,6 +42,7 @@ gem 'neat'
 group :development do
   gem 'pry-rails'
   gem 'quiet_assets'
+  gem 'thin'
 end
 
 # To use ActiveModel has_secure_password

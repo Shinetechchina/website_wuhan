@@ -9,6 +9,7 @@ WebsiteWuhan::Application.routes.draw do
 
   Refinery::Core::Engine.routes.draw do
     root to: 'site#home'
+    get '/blog', to: 'site#blog'
 
     devise_scope :refinery_user do
       get '/auth/:provider/callback', to: 'sessions#auth'
