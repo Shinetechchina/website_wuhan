@@ -2,7 +2,7 @@ Refinery::Core::Engine.routes.append do
 
   # Frontend routes
   namespace :shinetech, path: '' do
-    resource :clients, :only => :index
+    resources :clients, :only => :index
   end
 
   # Admin routes

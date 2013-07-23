@@ -1,4 +1,7 @@
 .box-service
+  p
+    color: $color-font
+
   .icon
     font-size: 120px
 
@@ -6,7 +9,8 @@
     padding: 10px
 
   .mini
-    box-sizing: border-box
+    width: 100%
+    height: 100%
 
   .maxi
     .icon
@@ -15,3 +19,7 @@
 
     h2
       margin-bottom: 40px
+
+.box-service.box-expanded
+  @include span-columns(6)
+  height: $box-height * 2 + $gutter

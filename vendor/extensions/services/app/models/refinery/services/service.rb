@@ -13,6 +13,8 @@ module Refinery
       validates_length_of :color, maximum: 50
       validates_length_of :icon, maximum: 30
 
+      default_scope order(:position)
+
       liquid_methods :title, :color, :icon, :expanded, :short_content, :content
     end
   end
