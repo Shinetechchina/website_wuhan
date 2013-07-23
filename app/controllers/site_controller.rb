@@ -11,5 +11,9 @@ class SiteController < ApplicationController
       @techs = @techs.tagged_with(tag, any: true)
       @staffs = @staffs.tagged_with(tag, any: true)
     end
+
+    if request.xhr?
+      render layout: false
+    end
   end
 end

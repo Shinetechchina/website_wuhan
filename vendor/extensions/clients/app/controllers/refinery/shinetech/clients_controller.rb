@@ -9,6 +9,10 @@ module Refinery
         # # you can use meta fields from your model instead (e.g. browser_title)
         # # by swapping @page for @client in the line below:
         # present(@page)
+
+        if request.xhr?
+          render layout: false
+        end
       end
 
       # def show

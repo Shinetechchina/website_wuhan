@@ -1,4 +1,4 @@
-window.boxManager =
+App.BoxManager =
   init: ->
     self = @
 
@@ -37,10 +37,10 @@ window.boxManager =
     self = @
     $container = @$container
 
-    App.Overlay.show(mask: true)
+    # App.Overlay.show(mask: true)
 
     $.get(url).success (result) ->
-      App.Overlay.hide()
+      # App.Overlay.hide()
 
       # Remove old boxes when page changing
       boxes = $container.children()
@@ -51,10 +51,10 @@ window.boxManager =
         $container.append(@)
         $container.masonry('appended', @)
 
-      $container.find('.box-video').each ->
-        el = $(@)
-        if el.data('video-id')
-          el.css('background-image', "url(http://img.youtube.com/vi/#{el.data('video-id')}/hqdefault.jpg)")
+      # $container.find('.box-video').each ->
+      #   el = $(@)
+      #   if el.data('video-id')
+      #     el.css('background-image', "url(http://img.youtube.com/vi/#{el.data('video-id')}/hqdefault.jpg)")
 
   initBoxVideo: ->
     self = @
