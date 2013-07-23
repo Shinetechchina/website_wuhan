@@ -145,6 +145,8 @@ ActiveRecord::Schema.define(:version => 20130719032618) do
     t.string   "name"
     t.text     "description"
     t.integer  "logo_id"
+    t.text     "comment"
+    t.string   "commenter"
     t.integer  "position"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false

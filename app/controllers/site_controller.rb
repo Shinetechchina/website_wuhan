@@ -16,4 +16,8 @@ class SiteController < ApplicationController
       render layout: false
     end
   end
+
+  def blog
+    @blogs = Blog.all
+  end
 end
