@@ -8,6 +8,7 @@ window.App = App =
     @initSlide()
     @initTagList()
     @initTagsInput()
+    @submitNavbarTagsInput()
 
   initMenu: ->
 
@@ -40,11 +41,10 @@ window.App = App =
       e.preventDefault()
       if $.inArray(seletedValue, navbarTagsValues) < 0
         $('#navbar-tags').addTag(seletedValue)
+        navbarTagsValues = $('#navbar-tags_tagsinput .tag span').text().split("  ")
       else
         $('#navbar-tags').removeTag(seletedValue)
-      #el = $(@)
-      #$.cookie('tag', el.data('tag'))
-      #location.reload()
+        navbarTagsValues = $('#navbar-tags_tagsinput .tag span').text().split("  ")
 
 
   initTagsInput: ->
@@ -53,7 +53,7 @@ window.App = App =
       interactive: false
 
   submitNavbarTagsInput: ->
-    $('.nav-btn').onclick ->
+    $('.nav-btn').on 'click', (e) ->
       navbarTagsValues = $('#navbar-tags_tagsinput .tag span').text().split("  ")
-      $.cookie('tag', el.data(navbarTagsValues.join(',')))
+      $.cookie('tag', navbarTagsValues)
       location.reload()
