@@ -7,6 +7,7 @@ window.App = App =
 
     @initSlide()
     @initTagList()
+    @initTagsInput()
 
   initMenu: ->
 
@@ -33,7 +34,26 @@ window.App = App =
 
   initTagList: ->
     $('.dropdown-tag .dropdown-menu a').on 'click', (e) ->
+      seletedValue = $(this).text()
+      navbarTagsValues = $('#navbar-tags_tagsinput .tag span').text().split("  ")
+
       e.preventDefault()
-      el = $(@)
-      $.cookie('tag', el.data('tag'))
+      if $.inArray(seletedValue, navbarTagsValues) < 0
+        $('#navbar-tags').addTag(seletedValue)
+      else
+        $('#navbar-tags').removeTag(seletedValue)
+      #el = $(@)
+      #$.cookie('tag', el.data('tag'))
+      #location.reload()
+
+
+  initTagsInput: ->
+    $('.tags-input').tagsInput
+      height: "51px"
+      interactive: false
+
+  submitNavbarTagsInput: ->
+    $('.nav-btn').onclick ->
+      navbarTagsValues = $('#navbar-tags_tagsinput .tag span').text().split("  ")
+      $.cookie('tag', el.data(navbarTagsValues.join(',')))
       location.reload()
