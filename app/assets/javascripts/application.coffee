@@ -2,6 +2,7 @@
 #= require jquery_ujs
 #= require jquery.cookie
 #= require bootstrap-dropdown
+#= require jquery.tagsinput
 #= require masonry.pkgd.min
 #= require path.min
 #= require app
