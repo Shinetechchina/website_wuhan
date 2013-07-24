@@ -7,7 +7,6 @@ window.App = App =
 
     @initSlide()
     @initTagList()
-    @initTagsInput()
     @submitNavbarTagsInput()
 
   initMenu: ->
@@ -37,24 +36,20 @@ window.App = App =
 
   initTagList: ->
     $('.dropdown-tag .dropdown-menu a').on 'click', (e) ->
-      seletedValue = $(this).text()
-      navbarTagsValues = window.App.getNavbarTagsValues()
-      if $.inArray(seletedValue, navbarTagsValues) == -1
-        $('#navbar-tags').addTag(seletedValue)
+      if $(this).hasClass('option-all') and not $(this).find('i').hasClass('selected')
+        $('.dropdown-tag .dropdown-menu .selected').removeClass('selected')
+        $(this).find('i').addClass('selected')
       else
-        $('#navbar-tags').removeTag(seletedValue)
-
-  initTagsInput: ->
-    $('.tags-input').tagsInput
-      height: "55px"
-      interactive: false
+        $(this).find('i').toggleClass('selected')
+        $('.dropdown-tag .dropdown-menu .option-all i').removeClass('selected')
+      return false
 
   submitNavbarTagsInput: ->
     $('.nav-btn').on 'click', (e) ->
-      navbarTagsValues = window.App.getNavbarTagsValues()
-      $.cookie('tag', navbarTagsValues)
+      SelectedValues = window.App.getNavbarSelectedTags()
+      $.cookie('tag', SelectedValues)
       location.reload()
 
-  getNavbarTagsValues: ->
-    $('#navbar-tags_tagsinput .tag span').text().split("  ").filter (v) ->
+  getNavbarSelectedTags: ->
+    $('.dropdown-menu li a .selected').parents('a').text().split(" ").filter (v) ->
       v isnt ""

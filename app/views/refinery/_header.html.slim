@@ -4,14 +4,13 @@
       = render partial: "/refinery/menu", locals: {dom_id: 'menu', css: 'menu'}
 
       .dropdown.dropdown-tag
-        .dropdown-toggle data-toggle="dropdown" href="#"
-          input.tags-input id="navbar-tags" value="#{cookies[:tag]}"
+        - cookie_tag_arr = cookies[:tag].split(',')
+        a.dropdown-toggle data-toggle="dropdown" href="#" =cookie_tag_arr.join(' ')
         ul.dropdown-menu.pull-right role="menu" aria-labelledby="dLabel"
-          li
-            a data-tag="all" all
-          li
-            a data-tag="ruby" ruby
-          li
-            a data-tag="javascript" javascript
+          - ['all', 'ruby', 'javascript'].each do |value|
+            li
+              a data-tag=value class="#{'option-all' if value == 'all'}"
+                i.icon-ok class="#{'selected' if cookie_tag_arr.include? value}"
+                = value + " "
           li
             input type="submit" class='nav-btn'
