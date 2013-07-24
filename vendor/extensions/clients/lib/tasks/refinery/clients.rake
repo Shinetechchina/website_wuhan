@@ -1,7 +1,7 @@
 namespace :refinery do
   namespace :clients do
 
-    # Load demo client data. If the client is exist, it won't be generated again.
+    desc "Load client demo data."
     task :load_demo => :environment do
       demo_path = "#{Rails.root}/vendor/extensions/clients/db/demo"
 

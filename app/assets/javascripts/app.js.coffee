@@ -27,6 +27,8 @@ window.App = App =
 
       currentContent.addClass('slide-out').removeClass('active')
       activeContent.addClass('active')
+
+      # TODO 把这个变成 layout 后的回调，layout 计算完成后立刻执行
       setTimeout(->
         currentContent.removeClass('slide-out')
       , 500)

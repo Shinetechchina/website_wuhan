@@ -2,7 +2,7 @@ Refinery::Core::Engine.routes.append do
 
   # Frontend routes
   namespace :technologies do
-    resources :technologies, :path => '', :only => [:index, :show]
+    resources :technologies, :path => '', :only => :index
   end
 
   # Admin routes
