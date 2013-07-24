@@ -38,16 +38,11 @@ window.App = App =
   initTagList: ->
     $('.dropdown-tag .dropdown-menu a').on 'click', (e) ->
       seletedValue = $(this).text()
-      navbarTagsValues = $('#navbar-tags_tagsinput .tag span').text().split("  ")
-
-      e.preventDefault()
-      if $.inArray(seletedValue, navbarTagsValues) < 0
+      navbarTagsValues = window.App.getNavbarTagsValues()
+      if $.inArray(seletedValue, navbarTagsValues) == -1
         $('#navbar-tags').addTag(seletedValue)
-        navbarTagsValues = $('#navbar-tags_tagsinput .tag span').text().split("  ")
       else
         $('#navbar-tags').removeTag(seletedValue)
-        navbarTagsValues = $('#navbar-tags_tagsinput .tag span').text().split("  ")
-
 
   initTagsInput: ->
     $('.tags-input').tagsInput
@@ -56,6 +51,10 @@ window.App = App =
 
   submitNavbarTagsInput: ->
     $('.nav-btn').on 'click', (e) ->
-      navbarTagsValues = $('#navbar-tags_tagsinput .tag span').text().split("  ")
+      navbarTagsValues = window.App.getNavbarTagsValues()
       $.cookie('tag', navbarTagsValues)
       location.reload()
+
+  getNavbarTagsValues: ->
+    $('#navbar-tags_tagsinput .tag span').text().split("  ").filter (v) ->
+      v isnt ""
