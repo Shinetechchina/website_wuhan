@@ -18,6 +18,10 @@ module Refinery
       liquid_methods :title, :description
 
       include ImageExt
+
+      def image_url
+        image.thumbnail("230x100>").url
+      end
     end
   end
 end

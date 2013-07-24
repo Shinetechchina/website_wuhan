@@ -6,7 +6,11 @@ module Refinery
       # before_filter :find_page
 
       def index
-        @technologies = Technology.all
+        @technologies = Technology.scoped
+        if has_tag?
+          @technologies = @technologies.tagged_with(tag, any: true)
+        end
+
         # you can use meta fields from your model instead (e.g. browser_title)
         # by swapping @page for @technology in the line below:
         # present(@page)
