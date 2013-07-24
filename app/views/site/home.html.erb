@@ -1,53 +1,52 @@
-<div class="box box-title" style="background-color: rgb(0, 136, 204)">
-  <h2>What we can offer:</h2>
-</div>
-<% @services.each do |service| %>
-  <div class="box box-service">
-    <div class="mini">
-      <a href="/services">
-        <div class="box-hover-content" style="border-color: <%= service.color %>"></div>
-        <i class="icon icon-<%= service.icon %>" style="color: <%= service.color %>"></i>
-        <h3 style="color: <%= service.color %>"><%= service.title %></h3>
-        <p><%= service.short_content %></p>
-      </a>
-    </div>
-  </div>
-<% end %>
-<%= fill_with_boxes 3 - @services.size if @services.size < 3 %>
-
 <div class="box box-title" style="background-color: rgb(238, 95, 91)">
   <h2>Who we work with:</h2>
 </div>
 <% @clients.each do |client| %>
   <div class="box box-client">
-    <div class="mini">
-      <a href="/clients">
+    <a class="box-link" href="/clients">
+      <div class="mini">
         <div class="client-logo">
           <%= image_tag client.logo.url %>
         </div>
-      </a>
-    </div>
+      </div>
+    </a>
   </div>
 <% end %>
 <%= fill_with_boxes 3 - @clients.size if @clients.size < 3 %>
 
-<div class="box box-title" style="background-color: rgb(248, 148, 6)">
-  <h2>How we work:</h2>
+<div class="box box-title" style="background-color: rgb(0, 136, 204)">
+  <h2>What we can offer:</h2>
 </div>
-<div class="box" style="background-image:url('/assets/programming-practices.png'); background-size: 370px;"></div>
-<div class="box" style="background-image:url('/assets/delivery.png'); background-size: 370px;"></div>
-<div class="box" style="background-image:url('/assets/consulting.png'); background-size: 370px;"></div>
+<% @services.each do |service| %>
+  <div class="box box-service">
+    <a class="box-link" href="/services">
+      <div class="mini">
+        <div class="box-hover-content" style="border-color: <%= service.color %>"></div>
+        <i class="icon icon-<%= service.icon %>" style="color: <%= service.color %>"></i>
+        <h3 style="color: <%= service.color %>"><%= service.title %></h3>
+        <p><%= service.short_content %></p>
+      </div>
+    </a>
+  </div>
+<% end %>
+<%= fill_with_boxes 3 - @services.size if @services.size < 3 %>
 
 <div class="box box-title" style="background-color: rgb(81, 163, 81)">
   <h2>What technology we use:</h2>
 </div>
-<% for tech in @techs %>
+<% @technologies.each do |tech| %>
   <div class="box box-tech">
-    <img src="<%= tech.image_url %>">
-    <p><%= tech.description.html_safe %></p>
+    <a class="box-link" href="/technologies">
+      <div class="tech-title" target="_blank">
+        <%= image_tag tech.image.url %>
+      </div>
+      <div class="tech-description">
+        <%= tech.description.html_safe %>
+      </div>
+    </a>
   </div>
 <% end %>
-<%= fill_with_boxes 3 - @techs.size if @techs.size < 3 %>
+<%= fill_with_boxes 3 - @technologies.size if @technologies.size < 3 %>
 
 <div class="box box-title" style="background-color:rgb(47, 150, 180)">
   <h2>Our staffs:</h2>

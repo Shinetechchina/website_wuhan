@@ -9,6 +9,7 @@ App.Router =
     @registerRoute '/'
     @registerRoute '/services'
     @registerRoute '/clients'
+    @registerRoute '/technologies'
 
     Path.history.listen()
 

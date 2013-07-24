@@ -13,6 +13,8 @@ module Refinery
 
       belongs_to :image, :class_name => '::Refinery::Image'
 
+      default_scope order(:title)
+
       liquid_methods :title, :description
 
       include ImageExt
