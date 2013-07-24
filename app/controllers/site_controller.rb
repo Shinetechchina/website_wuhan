@@ -5,11 +5,11 @@ class SiteController < ApplicationController
     @clients = Refinery::Shinetech::Client.limit(3)
     @services = Refinery::Services::Service.limit(3)
 
-    @techs = Refinery::Technologies::Technology.order('title').limit(3)
+    @technologies = Refinery::Technologies::Technology.limit(3)
     @staffs = Refinery::Staffs::Staff.order('name').limit(3)
 
     if has_tag?
-      @techs = @techs.tagged_with(tag, any: true)
+      @technologies = @technologies.tagged_with(tag, any: true)
       @staffs = @staffs.tagged_with(tag, any: true)
     end
 
