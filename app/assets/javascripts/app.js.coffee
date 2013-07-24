@@ -49,7 +49,7 @@ window.App = App =
 
   initTagsInput: ->
     $('.tags-input').tagsInput
-      height: "51px"
+      height: "55px"
       interactive: false
 
   submitNavbarTagsInput: ->
