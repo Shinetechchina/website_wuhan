@@ -5,7 +5,7 @@
 
       .dropdown.dropdown-tag
         - cookie_tag_arr = cookies[:tag].split(',')
-        a.dropdown-toggle data-toggle="dropdown" href="#" =cookie_tag_arr.join(' ')
+        a.dropdown-toggle data-toggle="dropdown" href="#" =cookie_tag_arr.join('　')
         ul.dropdown-menu.pull-right role="menu" aria-labelledby="dLabel"
           - ['all', 'ruby', 'javascript'].each do |value|
             li
