@@ -18,13 +18,18 @@
 
     &> li > a
       color: #FFF
+      -moz-user-select: none
+      -webkit-user-select: none
+      -ms-user-select: none
+      -khtml-user-select: none
+      user-select: none
 
       &:hover
         background: #252525
 
       & > i
         padding-right: 10px
-        color: $color-main
+        visibility: hidden
 
       & > .selected
-        color: white
+        visibility: visible

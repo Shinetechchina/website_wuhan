@@ -35,6 +35,10 @@ window.App = App =
       , 500)
 
   initTagList: ->
+    $('.dropdown-tag .dropdown-menu a').on 'onselectstart', ->
+      return false
+      #forbid select text in IE6--IE9
+
     $('.dropdown-tag .dropdown-menu a').on 'click', (e) ->
       if $(this).hasClass('option-all') and not $(this).find('i').hasClass('selected')
         $('.dropdown-tag .dropdown-menu .selected').removeClass('selected')
