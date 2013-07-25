@@ -13,8 +13,19 @@
   .dropdown-menu
     margin: 0
     border: 0
+    padding-bottom: 0
     background-color: $color-main
     border-radius: 0
+
+    .nav-btn
+      background-color: $color-link
+      @include linear-gradient(lighten($color-link, 10%), darken($color-link, 10%))
+      .nav-btn-inner
+        font-weight: bold
+        border: 0
+        color: white
+        margin-left: 42px
+        padding-top: 5px
 
     &> li > a
       color: #FFF
@@ -26,6 +37,7 @@
 
       &:hover
         background: #252525
+
 
       & > i
         padding-right: 10px

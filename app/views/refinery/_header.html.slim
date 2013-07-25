@@ -5,12 +5,16 @@
 
       .dropdown.dropdown-tag
         - cookie_tag_arr = cookies[:tag].split(',')
-        a.dropdown-toggle data-toggle="dropdown" href="#" =cookie_tag_arr.join('　')
+        a.dropdown-toggle data-toggle="dropdown" href="#"
+          = cookie_tag_arr.join('&nbsp;&nbsp;').html_safe
+          | &nbsp;&nbsp;
+          i.icon-sort-down
         ul.dropdown-menu.pull-right role="menu" aria-labelledby="dLabel"
           - ['all', 'ruby', 'javascript'].each do |value|
             li
               a data-tag=value class="#{'option-all' if value == 'all'}"
                 i.icon-ok class="#{'selected' if cookie_tag_arr.include? value}"
                 = value + " "
-          li
-            input type="submit" class='nav-btn'
+          li.nav-btn.pointer
+            .nav-btn-inner
+              | submit
