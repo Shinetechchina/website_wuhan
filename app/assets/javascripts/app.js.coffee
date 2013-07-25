@@ -8,6 +8,7 @@ window.App = App =
     @initSlide()
     @initTagList()
     @submitNavbarTagsInput()
+    @initMasthead()
 
   initMenu: ->
 
@@ -57,3 +58,14 @@ window.App = App =
   getNavbarSelectedTags: ->
     $('.dropdown-menu li a .selected').parents('a').text().split(" ").filter (v) ->
       v isnt ""
+
+  initMasthead: ->
+    return unless location.pathname == '/'
+
+    el = $('.masthead')
+    el.show()
+    $(document.body).scrollTop()
+
+    $(document).one 'mousewheel', (e) ->
+      el.fadeOut()
+      $('#box-container').animate(opacity: 1, 500)

@@ -46,19 +46,33 @@ a
   margin-bottom: -32px
 
 .masthead
-  margin-top: 32px
-  margin-bottom: 20px
-  padding: 50px 0
-  color: white
-  background: $color-link
-  @include linear-gradient(darken($color-link, 10%), lighten($color-link, 10%))
+  @include position(fixed, 0px 0px 0px 0px)
+  background: rgba(white, .8)
+  z-index: 9000
+
+.masthead-content
+  @include position(absolute, 0px 0px 0 0px)
+  @include linear-gradient(to top, #a5cad6, darken(#a5cad6, 10%))
+  margin: 0
+  z-index: 9001
+  box-shadow: 0 2px 5px rgba(black, .5)
+  color: #333
 
   h1
-    margin-top: 0
-    color: white
+    margin-top: 50px
+    color: #333
     font-size: 50px
     line-height: 50px
     border: 0
+    text-shadow: 1px 1px 5px rgba(#333, .5)
+
+.masthead-tip
+  font-family: Quintessential
+  margin: 30px 0 20px 0
+  text-align: center
+  color: white
+  font-size: 24px
+
 
 .container
   @include outer-container
