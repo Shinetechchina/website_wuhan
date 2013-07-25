@@ -1,0 +1,33 @@
+-
+  name: 'Christian Bale'
+  image: christian_bale.jpg
+  email: 'christian_bale@example.com'
+  number: 122
+  title: 'Ruby developer'
+  tag_list: "ruby"
+  description: "A great English actor"
+-
+  name: 'Christopher nolan'
+  image: christopher_nolan.jpg
+  email: 'christopher_nolan@example.com'
+  number: 181
+  title: 'Ruby and Javascript developer'
+  tag_list: "ruby, javascript"
+  description: "A great English writer and director"
+-
+  name: 'Cillian Murphy'
+  image: cillian_murphy.jpg
+  email: 'cillian_murphy@example.com'
+  number: 212
+  title: 'javascript developer'
+  tag_list: "javascript"
+  description: "A great javascript developer in Shintech"
+-
+  name: 'Peter Jacobsen'
+  image: peter_jacobsen.jpg
+  email: 'peter_jacobsen@example.com'
+  number: 377
+  title: '.Net developer'
+  tag_list: ".net"
+  description: "A great .net developer, his a good man, he like fishing and writting."
+
