@@ -2,9 +2,12 @@ module Refinery
   module Staffs
     class StaffsController < ::ApplicationController
       def index
-        @staffs = Staff.order('position ASC')
-        @staffs = @staffs.tagged_with(tag, any: true) if tag != 'all'
-        @page = ::Refinery::Page.where(link_url: "/staff").first
+        @staffs = Staff.scoped
+        @staffs = @staffs.tagged_with(tag, any: true) if has_tag?
+
+        if request.xhr?
+          render layout: false
+        end
       end
     end
   end

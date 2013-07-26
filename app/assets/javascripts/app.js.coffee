@@ -39,7 +39,6 @@ window.App = App =
 
     el = $('.masthead')
     el.show()
-    $(document.body).scrollTop()
 
     $(document).one 'mousewheel', (e) ->
       el.fadeOut()

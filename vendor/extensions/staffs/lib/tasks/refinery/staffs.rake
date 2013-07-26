@@ -1,7 +1,7 @@
 namespace :refinery do
   namespace :staffs do
 
-    desc "Load technologies demo data"
+    desc "Load staff demo data"
     task :load_demo => :environment do
       demo_path = "#{Rails.root}/vendor/extensions/staffs/db/demo"
 
