@@ -7,8 +7,6 @@ window.App = App =
     App.DropdownTagList.init()
 
     @initSlide()
-    @initTagList()
-    @submitNavbarTagsInput()
     @initMasthead()
 
   initMenu: ->
