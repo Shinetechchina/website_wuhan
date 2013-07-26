@@ -1,0 +1,29 @@
+en:
+  refinery:
+    plugins:
+      messages:
+        title: Messages
+    messages:
+      admin:
+        messages:
+          actions:
+            create_new: Add New Message
+            reorder: Reorder Messages
+            reorder_done: Done Reordering Messages
+          records:
+            title: Messages
+            sorry_no_results: Sorry! There are no results found.
+            no_items_yet: There are no Messages yet. Click "Add New Message" to add your first message.
+          message:
+            view_live_html: View this message live <br/><em>(opens in a new window)</em>
+            edit: Edit this message
+            delete: Remove this message forever
+      messages:
+        show:
+          other: Other Messages
+  activerecord:
+    attributes:
+      'refinery/messages/message':
+        name: Name
+        email: Email
+        content: Content

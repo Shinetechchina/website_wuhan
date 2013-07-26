@@ -1,0 +1,25 @@
+<ul>
+  <% if ::Refinery::Messages::Admin::MessagesController.searchable? %>
+    <li>
+      <%= render '/refinery/admin/search', :url => refinery.messages_admin_messages_path %>
+    </li>
+  <% end %>
+  <li>
+    <%= link_to t('.create_new'), refinery.new_messages_admin_message_path,
+                 :class => "add_icon" %>
+  </li>
+<% if !searching? && ::Refinery::Messages::Admin::MessagesController.sortable? && ::Refinery::Messages::Message.any? %>
+  <li>
+    <%= link_to t('.reorder', :what => "Messages"),
+                 refinery.messages_admin_messages_path,
+                 :id => "reorder_action",
+                 :class => "reorder_icon" %>
+
+    <%= link_to t('.reorder_done', :what => "Messages"),
+                 refinery.messages_admin_messages_path,
+                 :id => "reorder_action_done",
+                 :style => "display: none;",
+                 :class => "reorder_icon" %>
+  </li>
+<% end %>
+</ul>

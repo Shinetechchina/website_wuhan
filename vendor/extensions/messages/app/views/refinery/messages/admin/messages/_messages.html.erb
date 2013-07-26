@@ -1,0 +1,2 @@
+<%= will_paginate @messages if Refinery::Messages::Admin::MessagesController.pageable? %>
+<%= render 'sortable_list' %>

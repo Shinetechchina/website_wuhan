@@ -1,0 +1,31 @@
+zh-CN:
+  refinery:
+    plugins:
+      messages:
+        title: Messages
+    messages:
+      admin:
+        messages:
+          actions:
+            create_new: 建立新的 Message
+            reorder: 对 Messages 重新排序
+            reorder_done: 对 Messages 的重新排序结束
+          records:
+            title: Messages
+            sorry_no_results: 对不起，未找到结果。 #Sorry! There are no results found.
+
+            # There are no Messages yet. Click "Add New Message" to add your first message.
+            no_items_yet: 目前没有 Messages . 点击 "Add New Message" 创建一个message.
+          message:
+            view_live_html: 查看 message 的最新内容.<br/><em>(新窗口中打开)</em>
+            edit: 编辑 message
+            delete: 永久删除 message
+      messages:
+        show:
+          other: 其他 Messages
+  activerecord:
+    attributes:
+      'refinery/messages/message':
+        name: Name
+        email: Email
+        content: Content

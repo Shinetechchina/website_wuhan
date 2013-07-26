@@ -43,6 +43,15 @@ ActiveRecord::Schema.define(:version => 20130730071846) do
     t.datetime "updated_at",      :null => false
   end
 
+  create_table "refinery_messages", :force => true do |t|
+    t.string   "name"
+    t.string   "email"
+    t.text     "content"
+    t.integer  "position"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
   create_table "refinery_page_part_translations", :force => true do |t|
     t.integer  "refinery_page_part_id"
     t.string   "locale"

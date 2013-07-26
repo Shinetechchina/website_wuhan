@@ -1,0 +1,29 @@
+nl:
+  refinery:
+    plugins:
+      messages:
+        title: Messages
+    messages:
+      admin:
+        messages:
+          actions:
+            create_new: Maak een nieuwe Message
+            reorder: Wijzig de volgorde van de Messages
+            reorder_done: Klaar met het wijzingen van de volgorde van de Messages
+          records:
+            title: Messages
+            sorry_no_results: Helaas! Er zijn geen resultaten gevonden.
+            no_items_yet: Er zijn nog geen Messages. Druk op 'Maak een nieuwe Message' om de eerste aan te maken.
+          message:
+            view_live_html: Bekijk deze message op de website <br/><em>(opent een nieuw venster)</em>
+            edit: Bewerk deze message
+            delete: Verwijder deze message voor eeuwig
+      messages:
+        show:
+          other: Andere Messages
+  activerecord:
+    attributes:
+      'refinery/messages/message':
+        name: Name
+        email: Email
+        content: Content

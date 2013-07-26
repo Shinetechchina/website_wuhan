@@ -1,0 +1,29 @@
+fr:
+  refinery:
+    plugins:
+      messages:
+        title: Messages
+    messages:
+      admin:
+        messages:
+          actions:
+            create_new: Créer un(e) nouve(au/l/lle) Message
+            reorder: Réordonner les Messages
+            reorder_done: Fin de réordonnancement des Messages
+          records:
+            title: Messages
+            sorry_no_results: "Désolé ! Aucun résultat."
+            no_items_yet: 'Il n''y a actuellement aucun(e) Message. Cliquer sur "Créer un(e) nouve(au/l/lle) Message" pour créer votre premi(er/ère) message.'
+          message:
+            view_live_html: Voir ce(t/tte) message <br/><em>(Ouvre une nouvelle fenêtre)</em>
+            edit: Modifier ce(t/tte) message
+            delete: Supprimer définitivement ce(t/tte) message
+      messages:
+        show:
+          other: Autres Messages
+  activerecord:
+    attributes:
+      'refinery/messages/message':
+        name: Name
+        email: Email
+        content: Content

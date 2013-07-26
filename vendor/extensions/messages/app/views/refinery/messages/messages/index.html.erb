@@ -1,0 +1,11 @@
+<% content_for :body do %>
+  <ul id="messages">
+    <% @messages.each do |message| %>
+      <li>
+        <%= link_to message.name, refinery.messages_message_path(message) %>
+      </li>
+    <% end %>
+  </ul>
+<% end %>
+
+<%= render '/refinery/content_page' %>

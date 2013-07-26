@@ -1,0 +1,29 @@
+sk:
+  refinery:
+    plugins:
+      messages:
+        title: Messages
+    messages:
+      admin:
+        messages:
+          actions:
+            create_new: Pridať Message
+            reorder: Preusporiadať Messages
+            reorder_done: Koniec radenia Messages
+          records:
+            title: Messages
+            sorry_no_results: Ľutujeme, ale neboli nájdené žiadne výsledky.
+            no_items_yet: Nie sú vytvorené žiadne Messages. Kliknite na "Pridať Message" pre pridanie prvého message.
+          message:
+            view_live_html: Zobraziť náhľad message<br/><em>(otvorí sa v novom okne)</em>
+            edit: Upraviť message
+            delete: Zmazať message
+      messages:
+        show:
+          other: Daľšie Messages
+  activerecord:
+    attributes:
+      'refinery/messages/message':
+        name: Name
+        email: Email
+        content: Content

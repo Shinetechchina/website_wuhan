@@ -1,0 +1,30 @@
+es:
+  refinery:
+    plugins:
+      messages:
+        title: Messages
+#        article: masculino/femenino
+    messages:
+      admin:
+        messages:
+          actions:
+            create_new: Crear nuevo message
+            reorder: Reordenar messages
+            reorder_done: Reordenación de messages completada
+          records:
+            title: Messages
+            sorry_no_results: Lo siento, no hay resultados
+            no_items_yet: No hay messages todavía. Pulsa en "Crear nuevo Message" para crear tu primer message.
+          message:
+            view_live_html: Ver este message como abierto al público <br/><em>(abre en ventana nueva)</em>
+            edit: Editar este message
+            delete: Borrar este message para siempre
+      messages:
+        show:
+          other: Otros messages
+  activerecord:
+    attributes:
+      'refinery/messages/message':
+        name: Name
+        email: Email
+        content: Content

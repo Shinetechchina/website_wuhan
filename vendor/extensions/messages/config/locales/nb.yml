@@ -1,0 +1,29 @@
+nb:
+  refinery:
+    plugins:
+      messages:
+        title: Messages
+    messages:
+      admin:
+        messages:
+          actions:
+            create_new: Lag en ny Message
+            reorder: Endre rekkefølgen på Messages
+            reorder_done: Ferdig å endre rekkefølgen Messages
+          records:
+            title: Messages
+            sorry_no_results: Beklager! Vi fant ikke noen resultater.
+            no_items_yet: Det er ingen Messages enda. Klikk på "Lag en ny Message" for å legge til din første message.
+          message:
+            view_live_html: Vis hvordan denne message ser ut offentlig <br/><em>(åpner i et nytt vindu)</em>
+            edit: Rediger denne message
+            delete: Fjern denne message permanent
+      messages:
+        show:
+          other: Andre Messages
+  activerecord:
+    attributes:
+      'refinery/messages/message':
+        name: Name
+        email: Email
+        content: Content
