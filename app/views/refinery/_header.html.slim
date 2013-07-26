@@ -9,11 +9,11 @@
           | &nbsp;&nbsp;
           i.icon-sort-down
         ul.dropdown-menu.pull-right role="menu" aria-labelledby="dLabel"
-          - ['all', 'ruby', 'javascript'].each do |value|
+          - ['', 'ruby', 'javascript'].each do |value|
             li
-              a data-tag=value class="#{'option-all' if value == 'all'} #{'selected' if cookies[:tag].split(',').include? value}"
+              a data-tag=value
                 i.icon-ok
-                = value + " "
+                = value.present? ? value + " " : 'all'
           li.nav-btn.pointer
             .nav-btn-inner
               | submit

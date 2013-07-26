@@ -4,6 +4,7 @@ App.DropdownTagList =
     @$dropdownMenu = $('.dropdown-tag .dropdown-menu')
     @$dropdownMenuLink = $('.dropdown-tag .dropdown-menu a')
     @setTagListBar()
+    @initTagListSelected()
     @initTagListMenu()
     @initTagListSubmit()
 
@@ -15,13 +16,19 @@ App.DropdownTagList =
       #forbid select text in IE6--IE9
 
     @$dropdownMenuLink.on 'click', ->
-      if $(@).hasClass('option-all') and not $(@).hasClass('selected')
+      if ($(@).data('tag') == '') and not $(@).hasClass('selected')
         self.$dropdownMenu.find('.selected').removeClass('selected')
         $(@).addClass('selected')
       else
         $(@).toggleClass('selected')
-        self.$dropdownMenu.find('.option-all').removeClass('selected')
+        self.$dropdownMenu.find('[data-tag=""]').removeClass('selected')
       return false
+
+  initTagListSelected: ->
+    cookie_tags = $.cookie('tag').split(',')
+    for link in @$dropdownMenuLink
+      if $.inArray( $(link).data('tag'), cookie_tags ) is 0
+        $(link).addClass('selected')
 
   initTagListSubmit: ->
     self = @
@@ -31,13 +38,12 @@ App.DropdownTagList =
       location.reload()
 
   setCookieTags: ->
-    self = @
-    selectedValues = self.getNavbarSelectedTags()
-    selectedValues = 'all' if selectedValues.length == 0
+    selectedValues = @getNavbarSelectedTags()
     $.cookie('tag', selectedValues)
 
   setTagListBar: ->
     tag_text = $.cookie('tag').split(',').join(' + ')
+    tag_text = 'all' if tag_text == ''
     $('.dropdown-tag .dropdown-toggle span').text(tag_text)
 
   getNavbarSelectedTags: ->
