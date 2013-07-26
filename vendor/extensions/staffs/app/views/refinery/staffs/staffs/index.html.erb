@@ -1,1 +1,26 @@
-<%= render_liquid_page_body @page, 'staffs' => @staffs %>
+<% @staffs.each do |staff| %>
+  <div class="box box-staff box-expandable">
+    <div class="mini">
+      <div class="staff-thumb" style="background-image: url('<%= staff.image_url %>');">
+        <div class="staff-name"><%= staff.name %></div>
+      </div>
+    </div>
+
+    <div class="maxi">
+      <div class="staff-thumb" style="background-image: url('<%= staff.image_url %>');">
+        <div class="staff-name"><%= staff.name %></div>
+      </div>
+      <div class="staff-info">
+        <h2><%= staff.name %></h2>
+        <div class="staff-description"><%= staff.description %></div>
+        <div class="social-links">
+          <% if staff.github_url? %><a href="<%= staff.github_url %>" target="_blank"><i class="icon-github icon-large"></i>Github</a><% end %>
+          <% if staff.linkedin_url? %><a href="<%= staff.linkedin_url %>" target="_blank"><i class="icon-linkedin icon-large"></i>LinkedIn</a><% end %>
+          <% if staff.twitter_url? %><a href="<%= staff.twitter_url %>" target="_blank"><i class="icon-twitter icon-large"></i>Twitter</a><% end %>
+          <% if staff.weibo_url? %><a href="<%= staff.weibo_url %>" target="_blank"><i class="icon-weibo icon-large"></i>Weibo</a><% end %>
+          <% if staff.email? %><a href="mailto:<%= staff.email %>" target="_blank"><i class="icon icon-envelope"></i>Email</a><% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>

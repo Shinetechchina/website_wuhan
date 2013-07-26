@@ -52,12 +52,14 @@
   <h2>Our staffs:</h2>
 </div>
 <% for staff in @staffs %>
-  <div class="box box-staff box-expandable" onclick="location = '/staff'">
-    <div class="mini">
-      <div class="staff-thumb" style="background-image: url('<%= staff.image_url %>');">
-        <div class="staff-name"><%= staff.name %></div>
+  <div class="box box-staff">
+    <a href="/staff">
+      <div class="mini">
+        <div class="staff-thumb" style="background-image: url('<%= staff.image_url %>');">
+          <div class="staff-name"><%= staff.name %></div>
+        </div>
       </div>
-    </div>
+    </a>
   </div>
 <% end %>
 <%= fill_with_boxes 3 - @staffs.size if @staffs.size < 3 %>
