@@ -8,6 +8,7 @@
 #= require app
 #= require box_manager
 #= require router
+#= require dropdown_tag_list
 #= require video_modal
 #= require overlay
 #= require_self

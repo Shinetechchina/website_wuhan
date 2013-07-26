@@ -4,6 +4,7 @@ window.App = App =
   init: ->
     App.BoxManager.init()
     App.Router.init()
+    App.DropdownTagList.init()
 
     @initSlide()
     @initTagList()
@@ -34,30 +35,6 @@ window.App = App =
       setTimeout(->
         currentContent.removeClass('slide-out')
       , 500)
-
-  initTagList: ->
-    $('.dropdown-tag .dropdown-menu a').on 'onselectstart', ->
-      return false
-      #forbid select text in IE6--IE9
-
-    $('.dropdown-tag .dropdown-menu a').on 'click', (e) ->
-      if $(this).hasClass('option-all') and not $(this).find('i').hasClass('selected')
-        $('.dropdown-tag .dropdown-menu .selected').removeClass('selected')
-        $(this).find('i').addClass('selected')
-      else
-        $(this).find('i').toggleClass('selected')
-        $('.dropdown-tag .dropdown-menu .option-all i').removeClass('selected')
-      return false
-
-  submitNavbarTagsInput: ->
-    $('.nav-btn').on 'click', (e) ->
-      SelectedValues = window.App.getNavbarSelectedTags()
-      $.cookie('tag', SelectedValues)
-      location.reload()
-
-  getNavbarSelectedTags: ->
-    $('.dropdown-menu li a .selected').parents('a').text().split(" ").filter (v) ->
-      v isnt ""
 
   initMasthead: ->
     return unless location.pathname == '/'
