@@ -24,7 +24,7 @@ App.BoxManager =
     $el.addClass('box-expanded') #.addClass(expandedClass)
 
     onLayoutComplete = ->
-      $(document.body).animate scrollTop: $el.offset().top - 40
+      $(document.body).animate scrollTop: $el.offset().top - parseInt($('body').css('margin-top').replace('px', ''))
       true
 
     @reLayout()

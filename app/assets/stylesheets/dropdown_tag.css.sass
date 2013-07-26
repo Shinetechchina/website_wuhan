@@ -1,12 +1,11 @@
 .dropdown.dropdown-tag
-  position: absolute
-  top: 0
-  right: 0
-  background-color: $color-main
+  float: right
+  margin-top: 18px
+  background-color: #ed6752
 
   .dropdown-toggle
     display: block
-    padding: 10px 15px
+    padding: 5px 15px
     font-size: 16px
     color: white
     .icon-sort-down
@@ -15,8 +14,11 @@
       position: relative
 
 
+  &.open .dropdown-toggle
+    background: $color-font
+
   .dropdown-menu
-    margin: 0
+    margin: 5px 0 0
     border: 0
     padding-bottom: 0
     background-color: $color-main

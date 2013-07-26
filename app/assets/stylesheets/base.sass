@@ -1,10 +1,13 @@
 html
-  background-color: #E7F1F5
+  background-color: $color-bg
   // font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif
   font-family: $font-family
   font-size: 14px
   line-height: 1.8em
   color: $color-font
+
+body
+  margin-top: $header-height + 20px
 
 h1, h2, h3, h4
   color: $color-heading
@@ -56,11 +59,11 @@ a
   margin: 0
   z-index: 9001
   box-shadow: 0 2px 5px rgba(black, .5)
-  color: #333
+  color: white
 
   h1
     margin-top: 50px
-    color: #333
+    color: white
     font-size: 50px
     line-height: 50px
     border: 0
@@ -87,38 +90,45 @@ a
   a
     color: $main-color!important
 
-#menu-wrapper
-  background-color: #252525
-  z-index: 999
-  width: 100%
+.header
   position: fixed
   top: 0
+  width: 100%
+  height: $header-height
+  background-color: $color-bg
+  z-index: 999
+
+  > .container
+    border-bottom: 1px solid #ddd
 
 #menu
   float: left
-  background-color: #252525
   margin: 0 auto
-  padding: 8px 0
-  font-family: Palatino, Georgia, serif
-  font-weight: bold
   font-size: 13px
-  font-style: italic
-  line-height: 16px
-  text-shadow: 0 1px 0 rgba(255, 255, 255, .6)
+  height: $header-height
+  line-height: $header-height
+  color: $color-font
   text-transform: uppercase
-  ul
-    li
-      padding: 0px 3px
-      display: inline-block
-      vertical-align: baseline
-      a
-        color: #999
-        padding: 8px 12px
-        &:hover
-          color: #fff
-    li.selected a
-      color: #fff
-      background: #111
+
+  li
+    display: inline-block
+
+    a
+      display: block
+      padding: 0 12px
+      color: lighten($color-font, 20%)
+      font-size: 16px
+      @include transition(all .5s)
+
+      &:hover
+        color: $color-font
+
+    &.first a
+      padding-left: 0
+
+    &.selected a
+      color: $color-font
+      text-shadow: 1px 1px rgba($color-font, .5)
 
 .footer
   font-size: 11px
