@@ -47,5 +47,7 @@ App.DropdownTagList =
     $('.dropdown-tag .dropdown-toggle span').text(tag_text)
 
   getNavbarSelectedTags: ->
-    @$dropdownMenu.find('.selected').text().split(" ").filter (v) ->
-      v isnt ""
+    selectedValues = []
+    for selected in @$dropdownMenu.find('.selected')
+      selectedValues = selectedValues.concat($(selected).data('tag'))
+    selectedValues
