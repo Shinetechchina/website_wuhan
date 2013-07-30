@@ -15,7 +15,7 @@ gem 'omniauth'
 gem 'omniauth-weibo-oauth2'
 
 #tagging
-gem 'acts-as-taggable-on'
+gem 'acts-as-taggable-on', require: false
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -44,7 +44,6 @@ group :development do
   gem 'binding_of_caller'
   gem 'pry-rails'
   gem 'quiet_assets'
-  gem 'thin'
 end
 
 # To use ActiveModel has_secure_password

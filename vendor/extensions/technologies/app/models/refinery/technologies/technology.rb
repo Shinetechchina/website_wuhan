@@ -1,3 +1,5 @@
+require 'acts-as-taggable-on'
+
 module Refinery
   module Technologies
     class Technology < Refinery::Core::BaseModel

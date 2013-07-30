@@ -1,3 +1,5 @@
+require 'acts-as-taggable-on'
+
 module Refinery
   module Staffs
     class Staff < Refinery::Core::BaseModel
