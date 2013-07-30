@@ -1,9 +1,8 @@
 class Authentication < ActiveRecord::Base
-  belongs_to :refinery_user
-  attr_accessible :provider, :uid, :user_id, :access_token, :expires_in
+  attr_accessible :provider, :uid, :access_token, :expires_in
 
   validates_presence_of :access_token, :uid, :provider, :expires_in
-  validates :provider, :uniqueness => {:scope => :user_id}
+  validates :provider, :uniqueness => {:scope => :uid}
   validates :uid, :uniqueness => {:scope => :provider}
 
   scope :weibo, where(provider: 'weibo')
