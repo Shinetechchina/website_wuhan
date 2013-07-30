@@ -11,5 +11,13 @@ describe SiteController do
       get :home, {use_route: :sites}
       response.should be_success
     end
+
+    it "should have .masthead" do
+      #get :home, {use_route: :sites}
+      #page.should have_selector('.masthead')
+    end
+
+    it ".masthead should display" do
+    end
   end
 end
