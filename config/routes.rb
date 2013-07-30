@@ -8,8 +8,7 @@ WebsiteWuhan::Application.routes.draw do
   mount Refinery::Core::Engine, :at => '/'
 
   Refinery::Core::Engine.routes.draw do
-    root to: 'site#home'
-    get '/blog', to: 'site#blog'
+    get '/blog', to: 'pages#blog'
 
     devise_scope :refinery_user do
       get '/auth/:provider/callback', to: 'sessions#auth'
