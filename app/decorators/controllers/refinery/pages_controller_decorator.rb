@@ -3,6 +3,8 @@ Refinery::PagesController.class_eval do
   # This issue is solved in master branch
   public :render_with_templates?
 
+  layout -> (controller) { controller.request.xhr? ? false : 'application' }
+
   skip_before_filter :find_page, only: [:home, :blog]
 
   def home
@@ -23,7 +25,6 @@ Refinery::PagesController.class_eval do
   end
 
   def blog
-    # @blogs = Blog.all
-    @blogs = []
+    @blogs = Blog.all
   end
 end

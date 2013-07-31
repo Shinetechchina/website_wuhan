@@ -11,6 +11,7 @@ App.Router =
     @registerRoute '/clients'
     @registerRoute '/technologies'
     @registerRoute '/staff'
+    @registerRoute '/blog'
 
     Path.history.listen()
 
