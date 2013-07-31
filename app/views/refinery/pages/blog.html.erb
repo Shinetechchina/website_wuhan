@@ -1,5 +1,5 @@
-<% @blogs.each do |blog| %>
-  <div class="item">
+<% if @blogs.present? %>
+  <% @blogs.each do |blog| %>
     <div class="box shade-box background-image-adaptive-box" style="background-image: url(<%= blog.image_url %>);">
       <div class="shade">
         <div class="posted-date"><%= blog.created_at %></div>
@@ -11,5 +11,10 @@
         </div>
       </div>
     </div>
+  <% end %>
+<% else %>
+  <div class="box box-about box-double">
+    <h3>No any blog</h3>
+    <p>Please click the <a href="/auth/weibo", target="_blank">link</a> to authticate your third-party account.</p>
   </div>
 <% end %>

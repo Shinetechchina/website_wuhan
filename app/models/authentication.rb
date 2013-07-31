@@ -1,9 +1,8 @@
 class Authentication < ActiveRecord::Base
-  belongs_to :refinery_user
-  attr_accessible :provider, :uid, :user_id, :access_token, :expires_in
+  attr_accessible :provider, :uid, :access_token, :expires_in
 
   validates_presence_of :access_token, :uid, :provider, :expires_in
-  validates :provider, :uniqueness => {:scope => :user_id}
+  validates :provider, :uniqueness => {:scope => :uid}
   validates :uid, :uniqueness => {:scope => :provider}
 
   scope :weibo, where(provider: 'weibo')
@@ -40,7 +39,11 @@ class Authentication < ActiveRecord::Base
   end
 
   def self.weibo_list
-    self.all.map(&:weibo_timeline).inject(:+).sort_by{|weibo| weibo["id"]}.reverse
+    if (weibo_timeline = self.all.map(&:weibo_timeline).inject(:+)).present?
+      weibo_timeline.sort_by{|weibo| weibo["id"]}.reverse
+    else
+      []
+    end
   end
 
   def weibo_data(interface, options={})

@@ -42,8 +42,15 @@ gem 'neat'
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller'
-  gem 'pry-rails'
   gem 'quiet_assets'
+end
+
+group :development, :test do
+  gem 'pry-rails'
+  gem 'rspec-rails', '~> 2.0'
+  gem 'capybara', require: false
+  gem 'poltergeist'
+  gem 'factory_girl_rails'
 end
 
 # To use ActiveModel has_secure_password
