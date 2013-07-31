@@ -11,9 +11,13 @@ class Blog
   end
 
   def self.all
-    ::Authentication.weibo_list.map do |weibo|
-      [Blog.new(weibo)]
-    end.inject(:+)
+    if (weibo_list = ::Authentication.weibo_list).present?
+      weibo_list.map do |weibo|
+        [Blog.new(weibo)]
+      end.inject(:+)
+    else
+      []
+    end
   end
 
   protected
