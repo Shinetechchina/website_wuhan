@@ -37,10 +37,10 @@ App.BoxManager =
     self = @
     $container = @$container
 
-    # App.Overlay.show(mask: true)
+    App.Overlay.show(mask: true) if url == '/blog'
 
     $.get(url).success (result) ->
-      # App.Overlay.hide()
+      App.Overlay.hide()
 
       # Remove old boxes when page changing
       boxes = $container.children()
