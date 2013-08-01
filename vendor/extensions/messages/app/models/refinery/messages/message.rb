@@ -7,7 +7,8 @@ module Refinery
 
       acts_as_indexed :fields => [:name, :email, :content]
 
-      validates :name, :presence => true, :uniqueness => true
+      validates :name, :email, :content, :presence => true
+      validates_format_of :email, with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i
     end
   end
 end

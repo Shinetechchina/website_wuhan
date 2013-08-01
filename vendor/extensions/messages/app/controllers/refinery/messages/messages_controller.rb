@@ -11,6 +11,17 @@ module Refinery
         present(@page)
       end
 
+      def create
+        @message = Message.new(params[:message])
+        respond_to do |format|
+          if @message.save
+            format.js { render js: "alert('Guest successful, we will contact you.'); $('#guest-bar').click();" }
+          else
+            format.js { render js: "alert('Guest failed, please input correctly format.')" }
+          end
+        end
+      end
+
       def show
         @message = Message.find(params[:id])
 

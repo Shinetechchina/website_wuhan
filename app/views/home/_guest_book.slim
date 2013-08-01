@@ -1,9 +1,9 @@
 #guest-book
   #guest-bar.pointer
     | Comment with us
-    i.icon-chevron-up.pull-right
+    i.icon-chevron-up.pull-right#toogle-guest
   #guest-form.hide
-    = form_for Refinery::Messages::Message.new, url: '/refinery/messages' do |f|
+    = form_for Refinery::Messages::Message.new, url: '/messages', remote: true do |f|
       = f.label 'Your Name:'
       .field
         = f.text_field :name
@@ -13,4 +13,4 @@
       = f.label 'Content:'
       .field
         = f.text_area :content, rows: 8
-      =f.submit 'Submit', id: 'message_submit'
+      =f.submit 'Submit', id: 'message_submit', disable_with: "loading..."
