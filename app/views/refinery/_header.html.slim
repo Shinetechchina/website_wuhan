@@ -1,7 +1,22 @@
 - unless response.status == 404
   .header
     .container style="position: relative;"
-      = render partial: "/refinery/menu", locals: {dom_id: 'menu', css: 'menu'}
+      /= render partial: "/refinery/menu", locals: {dom_id: 'menu', css: 'menu'}
+      nav#menu.menu
+        ul
+          li.first
+            a.route href="/" HOME
+          li
+            a.route href="/clients" CLIENTS
+          li
+            a.route href="/services" SERVICES
+          li
+            a.route href="/technologies" TECHNOLOGIES
+          li
+            a.route href="/staff" STAFF
+          li.last
+            a.route href="/blog" BLOG
+
 
       .dropdown.dropdown-tag
         a.dropdown-toggle data-toggle="dropdown" href="#"

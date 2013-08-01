@@ -3,7 +3,7 @@
 </div>
 <% @clients.each do |client| %>
   <div class="box box-client">
-    <a class="box-link" href="/clients">
+    <a class="route box-link" href="/clients">
       <div class="mini">
         <div class="client-logo">
           <%= image_tag client.logo.url %>
@@ -19,7 +19,7 @@
 </div>
 <% @services.each do |service| %>
   <div class="box box-service">
-    <a class="box-link" href="/services">
+    <a class="route box-link" href="/services">
       <div class="mini">
         <div class="box-hover-content" style="border-color: <%= service.color %>"></div>
         <i class="icon icon-<%= service.icon %>" style="color: <%= service.color %>"></i>
@@ -36,7 +36,7 @@
 </div>
 <% @technologies.each do |tech| %>
   <div class="box box-tech">
-    <a class="box-link" href="/technologies">
+    <a class="route box-link" href="/technologies">
       <div class="tech-title" target="_blank">
         <%= image_tag tech.image_url %>
       </div>
@@ -53,7 +53,7 @@
 </div>
 <% for staff in @staffs %>
   <div class="box box-staff">
-    <a href="/staff">
+    <a class="route" href="/staff">
       <div class="mini">
         <div class="staff-thumb" style="background-image: url('<%= staff.image_url %>');">
           <div class="staff-name"><%= staff.name %></div>

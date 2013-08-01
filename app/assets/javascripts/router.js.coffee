@@ -30,7 +30,7 @@ App.Router =
     )
 
   bindLinks: ->
-    $('body').on 'click.route', 'a', (e) ->
+    $('body').on 'click.route', 'a.route', (e) ->
       e.preventDefault()
       el = $(@)
       Path.history.pushState({}, "", el.attr('href')) if el.attr('href')
