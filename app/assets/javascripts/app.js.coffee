@@ -8,6 +8,7 @@ window.App = App =
 
     @initSlide()
     @initMasthead()
+    @initGuest()
 
   initMenu: ->
 
@@ -43,3 +44,12 @@ window.App = App =
     $(document).one 'mousewheel', (e) ->
       el.fadeOut()
       $('#box-container').animate(opacity: 1, 500)
+
+  initGuest: ->
+    $('#guest-bar').on 'click', ->
+      if !$('#guest-form').is(':visible')
+        $('#guest-form').show()
+        $(@).find('i').removeClass('.icon-chevron-up').addClass('icon-chevron-down')
+      else
+        $('#guest-form').hide()
+        $(@).find('i').addClass('.icon-chevron-up').removeClass('icon-chevron-down')

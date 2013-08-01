@@ -4,6 +4,6 @@ class RemoveUserIdFromAuthentication < ActiveRecord::Migration
   end
 
   def down
-    add_column :authentications, :user_id, type: :string
+    add_column :authentications, :user_id, :integer
   end
 end

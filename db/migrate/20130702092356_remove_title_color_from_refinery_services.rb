@@ -4,6 +4,6 @@ class RemoveTitleColorFromRefineryServices < ActiveRecord::Migration
   end
 
   def down
-    add_column :refinery_services, :color, type: :string
+    add_column :refinery_services, :color, :string
   end
 end

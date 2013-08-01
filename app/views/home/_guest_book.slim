@@ -1,5 +1,16 @@
 #guest-book
   #guest-bar.pointer
     | Comment with us
-    i.icon-chevron-up
-  #guest-content
+    i.icon-chevron-up.pull-right
+  #guest-form.hide
+    = form_for Refinery::Messages::Message.new, url: '/refinery/messages' do |f|
+      = f.label 'Your Name:'
+      .field
+        = f.text_field :name
+      = f.label 'Your email:'
+      .field
+        = f.text_field :email
+      = f.label 'Content:'
+      .field
+        = f.text_area :content, rows: 8
+      =f.submit 'Submit', id: 'message_submit'
