@@ -6,15 +6,13 @@ html
     - unless response.status == 404
       = javascript_include_tag "application"
   body
-    .masthead.hide
-      .masthead-content
-        .container
-          h1 Shinetech Wuhan
-          p Welcome to Shinetech Wuhan. Our clients are solving some of the most pressing problems of our time. We deliver disruptive thinking and empowering technology to help them succeed.
-          div.masthead-tip Scroll to enter
-
-    = render '/home/header'
+    .masthead
+      .container
+        h1 Shinetech Wuhan
+        p Welcome to Shinetech Wuhan. Our clients are solving some of the most pressing problems of our time. We deliver disruptive thinking and empowering technology to help them succeed.
     = render '/refinery/header'
+
+    /= render '/home/header'
 
     #box-container.container
       = yield

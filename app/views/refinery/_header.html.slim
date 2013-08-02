@@ -1,6 +1,9 @@
 - unless response.status == 404
   .header
-    .container style="position: relative;"
+    .container
+      .logo
+        a href="#" Shinetech
+
       /= render partial: "/refinery/menu", locals: {dom_id: 'menu', css: 'menu'}
       nav#menu.menu
         ul
