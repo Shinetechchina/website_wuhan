@@ -11,6 +11,7 @@
 #= require dropdown_tag_list
 #= require video_modal
 #= require overlay
+#= require masthead
 #= require_self
 
 $ ->

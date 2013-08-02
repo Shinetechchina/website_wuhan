@@ -5,9 +5,9 @@ window.App = App =
     App.BoxManager.init()
     App.Router.init()
     App.DropdownTagList.init()
+    App.Masthead.init()
 
     @initSlide()
-    @initMasthead()
     @initGuest()
 
   initMenu: ->
@@ -34,16 +34,6 @@ window.App = App =
       setTimeout(->
         currentContent.removeClass('slide-out')
       , 500)
-
-  initMasthead: ->
-    return unless location.pathname == '/'
-
-    el = $('.masthead')
-    el.show()
-
-    $(document).one 'mousewheel', (e) ->
-      el.fadeOut()
-      $('#box-container').animate(opacity: 1, 500)
 
   initGuest: ->
     $('#guest-bar').on 'click', ->
