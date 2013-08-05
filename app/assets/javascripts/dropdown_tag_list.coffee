@@ -1,61 +1,42 @@
 App.DropdownTagList =
-
   init: ->
-    @$dropdownMenu = $('.dropdown-tag .dropdown-menu')
-    @$dropdownMenuLink = $('.dropdown-tag .dropdown-menu a')
-    @setTagListBar()
-    @initTagListSelected()
-    @initTagListMenu()
-    @initTagListSubmit()
+    @$el     = $('.dropdown-tag')
+    @$toggle = @$el.find('.dropdown-toggle span')
+    @$menu   = @$el.find('.dropdown-menu')
+    @$submit = @$el.find('.nav-btn')
 
-  initTagListMenu: ->
+    @bindEvents()
+
+    @render()
+
+    @preventMenuSelection()
+
+  bindEvents: ->
     self = @
 
-    #forbid select text in IE6--IE9
-    @$dropdownMenu.on 'onselectstart', 'a', (e) -> e.preventDefault
+    @$menu.on 'click', 'a', (e) ->
+      e.preventDefault()
 
-    @$dropdownMenu.on 'click', 'a', ->
-      elLink = $(@)
-      if (elLink.data('tag') == '') and not elLink.hasClass('selected')
-        self.$dropdownMenu.find('.selected').removeClass('selected')
-        elLink.addClass('selected')
-      else
-        elLink.toggleClass('selected')
-        self.$dropdownMenu.find('[data-tag=""]').removeClass('selected')
-      return false
+      $link = $(@)
+      return if $link.hasClass('selected')
 
-  initTagListSelected: ->
-    tags = @getTags()
-    if tags
-      @$dropdownMenuLink.each ->
-        elLink = $(@)
-        elLink.addClass('selected') if $.inArray(elLink.data('tag'), tags) >= 0
-    else
-      @$dropdownMenuLink.filter(':first').addClass('selected')
+      self.setTag($link.data('tag'))
+      self.render()
 
+  render: (value) ->
+    @$toggle.text(@getTag() || 'all')
 
-  initTagListSubmit: ->
-    self = @
-    $('.nav-btn').on 'click', (e) ->
-      self.setCookieTags()
-      self.setTagListBar()
-      location.reload()
+    @$menu.find('a').each ->
+      $link = $(@)
+      if value == $link.data('tag') then $link.addClass('selected') else $link.removeClass('selected')
 
-  setCookieTags: ->
-    selectedValues = @getNavbarSelectedTags()
-    $.cookie('tag', selectedValues)
+  # prevent text selection when dbclick in IE6--IE9
+  preventMenuSelection: ->
+    @$menu.on 'onselectstart', 'a', (e) -> e.preventDefault
 
-  getTags: ->
-    tags = $.cookie('tag')
-    if tags then tags.split(',') else null
+  setTag: (value) ->
+    $.cookie('tag', value)
 
-  setTagListBar: ->
-    tags = @getTags()
-    tag_text = if tags then tags.join(' + ') else 'all'
-    $('.dropdown-tag .dropdown-toggle span').text(tag_text)
-
-  getNavbarSelectedTags: ->
-    selectedValues = []
-    for selected in @$dropdownMenu.find('.selected')
-      selectedValues = selectedValues.concat($(selected).data('tag'))
-    selectedValues
+  getTag: ->
+    tag = $.cookie('tag')
+    if tag && !/^\s+$/.test(tag) then tag else null

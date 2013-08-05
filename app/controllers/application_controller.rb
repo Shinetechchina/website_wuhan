@@ -13,7 +13,7 @@ class ApplicationController < ActionController::Base
 
   def set_tag
     tag = params[:tag]
-    if tag.present? && tag =~ /^\w+(,\w+)*$/
+    if tag.present?
       cookies[:tag] = tag == 'all' ? '' : tag
     end
   end

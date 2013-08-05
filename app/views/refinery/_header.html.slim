@@ -27,11 +27,8 @@
           | &nbsp;&nbsp;
           i.icon-sort-down
         ul.dropdown-menu.pull-right role="menu" aria-labelledby="dLabel"
-          - ['', 'ruby', 'javascript'].each do |value|
+          - ['', 'rails', 'javascript', 'outsourcing'].each do |value|
             li
               a data-tag=value
                 i.icon-ok
                 = value.present? ? value + " " : 'all'
-          li.nav-btn.pointer
-            .nav-btn-inner
-              | submit
