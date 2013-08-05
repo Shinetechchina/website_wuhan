@@ -1,5 +1,5 @@
 # This migration comes from refinery_services (originally 2)
-class AddExpandedToRefineryServices < ActiveRecord::Migration
+class AddExpandedToServices < ActiveRecord::Migration
   def up
     add_column :refinery_services, :expanded, :boolean, default: false
   end
