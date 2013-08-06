@@ -7,6 +7,8 @@ Refinery::PagesController.class_eval do
 
   skip_before_filter :find_page, only: [:home, :blog]
 
+  caches_action :blog, expires_in: 30.minutes
+
   def home
     @clients = Refinery::Shinetech::Client.limit(3)
     @services = Refinery::Services::Service.limit(3)
