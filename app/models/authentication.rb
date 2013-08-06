@@ -35,7 +35,7 @@ class Authentication < ActiveRecord::Base
   end
 
   def weibo_timeline
-    weibo_data('/statuses/user_timeline', {count: 20})["statuses"]
+    weibo_data('/statuses/user_timeline', {count: 50})["statuses"]
   end
 
   def self.weibo_list
