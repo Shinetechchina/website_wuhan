@@ -1,1 +1,15 @@
-<%= render_liquid_page_body @page, 'services' => @services %>
+<% @services.each do |s| %>
+  <div class="box box-service box-expandable <%= 'box-expanded' if s.expanded %>">
+    <div class="mini">
+      <div class="box-hover-content" style="border-color: <%= s.color %>"></div>
+      <i class="icon icon-<%= s.icon %>" style="color: <%= s.color %>"></i>
+      <h3 style="color: <%= s.color %>"><%= s.title %></h3>
+      <p><%= s.short_content %></p>
+    </div>
+    <div class="maxi">
+      <i class="icon icon-<%= s.icon %>" style="color: <%= s.color %>"></i>
+      <h2 style="color: <%= s.color %>"><%= s.title %></h3>
+      <%= s.short_content %>
+    </div>
+  </div>
+<% end %>
