@@ -1,4 +1,4 @@
-rails_root = File.expand_path(__FILE__).split('/')[0..-3].join('/')
+rails_root = "/apps/website_wuhan/current"
 rails_env = ENV["RAILS_ENV"] || "production"
 
 worker_processes 1
@@ -12,8 +12,8 @@ timeout 30
 
 pid "#{rails_root}/tmp/pids/unicorn.pid"
 
-stderr_path "#{rails_root}/log/unicorn.stderr.log"
-stdout_path "#{rails_root}/log/unicorn.stdout.log"
+# stderr_path "#{rails_root}/log/unicorn.stderr.log"
+# stdout_path "#{rails_root}/log/unicorn.stdout.log"
 
 preload_app true
 
