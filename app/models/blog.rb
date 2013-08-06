@@ -20,7 +20,7 @@ class Blog
     end
   end
 
-  def self.filter_topic(topic)
+  def self.filte_topic(topic)
     topic_regexp = Regexp.new("#" + topic + "#")
     blogs = self.all
     blogs.select do |blog|
