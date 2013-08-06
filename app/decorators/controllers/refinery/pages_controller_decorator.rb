@@ -27,6 +27,6 @@ Refinery::PagesController.class_eval do
   end
 
   def blog
-    @blogs = Blog.all
+    @blogs = Blog.filter_topic('ShineNext')
   end
 end

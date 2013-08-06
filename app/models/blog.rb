@@ -20,7 +20,13 @@ class Blog
     end
   end
 
-  protected
+  def self.filter_topic(topic)
+    topic_regexp = Regexp.new("#" + topic + "#")
+    blogs = self.all
+    blogs.select do |blog|
+      blog.text =~ topic_regexp
+    end
+  end
 
   def self.select_image_url(weibo)
     weibo["bmiddle_pic"] ||
