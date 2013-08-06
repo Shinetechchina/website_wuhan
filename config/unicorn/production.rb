@@ -1,11 +1,12 @@
+# rails_root = File.expand_path(__FILE__).split('/')[0..-4].join('/')
 rails_root = "/apps/website_wuhan/current"
 rails_env = ENV["RAILS_ENV"] || "production"
 
 worker_processes 1
 working_directory rails_root
 
-listen "#{rails_root}/tmp/sockets/unicorn.sock", :backlog => 2048
-#listen 8090, :tcp_nopush => false
+# listen "#{rails_root}/tmp/sockets/unicorn.sock", :backlog => 2048
+listen 8090, :tcp_nopush => false
 
 # nuke workers after 30 seconds instead of 60 seconds (the default)
 timeout 30
