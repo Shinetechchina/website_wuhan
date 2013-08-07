@@ -1,6 +1,8 @@
 .box-staff
   &.box-expanded
-    @include span-columns(9)
+    @include span-columns(6)
+    min-height: $box-height
+    width: $box-width * 2 + $box-gap
 
 .staff-thumb
   float: left
@@ -10,7 +12,7 @@
 
 .staff-name
   position: absolute
-  bottom: 20px
+  top: 239px
   left: 0
   padding: 0 10px
   color: white
@@ -22,12 +24,10 @@
   background: $main-color
 
 .staff-info
-  margin-left: $box-width
   padding: 10px
 
 .staff-description
-  max-height: 150px
-  overflow: hidden
+  display: inline
 
 .social-links
   margin-top: 20px

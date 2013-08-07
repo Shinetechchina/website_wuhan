@@ -68,18 +68,19 @@ a
 
 .container
   @include outer-container
-  width: $max-width
+  max-width: $max-width
+  min-width: $box-width
 
 .header
   position: fixed
   top: 0
   width: 100%
   height: $header-height
-  background-color: $color-bg
   z-index: 999
 
   > .container
     border-bottom: 1px solid #ddd
+    background-color: $color-bg
 
 .logo
   float: left
@@ -95,7 +96,6 @@ a
 #menu
   float: left
   margin: 0 auto
-  font-size: 13px
   height: $header-height
   line-height: $header-height
   color: $color-font

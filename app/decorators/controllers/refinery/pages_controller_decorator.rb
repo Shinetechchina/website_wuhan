@@ -7,6 +7,8 @@ Refinery::PagesController.class_eval do
 
   skip_before_filter :find_page, only: [:home, :blog]
 
+  caches_action :blog, expires_in: 30.minutes, cache_path: :post_cache_path.to_proc
+
   def home
     @clients = Refinery::Shinetech::Client.limit(3)
     @services = Refinery::Services::Service.limit(3)
@@ -25,6 +27,14 @@ Refinery::PagesController.class_eval do
   end
 
   def blog
-    @blogs = Blog.all
+    @blogs = Blog.filte_topic('ShineNext')
+  end
+
+  def post_cache_path
+    if request.xhr?
+      "#{request.url}.js"
+    else
+      "#{request.url}.html"
+    end
   end
 end
