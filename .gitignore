@@ -22,6 +22,9 @@ db/*.sqlite3-journal
 tmp
 tmp/**/*
 
+# unicorn config
+config/unicorn/development.rb
+
 # Documentation
 doc/api
 doc/app
