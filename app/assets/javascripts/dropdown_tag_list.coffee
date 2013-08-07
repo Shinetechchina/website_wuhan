@@ -23,6 +23,8 @@ App.DropdownTagList =
       self.setTag($link.data('tag'))
       self.render()
 
+      App.BoxManager.load(location.pathname)
+
   render: (value) ->
     @$toggle.text(@getTag() || 'all')
 
