@@ -14,7 +14,7 @@ require 'mina/rvm'    # for rvm support. (http://rvm.io)
 set :domain, '192.168.1.39'
 set :deploy_to, '/apps/website_wuhan'
 set :repository, 'https://github.com/Shinetechchina/website_wuhan.git'
-set :branch, 'deploy'
+set :branch, 'master'
 set :app_path, "#{deploy_to}/#{current_path}"
 
 # Manually create these paths in shared/ (eg: shared/config/database.yml) in your server.
