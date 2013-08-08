@@ -9,8 +9,8 @@ class SiteController < ApplicationController
     @staffs = Refinery::Staffs::Staff.order('name').limit(3)
 
     if has_tag?
-      @technologies = @technologies.tagged_with(tag, any: true)
-      @staffs = @staffs.tagged_with(tag, any: true)
+      @technologies = @technologies.order_by_tag(tag)
+      @staffs = @staffs.order_by_tag(tag)
     end
 
     if request.xhr?

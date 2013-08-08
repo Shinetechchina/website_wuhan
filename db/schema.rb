@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130730071846) do
+ActiveRecord::Schema.define(:version => 20130808005534) do
 
   create_table "authentications", :force => true do |t|
     t.string   "provider"
@@ -105,15 +105,6 @@ ActiveRecord::Schema.define(:version => 20130730071846) do
   add_index "refinery_pages", ["parent_id"], :name => "index_refinery_pages_on_parent_id"
   add_index "refinery_pages", ["rgt"], :name => "index_refinery_pages_on_rgt"
 
-  create_table "refinery_references", :force => true do |t|
-    t.string   "title"
-    t.integer  "image_id"
-    t.text     "content"
-    t.integer  "position"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
   create_table "refinery_resources", :force => true do |t|
     t.string   "file_mime_type"
     t.string   "file_name"
@@ -168,12 +159,13 @@ ActiveRecord::Schema.define(:version => 20130730071846) do
     t.integer  "image_id"
     t.text     "description"
     t.integer  "position"
-    t.datetime "created_at",   :null => false
-    t.datetime "updated_at",   :null => false
+    t.datetime "created_at",                 :null => false
+    t.datetime "updated_at",                 :null => false
     t.string   "github_url"
     t.string   "linkedin_url"
     t.string   "twitter_url"
     t.string   "weibo_url"
+    t.string   "tags",         :limit => 50,                 :array => true
   end
 
   create_table "refinery_technologies", :force => true do |t|
@@ -181,8 +173,9 @@ ActiveRecord::Schema.define(:version => 20130730071846) do
     t.integer  "image_id"
     t.text     "description"
     t.integer  "position"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.datetime "created_at",                :null => false
+    t.datetime "updated_at",                :null => false
+    t.string   "tags",        :limit => 30,                 :array => true
   end
 
   create_table "refinery_user_plugins", :force => true do |t|
@@ -225,22 +218,5 @@ ActiveRecord::Schema.define(:version => 20130730071846) do
 
   add_index "seo_meta", ["id"], :name => "index_seo_meta_on_id"
   add_index "seo_meta", ["seo_meta_id", "seo_meta_type"], :name => "index_seo_meta_on_seo_meta_id_and_seo_meta_type"
-
-  create_table "taggings", :force => true do |t|
-    t.integer  "tag_id"
-    t.integer  "taggable_id"
-    t.string   "taggable_type"
-    t.integer  "tagger_id"
-    t.string   "tagger_type"
-    t.string   "context",       :limit => 128
-    t.datetime "created_at"
-  end
-
-  add_index "taggings", ["tag_id"], :name => "index_taggings_on_tag_id"
-  add_index "taggings", ["taggable_id", "taggable_type", "context"], :name => "index_taggings_on_taggable_id_and_taggable_type_and_context"
-
-  create_table "tags", :force => true do |t|
-    t.string "name"
-  end
 
 end

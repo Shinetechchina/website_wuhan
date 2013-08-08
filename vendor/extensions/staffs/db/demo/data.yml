@@ -4,7 +4,7 @@
   email: 'christian_bale@example.com'
   number: 122
   title: 'Ruby developer'
-  tag_list: "ruby"
+  tags: ["ruby"]
   description: "A great English actor"
 -
   name: 'Christopher nolan'
@@ -12,7 +12,7 @@
   email: 'christopher_nolan@example.com'
   number: 181
   title: 'Ruby and Javascript developer'
-  tag_list: "ruby, javascript"
+  tags: ["ruby", "javascript"]
   description: "A great English writer and director"
 -
   name: 'Cillian Murphy'
@@ -20,7 +20,7 @@
   email: 'cillian_murphy@example.com'
   number: 212
   title: 'javascript developer'
-  tag_list: "javascript"
+  tags: ["javascript"]
   description: "A great javascript developer in Shintech"
 -
   name: 'Peter Jacobsen'
@@ -28,6 +28,6 @@
   email: 'peter_jacobsen@example.com'
   number: 377
   title: '.Net developer'
-  tag_list: ".net"
+  tags: [".net"]
   description: "A great .net developer, his a good man, he like fishing and writting."
 

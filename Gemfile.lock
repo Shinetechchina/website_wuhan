@@ -5,8 +5,6 @@ PATH
       refinerycms-core (~> 2.0.10)
     refinerycms-messages (1.0)
       refinerycms-core (~> 2.0.10)
-    refinerycms-references (1.0)
-      refinerycms-core (~> 2.0.10)
     refinerycms-services (1.0)
       refinerycms-core (~> 2.0.10)
     refinerycms-staffs (1.0)
@@ -44,8 +42,6 @@ GEM
     activesupport (3.2.13)
       i18n (= 0.6.1)
       multi_json (~> 1.0)
-    acts-as-taggable-on (2.4.1)
-      rails (>= 3, < 5)
     acts_as_indexed (0.7.8)
     arel (3.0.2)
     awesome_nested_set (2.1.6)
@@ -163,6 +159,7 @@ GEM
       activerecord (~> 3.0)
       railties (~> 3.0)
     pg (0.15.1)
+    pg_array_parser (0.0.9)
     poltergeist (1.0.3)
       capybara (~> 1.1)
       childprocess (~> 0.3)
@@ -170,6 +167,9 @@ GEM
       http_parser.rb (~> 0.5.3)
       multi_json (~> 1.0)
     polyglot (0.3.3)
+    postgres_ext (0.4.0)
+      activerecord (~> 3.2.0)
+      pg_array_parser (~> 0.0.8)
     pry (0.9.12.2)
       coderay (~> 1.0.5)
       method_source (~> 0.8)
@@ -306,7 +306,6 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  acts-as-taggable-on
   better_errors
   binding_of_caller
   bourbon
@@ -323,13 +322,13 @@ DEPENDENCIES
   omniauth-weibo-oauth2
   pg
   poltergeist
+  postgres_ext
   pry-rails
   quiet_assets
   rails (= 3.2.13)
   refinerycms (~> 2.0.0)
   refinerycms-clients!
   refinerycms-messages!
-  refinerycms-references!
   refinerycms-services!
   refinerycms-staffs!
   refinerycms-technologies!

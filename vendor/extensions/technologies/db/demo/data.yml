@@ -1,7 +1,7 @@
 -
   title: Backbone
   image: backbone_logo.png
-  tag_list: "backbone, javascript, mvc"
+  tags: ["backbone", "javascript", "mvc"]
   description: "<p>Simple, lightweight and module JavaScript framework.</p>"
 -
   title: Elasticsearch
@@ -11,30 +11,30 @@
 -
   title: Ember
   image: ember_logo.png
-  tag_list: "ember, javascript, mvc"
+  tags: ["ember", "javascript", "mvc"]
   description: "<p>Ember is a JavaScript framework for creating ambitious web applications that eliminates boilerplate and provides a standard application architecture.</p>"
 -
   title: Handlebars
   image: handlebars_logo.png
-  tag_list: "handlebars, template, javascript"
+  tags: ["handlebars", "template", "javascript"]
   description: "<p>Handlebars provides the power necessary to let you build semantic templates effectively with no frustration.</p>"
 -
   title: PhoneGap
   image: phonegap_logo.png
-  tag_list: "phonegap, mobile app, javascript"
+  tags: ["phonegap", "mobile app", "javascript"]
   description: "<p>PhoneGap is an open source framework for quickly building cross-platform mobile apps using HTML5, Javascript and CSS.</p>"
 -
   title: Ruby on Rails
   image: rails_logo.png
-  tag_list: "rails, ruby, rack, mvc"
+  tags: ["rails", "ruby", "rack", "mvc"]
   description: "<p>Ruby on Rails is a web framework optimized for programmer happiness and sustainable productivity. It lets you write beautiful code by favoring convention over configuration.</p>"
 -
   title: Sinatra
   image: sinatra_logo.png
-  tag_list: "sinatra, ruby, rack"
+  tags: ["sinatra", "ruby", "rack"]
   description: "<p>Simple and event based Rack framework. It is a DSL for quickly creating web applications in Ruby with minimal effort.</p>"
 -
   title: jQuery
   image: jquery_logo.png
-  tag_list: "jquery, javascript"
+  tags: ["jquery", "javascript"]
   description: "<p>jQuery is a fast, concise, library that simplifies how to traverse HTML documents, handle events, perform animations, and add AJAX.configuration.</p>"

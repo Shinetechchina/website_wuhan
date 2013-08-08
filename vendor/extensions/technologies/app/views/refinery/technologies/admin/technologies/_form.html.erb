@@ -22,7 +22,7 @@
 
   <div class='field'>
     <%= f.label :tags -%>
-    <%= f.text_field :tag_list, class: 'tags-input', value: @technology.tag_list %>
+    <%= f.text_field :tags, class: 'tags-input', value: @technology.tags.join(',') %>
   </div>
 
   <div class='field'>

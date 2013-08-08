@@ -2,12 +2,12 @@ class CreateStaffsStaffs < ActiveRecord::Migration
 
   def up
     create_table :refinery_staffs do |t|
-      t.string :name
-      t.string :email
+      t.string  :name
+      t.string  :email
       t.integer :number
-      t.string :title
+      t.string  :title
       t.integer :image_id
-      t.text :description
+      t.text    :description
       t.integer :position
 
       t.timestamps

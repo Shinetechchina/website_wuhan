@@ -14,8 +14,8 @@ gem 'httparty'
 gem 'omniauth'
 gem 'omniauth-weibo-oauth2'
 
-#tagging
-gem 'acts-as-taggable-on', require: false
+# postgres array for Rails 3
+gem 'postgres_ext'
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -71,7 +71,6 @@ gem 'unicorn'
 
 gem 'refinerycms-staffs', :path => 'vendor/extensions'
 gem 'refinerycms-services', :path => 'vendor/extensions'
-gem 'refinerycms-references', :path => 'vendor/extensions'
 gem 'refinerycms-technologies', :path => 'vendor/extensions'
 gem 'refinerycms-clients', path: 'vendor/extensions'
 

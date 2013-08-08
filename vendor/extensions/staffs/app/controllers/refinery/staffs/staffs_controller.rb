@@ -3,7 +3,7 @@ module Refinery
     class StaffsController < ::ApplicationController
       def index
         @staffs = Staff.scoped
-        @staffs = @staffs.tagged_with(tag, any: true) if has_tag?
+        @staffs = @staffs.order_by_tag(tag) if has_tag?
 
         if request.xhr?
           render layout: false

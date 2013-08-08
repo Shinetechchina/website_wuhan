@@ -2,9 +2,9 @@ class CreateTechnologiesTechnologies < ActiveRecord::Migration
 
   def up
     create_table :refinery_technologies do |t|
-      t.string :title
+      t.string  :title
       t.integer :image_id
-      t.text :description
+      t.text    :description
       t.integer :position
 
       t.timestamps
