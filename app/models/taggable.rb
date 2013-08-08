@@ -5,7 +5,11 @@ module Taggable
 
   module ClassMethods
     def order_by_tag(tag)
-      order("tags @> '{#{tag}}' desc")
+      if tag.present?
+        order("tags @> '{#{tag}}' desc")
+      else
+        scoped
+      end
     end
   end
 

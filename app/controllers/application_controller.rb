@@ -8,7 +8,7 @@ class ApplicationController < ActionController::Base
   protected
 
   def tag
-    @tag ||= cookies[:tag].present? ? cookies[:tag].split(',') : []
+    @tag ||= cookies[:tag].present? ? cookies[:tag] : nil
   end
 
   def set_tag
