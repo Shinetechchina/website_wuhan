@@ -1,28 +1,26 @@
 App.Router =
   elMenu: null
 
-  currentPage: null
-
   init: ->
     @elMenu = $('#menu')
+    @initRoutes()
+    @bindEvents()
 
-    @currentPage = location.pathname.match(/^(\/\w*)/)[1]
-
+  initRoutes: ->
     pageRoute = crossroads.addRoute '/:page:/:id:'
 
-    onRouteChange = (page, id) =>
-      page = if page then "/#{page}" else '/'
+    window.pageRoute = pageRoute
 
+    # strict pageRoute to respond pages below
+    pageRoute.rules =
+      page: ['clients', 'services', 'technologies', 'staff', 'blog']
+
+    onRouteChange = (reload, page, id) =>
+      page = if page then "/#{page}" else '/'
       @activeMenuItem(page)
-      if @currentPage == page
-        App.BoxManager.expandBox(id)
-      else
-        @currentPage = page
-        App.BoxManager.load(page, id)
+      App.BoxManager.render(page, id, reload)
 
     pageRoute.matched.add(onRouteChange)
-
-    @bindEvents()
 
   bindEvents: ->
     return unless Modernizr.history
@@ -31,11 +29,11 @@ App.Router =
       e.preventDefault()
       el = $(@)
       url = el.attr('href')
-      crossroads.parse(url)
+      crossroads.parse(url, [false])
       history.pushState(null, null, url) if url
 
     $(window).on 'popstate', ->
-      crossroads.parse(location.pathname)
+      crossroads.parse(location.pathname, [false])
 
   activeMenuItem: (route) ->
     @elMenu
@@ -43,3 +41,8 @@ App.Router =
       .find('li').each ->
         li = $(@)
         li.addClass('selected') if li.find('a').attr('href') == route
+
+  reload: ->
+    # Reset state first, otherwise crossroads won't diapatch for the same url
+    crossroads.resetState()
+    crossroads.parse(location.pathname, [true])

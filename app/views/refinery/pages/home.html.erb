@@ -9,7 +9,6 @@
     </div>
   </div>
 <% end %>
-<%= fill_with_boxes 3 - @clients.size if @clients.size < 3 %>
 
 <% @services.each do |service| %>
   <div class="box box-service">
@@ -23,7 +22,6 @@
     </div>
   </div>
 <% end %>
-<%= fill_with_boxes 3 - @services.size if @services.size < 3 %>
 
 <% @technologies.each do |tech| %>
   <div class="box box-tech">
@@ -37,7 +35,6 @@
     </a>
   </div>
 <% end %>
-<%= fill_with_boxes 3 - @technologies.size if @technologies.size < 3 %>
 
 <% @staffs.each do |staff| %>
   <div class="box box-staff">
@@ -50,7 +47,6 @@
     </div>
   </div>
 <% end %>
-<%= fill_with_boxes 3 - @staffs.size if @staffs.size < 3 %>
 
 <div class="box box-double box-about">
   <h3> About ShineNext</h3>
