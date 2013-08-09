@@ -37,6 +37,10 @@ App.BoxManager =
   reLayout: ->
     @$container.masonry('layout')
 
+  # The usage of reload:
+  #   When calling render() without reload, if the page is not change, BoxManager only expand the box via id without reload boxes from server.
+  #   With reload, BoxManager loads all the boxes from server.
+  #   Currently only tag switching needs this argument.
   render: (page, id, reload) ->
     self = @
     $container = @$container
