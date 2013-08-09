@@ -1,9 +1,11 @@
 <% @clients.each do |client| %>
-  <div class="box box-client box-expandable">
+  <div class="box box-client box-expandable <%= 'box-expanded' if params[:id] == client.id.to_s %>" data-id="<%= client.id %>">
     <div class="mini">
-      <div class="client-logo">
-        <%= image_tag client.logo.url %>
-      </div>
+      <a class="route" href="/clients/<%= client.id %>">
+        <div class="client-logo">
+          <%= image_tag client.logo.url %>
+        </div>
+      </a>
     </div>
     <div class="maxi">
       <div class="client-content">
