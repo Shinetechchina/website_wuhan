@@ -2,6 +2,7 @@
 #= require jquery_ujs
 #= require jquery.cookie
 #= require bootstrap-dropdown
+#= require bootstrap-modal
 #= require jquery.tagsinput
 #= require masonry.pkgd.min
 #= require signals.min
@@ -13,12 +14,14 @@
 #= require video_modal
 #= require overlay
 #= require masthead
+#= require custom_boxes
 
 window.App = App =
   $menu: null
 
   init: ->
     App.BoxManager.init()
+    App.CustomBoxes.init()
     App.Router.init()
     App.DropdownTagList.init()
     App.Masthead.init()

@@ -9,6 +9,12 @@ WebsiteWuhan::Application.routes.draw do
 
   Refinery::Core::Engine.routes.draw do
     get '/blog', to: 'pages#blog'
+    get '/boxes', to: 'pages#boxes'
+    resources :boxes, only: [:create] do
+      collection do
+        post :select_type
+      end
+    end
 
     devise_scope :refinery_user do
       get '/auth/:provider/callback', to: 'sessions#auth'

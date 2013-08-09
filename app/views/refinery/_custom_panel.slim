@@ -1,0 +1,19 @@
+#custom-panel
+  h3 Select boxes add to page
+  #custom-boxes-list
+    ul
+      li
+        a#new-box.box-option href="#newBoxModal" data-toogle="modal"
+          i.icon-plus
+        | New box
+      - if @boxes.present?
+        - @boxes.each do |box|
+          li
+            .box-option
+              .box-option-nav
+                = box.boxable_type_name
+              .box-option-content
+                = box.boxable_title
+            i.icon-edit
+            | &nbsp;
+            i.icon-remove

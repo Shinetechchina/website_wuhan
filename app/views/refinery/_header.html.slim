@@ -20,6 +20,9 @@
           li.last
             a.route href="/blog" BLOG
 
+          - if current_refinery_user.try(:is_admin?) and request.path == '/'
+            li
+              =link_to 'BOXES', boxes_path, id: 'boxes-link', class: "route"
 
       .dropdown.dropdown-tag
         a.dropdown-toggle data-toggle="dropdown" href="#"

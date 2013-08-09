@@ -4,6 +4,7 @@ module Refinery
       self.table_name = 'refinery_services'
 
       attr_accessible :title, :color, :icon, :expanded, :short_content, :content, :position
+      alias_attribute :name, :title
 
       acts_as_indexed :fields => [:title, :short_content, :content]
 

@@ -13,7 +13,7 @@ App.Router =
 
     # strict pageRoute to respond pages below
     pageRoute.rules =
-      page: ['clients', 'services', 'technologies', 'staff', 'blog']
+      page: ['clients', 'services', 'technologies', 'staff', 'blog', 'boxes']
 
     onRouteChange = (reload, page, id) =>
       page = if page then "/#{page}" else '/'
