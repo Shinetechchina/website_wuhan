@@ -4,9 +4,9 @@ class Box < ActiveRecord::Base
 
   BOXABLE_TYPES = ['Refinery::Staffs::Staff', 'Refinery::Technologies::Technology', 'Refinery::Shinetech::Client', 'Refinery::Services::Service']
 
-  validates_presence_of :template, :position
-  validates_uniqueness_of :position
-  validates_inclusion_of :boxable_type, in: BOXABLE_TYPES, allow_nil: true
+  validates_presence_of :template, :position, :boxable
+  validates_uniqueness_of :position, :boxable
+  validates_inclusion_of :boxable_type, in: BOXABLE_TYPES
 
   scope :arranged, where("position IS NOT NULL").order(:position)
   scope :statical, where(boxable_type: nil)

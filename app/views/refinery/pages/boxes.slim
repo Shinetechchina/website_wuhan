@@ -9,9 +9,11 @@
       i.icon-plus
 
 #newBoxModal.modal.hide.fade tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"
+  .modal-header
+    a.pull-right.close.pointer data-dismiss="modal" aria-hidden="true" style="color:#ccc!important"
+      i.icon-remove
+    h3 Please select box's type and name...
   .modal-body
-    h3 Please select box type and data...
-    hr
     = form_for Box.new do |f|
       .field
         = f.label :boxable_type, "Box type"
