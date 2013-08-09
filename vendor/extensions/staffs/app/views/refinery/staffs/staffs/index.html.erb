@@ -1,9 +1,11 @@
 <% @staffs.each do |staff| %>
-  <div class="box box-staff box-expandable">
+  <div class="box box-staff box-expandable <%= 'box-expanded' if params[:id] == staff.id.to_s %>" data-id="<%= staff.id %>">
     <div class="mini">
-      <div class="staff-thumb" style="background-image: url('<%= staff.image_url %>');">
-        <div class="staff-name"><%= staff.name %></div>
-      </div>
+      <a class="route" href="/staff/<%= staff.id %>">
+        <div class="staff-thumb" style="background-image: url('<%= staff.image_url %>');">
+          <div class="staff-name"><%= staff.name %></div>
+        </div>
+      </a>
     </div>
 
     <div class="maxi">

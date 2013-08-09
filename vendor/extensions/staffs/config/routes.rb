@@ -1,6 +1,6 @@
 Refinery::Core::Engine.routes.append do
   namespace :staffs, :path => '' do
-    get '/staff' => 'staffs#index'
+    get '/staff(/:id)' => 'staffs#index'
 
     namespace :admin, :path => 'refinery' do
       resources :staffs, :except => :show do

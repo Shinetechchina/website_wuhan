@@ -4,7 +4,8 @@
 #= require bootstrap-dropdown
 #= require jquery.tagsinput
 #= require masonry.pkgd.min
-#= require path.min
+#= require signals.min
+#= require crossroads.min
 #= require_self
 #= require box_manager
 #= require router

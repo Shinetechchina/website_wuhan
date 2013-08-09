@@ -9,36 +9,37 @@ App.BoxManager =
       columnWidth: 279
       gutter: 18
 
-    @$container.on 'click', '.box-expandable', ->
-      self.expandBox(@)
-
     @initBoxVideo()
 
   # 展开box，只有class为box-expandable的box才会响应这个方法
   expandBox: (el) ->
-    $el = $(el)
+    if typeof el == 'string'
+      $el = @$container.find(".box[data-id=#{el}]")
+    else
+      $el = $(el)
     expandedClass = $el.data('expanded-class')
     return if $el.hasClass('box-expanded')
 
     @$container.find(".box-expandable").removeClass('box-expanded') #.removeClass(expandedClass)
     $el.addClass('box-expanded') #.addClass(expandedClass)
 
-    onLayoutComplete = ->
-      $(document.body).animate scrollTop: $el.offset().top - parseInt($('#box-container').css('margin-top').replace('px', ''))
-      true
+    # onLayoutComplete = ->
+    #   $(document.body).animate scrollTop: $el.offset().top - parseInt($('#box-container').css('margin-top').replace('px', ''))
+    #   true
 
     @reLayout()
-    @$container.masonry 'on', 'layoutComplete', onLayoutComplete
+    # @$container.masonry 'on', 'layoutComplete', onLayoutComplete
 
   reLayout: ->
     @$container.masonry('layout')
 
-  load: (url) ->
+  load: (page, id) ->
     self = @
     $container = @$container
 
-    App.Overlay.show(mask: true) if url == '/blog'
+    App.Overlay.show(mask: true) if page == '/blog'
 
+    url = if id then "#{page}/#{id}" else page
     $.get(url).success (result) ->
       App.Overlay.hide()
 

@@ -1,39 +1,41 @@
 App.Router =
   elMenu: null
 
-  pageFirstLoaded: true
+  currentPage: null
 
   init: ->
     @elMenu = $('#menu')
 
-    @registerRoute '/'
-    @registerRoute '/services'
-    @registerRoute '/clients'
-    @registerRoute '/technologies'
-    @registerRoute '/staff'
-    @registerRoute '/blog'
+    @currentPage = location.pathname.match(/^(\/\w*)/)[1]
 
-    Path.history.listen()
+    pageRoute = crossroads.addRoute '/:page:/:id:'
 
-    @bindLinks()
+    onRouteChange = (page, id) =>
+      page = if page then "/#{page}" else '/'
 
-  registerRoute: (route) ->
-    self = @
-
-    Path.map(route).enter(->
-      self.activeMenuItem(route)
-    ).to(->
-      if self.pageFirstLoaded
-        self.pageFirstLoaded = false
+      @activeMenuItem(page)
+      if @currentPage == page
+        App.BoxManager.expandBox(id)
       else
-        App.BoxManager.load(route)
-    )
+        @currentPage = page
+        App.BoxManager.load(page, id)
 
-  bindLinks: ->
+    pageRoute.matched.add(onRouteChange)
+
+    @bindEvents()
+
+  bindEvents: ->
+    return unless Modernizr.history
+
     $('body').on 'click.route', 'a.route', (e) ->
       e.preventDefault()
       el = $(@)
-      Path.history.pushState({}, "", el.attr('href')) if el.attr('href')
+      url = el.attr('href')
+      crossroads.parse(url)
+      history.pushState(null, null, url) if url
+
+    $(window).on 'popstate', ->
+      crossroads.parse(location.pathname)
 
   activeMenuItem: (route) ->
     @elMenu

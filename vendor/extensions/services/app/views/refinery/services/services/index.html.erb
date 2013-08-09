@@ -1,10 +1,12 @@
 <% @services.each do |s| %>
-  <div class="box box-service box-expandable <%= 'box-expanded' if s.expanded %>">
+  <div class="box box-service box-expandable <%= 'box-expanded' if params[:id] == s.id.to_s %>" data-id="<%= s.id %>">
     <div class="mini">
-      <div class="box-hover-content" style="border-color: <%= s.color %>"></div>
-      <i class="icon icon-<%= s.icon %>" style="color: <%= s.color %>"></i>
-      <h3 style="color: <%= s.color %>"><%= s.title %></h3>
-      <p><%= s.short_content %></p>
+      <a class="route" href="/services/<%= s.id %>">
+        <div class="box-hover-content" style="border-color: <%= s.color %>"></div>
+        <i class="icon icon-<%= s.icon %>" style="color: <%= s.color %>"></i>
+        <h3 style="color: <%= s.color %>"><%= s.title %></h3>
+        <p><%= s.short_content %></p>
+      </a>
     </div>
     <div class="maxi">
       <i class="icon icon-<%= s.icon %>" style="color: <%= s.color %>"></i>

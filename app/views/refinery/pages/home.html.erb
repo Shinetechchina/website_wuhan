@@ -1,42 +1,33 @@
-<div class="box box-title" style="background-color: rgb(238, 95, 91)">
-  <h2>Who we work with:</h2>
-</div>
 <% @clients.each do |client| %>
   <div class="box box-client">
-    <a class="route box-link" href="/clients">
-      <div class="mini">
+    <div class="mini">
+      <a class="route" href="/clients/<%= client.id %>">
         <div class="client-logo">
           <%= image_tag client.logo.url %>
         </div>
-      </div>
-    </a>
+      </a>
+    </div>
   </div>
 <% end %>
 <%= fill_with_boxes 3 - @clients.size if @clients.size < 3 %>
 
-<div class="box box-title" style="background-color: rgb(0, 136, 204)">
-  <h2>What we can offer:</h2>
-</div>
 <% @services.each do |service| %>
   <div class="box box-service">
-    <a class="route box-link" href="/services">
-      <div class="mini">
+    <div class="mini">
+      <a class="route" href="/services/<%= service.id %>">
         <div class="box-hover-content" style="border-color: <%= service.color %>"></div>
         <i class="icon icon-<%= service.icon %>" style="color: <%= service.color %>"></i>
         <h3 style="color: <%= service.color %>"><%= service.title %></h3>
         <p><%= service.short_content %></p>
-      </div>
-    </a>
+      </a>
+    </div>
   </div>
 <% end %>
 <%= fill_with_boxes 3 - @services.size if @services.size < 3 %>
 
-<div class="box box-title" style="background-color: rgb(81, 163, 81)">
-  <h2>What technology we use:</h2>
-</div>
 <% @technologies.each do |tech| %>
   <div class="box box-tech">
-    <a class="route box-link" href="/technologies">
+    <a class="route" href="/technologies">
       <div class="tech-title" target="_blank">
         <%= image_tag tech.image_url %>
       </div>
@@ -48,18 +39,15 @@
 <% end %>
 <%= fill_with_boxes 3 - @technologies.size if @technologies.size < 3 %>
 
-<div class="box box-title" style="background-color:rgb(47, 150, 180)">
-  <h2>Our staffs:</h2>
-</div>
-<% for staff in @staffs %>
+<% @staffs.each do |staff| %>
   <div class="box box-staff">
-    <a class="route" href="/staff">
-      <div class="mini">
+    <div class="mini">
+      <a class="route" href="/staff/<%= staff.id %>">
         <div class="staff-thumb" style="background-image: url('<%= staff.image_url %>');">
           <div class="staff-name"><%= staff.name %></div>
         </div>
-      </div>
-    </a>
+      </a>
+    </div>
   </div>
 <% end %>
 <%= fill_with_boxes 3 - @staffs.size if @staffs.size < 3 %>
@@ -80,7 +68,4 @@
     <li><i class="icon-twitter"></i></li>
     <li><i class="icon-github"></i></li>
   </ul>
-</div>
-<div class="box box-video" data-video-id="Eqv3Et_EqJs">
-  <a class="btn-play"><i class="icon-play"></i></a>
 </div>
