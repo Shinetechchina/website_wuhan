@@ -4,6 +4,8 @@ module Refinery
       self.table_name = 'refinery_technologies'
 
       attr_accessible :tags, :title, :image_id, :description, :position
+      alias_attribute :name, :title
+
       acts_as_indexed :fields => [:title]
 
       validates_presence_of :title, :image, :description
