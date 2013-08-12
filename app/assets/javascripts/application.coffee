@@ -28,8 +28,12 @@ window.App = App =
 
     @initSlide()
     @initGuest()
+    @initMessage()
 
   initMenu: ->
+
+  initMessage: ->
+     $("#message_container").slideDown().delay(3000).slideUp()
 
   initSlide: ->
     $(document.body).on 'click', '.slide .tabs li, .slide .bullets li', ->

@@ -6,7 +6,7 @@ class Box < ActiveRecord::Base
 
   validates_presence_of :template, :position, :boxable_type, :boxable_id
   validates_uniqueness_of :position
-  validates_uniqueness_of :boxable_type, scope: [:boxable_id]
+  validates_uniqueness_of :boxable_id, scope: :boxable_type, message: "box is has already been taken"
   validates_inclusion_of :boxable_type, in: BOXABLE_TYPES
 
   scope :arranged, where("position IS NOT NULL").order(:position)

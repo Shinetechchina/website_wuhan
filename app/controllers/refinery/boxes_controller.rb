@@ -15,6 +15,10 @@ class Refinery::BoxesController < ApplicationController
     respond_to do |format|
       if @box.save
         format.html { redirect_to request.path }
+        flash[:notice] = "create box successful !"
+      else
+        flash[:error] = @box.errors.to_a.join(';')
+        format.html { redirect_to request.path }
       end
     end
   end
