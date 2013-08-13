@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130808005534) do
+ActiveRecord::Schema.define(:version => 20130813033443) do
 
   add_extension "hstore"
 
@@ -29,7 +29,6 @@ ActiveRecord::Schema.define(:version => 20130808005534) do
     t.integer  "boxable_id"
     t.string   "boxable_type"
     t.string   "template"
-    t.integer  "tag_id"
     t.datetime "created_at",   :null => false
     t.datetime "updated_at",   :null => false
   end

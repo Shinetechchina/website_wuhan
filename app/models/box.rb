@@ -1,5 +1,5 @@
 class Box < ActiveRecord::Base
-  attr_accessible :boxable_id, :boxable_type, :position, :template, :tag_id
+  attr_accessible :boxable_id, :boxable_type, :position, :template
   belongs_to :boxable, polymorphic: true
 
   BOXABLE_TYPES = ['Refinery::Staffs::Staff', 'Refinery::Technologies::Technology', 'Refinery::Shinetech::Client', 'Refinery::Services::Service']
