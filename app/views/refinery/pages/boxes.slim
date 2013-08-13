@@ -1,12 +1,10 @@
 - if @boxes.present?
   - @boxes.each do |box|
-    .item
-      =render box.template, boxable: box.boxable
+    =render box.template, boxable: box.boxable
 
-.item
-  .box.new-box
-    a.new-box-inner data-toggle="modal" href="#newBoxModal"
-      i.icon-plus
+.box.new-box
+  a.new-box-inner data-toggle="modal" href="#newBoxModal"
+    i.icon-plus
 
 #newBoxModal.modal.hide.fade tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"
   .modal-header
