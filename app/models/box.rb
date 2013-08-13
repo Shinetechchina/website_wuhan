@@ -5,8 +5,7 @@ class Box < ActiveRecord::Base
   BOXABLE_TYPES = ['Refinery::Staffs::Staff',
                    'Refinery::Technologies::Technology',
                    'Refinery::Shinetech::Client',
-                   'Refinery::Services::Service',
-                   'Refinery::CustomBoxes::CustomBox']
+                   'Refinery::Services::Service']
 
   validates_presence_of :template, :position, :boxable_type, :boxable_id
   validates_uniqueness_of :position

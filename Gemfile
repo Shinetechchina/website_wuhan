@@ -72,7 +72,4 @@ gem 'refinerycms-staffs', :path => 'vendor/extensions'
 gem 'refinerycms-services', :path => 'vendor/extensions'
 gem 'refinerycms-technologies', :path => 'vendor/extensions'
 gem 'refinerycms-clients', path: 'vendor/extensions'
-
 gem 'refinerycms-messages', :path => 'vendor/extensions'
-
-gem 'refinerycms-custom_boxes', :path => 'vendor/extensions'
