@@ -20,7 +20,7 @@
           li.last
             a.route href="/blog" BLOG
 
-          - if current_refinery_user.has_role?(:superuser)
+          - if current_refinery_user.try(:has_role?, :superuser)
             li
               =link_to 'BOXES', boxes_path, id: 'boxes-link', class: "route"
 
