@@ -4,7 +4,11 @@
 #= require bootstrap-dropdown
 #= require bootstrap-modal
 #= require jquery.tagsinput
-#= require masonry.pkgd.min
+#
+# require masonry.pkgd.min
+#= require jquery-ui-1.10.3.custom
+#= require shapeshift/jquery.shapeshift
+#
 #= require signals.min
 #= require crossroads.min
 #= require_self

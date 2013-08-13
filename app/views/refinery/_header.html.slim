@@ -22,7 +22,7 @@
 
           - if current_refinery_user.try(:has_role?, :superuser)
             li
-              =link_to 'BOXES', boxes_path, id: 'boxes-link', class: "route"
+              =link_to 'BOXES', '/boxes', id: 'boxes-link', class: "route"
 
       .dropdown.dropdown-tag
         a.dropdown-toggle data-toggle="dropdown" href="#"

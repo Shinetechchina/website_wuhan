@@ -1,7 +1,5 @@
 .box
-  @include span-columns(3)
-  @include omega(4n)
-  position: relative
+  position: absolute
   width: $box-width
   height: $box-height
   margin-bottom: $gutter
@@ -133,11 +131,10 @@
     bottom: 30px
 
 .box-double
-  @include span-columns(6)
-  width: $box-double-width
+  width: $box-width-2x
 
 .box-triple
-  @include span-columns(9)
+  width: $box-width-3x
 
 .box-hover-content
   @include position(absolute, 0px 0px 0px 0px)

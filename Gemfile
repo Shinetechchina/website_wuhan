@@ -37,7 +37,6 @@ gem 'refinerycms', '~> 2.0.0'
 gem 'liquid', '~> 2.5.0'
 gem 'codemirror-rails'
 gem 'bourbon'
-gem 'neat'
 
 group :development do
   gem 'better_errors'

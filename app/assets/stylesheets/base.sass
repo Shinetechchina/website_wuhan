@@ -75,9 +75,16 @@ a
     margin-bottom: 50px
 
 .container
-  @include outer-container
-  max-width: $max-width
+  margin: 0 auto
+  max-width: $box-width-4x
   min-width: $box-width
+
+  &:before, &:after
+    display: table
+    content: ""
+
+  &:after
+    clear: both
 
 .header
   position: fixed

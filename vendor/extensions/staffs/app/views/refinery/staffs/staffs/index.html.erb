@@ -1,5 +1,5 @@
 <% @staffs.each do |staff| %>
-  <div class="box box-staff box-expandable <%= 'box-expanded' if params[:id] == staff.id.to_s %>" data-id="<%= staff.id %>">
+  <div class="box box-staff box-expandable <%= 'box-expanded' if params[:id] == staff.id.to_s %>" <%= 'data-ss-colspan=2' if params[:id] == staff.id.to_s %> data-id="<%= staff.id %>" data-expand-cols="2">
     <div class="mini">
       <a class="route" href="/staff/<%= staff.id %>">
         <div class="staff-thumb" style="background-image: url('<%= staff.image_url %>');">

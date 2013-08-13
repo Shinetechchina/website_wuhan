@@ -2,18 +2,19 @@
   text-align: left
 
 .box-client.box-expanded
-  @include span-columns(12)
+  width: $box-width-4x
   height: auto
 
   .client-content
-    @include span-columns(9)
-    padding: 20px 0 20px 20px
+    width: $box-width-3x
+    padding: $gutter
+    padding-right: 0
 
     h1
       margin-top: 0
 
   .client-aside
-    @include span-columns(3)
+    width: $box-width
     padding: 30px 20px
 
 .client-logo
