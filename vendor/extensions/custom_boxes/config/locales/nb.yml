@@ -1,0 +1,30 @@
+nb:
+  refinery:
+    plugins:
+      custom_boxes:
+        title: Custom Boxes
+    custom_boxes:
+      admin:
+        custom_boxes:
+          actions:
+            create_new: Lag en ny Custom Box
+            reorder: Endre rekkefølgen på Custom Boxes
+            reorder_done: Ferdig å endre rekkefølgen Custom Boxes
+          records:
+            title: Custom Boxes
+            sorry_no_results: Beklager! Vi fant ikke noen resultater.
+            no_items_yet: Det er ingen Custom Boxes enda. Klikk på "Lag en ny Custom Box" for å legge til din første custom box.
+          custom_box:
+            view_live_html: Vis hvordan denne custom box ser ut offentlig <br/><em>(åpner i et nytt vindu)</em>
+            edit: Rediger denne custom box
+            delete: Fjern denne custom box permanent
+      custom_boxes:
+        show:
+          other: Andre Custom Boxes
+  activerecord:
+    attributes:
+      'refinery/custom_boxes/custom_box':
+        title: Title
+        width: Width
+        height: Height
+        content: Content

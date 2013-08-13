@@ -1,0 +1,32 @@
+zh-CN:
+  refinery:
+    plugins:
+      custom_boxes:
+        title: Custom Boxes
+    custom_boxes:
+      admin:
+        custom_boxes:
+          actions:
+            create_new: 建立新的 Custom Box
+            reorder: 对 Custom Boxes 重新排序
+            reorder_done: 对 Custom Boxes 的重新排序结束
+          records:
+            title: Custom Boxes
+            sorry_no_results: 对不起，未找到结果。 #Sorry! There are no results found.
+
+            # There are no Custom Boxes yet. Click "Add New Custom Box" to add your first custom box.
+            no_items_yet: 目前没有 Custom Boxes . 点击 "Add New Custom Box" 创建一个custom box.
+          custom_box:
+            view_live_html: 查看 custom box 的最新内容.<br/><em>(新窗口中打开)</em>
+            edit: 编辑 custom box
+            delete: 永久删除 custom box
+      custom_boxes:
+        show:
+          other: 其他 Custom Boxes
+  activerecord:
+    attributes:
+      'refinery/custom_boxes/custom_box':
+        title: Title
+        width: Width
+        height: Height
+        content: Content

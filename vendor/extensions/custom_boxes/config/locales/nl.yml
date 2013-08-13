@@ -1,0 +1,30 @@
+nl:
+  refinery:
+    plugins:
+      custom_boxes:
+        title: Custom Boxes
+    custom_boxes:
+      admin:
+        custom_boxes:
+          actions:
+            create_new: Maak een nieuwe Custom Box
+            reorder: Wijzig de volgorde van de Custom Boxes
+            reorder_done: Klaar met het wijzingen van de volgorde van de Custom Boxes
+          records:
+            title: Custom Boxes
+            sorry_no_results: Helaas! Er zijn geen resultaten gevonden.
+            no_items_yet: Er zijn nog geen Custom Boxes. Druk op 'Maak een nieuwe Custom Box' om de eerste aan te maken.
+          custom_box:
+            view_live_html: Bekijk deze custom box op de website <br/><em>(opent een nieuw venster)</em>
+            edit: Bewerk deze custom box
+            delete: Verwijder deze custom box voor eeuwig
+      custom_boxes:
+        show:
+          other: Andere Custom Boxes
+  activerecord:
+    attributes:
+      'refinery/custom_boxes/custom_box':
+        title: Title
+        width: Width
+        height: Height
+        content: Content

@@ -26,3 +26,6 @@ Refinery::Shinetech::Engine.load_seed
 
 # Added by Refinery CMS Messages extension
 Refinery::Messages::Engine.load_seed
+
+# Added by Refinery CMS Custom Boxes extension
+Refinery::CustomBoxes::Engine.load_seed

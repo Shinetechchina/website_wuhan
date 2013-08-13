@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130813033443) do
+ActiveRecord::Schema.define(:version => 20130813052117) do
 
   add_extension "hstore"
 
@@ -31,6 +31,16 @@ ActiveRecord::Schema.define(:version => 20130813033443) do
     t.string   "template"
     t.datetime "created_at",   :null => false
     t.datetime "updated_at",   :null => false
+  end
+
+  create_table "refinery_custom_boxes", :force => true do |t|
+    t.string   "title"
+    t.integer  "width"
+    t.integer  "height"
+    t.text     "content"
+    t.integer  "position"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "refinery_images", :force => true do |t|

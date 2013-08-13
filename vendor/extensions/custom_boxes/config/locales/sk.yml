@@ -1,0 +1,30 @@
+sk:
+  refinery:
+    plugins:
+      custom_boxes:
+        title: Custom Boxes
+    custom_boxes:
+      admin:
+        custom_boxes:
+          actions:
+            create_new: Pridať Custom Box
+            reorder: Preusporiadať Custom Boxes
+            reorder_done: Koniec radenia Custom Boxes
+          records:
+            title: Custom Boxes
+            sorry_no_results: Ľutujeme, ale neboli nájdené žiadne výsledky.
+            no_items_yet: Nie sú vytvorené žiadne Custom Boxes. Kliknite na "Pridať Custom Box" pre pridanie prvého custom box.
+          custom_box:
+            view_live_html: Zobraziť náhľad custom box<br/><em>(otvorí sa v novom okne)</em>
+            edit: Upraviť custom box
+            delete: Zmazať custom box
+      custom_boxes:
+        show:
+          other: Daľšie Custom Boxes
+  activerecord:
+    attributes:
+      'refinery/custom_boxes/custom_box':
+        title: Title
+        width: Width
+        height: Height
+        content: Content

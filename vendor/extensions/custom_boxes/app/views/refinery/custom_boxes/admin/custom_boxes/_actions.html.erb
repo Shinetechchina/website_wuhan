@@ -1,0 +1,25 @@
+<ul>
+  <% if ::Refinery::CustomBoxes::Admin::CustomBoxesController.searchable? %>
+    <li>
+      <%= render '/refinery/admin/search', :url => refinery.custom_boxes_admin_custom_boxes_path %>
+    </li>
+  <% end %>
+  <li>
+    <%= link_to t('.create_new'), refinery.new_custom_boxes_admin_custom_box_path,
+                 :class => "add_icon" %>
+  </li>
+<% if !searching? && ::Refinery::CustomBoxes::Admin::CustomBoxesController.sortable? && ::Refinery::CustomBoxes::CustomBox.any? %>
+  <li>
+    <%= link_to t('.reorder', :what => "Custom Boxes"),
+                 refinery.custom_boxes_admin_custom_boxes_path,
+                 :id => "reorder_action",
+                 :class => "reorder_icon" %>
+
+    <%= link_to t('.reorder_done', :what => "Custom Boxes"),
+                 refinery.custom_boxes_admin_custom_boxes_path,
+                 :id => "reorder_action_done",
+                 :style => "display: none;",
+                 :class => "reorder_icon" %>
+  </li>
+<% end %>
+</ul>
