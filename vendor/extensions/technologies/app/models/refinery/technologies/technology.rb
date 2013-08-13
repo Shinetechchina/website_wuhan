@@ -12,6 +12,7 @@ module Refinery
       validates :title, :uniqueness => true
 
       belongs_to :image, :class_name => '::Refinery::Image'
+      has_many :boxes, as: :boxable, dependent: :destroy
 
       liquid_methods :title, :description
 

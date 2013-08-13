@@ -10,6 +10,7 @@ module Refinery
       validates :logo, :description, presence: true
 
       belongs_to :logo, :class_name => '::Refinery::Image'
+      has_many :boxes, as: :boxable, dependent: :destroy
 
       default_scope order(:position)
     end

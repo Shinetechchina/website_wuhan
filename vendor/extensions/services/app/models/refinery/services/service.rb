@@ -6,6 +6,7 @@ module Refinery
       attr_accessible :title, :color, :icon, :expanded, :short_content, :content, :position
       alias_attribute :name, :title
 
+      has_many :boxes, as: :boxable, dependent: :destroy
       acts_as_indexed :fields => [:title, :short_content, :content]
 
       validates_presence_of :title, :color, :icon, :short_content, :content

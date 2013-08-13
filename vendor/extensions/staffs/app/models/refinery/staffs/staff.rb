@@ -14,6 +14,7 @@ module Refinery
       validates_format_of :email, with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i
 
       belongs_to :image, :class_name => '::Refinery::Image'
+      has_many :boxes, as: :boxable, dependent: :destroy
 
       liquid_methods :name, :number, :title, :description,
         :email?, :email, :github_url?, :github_url, :linkedin_url?, :linkedin_url, :twitter_url?, :twitter_url, :weibo_url?, :weibo_url
