@@ -4,6 +4,7 @@ module Refinery
       self.table_name = 'refinery_custom_boxes'
 
       attr_accessible :title, :width, :height, :content, :position
+      alias_attribute :name, :title
 
       acts_as_indexed :fields => [:title, :content]
 
