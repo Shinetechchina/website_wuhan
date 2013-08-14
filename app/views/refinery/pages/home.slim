@@ -2,24 +2,25 @@
   - @boxes.each do |box|
     =render box.template, boxable: box.boxable
 
-.box.new-box
-  a.new-box-inner data-toggle="modal" href="#newBoxModal"
-    i.icon-plus
+- if current_refinery_user.present?
+  .box.new-box
+    a.new-box-inner data-toggle="modal" href="#newBoxModal"
+      i.icon-plus
 
-#newBoxModal.modal.hide.fade tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"
-  .modal-header
-    a.pull-right.close.pointer data-dismiss="modal" aria-hidden="true" style="color:#ccc!important"
-      i.icon-remove
-    h3 Please select box's type and name...
-  .modal-body
-    = form_for Box.new, url: '/boxes', method: 'post' do |f|
-      .field
-        = f.label :boxable_type, "Box type"
-        | &nbsp;&nbsp;
-        = f.select :boxable_type, Box::BOXABLE_TYPES.collect{|s|[s.split("::").last, s]}
-      .field
-        = f.label :boxable_id, "Box name"
-        | &nbsp;&nbsp;
-        = select_box_name_by Box::BOXABLE_TYPES.first
-      .field.pull-right
-        = f.submit
+  #newBoxModal.modal.hide.fade tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"
+    .modal-header
+      a.pull-right.close.pointer data-dismiss="modal" aria-hidden="true" style="color:#ccc!important"
+        i.icon-remove
+      h3 Please select box's type and name...
+    .modal-body
+      = form_for Box.new, url: '/boxes', method: 'post' do |f|
+        .field
+          = f.label :boxable_type, "Box type"
+          | &nbsp;&nbsp;
+          = f.select :boxable_type, Box::BOXABLE_TYPES.collect{|s|[s.split("::").last, s]}
+        .field
+          = f.label :boxable_id, "Box name"
+          | &nbsp;&nbsp;
+          = select_box_name_by Box::BOXABLE_TYPES.first
+        .field.pull-right
+          = f.submit

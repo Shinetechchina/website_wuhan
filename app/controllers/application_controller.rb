@@ -4,8 +4,20 @@ class ApplicationController < ActionController::Base
   before_filter :set_tag
 
   # helper_method :tag
+  #
 
-  protected
+  def require_user
+    if current_refinery_user.blank?
+      respond_to do |format|
+        format.html  {
+          authenticate_refinery_user!
+        }
+        format.all {
+          head(:unauthorized)
+        }
+      end
+    end
+  end
 
   def tag
     @tag ||= cookies[:tag].present? ? cookies[:tag] : nil

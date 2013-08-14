@@ -3,6 +3,8 @@ class Refinery::BoxesController < ApplicationController
   include CustomBoxesHelper
   include ActionView::Helpers::FormOptionsHelper
 
+  before_filter :require_user
+
   def select_type
     klass_name = params[:boxable_type]
     render inline: select_box_name_by(klass_name)
