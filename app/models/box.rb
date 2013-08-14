@@ -1,6 +1,7 @@
 class Box < ActiveRecord::Base
-  attr_accessible :boxable_id, :boxable_type, :position, :template
+  attr_accessible :boxable_id, :boxable_type, :position, :template, :boxset_id, :url
   belongs_to :boxable, polymorphic: true
+  belongs_to :boxset
 
   BOXABLE_TYPES = ['Refinery::Staffs::Staff',
                    'Refinery::Technologies::Technology',
@@ -8,7 +9,7 @@ class Box < ActiveRecord::Base
                    'Refinery::Services::Service']
 
   validates_presence_of :template, :position, :boxable_type, :boxable_id
-  validates_uniqueness_of :position
+  validates_uniqueness_of :position, scope: :boxset_id
   validates_uniqueness_of :boxable_id, scope: :boxable_type, allow_nil: true, message: "box is has already been taken"
   validates_inclusion_of :boxable_type, in: BOXABLE_TYPES
 
