@@ -1,5 +1,5 @@
 class Box < ActiveRecord::Base
-  attr_accessible :boxable_id, :boxable_type, :position, :template, :boxset_id, :url
+  attr_accessible :boxable_id, :boxable_type, :position, :template, :box_set_id, :url
   belongs_to :boxable, polymorphic: true
   belongs_to :box_set
 
@@ -8,10 +8,10 @@ class Box < ActiveRecord::Base
                    'Refinery::Shinetech::Client',
                    'Refinery::Services::Service']
 
-  validates_presence_of :template, :position, :boxable_type, :boxable_id
-  validates_uniqueness_of :position, scope: :boxset_id
-  validates_uniqueness_of :boxable_id, scope: :boxable_type, allow_nil: true, message: "box is has already been taken"
-  validates_inclusion_of :boxable_type, in: BOXABLE_TYPES
+  validates_presence_of :template
+  # validates_uniqueness_of :position, scope: :box_set_id
+  # validates_uniqueness_of :boxable_id, scope: :boxable_type, allow_nil: true, message: "box is has already been taken"
+  # validates_inclusion_of :boxable_type, in: BOXABLE_TYPES
 
   scope :arranged, where("position IS NOT NULL").order(:position)
 
@@ -42,6 +42,10 @@ class Box < ActiveRecord::Base
   def set_template
     template_name = self.boxable_type.split("::").last.downcase
     self.template = "boxes/#{template_name}"
+  end
+
+  def template_path
+    "boxes/#{template}"
   end
 
 end
