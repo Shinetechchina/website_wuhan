@@ -5,6 +5,19 @@ class ApplicationController < ActionController::Base
 
   # helper_method :tag
 
+  def require_user
+    if current_refinery_user.blank?
+      respond_to do |format|
+        format.html  {
+          authenticate_refinery_user!
+        }
+        format.all {
+          head(:unauthorized)
+        }
+      end
+    end
+  end
+
   protected
 
   def tag
