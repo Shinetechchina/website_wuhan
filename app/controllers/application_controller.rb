@@ -4,7 +4,6 @@ class ApplicationController < ActionController::Base
   before_filter :set_tag
 
   # helper_method :tag
-  #
 
   def require_user
     if current_refinery_user.blank?
@@ -18,6 +17,8 @@ class ApplicationController < ActionController::Base
       end
     end
   end
+
+  protected
 
   def tag
     @tag ||= cookies[:tag].present? ? cookies[:tag] : nil
