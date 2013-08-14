@@ -1,7 +1,7 @@
 class Box < ActiveRecord::Base
   attr_accessible :boxable_id, :boxable_type, :position, :template, :boxset_id, :url
   belongs_to :boxable, polymorphic: true
-  belongs_to :boxset
+  belongs_to :box_set
 
   BOXABLE_TYPES = ['Refinery::Staffs::Staff',
                    'Refinery::Technologies::Technology',

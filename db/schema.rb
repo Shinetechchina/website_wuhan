@@ -13,8 +13,6 @@
 
 ActiveRecord::Schema.define(:version => 20130814063423) do
 
-  add_extension "hstore"
-
   create_table "authentications", :force => true do |t|
     t.string   "provider"
     t.string   "uid"
@@ -22,6 +20,12 @@ ActiveRecord::Schema.define(:version => 20130814063423) do
     t.datetime "updated_at",   :null => false
     t.string   "access_token"
     t.datetime "expires_in"
+  end
+
+  create_table "box_sets", :force => true do |t|
+    t.string   "url"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "boxes", :force => true do |t|
@@ -32,13 +36,7 @@ ActiveRecord::Schema.define(:version => 20130814063423) do
     t.datetime "created_at",   :null => false
     t.datetime "updated_at",   :null => false
     t.string   "url"
-    t.integer  "boxset_id"
-  end
-
-  create_table "boxsets", :force => true do |t|
-    t.string   "url"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.integer  "box_set_id"
   end
 
   create_table "refinery_custom_boxes", :force => true do |t|
@@ -133,15 +131,6 @@ ActiveRecord::Schema.define(:version => 20130814063423) do
   add_index "refinery_pages", ["lft"], :name => "index_refinery_pages_on_lft"
   add_index "refinery_pages", ["parent_id"], :name => "index_refinery_pages_on_parent_id"
   add_index "refinery_pages", ["rgt"], :name => "index_refinery_pages_on_rgt"
-
-  create_table "refinery_references", :force => true do |t|
-    t.string   "title"
-    t.integer  "image_id"
-    t.text     "content"
-    t.integer  "position"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
 
   create_table "refinery_resources", :force => true do |t|
     t.string   "file_mime_type"
@@ -256,22 +245,5 @@ ActiveRecord::Schema.define(:version => 20130814063423) do
 
   add_index "seo_meta", ["id"], :name => "index_seo_meta_on_id"
   add_index "seo_meta", ["seo_meta_id", "seo_meta_type"], :name => "index_seo_meta_on_seo_meta_id_and_seo_meta_type"
-
-  create_table "taggings", :force => true do |t|
-    t.integer  "tag_id"
-    t.integer  "taggable_id"
-    t.string   "taggable_type"
-    t.integer  "tagger_id"
-    t.string   "tagger_type"
-    t.string   "context",       :limit => 128
-    t.datetime "created_at"
-  end
-
-  add_index "taggings", ["tag_id"], :name => "index_taggings_on_tag_id"
-  add_index "taggings", ["taggable_id", "taggable_type", "context"], :name => "index_taggings_on_taggable_id_and_taggable_type_and_context"
-
-  create_table "tags", :force => true do |t|
-    t.string "name"
-  end
 
 end
