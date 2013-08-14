@@ -7,15 +7,14 @@ WebsiteWuhan::Application.routes.draw do
   # We ask that you don't use the :as option here, as Refinery relies on it being the default of "refinery"
   mount Refinery::Core::Engine, :at => '/'
 
-  resources :boxes, only: [:create] do
-    collection do
-      post :select_type
-    end
-  end
-
   Refinery::Core::Engine.routes.draw do
-    get '/boxes', to: 'page#boxes', as: 'boxes_path'
     get '/blog', to: 'pages#blog'
+
+    resources :boxes, only: [:create] do
+      collection do
+        post :select_type
+      end
+    end
 
     devise_scope :refinery_user do
       get '/auth/:provider/callback', to: 'sessions#auth'

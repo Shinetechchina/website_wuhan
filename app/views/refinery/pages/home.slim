@@ -12,7 +12,7 @@
       i.icon-remove
     h3 Please select box's type and name...
   .modal-body
-    = form_for Box.new do |f|
+    = form_for Box.new, url: '/boxes', method: 'post' do |f|
       .field
         = f.label :boxable_type, "Box type"
         | &nbsp;&nbsp;

@@ -13,7 +13,6 @@ class Box < ActiveRecord::Base
   validates_inclusion_of :boxable_type, in: BOXABLE_TYPES
 
   scope :arranged, where("position IS NOT NULL").order(:position)
-  scope :statical, where(boxable_type: nil)
 
   def boxable_type_name
     if (boxable_type = self.boxable_type).present?

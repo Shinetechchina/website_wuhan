@@ -10,11 +10,11 @@ Refinery::PagesController.class_eval do
   caches_action :blog, expires_in: 30.minutes, cache_path: :post_cache_path.to_proc
 
   def home
-    @clients = Refinery::Shinetech::Client.limit(3)
-    @services = Refinery::Services::Service.limit(3)
-
-    @technologies = Refinery::Technologies::Technology.limit(3)
-    @staffs = Refinery::Staffs::Staff.order('name').limit(3)
+    @boxes = Box.arranged
+    #@clients = Refinery::Shinetech::Client.limit(3)
+    #@services = Refinery::Services::Service.limit(3)
+    #@technologies = Refinery::Technologies::Technology.limit(3)
+    #@staffs = Refinery::Staffs::Staff.order('name').limit(3)
 
     if has_tag?
       @technologies = @technologies.order_by_tag(tag)
@@ -28,10 +28,6 @@ Refinery::PagesController.class_eval do
 
   def blog
     @blogs = Blog.filte_topic('ShineNext')
-  end
-
-  def boxes
-    @boxes = Box.all
   end
 
   def post_cache_path
