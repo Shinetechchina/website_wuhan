@@ -24,4 +24,10 @@ class Refinery::BoxesController < ApplicationController
       end
     end
   end
+
+  def destroy
+    @box = Box.find(params[:id])
+    @box.destroy
+    render inline: 'destroy successful'
+  end
 end

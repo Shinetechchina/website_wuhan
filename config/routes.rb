@@ -10,7 +10,7 @@ WebsiteWuhan::Application.routes.draw do
   Refinery::Core::Engine.routes.draw do
     get '/blog', to: 'pages#blog'
 
-    resources :boxes, only: [:create] do
+    resources :boxes, only: [:create, :destroy] do
       collection do
         post :select_type
       end
