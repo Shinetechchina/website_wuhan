@@ -3,6 +3,7 @@ module ApplicationHelper
     if block_given?
       options = content_or_options_with_block || {}
 
+      options[:id] = "box-#{box.id}"
       options[:data] ||= {}
       options[:class] ||= []
       options[:class].unshift 'box'

@@ -20,6 +20,13 @@
           li.last
             a.route href="/blog" BLOG
 
+      - if current_refinery_user.present?
+        div#edit-boxes
+          span EDIT
+          | &nbsp;&nbsp;
+          i.icon-cogs
+
+    /
       .dropdown.dropdown-tag
         a.dropdown-toggle data-toggle="dropdown" href="#"
           span

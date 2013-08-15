@@ -1,6 +1,6 @@
 - if @boxes.present?
   - @boxes.each do |box|
-    =render box.template, boxable: box.boxable
+    =render partial: box.template, locals: {box: box, boxable: box.boxable}
 
 - if current_refinery_user.present?
   .box.new-box
