@@ -1,9 +1,9 @@
 Refinery::Core::Engine.routes.append do
 
   # Frontend routes
-  namespace :technologies do
-    resources :technologies, :path => '', :only => :index
-  end
+  # namespace :technologies do
+  #   resources :technologies, :path => '', :only => :index
+  # end
 
   # Admin routes
   namespace :technologies, :path => '' do

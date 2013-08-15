@@ -1,9 +1,9 @@
 Refinery::Core::Engine.routes.append do
 
   # Frontend routes
-  namespace :shinetech, path: '' do
-    get '/clients(/:id)' => 'clients#index'
-  end
+  # namespace :shinetech, path: '' do
+  #   get '/clients(/:id)' => 'clients#index'
+  # end
 
   # Admin routes
   namespace :shinetech, path: '' do

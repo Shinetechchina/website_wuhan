@@ -5,25 +5,32 @@ Refinery::PagesController.class_eval do
 
   layout -> (controller) { controller.request.xhr? ? false : 'application' }
 
-  skip_before_filter :find_page, only: [:home, :blog, :boxes]
+  skip_before_filter :find_page, only: [:home, :blog, :boxes, :show]
 
   caches_action :blog, expires_in: 30.minutes, cache_path: :post_cache_path.to_proc
 
   def home
-    @boxes = Box.arranged
-    #@clients = Refinery::Shinetech::Client.limit(3)
-    #@services = Refinery::Services::Service.limit(3)
-    #@technologies = Refinery::Technologies::Technology.limit(3)
-    #@staffs = Refinery::Staffs::Staff.order('name').limit(3)
+    # @boxes = Box.arranged
 
-    if has_tag?
-      @technologies = @technologies.order_by_tag(tag)
-      @staffs = @staffs.order_by_tag(tag)
-    end
+    # @clients = Refinery::Shinetech::Client.limit(3)
+    # @services = Refinery::Services::Service.limit(3)
+    # @technologies = Refinery::Technologies::Technology.limit(3)
+    # @staffs = Refinery::Staffs::Staff.order('name').limit(3)
 
-    if request.xhr?
-      render layout: false
-    end
+    # if has_tag?
+    #   @technologies = @technologies.order_by_tag(tag)
+    #   @staffs = @staffs.order_by_tag(tag)
+    # end
+
+    # if request.xhr?
+    #   render layout: false
+    # end
+
+    find_boxes('/')
+  end
+
+  def show
+    find_boxes("/#{params[:path]}")
   end
 
   def blog
@@ -36,6 +43,14 @@ Refinery::PagesController.class_eval do
     else
       "#{request.url}.html"
     end
+  end
+
+  protected
+
+  def find_boxes(url)
+    @box_set = BoxSet.find_by_url(url)
+    @boxes = @box_set.boxes
+    render 'boxes'
   end
 
 end

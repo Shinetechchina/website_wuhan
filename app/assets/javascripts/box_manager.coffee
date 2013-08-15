@@ -23,6 +23,8 @@ App.BoxManager =
 
   # 展开box，只有class为box-expandable的box才会响应这个方法
   expandBox: (el) ->
+    return
+
     $el = if typeof el == 'string' then @$container.find(".box[data-id=#{el}]") else $(el)
 
     expandCols = $el.data('expand-cols')
