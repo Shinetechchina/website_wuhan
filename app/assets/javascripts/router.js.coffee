@@ -7,18 +7,14 @@ App.Router =
     @bindEvents()
 
   initRoutes: ->
-    pageRoute = crossroads.addRoute '/:page:/:id:'
+    pageRoute = crossroads.addRoute '/:page*:'
 
-    window.pageRoute = pageRoute
-
-    # strict pageRoute to respond pages below
-    pageRoute.rules =
-      page: ['clients', 'services', 'technologies', 'staff', 'blog', 'boxes']
-
-    onRouteChange = (reload, page, id) =>
+    onRouteChange = (reload, page) =>
       page = if page then "/#{page}" else '/'
+      [page, hashtag] = page.split('#')
+
       @activeMenuItem(page)
-      App.BoxManager.render(page, id, reload)
+      App.BoxManager.render(page, reload)
 
     pageRoute.matched.add(onRouteChange)
 
@@ -35,12 +31,20 @@ App.Router =
     $(window).on 'popstate', ->
       crossroads.parse(location.pathname, [false])
 
-  activeMenuItem: (route) ->
+  activeMenuItem: (page) ->
+    menu = @getMenuByPage(page)
     @elMenu
       .find('li').removeClass('selected').end()
       .find('li').each ->
         li = $(@)
-        li.addClass('selected') if li.find('a').attr('href') == route
+        li.addClass('selected') if li.find('a').attr('href') == "/#{menu}"
+
+  getMenuByPage: (page) ->
+    if page == '/'
+      return 'home'
+    else
+      match = page.match(/^\/(\w+)/)
+      return if match then match[1] else 'home'
 
   reload: ->
     # Reset state first, otherwise crossroads won't diapatch for the same url

@@ -44,20 +44,17 @@ App.BoxManager =
     @$container.trigger('ss-rearrange')
 
   # The usage of reload:
-  #   When calling render() without reload, if the page is not change, BoxManager only expand the box via id without reload boxes from server.
+  #   When calling render() without reload, if the current page is not change, BoxManager won't reload boxes from server.
   #   With reload, BoxManager loads all the boxes from server.
   #   Currently only tag switching needs this argument.
-  render: (page, id, reload) ->
+  render: (page, reload) ->
     $container = @$container
 
-    if @currentPage == page && !reload
-      @expandBox(id)
-    else
+    if @currentPage != page || reload
       @currentPage = page
-      App.Overlay.show(mask: true) if page == '/blog'
+      App.Overlay.show(mask: true) if page.match(/^\/blog/)
 
-      url = if id then "#{page}/#{id}" else page
-      $.get(url).success (result) =>
+      $.get(page).success (result) =>
         App.Overlay.hide()
 
         # Remove old boxes when page changing
