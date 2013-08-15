@@ -19,18 +19,21 @@ App.BoxManager =
       align: 'left'
       enableDrag: false
 
-    # @initBoxVideo()
+    @bindEvents()
+
+  bindEvents: ->
+    self = @
+    @$container.on 'click', '.box.box-expandable:not(a)', -> self.expandBox(@)
 
   # 展开box，只有class为box-expandable的box才会响应这个方法
   expandBox: (el) ->
-    return
-
-    $el = if typeof el == 'string' then @$container.find(".box[data-id=#{el}]") else $(el)
+    $el = if typeof el == 'string' then @$container.find(".box[data-box-id=#{el}]") else $(el)
+    return if $el.is('a')
 
     expandCols = $el.data('expand-cols')
     return if $el.hasClass('box-expanded')
 
-    @$container.find(".box-expandable").removeClass('box-expanded').removeAttr('data-ss-colspan')
+    @$container.find(".box-expandable:not([data-collapse=false])").removeClass('box-expanded').removeAttr('data-ss-colspan')
     $el.addClass('box-expanded').attr('data-ss-colspan', expandCols)
 
     # onLayoutComplete = ->

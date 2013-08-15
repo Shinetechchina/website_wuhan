@@ -1,18 +1,18 @@
-.box.box-client.box-expandable class="#{'box-expanded' if box.expanded?}" data-box-id=box.id data-id=boxable.id data-ss-colspan="#{box.expanded && box.expand_cols ? box.expand_cols : 1}"
+= box_tag box, expandable: true, expand_cols: 4 do
   .mini
-    a.route.box-link href=box.url
-      .client-logo
-        = image_tag boxable.logo.url
-  .maxi
-    .client-content
-      h1 = boxable.name
-      div class="description"
-        = boxable.description.html_safe
-      - if boxable.comment? and boxable.commenter?
-        div class="comment"
-          | " #{boxable.comment} "
-        div class="commenter"
-          = boxable.commenter
-    div class="client-aside"
-      div class="client-logo"
-        = image_tag boxable.logo.url
+    .client-logo
+      = image_tag boxable.logo.url
+  - if box.url.blank?
+    .maxi
+      .client-content
+        h1 = boxable.name
+        .description
+          = boxable.description.html_safe
+        - if boxable.comment? and boxable.commenter?
+          .comment
+            | " #{boxable.comment} "
+          .commenter
+            = boxable.commenter
+      .client-aside
+        .client-logo
+          = image_tag boxable.logo.url

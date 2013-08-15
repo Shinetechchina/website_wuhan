@@ -1,5 +1,5 @@
 class Box < ActiveRecord::Base
-  attr_accessible :boxable_id, :boxable_type, :position, :template, :box_set_id, :url
+  attr_accessible :boxable, :boxable_id, :boxable_type, :position, :template, :box_set_id, :url, :expanded
   belongs_to :boxable, polymorphic: true
   belongs_to :box_set
 

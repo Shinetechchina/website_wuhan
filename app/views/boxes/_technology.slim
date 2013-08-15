@@ -1,6 +1,5 @@
-.box.box-tech data-id=boxable.id
-  a.route.box-link href="/technologies"
-    .tech-title target="_blank"
-      = image_tag boxable.image_url
-    .tech-description
-      =raw boxable.description
+= box_tag box do
+  .tech-title target="_blank"
+    = image_tag boxable.image_url
+  .tech-description
+    =raw boxable.description

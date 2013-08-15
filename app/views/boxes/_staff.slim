@@ -1,5 +1,22 @@
-.box.box-staff data-id=boxable.id
-  a.route href="/staff"
-    .mini
-      .staff-thumb style="background-image: url(#{boxable.image_url})"
-        .staff-name #{boxable.name}
+= box_tag box, expandable: true, expand_cols: 2 do
+  .mini
+    .staff-thumb style="background-image: url('#{boxable.image_url}');"
+      .staff-name = boxable.name
+  - if box.url.blank?
+    .maxi
+      .staff-thumb style="background-image: url('#{boxable.image_url}');"
+        .staff-name = boxable.name
+      .staff-info
+        h2 = boxable.name
+        .staff-description = boxable.description
+        .social-links
+          - if boxable.github_url?
+            a href="#{boxable.github_url}" target="_blank": i.icon-github.icon-large Github
+          - if boxable.linkedin_url?
+            a href="#{boxable.linkedin_url}" target="_blank": i.icon-linkedin.icon-large LinkedIn
+          - if boxable.twitter_url?
+            a href="#{boxable.twitter_url}" target="_blank": i.icon-twitter.icon-large Twitter
+          - if boxable.weibo_url?
+            a href="#{boxable.weibo_url}" target="_blank": i.icon-weibo.icon-large Weibo
+          - if boxable.email?
+            a href="mailto:#{boxable.email}" target="_blank": i.icon.icon-envelope Email
