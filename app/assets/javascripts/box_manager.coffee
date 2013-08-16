@@ -55,10 +55,13 @@ App.BoxManager =
 
     if @currentPage != page || reload
       @currentPage = page
-      App.Overlay.show(mask: true) if page.match(/^\/blog/)
+      App.Overlay.show(mask: true)# if page.match(/^\/blog/)
+      mastheadheight = App.Masthead.mastheadHeight
+      $('.masthead').animate({height: mastheadheight})
 
       $.get(page).success (result) =>
-        App.Overlay.hide()
+        App.Overlay.hide('slow')
+        $('.masthead').animate({height: 0})
 
         # Remove old boxes when page changing
         boxes = @$container.children()
