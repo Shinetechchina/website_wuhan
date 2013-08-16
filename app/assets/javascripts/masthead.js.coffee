@@ -1,6 +1,7 @@
 App.Masthead =
   el: null
   lastY: null
+  wheelCount: 0
 
   headerHeight: 70
   mastheadHeight: 254
@@ -36,10 +37,8 @@ App.Masthead =
     height = 0
     $('.header').css('margin-top', height + 'px')
     $('#box-container').css('margin-top', height + @headerHeight + 20)
-    scroll('', 0)
 
   doubleTopBrowser: ->
-    @lastY = -1
     self = @
 
     $(window).on 'mousewheel', (e)->
@@ -48,8 +47,18 @@ App.Masthead =
       self.toggleHeaderByWheel()
 
   toggleHeaderByWheel: ()->
-      if scrollY == 0 and @lastY == 0 and Math.random() < 0.1 and not @el.is(":visible")
-        @expandHeader()
-      if scrollY > 40 and @el.is(":visible")
+      if scrollY == 0 and @lastY == 0 and not @el.is(":visible")
+        # record wheel count
+        @wheelCount = @wheelCount + 1
+        if @wheelCount == 4
+          @expandHeader()
+          @wheelCount = 0
+
+      else if scrollY > 40 and @el.is(":visible")
         @collapseHeader()
+
+      if scrollY > 0 and @wheelCount > 0
+        # clear wheel num
+        @wheelCount = 0
+
       @lastY = scrollY
