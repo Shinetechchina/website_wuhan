@@ -1,12 +1,12 @@
 - @boxes.each do |box|
   = render box.template, box: box, boxable: box.boxable
 
-- if current_refinery_user.present?
+/- if current_refinery_user.present?
   .box.new-box
     a.new-box-inner data-toggle="modal" href="#newBoxModal"
       i.icon-plus
 
-  #newBoxModal.modal.hide.fade tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"
+/  #newBoxModal.modal.hide.fade tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"
     .modal-header
       a.pull-right.close.pointer data-dismiss="modal" aria-hidden="true" style="color:#ccc!important"
         i.icon-remove
