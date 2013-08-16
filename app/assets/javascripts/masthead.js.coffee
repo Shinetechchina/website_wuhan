@@ -1,5 +1,6 @@
 App.Masthead =
   el: null
+  lastY: null
 
   headerHeight: 70
   mastheadHeight: 254
@@ -8,6 +9,7 @@ App.Masthead =
   init: ->
     @el = $('.masthead')
     @bindEvents()
+    @doubleTopBrowser()
 
   hide: ->
     @el.fadeOut()
@@ -18,17 +20,36 @@ App.Masthead =
 
   toggleHeader: (e) ->
     e.preventDefault() if e
-    if @el.height() == 0
-      @expandHeader()
-    else
+    if @el.is(":visible")
       @collapseHeader()
+    else
+      @expandHeader()
 
   expandHeader: ->
-    @el.animate {height: @mastheadHeight}, step: (height) =>
-      $('.header').css('margin-top', height + 'px')
-      $('#box-container').css('margin-top', height + @headerHeight + 20)
+    @el.slideDown()
+    height = @mastheadHeight
+    $('.header').css('margin-top', height + 'px')
+    $('#box-container').css('margin-top', height + @headerHeight + 20)
 
-  collapseHeader: ->
-    @el.animate {height: 0}, step: (height) =>
-      $('.header').css('margin-top', height + 'px')
-      $('#box-container').css('margin-top', height + @headerHeight + 20)
+  collapseHeader: (e)->
+    @el.slideUp()
+    height = 0
+    $('.header').css('margin-top', height + 'px')
+    $('#box-container').css('margin-top', height + @headerHeight + 20)
+    scroll('', 0)
+
+  doubleTopBrowser: ->
+    @lastY = -1
+    self = @
+
+    $(window).on 'mousewheel', (e)->
+      self.toggleHeaderByWheel()
+    $(window).on 'wheel', (e)->
+      self.toggleHeaderByWheel()
+
+  toggleHeaderByWheel: ()->
+      if scrollY == 0 and @lastY == 0 and Math.random() < 0.1 and not @el.is(":visible")
+        @expandHeader()
+      if scrollY > 40 and @el.is(":visible")
+        @collapseHeader()
+      @lastY = scrollY
