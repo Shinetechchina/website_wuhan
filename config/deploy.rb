@@ -24,6 +24,7 @@ set :shared_paths, ['config/database.yml', 'log', 'tmp', 'public/system']
 # Optional settings:
 #   set :user, 'foobar'    # Username in the server to SSH to.
 #   set :port, '30000'     # SSH port number.
+set :user, 'david'
 
 # This task is the environment that is loaded for most commands, such as
 # `mina deploy` or `mina rake`.
