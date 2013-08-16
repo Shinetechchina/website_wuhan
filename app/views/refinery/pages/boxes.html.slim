@@ -1,5 +1,5 @@
 - @boxes.each do |box|
-  = render box.template, box: box, boxable: box.boxable
+  = render box.template_path, box: box, boxable: box.boxable
 
 - if current_refinery_user.present?
   .box.new-box
