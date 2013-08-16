@@ -1,6 +1,5 @@
 App.Masthead =
   el: null
-  lastY: null
   wheelCount: 0
 
   headerHeight: 70
@@ -47,10 +46,10 @@ App.Masthead =
       self.toggleHeaderByWheel()
 
   toggleHeaderByWheel: ()->
-      if scrollY == 0 and @lastY == 0 and not @el.is(":visible")
+      if scrollY == 0 and not @el.is(":visible")
         # record wheel count
         @wheelCount = @wheelCount + 1
-        if @wheelCount == 4
+        if @wheelCount == 5
           @expandHeader()
           @wheelCount = 0
 
@@ -60,5 +59,3 @@ App.Masthead =
       if scrollY > 0 and @wheelCount > 0
         # clear wheel num
         @wheelCount = 0
-
-      @lastY = scrollY
