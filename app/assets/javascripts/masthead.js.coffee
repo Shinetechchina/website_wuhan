@@ -40,35 +40,34 @@ App.Masthead =
     $('#box-container').css('margin-top', height + @headerHeight + 20)
 
   collapseHeader: (e)->
-    @el.slideUp()
+    @el.slideUp('', ->scroll('', 0))
     height = 0
     $('.header').css('margin-top', height + 'px')
     $('#box-container').css('margin-top', height + @headerHeight + 20)
 
   doubleTopBrowser: ->
     self = @
+    #show header info
     $(window).on 'mousewheel', ->
-      self.toggleHeaderByWheel()
+      self.showHeaderByWheel()
     $(window).on 'wheel', ->
-      self.toggleHeaderByWheel()
+      self.showHeaderByWheel()
+    #hide header info
+    $(window).scroll ->
+      if self.el.is(":visible")
+        self.collapseHeader()
+        self.wheelCount = 0
 
-  toggleHeaderByWheel: ()->
-      if scrollY == 0 and not @el.is(":visible") and !@stopFlag
-        # record wheel count
-        @wheelCount = @wheelCount + 1
-        if @wheelCount == 6
-          @wheelCount = 0
-          self = @
-          setTimeout(->
-            setTimeout(->
-              self.collapseHeader()
-            , 5000)
-            self.expandHeader()
-          , 0)
-
-      else if scrollY > 0 and @el.is(":visible")
-        @collapseHeader()
-
-      if scrollY > 0 and @wheelCount > 0
-        # clear wheel num
+  showHeaderByWheel: ()->
+    if scrollY == 0 and not @el.is(":visible") and !@stopFlag
+      # record wheel count
+      @wheelCount = @wheelCount + 1
+      if @wheelCount == 6
         @wheelCount = 0
+        self = @
+        setTimeout(->
+          setTimeout(->
+            self.collapseHeader()
+          , 5000)
+          self.expandHeader()
+        , 0)
