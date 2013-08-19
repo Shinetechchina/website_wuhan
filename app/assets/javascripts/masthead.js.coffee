@@ -3,7 +3,7 @@ App.Masthead =
   wheelCount: 0
 
   headerHeight: 70
-  mastheadHeight: 254
+  mastheadHeight: 180
   contentMargin: 20
 
   init: ->
@@ -53,7 +53,7 @@ App.Masthead =
           @expandHeader()
           @wheelCount = 0
 
-      else if scrollY > 40 and @el.is(":visible")
+      else if scrollY > 0 and @el.is(":visible")
         @collapseHeader()
 
       if scrollY > 0 and @wheelCount > 0
