@@ -5,15 +5,23 @@ App.Masthead =
   headerHeight: 70
   mastheadHeight: 180
   contentMargin: 20
+  stopFlag: false
 
   init: ->
     @el = $('.masthead')
     @bindEvents()
     @doubleTopBrowser()
+    @cancelShowByMouseWheel()
 
   hide: ->
     @el.fadeOut()
     $('#box-container').animate(opacity: 1, 700)
+
+  cancelShowByMouseWheel: ->
+    self = @
+    @el.find('.icon-remove').on 'click', ->
+      self.collapseHeader()
+      self.stopFlag = true
 
   bindEvents: ->
     $('.logo a').on 'click', (e) => @toggleHeader()
@@ -39,14 +47,13 @@ App.Masthead =
 
   doubleTopBrowser: ->
     self = @
-
-    $(window).on 'mousewheel', (e)->
+    $(window).on 'mousewheel', ->
       self.toggleHeaderByWheel()
-    $(window).on 'wheel', (e)->
+    $(window).on 'wheel', ->
       self.toggleHeaderByWheel()
 
   toggleHeaderByWheel: ()->
-      if scrollY == 0 and not @el.is(":visible")
+      if scrollY == 0 and not @el.is(":visible") and !@stopFlag
         # record wheel count
         @wheelCount = @wheelCount + 1
         if @wheelCount == 5
