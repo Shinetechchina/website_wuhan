@@ -57,8 +57,14 @@ App.Masthead =
         # record wheel count
         @wheelCount = @wheelCount + 1
         if @wheelCount == 6
-          @expandHeader()
           @wheelCount = 0
+          self = @
+          setTimeout(->
+            setTimeout(->
+              self.collapseHeader()
+            , 5000)
+            self.expandHeader()
+          , 0)
 
       else if scrollY > 0 and @el.is(":visible")
         @collapseHeader()
