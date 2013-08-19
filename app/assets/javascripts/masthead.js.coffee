@@ -3,17 +3,25 @@ App.Masthead =
   wheelCount: 0
 
   headerHeight: 70
-  mastheadHeight: 254
+  mastheadHeight: 180
   contentMargin: 20
+  stopFlag: false
 
   init: ->
     @el = $('.masthead')
     @bindEvents()
     @doubleTopBrowser()
+    @cancelShowByMouseWheel()
 
   hide: ->
     @el.fadeOut()
     $('#box-container').animate(opacity: 1, 700)
+
+  cancelShowByMouseWheel: ->
+    self = @
+    @el.find('.icon-remove').on 'click', ->
+      self.collapseHeader()
+      self.stopFlag = true
 
   bindEvents: ->
     $('.logo a').on 'click', (e) => @toggleHeader()
@@ -32,30 +40,34 @@ App.Masthead =
     $('#box-container').css('margin-top', height + @headerHeight + 20)
 
   collapseHeader: (e)->
-    @el.slideUp()
+    @el.slideUp('', ->scroll('', 0))
     height = 0
     $('.header').css('margin-top', height + 'px')
     $('#box-container').css('margin-top', height + @headerHeight + 20)
 
   doubleTopBrowser: ->
     self = @
+    #show header info
+    $(window).on 'mousewheel', ->
+      self.showHeaderByWheel()
+    $(window).on 'wheel', ->
+      self.showHeaderByWheel()
+    #hide header info
+    $(window).scroll ->
+      if self.el.is(":visible") and scrollY > 0
+        self.collapseHeader()
+        self.wheelCount = 0
 
-    $(window).on 'mousewheel', (e)->
-      self.toggleHeaderByWheel()
-    $(window).on 'wheel', (e)->
-      self.toggleHeaderByWheel()
-
-  toggleHeaderByWheel: ()->
-      if scrollY == 0 and not @el.is(":visible")
-        # record wheel count
-        @wheelCount = @wheelCount + 1
-        if @wheelCount == 5
-          @expandHeader()
-          @wheelCount = 0
-
-      else if scrollY > 40 and @el.is(":visible")
-        @collapseHeader()
-
-      if scrollY > 0 and @wheelCount > 0
-        # clear wheel num
+  showHeaderByWheel: ()->
+    if scrollY == 0 and not @el.is(":visible") and !@stopFlag
+      # record wheel count
+      @wheelCount = @wheelCount + 1
+      if @wheelCount == 6
         @wheelCount = 0
+        self = @
+        setTimeout(->
+          setTimeout(->
+            self.collapseHeader()
+          , 5000)
+          self.expandHeader()
+        , 0)
