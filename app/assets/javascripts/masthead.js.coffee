@@ -56,7 +56,7 @@ App.Masthead =
       if scrollY == 0 and not @el.is(":visible") and !@stopFlag
         # record wheel count
         @wheelCount = @wheelCount + 1
-        if @wheelCount == 5
+        if @wheelCount == 6
           @expandHeader()
           @wheelCount = 0
 
