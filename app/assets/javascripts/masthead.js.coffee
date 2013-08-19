@@ -54,7 +54,7 @@ App.Masthead =
       self.showHeaderByWheel()
     #hide header info
     $(window).scroll ->
-      if self.el.is(":visible")
+      if self.el.is(":visible") and scrollY > 0
         self.collapseHeader()
         self.wheelCount = 0
 
