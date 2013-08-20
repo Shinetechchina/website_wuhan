@@ -1,10 +1,15 @@
+@media screen and (max-width: 720px)
+  .logo a
+    font-size: 18px
+
 @media screen and (max-width: 650px)
+
   #menu li a
     padding: 0 2px
     font-size: 12px
 
-  .box
-    width: $box-width
+  .logo a
+    font-size: 14px
 
   .box-service
     &.box-expanded
@@ -13,9 +18,12 @@
         width: 100%
         text-align: center
 
-  .box-staff
+  .box-staff, .box-service, .box-client
     &.box-expanded
-      min-height: $box-height * 2
-      .staff-info
-        h2
-          padding-top: 279px
+      height: auto
+      width: $box-width
+      min-height: $box-height-2x
+
+@media screen and (max-width: 500px)
+  #menu li a
+    font-size: 10px

@@ -11,7 +11,7 @@ App.BoxManager =
 
     @$container.shapeshift
       colWidth: @boxWidth
-      columns: 4
+      #columns: 4
       gutterX: @gutter
       gutterY: @gutter
       paddingX: 0
@@ -29,12 +29,13 @@ App.BoxManager =
   expandBox: (el) ->
     $el = if typeof el == 'string' then @$container.find(".box[data-box-id=#{el}]") else $(el)
     return if $el.is('a')
-
     expandCols = $el.data('expand-cols')
     return if $el.hasClass('box-expanded')
 
     @$container.find(".box-expandable:not([data-collapse=false])").removeClass('box-expanded').removeAttr('data-ss-colspan')
-    $el.addClass('box-expanded').attr('data-ss-colspan', expandCols)
+    $el.addClass('box-expanded')
+    if parseInt($('body').css('width')) >= 600
+      $el.attr('data-ss-colspan', expandCols)
 
     # onLayoutComplete = ->
     #   $(document.body).animate scrollTop: $el.offset().top - parseInt($('#box-container').css('margin-top').replace('px', ''))
