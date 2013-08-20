@@ -8,7 +8,7 @@
         .staff-name = boxable.name
       .staff-info
         h2 = boxable.name
-        .staff-description = boxable.description
+        .staff-description =raw boxable.description
         .social-links
           - if boxable.github_url?
             a href="#{boxable.github_url}" target="_blank": i.icon-github.icon-large Github

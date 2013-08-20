@@ -1,6 +1,7 @@
 .box-staff
   &.box-expanded
     min-height: $box-height
+    height: auto
     width: $box-width-2x
 
 .staff-thumb
@@ -22,13 +23,19 @@
 .staff-thumb:hover .staff-name
   background: $main-color
 
+.maxi
+  .staff-thumb
+    margin-right: 20px
+    margin-bottom: 10px
+
 .staff-info
-  float: right
+  //float: right
   box-sizing: border-box
-  width: $box-width
-  padding: 10px 10px 10px 0
+  //width: $box-width
+  padding: 10px 20px
 
 .staff-description
+  text-align: left
   display: inline
 
 .social-links
