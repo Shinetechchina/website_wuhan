@@ -27,6 +27,7 @@ App.Router =
       url = el.attr('href')
       crossroads.parse(url, [false])
       history.pushState(null, null, url) if url
+      App.Masthead.collapseHeader()
 
     $(window).on 'popstate', ->
       crossroads.parse(location.pathname, [false])
