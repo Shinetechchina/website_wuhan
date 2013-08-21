@@ -3,6 +3,8 @@ class Box < ActiveRecord::Base
   belongs_to :boxable, polymorphic: true
   belongs_to :box_set
 
+  # if you want to redirct to back, please set url is "#back" or "/#back"
+
   BOXABLE_TYPES = ['Refinery::Staffs::Staff',
                    'Refinery::Technologies::Technology',
                    'Refinery::Shinetech::Client',

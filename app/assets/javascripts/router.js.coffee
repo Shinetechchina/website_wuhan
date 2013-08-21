@@ -26,8 +26,12 @@ App.Router =
       el = $(@)
       url = el.attr('href')
       crossroads.parse(url, [false])
-      history.pushState(null, null, url) if url
       App.Masthead.collapseHeader()
+      # if you want to redirct to back, url is "#back" or "/#back"
+      if (url == "#back" or url == "/#back")
+        return history.back()
+      else if url
+        history.pushState(null, null, url)
 
     $(window).on 'popstate', ->
       crossroads.parse(location.pathname, [false])
