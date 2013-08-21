@@ -8,7 +8,7 @@ class Box < ActiveRecord::Base
                    'Refinery::Shinetech::Client',
                    'Refinery::Services::Service']
 
-  validates_presence_of :template
+  validates_presence_of :template, :box_set_id
   # validates_uniqueness_of :position, scope: :box_set_id
   # validates_uniqueness_of :boxable_id, scope: :boxable_type, allow_nil: true, message: "box is has already been taken"
   # validates_inclusion_of :boxable_type, in: BOXABLE_TYPES

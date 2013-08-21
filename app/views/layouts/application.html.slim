@@ -15,9 +15,9 @@ html
     = render '/refinery/header'
 
     /= render '/home/header'
-
-    #box-container.container
-      = yield
+    #wrapper
+      #box-container.container
+        = yield
 
     .container
       = render 'home/footer'

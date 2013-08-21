@@ -1,0 +1,9 @@
+div id="box-set-#{box_set.id}"
+  .pull-left
+    = box_set.url
+  - if '/' != box_set.url
+    =link_to "Delete", "/box_sets/#{box_set.id}", class: 'pull-right', method: 'delete', remote: true, confirm: "Do you really want to delete the page and it's boxes ?"
+  br.clear
+  .hr
+  br
+

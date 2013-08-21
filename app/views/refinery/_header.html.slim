@@ -20,21 +20,43 @@
           li.last
             a.route href="/blog" BLOG
 
-      /- if current_refinery_user.present?
-        div#edit-boxes
-          span EDIT
+      - if current_refinery_user.present?
+        div#edit-pages.edit-button data-toggle="modal" href="#editPagesModal"
+          span EDIT PAGES
           | &nbsp;&nbsp;
           i.icon-cogs
 
-    /
-      .dropdown.dropdown-tag
-        a.dropdown-toggle data-toggle="dropdown" href="#"
-          span
+        div#edit-boxes.edit-button
+          span EDIT BOXES
           | &nbsp;&nbsp;
-          i.icon-sort-down
-        ul.dropdown-menu.pull-right role="menu" aria-labelledby="dLabel"
-          - ['', 'ruby', 'javascript', 'outsourcing'].each do |value|
-            li
-              a data-tag=value
-                i.icon-ok
-                = value.present? ? value + " " : 'all'
+          i.icon-cogs
+
+  #editPagesModal.modal.hide.fade tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"
+    .modal-header
+      a.pull-right.close.pointer data-dismiss="modal" aria-hidden="true" style="color:#ccc!important"
+        i.icon-remove
+      h3 Please create page or delete pages.
+    .modal-body
+      - BoxSet.all.each do |box_set|
+        = render 'box_sets/modal_li', box_set: box_set
+
+      = form_for BoxSet.new, url: '/box_sets', method: 'post', remote: true do |f|
+        .field.pull-left
+          = f.label :url, "Page URL"
+          | &nbsp;&nbsp;
+          = f.text_field :url
+
+        .field.pull-right
+          = f.submit "Create Page"
+
+      /.dropdown.dropdown-tag
+      /  a.dropdown-toggle data-toggle="dropdown" href="#"
+      /    span
+      /    | &nbsp;&nbsp;
+      /    i.icon-sort-down
+      /  ul.dropdown-menu.pull-right role="menu" aria-labelledby="dLabel"
+      /    - ['', 'ruby', 'javascript', 'outsourcing'].each do |value|
+      /      li
+      /        a data-tag=value
+      /          i.icon-ok
+      /          = value.present? ? value + " " : 'all'

@@ -12,20 +12,20 @@ App.CustomBoxes =
 
   toggleBoxRemoveButton: ->
     self = @
+    span = $('#edit-boxes').find('span')
+    spanText = span.html()
     $('#edit-boxes').on 'click', ->
-      span = $(this).find('span')
-
       if $(".icon-remove-sign").length == 0
-        span.html 'CANCEL'
+        span.html 'UPDATE'
         $(".box").not('.new-box').prepend('<i class="icon-remove-sign remove-box-icon"></i>')
         self.removeBox()
       else
-        if span.html() == 'CANCEL'
+        if span.html() == 'UPDATE'
           $('.remove-box-icon').hide()
-          span.html('EDIT')
+          span.html(spanText)
         else
           $('.remove-box-icon').show()
-          span.html('CANCEL')
+          span.html('UPDATE')
 
   removeBox: ->
     $('.remove-box-icon').on 'click', ->

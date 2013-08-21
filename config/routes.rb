@@ -14,6 +14,7 @@ WebsiteWuhan::Application.routes.draw do
         post :select_type
       end
     end
+    resources :box_sets, only: [:create, :destroy]
 
     devise_scope :refinery_user do
       get '/auth/:provider/callback', to: 'sessions#auth'
