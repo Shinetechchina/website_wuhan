@@ -14,7 +14,8 @@ WebsiteWuhan::Application.routes.draw do
         post :select_type
       end
       member do
-        put :set_url
+        put :update_url
+        get :select_url
       end
     end
     resources :box_sets, only: [:create, :destroy]

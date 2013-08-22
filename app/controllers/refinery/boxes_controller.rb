@@ -25,13 +25,19 @@ class Refinery::BoxesController < ApplicationController
     end
   end
 
-  def set_url
+  def select_url
     @box = Box.find(params[:id])
-    url = params[:url]
-    if url.present? and @box.update_attributes(url: url)
-      render js: "alert('Set successful.')"
-    else
-      render js: "alert('Set fail, invalid url.')"
+    respond_to do |format|
+      format.js
+    end
+  end
+
+  def update_url
+    @box = Box.find(params[:id])
+    respond_to do |format|
+      if @box.update_attributes(params[:box])
+        format.js
+      end
     end
   end
 

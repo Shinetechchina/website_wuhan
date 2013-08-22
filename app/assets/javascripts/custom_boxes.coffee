@@ -57,13 +57,9 @@ App.CustomBoxes =
   setURL: ->
     self = @
     $('.set-url-icon').on 'click', (e)->
+      e.preventDefault()
       box = $(this).parents('.box')
-      oldURL = box.attr('href')
-      if newURL = prompt('Please input link, it use to redirct to other page after user click the box.', oldURL)
-        e.preventDefault()
-        boxId = box.attr('id').split('-').pop()
-        ajaxLink = "/boxes/#{boxId}/set_url?url=#{newURL}"
-        $.ajax({url: ajaxLink, type: 'put'}).success =>
-          $(@).parents('.box').attr('href', newURL)
-      else
-        return false
+      boxId = box.attr('id').split('-').pop()
+      ajaxLink = "/boxes/#{boxId}/select_url"
+      $.get(ajaxLink).success =>
+        $('#editBoxesModal').modal('show')

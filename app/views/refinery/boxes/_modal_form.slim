@@ -1,0 +1,8 @@
+= form_for @box, url: update_url_box_path(@box), remote: true do |f|
+  .field.pull-left
+    = f.label :url, "Page URL"
+    | &nbsp;&nbsp;
+    = f.select :url, BoxSet.all.collect(&:url)
+
+  .field.pull-right
+    = f.submit
