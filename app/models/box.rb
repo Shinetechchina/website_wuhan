@@ -12,7 +12,7 @@ class Box < ActiveRecord::Base
                    'Refinery::Services::Service',
                    'Refinery::Customs::Custom']
 
-  validates_presence_of :template, :box_set_id
+  validates_presence_of :template, :box_set_id#, :position
   # validates_uniqueness_of :position, scope: :box_set_id
   # validates_uniqueness_of :boxable_id, scope: :boxable_type, allow_nil: true, message: "box is has already been taken"
   # validates_inclusion_of :boxable_type, in: BOXABLE_TYPES
@@ -36,11 +36,11 @@ class Box < ActiveRecord::Base
   end
 
   def add_position
-    if Box.last.present?
-      self.position = Box.last.position + 1
-    else
-      self.position = 1
-    end
+    #if Box.last.present?
+    #  self.position = Box.last.position + 1
+    #else
+    #  self.position = 1
+    #end
   end
 
   def set_template

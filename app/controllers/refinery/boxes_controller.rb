@@ -13,7 +13,7 @@ class Refinery::BoxesController < ApplicationController
   def create
     @box = Box.new(params[:box])
     @box.set_template
-    @box.add_position
+    #@box.add_position
     respond_to do |format|
       if @box.save
         format.html { redirect_to '/' }
