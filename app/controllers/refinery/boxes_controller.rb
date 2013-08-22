@@ -16,11 +16,11 @@ class Refinery::BoxesController < ApplicationController
     #@box.add_position
     respond_to do |format|
       if @box.save
-        format.html { redirect_to '/' }
         flash[:notice] = "create box successful !"
+        format.html { redirect_to @box.box_set.url }
       else
         flash[:error] = @box.errors.to_a.join(';')
-        format.html { redirect_to '/' }
+        format.html { redirect_to @box.box_set.url }
       end
     end
   end
