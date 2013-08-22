@@ -16,6 +16,8 @@ App.CustomBoxes =
     editBoxIcons = '<div class="edit-box-icons"><i class="icon-remove-sign remove-box-icon"></i><i class="icon-link set-url-icon"></i></div>'
 
     $('#edit-boxes').on 'click', ->
+      routeBoxes = $('.box.route')
+      routeBoxes.removeClass('route')
       if $('.box-404').length > 0
         alert('Can not edit boxes in 404 page')
       else
@@ -29,6 +31,7 @@ App.CustomBoxes =
             span.html('UPDATE')
           else if $(".edit-box-icons").is(":visible")
             self.hideEditBoxIcons()
+            routeBoxes.addClass('route')
 
   hideEditBoxIcons: ->
     span = $('#edit-boxes').find('span')
@@ -40,6 +43,7 @@ App.CustomBoxes =
     @setURL()
 
   removeBox: ->
+    self = @
     $('.remove-box-icon').on 'click', ->
       if confirm('Do you really want destroy this box?')
         box = $(this).parents('.box')
@@ -47,16 +51,19 @@ App.CustomBoxes =
         url = "/boxes/#{boxId}"
         $.ajax({url: url, type: 'delete'}).success (result) =>
           box.remove()
-          App.BoxManager.init()
       else
         return false
 
   setURL: ->
-    $('.set-url-icon').on 'click', ->
+    self = @
+    $('.set-url-icon').on 'click', (e)->
       box = $(this).parents('.box')
       oldURL = box.attr('href')
       if newURL = prompt('Please input link, it use to redirct to other page after user click the box.', oldURL)
+        e.preventDefault()
         boxId = box.attr('id').split('-').pop()
         ajaxLink = "/boxes/#{boxId}/set_url?url=#{newURL}"
         $.ajax({url: ajaxLink, type: 'put'}).success =>
-          App.Router.reload()
+          $(@).parents('.box').attr('href', newURL)
+      else
+        return false
