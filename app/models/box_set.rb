@@ -5,11 +5,11 @@ class BoxSet < ActiveRecord::Base
 
   has_many :boxes, order: 'position', dependent: :destroy
 
-  before_save :set_url
+  before_save :improve_url
 
-  def set_url
+  def improve_url
     url = self.url
-    if url.first != '/'
+    if url.present? and url.first != '/'
       self.url = '/' + url
     end
   end

@@ -4,6 +4,7 @@ class Box < ActiveRecord::Base
   belongs_to :box_set
 
   # if you want to redirct to back, please set url is "#back" or "/#back"
+  before_save :improve_url
 
   BOXABLE_TYPES = ['Refinery::Staffs::Staff',
                    'Refinery::Technologies::Technology',
@@ -50,4 +51,10 @@ class Box < ActiveRecord::Base
     "boxes/#{template}"
   end
 
+  def improve_url
+    url = self.url
+    if url.present? and url.first != '/'
+      self.url = '/' + url
+    end
+  end
 end

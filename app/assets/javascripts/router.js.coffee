@@ -28,6 +28,7 @@ App.Router =
       url = el.attr('href')
       crossroads.parse(url, [false])
       App.Masthead.collapseHeader()
+      App.CustomBoxes.hideEditBoxIcons()
       # if you want to redirct to back, url is "#back" or "/#back"
       if (url == "#back" or url == "/#back")
         history.back()

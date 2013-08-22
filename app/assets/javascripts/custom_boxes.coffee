@@ -2,7 +2,7 @@ App.CustomBoxes =
 
   init: ->
     @selectBoxableType()
-    @toggleBoxRemoveButton()
+    @toggleEditBoxIcons()
 
   selectBoxableType: ->
     $('#box_boxable_type').on 'change', ->
@@ -10,22 +10,34 @@ App.CustomBoxes =
       $.post(url + "?boxable_type=" + $(this).val()).success (result) ->
         $('#box_boxable_id').html(result)
 
-  toggleBoxRemoveButton: ->
+  toggleEditBoxIcons: ->
     self = @
     span = $('#edit-boxes').find('span')
-    spanText = span.html()
+    editBoxIcons = '<div class="edit-box-icons"><i class="icon-remove-sign remove-box-icon"></i><i class="icon-link set-url-icon"></i></div>'
+
     $('#edit-boxes').on 'click', ->
-      if $(".icon-remove-sign").length == 0
-        span.html 'UPDATE'
-        $(".box").not('.new-box').prepend('<i class="icon-remove-sign remove-box-icon"></i>')
-        self.removeBox()
+      if $('.box-404').length > 0
+        alert('Can not edit boxes in 404 page')
       else
-        if span.html() == 'UPDATE'
-          $('.remove-box-icon').hide()
-          span.html(spanText)
-        else
-          $('.remove-box-icon').show()
+        if $(".edit-box-icons").length == 0
+          $(".box").not('.new-box').prepend(editBoxIcons)
+          self.editBoxEvents()
           span.html('UPDATE')
+        else
+          if not $(".edit-box-icons").is(":visible")
+            $(".edit-box-icons").show()
+            span.html('UPDATE')
+          else if $(".edit-box-icons").is(":visible")
+            self.hideEditBoxIcons()
+
+  hideEditBoxIcons: ->
+    span = $('#edit-boxes').find('span')
+    $(".edit-box-icons").hide()
+    span.html('EDIT BOXES')
+
+  editBoxEvents: ->
+    @removeBox()
+    @setURL()
 
   removeBox: ->
     $('.remove-box-icon').on 'click', ->
@@ -38,3 +50,13 @@ App.CustomBoxes =
           App.BoxManager.init()
       else
         return false
+
+  setURL: ->
+    $('.set-url-icon').on 'click', ->
+      box = $(this).parents('.box')
+      oldURL = box.attr('href')
+      if newURL = prompt('Please input link, it use to redirct to other page after user click the box.', oldURL)
+        boxId = box.attr('id').split('-').pop()
+        ajaxLink = "/boxes/#{boxId}/set_url?url=#{newURL}"
+        $.ajax({url: ajaxLink, type: 'put'}).success =>
+          App.Router.reload()
