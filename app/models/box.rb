@@ -43,7 +43,7 @@ class Box < ActiveRecord::Base
 
   def set_template
     template_name = self.boxable_type.split("::").last.downcase
-    self.template = "boxes/#{template_name}"
+    self.template = template_name
   end
 
   def template_path
