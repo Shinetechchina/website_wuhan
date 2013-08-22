@@ -1,0 +1,30 @@
+nl:
+  refinery:
+    plugins:
+      customs:
+        title: Customs
+    customs:
+      admin:
+        customs:
+          actions:
+            create_new: Maak een nieuwe Custom
+            reorder: Wijzig de volgorde van de Customs
+            reorder_done: Klaar met het wijzingen van de volgorde van de Customs
+          records:
+            title: Customs
+            sorry_no_results: Helaas! Er zijn geen resultaten gevonden.
+            no_items_yet: Er zijn nog geen Customs. Druk op 'Maak een nieuwe Custom' om de eerste aan te maken.
+          custom:
+            view_live_html: Bekijk deze custom op de website <br/><em>(opent een nieuw venster)</em>
+            edit: Bewerk deze custom
+            delete: Verwijder deze custom voor eeuwig
+      customs:
+        show:
+          other: Andere Customs
+  activerecord:
+    attributes:
+      'refinery/customs/custom':
+        title: Title
+        width: Width
+        height: Height
+        content: Content

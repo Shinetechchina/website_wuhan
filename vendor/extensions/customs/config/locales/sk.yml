@@ -1,0 +1,30 @@
+sk:
+  refinery:
+    plugins:
+      customs:
+        title: Customs
+    customs:
+      admin:
+        customs:
+          actions:
+            create_new: Pridať Custom
+            reorder: Preusporiadať Customs
+            reorder_done: Koniec radenia Customs
+          records:
+            title: Customs
+            sorry_no_results: Ľutujeme, ale neboli nájdené žiadne výsledky.
+            no_items_yet: Nie sú vytvorené žiadne Customs. Kliknite na "Pridať Custom" pre pridanie prvého custom.
+          custom:
+            view_live_html: Zobraziť náhľad custom<br/><em>(otvorí sa v novom okne)</em>
+            edit: Upraviť custom
+            delete: Zmazať custom
+      customs:
+        show:
+          other: Daľšie Customs
+  activerecord:
+    attributes:
+      'refinery/customs/custom':
+        title: Title
+        width: Width
+        height: Height
+        content: Content

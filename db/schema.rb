@@ -11,7 +11,9 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130814091649) do
+ActiveRecord::Schema.define(:version => 20130822083042) do
+
+  add_extension "hstore"
 
   create_table "authentications", :force => true do |t|
     t.string   "provider"
@@ -42,6 +44,16 @@ ActiveRecord::Schema.define(:version => 20130814091649) do
   end
 
   create_table "refinery_custom_boxes", :force => true do |t|
+    t.string   "title"
+    t.integer  "width"
+    t.integer  "height"
+    t.text     "content"
+    t.integer  "position"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "refinery_customs", :force => true do |t|
     t.string   "title"
     t.integer  "width"
     t.integer  "height"
@@ -247,5 +259,9 @@ ActiveRecord::Schema.define(:version => 20130814091649) do
 
   add_index "seo_meta", ["id"], :name => "index_seo_meta_on_id"
   add_index "seo_meta", ["seo_meta_id", "seo_meta_type"], :name => "index_seo_meta_on_seo_meta_id_and_seo_meta_type"
+
+  create_table "tags", :force => true do |t|
+    t.string "name"
+  end
 
 end

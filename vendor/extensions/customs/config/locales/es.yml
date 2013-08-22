@@ -1,0 +1,31 @@
+es:
+  refinery:
+    plugins:
+      customs:
+        title: Customs
+#        article: masculino/femenino
+    customs:
+      admin:
+        customs:
+          actions:
+            create_new: Crear nuevo custom
+            reorder: Reordenar customs
+            reorder_done: Reordenación de customs completada
+          records:
+            title: Customs
+            sorry_no_results: Lo siento, no hay resultados
+            no_items_yet: No hay customs todavía. Pulsa en "Crear nuevo Custom" para crear tu primer custom.
+          custom:
+            view_live_html: Ver este custom como abierto al público <br/><em>(abre en ventana nueva)</em>
+            edit: Editar este custom
+            delete: Borrar este custom para siempre
+      customs:
+        show:
+          other: Otros customs
+  activerecord:
+    attributes:
+      'refinery/customs/custom':
+        title: Title
+        width: Width
+        height: Height
+        content: Content

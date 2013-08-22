@@ -1,0 +1,32 @@
+zh-CN:
+  refinery:
+    plugins:
+      customs:
+        title: Customs
+    customs:
+      admin:
+        customs:
+          actions:
+            create_new: 建立新的 Custom
+            reorder: 对 Customs 重新排序
+            reorder_done: 对 Customs 的重新排序结束
+          records:
+            title: Customs
+            sorry_no_results: 对不起，未找到结果。 #Sorry! There are no results found.
+
+            # There are no Customs yet. Click "Add New Custom" to add your first custom.
+            no_items_yet: 目前没有 Customs . 点击 "Add New Custom" 创建一个custom.
+          custom:
+            view_live_html: 查看 custom 的最新内容.<br/><em>(新窗口中打开)</em>
+            edit: 编辑 custom
+            delete: 永久删除 custom
+      customs:
+        show:
+          other: 其他 Customs
+  activerecord:
+    attributes:
+      'refinery/customs/custom':
+        title: Title
+        width: Width
+        height: Height
+        content: Content

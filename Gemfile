@@ -73,3 +73,5 @@ gem 'refinerycms-services', :path => 'vendor/extensions'
 gem 'refinerycms-technologies', :path => 'vendor/extensions'
 gem 'refinerycms-clients', path: 'vendor/extensions'
 gem 'refinerycms-messages', :path => 'vendor/extensions'
+
+gem 'refinerycms-customs', :path => 'vendor/extensions'

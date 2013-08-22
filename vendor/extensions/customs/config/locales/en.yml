@@ -1,0 +1,30 @@
+en:
+  refinery:
+    plugins:
+      customs:
+        title: Customs
+    customs:
+      admin:
+        customs:
+          actions:
+            create_new: Add New Custom
+            reorder: Reorder Customs
+            reorder_done: Done Reordering Customs
+          records:
+            title: Customs
+            sorry_no_results: Sorry! There are no results found.
+            no_items_yet: There are no Customs yet. Click "Add New Custom" to add your first custom.
+          custom:
+            view_live_html: View this custom live <br/><em>(opens in a new window)</em>
+            edit: Edit this custom
+            delete: Remove this custom forever
+      customs:
+        show:
+          other: Other Customs
+  activerecord:
+    attributes:
+      'refinery/customs/custom':
+        title: Title
+        width: Width
+        height: Height
+        content: Content

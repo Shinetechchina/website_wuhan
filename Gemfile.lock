@@ -3,6 +3,8 @@ PATH
   specs:
     refinerycms-clients (1.0)
       refinerycms-core (~> 2.0.10)
+    refinerycms-customs (1.0)
+      refinerycms-core (~> 2.0.10)
     refinerycms-messages (1.0)
       refinerycms-core (~> 2.0.10)
     refinerycms-services (1.0)
@@ -324,6 +326,7 @@ DEPENDENCIES
   rails (= 3.2.13)
   refinerycms (~> 2.0.0)
   refinerycms-clients!
+  refinerycms-customs!
   refinerycms-messages!
   refinerycms-services!
   refinerycms-staffs!

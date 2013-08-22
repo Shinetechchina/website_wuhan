@@ -1,0 +1,45 @@
+<% content_for :body_content_title do %>
+  <%= @custom.title %>
+<% end %>
+
+<% content_for :body do %>
+  <section>
+    <h1>Title</h1>
+    <p>
+      <%=raw @custom.title %>
+    </p>
+  </section>
+  <section>
+    <h1>Width</h1>
+    <p>
+      <%=raw @custom.width %>
+    </p>
+  </section>
+  <section>
+    <h1>Height</h1>
+    <p>
+      <%=raw @custom.height %>
+    </p>
+  </section>
+  <section>
+    <h1>Content</h1>
+    <p>
+      <%=raw @custom.content %>
+    </p>
+  </section>
+<% end %>
+
+<% content_for :side_body do %>
+  <aside>
+    <h2><%= t('.other') %></h2>
+    <ul id="customs">
+      <% @customs.each do |custom| %>
+        <li>
+          <%= link_to custom.title, refinery.customs_custom_path(custom) %>
+        </li>
+      <% end %>
+    </ul>
+  </aside>
+<% end %>
+
+<%= render '/refinery/content_page' %>

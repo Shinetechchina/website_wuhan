@@ -1,0 +1,30 @@
+fr:
+  refinery:
+    plugins:
+      customs:
+        title: Customs
+    customs:
+      admin:
+        customs:
+          actions:
+            create_new: Créer un(e) nouve(au/l/lle) Custom
+            reorder: Réordonner les Customs
+            reorder_done: Fin de réordonnancement des Customs
+          records:
+            title: Customs
+            sorry_no_results: "Désolé ! Aucun résultat."
+            no_items_yet: 'Il n''y a actuellement aucun(e) Custom. Cliquer sur "Créer un(e) nouve(au/l/lle) Custom" pour créer votre premi(er/ère) custom.'
+          custom:
+            view_live_html: Voir ce(t/tte) custom <br/><em>(Ouvre une nouvelle fenêtre)</em>
+            edit: Modifier ce(t/tte) custom
+            delete: Supprimer définitivement ce(t/tte) custom
+      customs:
+        show:
+          other: Autres Customs
+  activerecord:
+    attributes:
+      'refinery/customs/custom':
+        title: Title
+        width: Width
+        height: Height
+        content: Content

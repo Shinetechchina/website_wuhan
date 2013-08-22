@@ -1,0 +1,30 @@
+nb:
+  refinery:
+    plugins:
+      customs:
+        title: Customs
+    customs:
+      admin:
+        customs:
+          actions:
+            create_new: Lag en ny Custom
+            reorder: Endre rekkefølgen på Customs
+            reorder_done: Ferdig å endre rekkefølgen Customs
+          records:
+            title: Customs
+            sorry_no_results: Beklager! Vi fant ikke noen resultater.
+            no_items_yet: Det er ingen Customs enda. Klikk på "Lag en ny Custom" for å legge til din første custom.
+          custom:
+            view_live_html: Vis hvordan denne custom ser ut offentlig <br/><em>(åpner i et nytt vindu)</em>
+            edit: Rediger denne custom
+            delete: Fjern denne custom permanent
+      customs:
+        show:
+          other: Andre Customs
+  activerecord:
+    attributes:
+      'refinery/customs/custom':
+        title: Title
+        width: Width
+        height: Height
+        content: Content

@@ -1,0 +1,25 @@
+<ul>
+  <% if ::Refinery::Customs::Admin::CustomsController.searchable? %>
+    <li>
+      <%= render '/refinery/admin/search', :url => refinery.customs_admin_customs_path %>
+    </li>
+  <% end %>
+  <li>
+    <%= link_to t('.create_new'), refinery.new_customs_admin_custom_path,
+                 :class => "add_icon" %>
+  </li>
+<% if !searching? && ::Refinery::Customs::Admin::CustomsController.sortable? && ::Refinery::Customs::Custom.any? %>
+  <li>
+    <%= link_to t('.reorder', :what => "Customs"),
+                 refinery.customs_admin_customs_path,
+                 :id => "reorder_action",
+                 :class => "reorder_icon" %>
+
+    <%= link_to t('.reorder_done', :what => "Customs"),
+                 refinery.customs_admin_customs_path,
+                 :id => "reorder_action_done",
+                 :style => "display: none;",
+                 :class => "reorder_icon" %>
+  </li>
+<% end %>
+</ul>

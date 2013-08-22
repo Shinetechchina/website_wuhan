@@ -1,0 +1,11 @@
+<% content_for :body do %>
+  <ul id="customs">
+    <% @customs.each do |custom| %>
+      <li>
+        <%= link_to custom.title, refinery.customs_custom_path(custom) %>
+      </li>
+    <% end %>
+  </ul>
+<% end %>
+
+<%= render '/refinery/content_page' %>
