@@ -13,13 +13,17 @@
             i.icon-star
         .staff-description =raw boxable.description
         .social-links
-          - if boxable.github_url?
-            a href="#{boxable.github_url}" target="_blank": i.icon-github.icon-large Github
-          - if boxable.linkedin_url?
-            a href="#{boxable.linkedin_url}" target="_blank": i.icon-linkedin.icon-large LinkedIn
-          - if boxable.twitter_url?
-            a href="#{boxable.twitter_url}" target="_blank": i.icon-twitter.icon-large Twitter
-          - if boxable.weibo_url?
-            a href="#{boxable.weibo_url}" target="_blank": i.icon-weibo.icon-large Weibo
           - if boxable.email?
-            a href="mailto:#{boxable.email}" target="_blank": i.icon.icon-envelope Email
+            a href="mailto:#{boxable.email}" target="_blank": i.icon.icon-envelope &nbsp;Email
+          - if boxable.cv_url?
+            a href="#{boxable.cv_url}" target="_blank": i.icon-external-link.icon-large &nbsp;CV
+          - if boxable.github_url?
+            a href="#{boxable.github_url}" target="_blank": i.icon-github.icon-large &nbsp;Github
+          - if boxable.linkedin_url?
+            a href="#{boxable.linkedin_url}" target="_blank": i.icon-linkedin.icon-large &nbsp;LinkedIn
+          - if boxable.facebook_url?
+            a href="#{boxable.facebook_url}" target="_blank": i.icon-facebook.icon-large &nbsp;Facebook
+          - if boxable.twitter_url?
+            a href="#{boxable.twitter_url}" target="_blank": i.icon-twitter.icon-large &nbsp;Twitter
+          - if boxable.weibo_url?
+            a href="#{boxable.weibo_url}" target="_blank": i.icon-weibo.icon-large &nbsp;Weibo

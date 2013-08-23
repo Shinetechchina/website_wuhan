@@ -43,7 +43,7 @@ App.BoxManager =
     if parseInt($('body').css('width')) >= 596
       $el.attr('data-ss-colspan', expandCols)
       expandHeight = @countExpandHeight($el.css('height'))
-      $el.css('height', expandHeight)
+      $el.find('.maxi').css('height', expandHeight)
 
     # onLayoutComplete = ->
     #   $(document.body).animate scrollTop: $el.offset().top - parseInt($('#box-container').css('margin-top').replace('px', ''))
