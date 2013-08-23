@@ -2,6 +2,7 @@ App.BoxManager =
   currentPage: null
 
   boxWidth: 280
+  boxHeight: 288
   gutter: 20
 
   init: ->
@@ -25,6 +26,11 @@ App.BoxManager =
     self = @
     @$container.on 'click', '.box.box-expandable:not(a)', -> self.expandBox(@)
 
+  countExpandHeight: (height)->
+    heightInt = parseInt(height)
+    if heightInt > @boxHeight and heightInt < @boxHeight * 2 + @gutter
+      (@boxHeight * 2 + @gutter) + 'px'
+
   # 展开box，只有class为box-expandable的box才会响应这个方法
   expandBox: (el) ->
     $el = if typeof el == 'string' then @$container.find(".box[data-box-id=#{el}]") else $(el)
@@ -34,13 +40,14 @@ App.BoxManager =
 
     @$container.find(".box-expandable:not([data-collapse=false])").removeClass('box-expanded').removeAttr('data-ss-colspan')
     $el.addClass('box-expanded')
-    if parseInt($('body').css('width')) >= 600
+    if parseInt($('body').css('width')) >= 596
       $el.attr('data-ss-colspan', expandCols)
+      expandHeight = @countExpandHeight($el.css('height'))
+      $el.css('height', expandHeight)
 
     # onLayoutComplete = ->
     #   $(document.body).animate scrollTop: $el.offset().top - parseInt($('#box-container').css('margin-top').replace('px', ''))
     #   true
-
     @reLayout()
     # @$container.masonry 'on', 'layoutComplete', onLayoutComplete
 
