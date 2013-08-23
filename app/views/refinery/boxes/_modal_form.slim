@@ -2,7 +2,7 @@
   .field.pull-left
     = f.label :url, "Page URL"
     | &nbsp;&nbsp;
-    = f.select :url, [nil] + BoxSet.all.collect(&:url)
+    = f.select :url, [nil, '#back'] + BoxSet.all.collect(&:url)
 
   .field.pull-right
     = f.submit
