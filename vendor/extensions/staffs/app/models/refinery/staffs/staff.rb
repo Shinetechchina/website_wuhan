@@ -3,7 +3,7 @@ module Refinery
     class Staff < Refinery::Core::BaseModel
       self.table_name = 'refinery_staffs'
 
-      attr_accessible :tags, :name, :email, :number, :title, :image_id, :description, :position, :github_url, :linkedin_url, :twitter_url, :weibo_url
+      attr_accessible :tags, :name, :email, :number, :title, :image_id, :second_image_id, :description, :position, :cv_url, :facebook_url, :github_url, :linkedin_url, :twitter_url, :weibo_url
 
       acts_as_indexed :fields => [:name, :email, :title, :description]
 
@@ -14,6 +14,7 @@ module Refinery
       validates_format_of :email, with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i
 
       belongs_to :image, :class_name => '::Refinery::Image'
+      belongs_to :second_image, :class_name => '::Refinery::Image'
       has_many :boxes, as: :boxable, dependent: :destroy
 
       liquid_methods :name, :number, :title, :description,

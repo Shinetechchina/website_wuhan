@@ -14,5 +14,10 @@ module Refinery
       self.image.try(:box_size_url)
     end
 
+    def second_image_url
+      self.second_image.try(:box_size_url)
+    end
+
+
   end
 end

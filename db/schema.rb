@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130822083042) do
+ActiveRecord::Schema.define(:version => 20130823075353) do
 
   add_extension "hstore"
 
@@ -200,13 +200,17 @@ ActiveRecord::Schema.define(:version => 20130822083042) do
     t.integer  "image_id"
     t.text     "description"
     t.integer  "position"
-    t.datetime "created_at",                 :null => false
-    t.datetime "updated_at",                 :null => false
+    t.datetime "created_at",                    :null => false
+    t.datetime "updated_at",                    :null => false
     t.string   "github_url"
     t.string   "linkedin_url"
     t.string   "twitter_url"
     t.string   "weibo_url"
-    t.string   "tags",         :limit => 50,                 :array => true
+    t.string   "tags",            :limit => 50,                 :array => true
+    t.integer  "second_image_id"
+    t.string   "facebook_url"
+    t.string   "cv_url"
+    t.integer  "quote"
   end
 
   create_table "refinery_technologies", :force => true do |t|
