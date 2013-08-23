@@ -3,7 +3,7 @@ module Refinery
     class Staff < Refinery::Core::BaseModel
       self.table_name = 'refinery_staffs'
 
-      attr_accessible :tags, :name, :email, :number, :title, :image_id, :second_image_id, :description, :position, :cv_url, :facebook_url, :github_url, :linkedin_url, :twitter_url, :weibo_url
+      attr_accessible :tags, :name, :email, :number, :title, :quote, :image_id, :second_image_id, :description, :position, :cv_url, :facebook_url, :github_url, :linkedin_url, :twitter_url, :weibo_url
 
       acts_as_indexed :fields => [:name, :email, :title, :description]
 

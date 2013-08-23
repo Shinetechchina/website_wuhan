@@ -11,6 +11,9 @@
         .staff-score
           - 5.times do
             i.icon-star
+        - if boxable.quote?
+          .staff-quote
+            = "$#{boxable.quote}/hour"
         .staff-description =raw boxable.description
         .social-links
           - if boxable.email?
