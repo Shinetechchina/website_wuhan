@@ -17,10 +17,11 @@ App.CustomBoxes =
 
     $('#edit-boxes').on 'click', ->
       routeBoxes = $('.box.route')
-      routeBoxes.removeClass('route')
       if $('.box-404').length > 0
         alert('Can not edit boxes in 404 page')
       else
+        App.BoxManager.shapeshiftEnableDrag(true)
+        routeBoxes.removeClass('route')
         if $(".edit-box-icons").length == 0
           $(".box").not('.new-box').prepend(editBoxIcons)
           self.editBoxEvents()
