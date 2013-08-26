@@ -1,7 +1,7 @@
 .box-staff
   &.box-expanded
     min-height: $box-height
-    width: $box-width-4x
+    width: $box-width-3x
     height: auto
 
   .maxi
@@ -14,15 +14,16 @@
       margin: 15px 0
       float: left
       padding-right: 20px
+      padding-top: 3px
       margin: 0px
-      font-size: 50px
+      font-size: 40px
       border-bottom: 0
 
     .staff-info-inner
-      height: 50px
+      height: 55px
       border-bottom: 1px solid #666
       padding-top: 10px
-      padding-bottom: 20px
+      padding-bottom: 5px
       margin-bottom: 5px
 
 .staff-thumb
@@ -46,6 +47,9 @@
   line-height: 2
   @include transition(background .3s)
 
+.staff-score
+  font-size: 12px
+
 .staff-thumb:hover .staff-name
   background: $main-color
 
@@ -53,14 +57,16 @@
   box-sizing: border-box
   text-align: left
   padding: 10px 20px
-  width: $box-width-3x
+  width: $box-width-2x
 
 .staff-quote
   font-weight: bold
+  font-size: 13px
+  margin-top: -4px
 
 .staff-description
   line-height: 1.5
-  font-size: 25px
+  font-size: 18px
 
 .social-links
   margin-top: 15px
