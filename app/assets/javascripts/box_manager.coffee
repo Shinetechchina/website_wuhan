@@ -14,27 +14,17 @@ App.BoxManager =
   shapeshiftEnableDrag: (boolean)->
     @$container.shapeshift
       colWidth: @boxWidth
-      align: 'center'
       #columns: 4
       gutterX: @gutter
       gutterY: @gutter
       paddingX: 0
       paddingY: 0
       align: 'left'
-      minColumns: 2
       enableDrag: boolean
 
   bindEvents: ->
     self = @
     @$container.on 'click', '.box.box-expandable:not(a)', -> self.expandBox(@)
-
-  countExpandCols: (width)->
-    if width <= @boxWidth * 2 + @gutter
-      2
-    else if width <= @boxWidth * 3 + @gutter * 2
-      3
-    else
-      4
 
   countExpandHeight: (height)->
     heightInt = parseInt(height)
@@ -45,18 +35,13 @@ App.BoxManager =
   expandBox: (el) ->
     $el = if typeof el == 'string' then @$container.find(".box[data-box-id=#{el}]") else $(el)
     return if $el.is('a')
-    #expandCols = $el.data('expand-cols')
+    expandCols = $el.data('expand-cols')
     return if $el.hasClass('box-expanded')
+
     @$container.find(".box-expandable:not([data-collapse=false])").removeClass('box-expanded').removeAttr('data-ss-colspan')
     $el.addClass('box-expanded')
-
-    width = $el.width()
-    expandCols = @countExpandCols(width)
-
     if parseInt($('body').css('width')) >= 596
-      $el.attr('data-ss-colspan', 4)# expandCols)
-      #expandHeight = @countExpandHeight($el.css('height'))
-      #$el.find('.maxi').css('height', expandHeight)
+      $el.attr('data-ss-colspan', expandCols)
 
     # onLayoutComplete = ->
     #   $(document.body).animate scrollTop: $el.offset().top - parseInt($('#box-container').css('margin-top').replace('px', ''))
@@ -65,10 +50,7 @@ App.BoxManager =
     # @$container.masonry 'on', 'layoutComplete', onLayoutComplete
 
   reLayout: ->
-    self = @
-    @$container.on "ss-arranged", (e, selected) ->
-      console.log($('.box-expanded').width())
-    @$container.trigger 'ss-rearrange'
+    @$container.trigger('ss-rearrange')
 
   # The usage of reload:
   #   When calling render() without reload, if the current page is not change, BoxManager won't reload boxes from server.

@@ -1,0 +1,22 @@
+ul
+  - if boxable.email?
+    li
+      a href="mailto:#{boxable.email}" target="_blank": i.icon.icon-envelope &nbsp;Email
+  - if boxable.cv_url?
+    li
+      a href="#{boxable.cv_url}" target="_blank": i.icon-file-text-alt.icon-large &nbsp;CV
+  - if boxable.facebook_url?
+    li
+      a href="#{boxable.facebook_url}" target="_blank": i.icon-facebook.icon-large &nbsp;Facebook
+  - if boxable.github_url?
+    li
+      a href="#{boxable.github_url}" target="_blank": i.icon-github.icon-large &nbsp;Github
+  - if boxable.linkedin_url?
+    li
+      a href="#{boxable.linkedin_url}" target="_blank": i.icon-linkedin.icon-large &nbsp;LinkedIn
+  - if boxable.twitter_url?
+    li
+      a href="#{boxable.twitter_url}" target="_blank": i.icon-twitter.icon-large &nbsp;Twitter
+  - if boxable.weibo_url?
+    li
+      a href="#{boxable.weibo_url}" target="_blank": i.icon-weibo.icon-large &nbsp;Weibo
