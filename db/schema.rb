@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130823075353) do
+ActiveRecord::Schema.define(:version => 20130827014227) do
 
   add_extension "hstore"
 
@@ -211,6 +211,7 @@ ActiveRecord::Schema.define(:version => 20130823075353) do
     t.string   "facebook_url"
     t.string   "cv_url"
     t.integer  "quote"
+    t.string   "signature"
   end
 
   create_table "refinery_technologies", :force => true do |t|
