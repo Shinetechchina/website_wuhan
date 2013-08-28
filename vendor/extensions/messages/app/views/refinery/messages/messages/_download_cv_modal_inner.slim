@@ -1,0 +1,14 @@
+= form_for Refinery::Messages::Message.new, url: '/messages', remote: true do |f|
+  = f.label :email
+  | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  = f.text_field :email
+  br
+  = f.label :phone_number
+  | &nbsp;&nbsp;
+  = f.text_field :phone_number
+
+  = f.hidden_field :staff_id, value: @staff.id
+
+  br
+
+  = f.submit 'submit', class: 'pull-right'

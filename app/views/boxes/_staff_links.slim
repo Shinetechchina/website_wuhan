@@ -4,7 +4,8 @@ ul
       a href="mailto:#{boxable.email}" target="_blank": i.icon.icon-envelope &nbsp;Email
   - if boxable.cv_url?
     li
-      a href="#{boxable.cv_url}" target="_blank": i.icon-file-text-alt.icon-large &nbsp;CV
+      = link_to new_messages_message_path(staff_id: boxable.id), remote: true do
+        i.icon-file-text-alt.icon-large &nbsp;CV
   - if boxable.facebook_url?
     li
       a href="#{boxable.facebook_url}" target="_blank": i.icon-facebook.icon-large &nbsp;Facebook

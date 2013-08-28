@@ -3,19 +3,22 @@
               :object => @message,
               :include_object_name => true %>
 
-  
+
   <div class='field'>
     <%= f.label :name -%>
     <%= f.text_field :name -%>
-
   </div>
-  
+
   <div class='field'>
     <%= f.label :email -%>
     <%= f.text_field :email  -%>
-
   </div>
-  
+
+  <div class='field'>
+    <%= f.label :phone_number -%>
+    <%= f.text_field :phone_number  -%>
+  </div>
+
   <div class='field'>
     <div id='page-tabs' class='clearfix ui-tabs ui-widget ui-widget-content ui-corner-all'>
       <ul id='page_parts'>
@@ -35,7 +38,7 @@
     </div>
 
   </div>
-  
+
   <%= render '/refinery/admin/form_actions', :f => f,
              :continue_editing => false,
              :delete_title => t('delete', :scope => 'refinery.messages.admin.messages.message'),

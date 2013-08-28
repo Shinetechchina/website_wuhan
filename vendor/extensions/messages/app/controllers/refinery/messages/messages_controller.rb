@@ -11,13 +11,33 @@ module Refinery
         present(@page)
       end
 
+      def new
+        @staff = Refinery::Staffs::Staff.find(params[:staff_id])
+        respond_to do |format|
+          format.js {render "new_download_cv_modal"}
+        end
+      end
+
       def create
         @message = Message.new(params[:message])
-        respond_to do |format|
+        #remain comment
+        if @message.comment?
+          respond_to do |format|
+            if @message.save
+              format.js { render js: "alert('Guest successful, we will contact you.'); $('#guest-bar').click();" }
+            else
+              format.js { render js: "alert('Guest failed, please input correctly format.')" }
+            end
+          end
+        else
+        #remain contact way
           if @message.save
-            format.js { render js: "alert('Guest successful, we will contact you.'); $('#guest-bar').click();" }
+            respond_to do |format|
+              cv_url = @message.staff.cv_url
+              format.js { render "download_cv", locals: {cv_url: cv_url} }
+            end
           else
-            format.js { render js: "alert('Guest failed, please input correctly format.')" }
+            render js: 'alert("Please remain phone number or email")'
           end
         end
       end

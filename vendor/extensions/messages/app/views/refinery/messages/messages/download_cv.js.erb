@@ -1,0 +1,4 @@
+$('#downloadCVModal').modal('hide');
+$('#downloadCVModal').on('hidden', function(){
+  window.open('<%= j cv_url %>')
+});

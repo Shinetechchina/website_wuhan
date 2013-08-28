@@ -14,6 +14,7 @@
 #= require_self
 #= require box_manager
 #= require router
+#= require staff
 #= require dropdown_tag_list
 #= require video_modal
 #= require overlay
@@ -26,6 +27,7 @@ window.App = App =
   init: ->
     App.BoxManager.init()
     App.CustomBoxes.init()
+    App.Staff.init()
     App.Router.init()
     App.DropdownTagList.init()
     App.Masthead.init()
