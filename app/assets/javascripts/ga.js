@@ -1,6 +1,6 @@
 var _gaq = _gaq || [];
 _gaq.push(['_setAccount', 'UA-43541604-1']);
-_gaq.push(['_setDomainName', 'http://116.211.5.6:8090']);
+_gaq.push(['_setDomainName', 'none']);
 _gaq.push(['_trackPageview']);
 
 (function() {
@@ -8,3 +8,12 @@ _gaq.push(['_trackPageview']);
   ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
   var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
 })();
+
+var gaEvents = {
+  AccessPage: 'AccessPage'
+}
+
+function gatAccessPage(page){
+  page = page === '' ? 'home' : page
+  _gaq.push(['_trackEvent', gaEvents['AccessPage'], page]);
+}
