@@ -9,27 +9,44 @@
   bottom: 0px
   right: -50px
   padding: 10px 10px 7px 10px
-  width: 265px
+  width: 305px
   font-weight: bold
-  background: $main-color none repeat scroll 0 0
+  background: #08c none repeat scroll 0 0
   color: #fff
   z-index: 9999
   border-radius: 5px 5px 0 0
 
   #guest-form
     background-color: white
-    color: $main-color
+    color: #08c
     font-size: 12px
     padding: 3px 10px
     padding-bottom: 10px
     input
       width: 125px
     textarea
-      width: 225px
+      width: 275px
 
     #message_submit
       margin-top: 10px
-      margin-left: 100px
+
+#downloadCVModal
+  background: #08c
+  color: #08c
+  width: 430px
+  .modal-header
+    border-bottom: 0
+  .modal-body
+    padding-top: 0
+  h3
+    color: #fff!important
+  form
+    background: #fff
+    padding: 15px
+  #message_content
+    width: 360px
+  #message_submit
+    margin-top: 5px
 
 @media screen and (max-width: $box-width-4x + 100px)
   #guest-book

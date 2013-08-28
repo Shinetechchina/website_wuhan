@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130827041126) do
+ActiveRecord::Schema.define(:version => 20130828065542) do
 
   add_extension "hstore"
 
@@ -84,6 +84,7 @@ ActiveRecord::Schema.define(:version => 20130827041126) do
     t.datetime "updated_at",   :null => false
     t.integer  "staff_id"
     t.string   "phone_number"
+    t.string   "company"
   end
 
   create_table "refinery_page_part_translations", :force => true do |t|

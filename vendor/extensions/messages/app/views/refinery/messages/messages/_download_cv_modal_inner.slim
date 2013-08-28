@@ -1,14 +1,26 @@
-= form_for Refinery::Messages::Message.new, url: '/messages', remote: true do |f|
-  = f.label :email
-  | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  = f.text_field :email
-  br
-  = f.label :phone_number
-  | &nbsp;&nbsp;
-  = f.text_field :phone_number
+#guest-modal
+  = form_for Refinery::Messages::Message.new, url: '/messages', remote: true do |f|
+    = f.label 'Your Name*'
+    .field
+      = f.text_field :name
 
-  = f.hidden_field :staff_id, value: @staff.id
+    = f.label 'Your Company*'
+    .field
+      = f.text_field :company
 
-  br
+    = f.label 'Your email*'
+    .field
+      = f.text_field :email
 
-  = f.submit 'submit', class: 'pull-right'
+    = f.label 'Your phone number'
+    .field
+      = f.text_field :phone_number
+
+    = f.label 'Content*'
+    .field
+      = f.text_area :content, rows: 5
+
+    = f.hidden_field :staff_id, value: @staff.id
+
+    #message_submit
+      =f.submit 'Submit', id: 'message_submit', disable_with: "loading..."

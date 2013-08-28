@@ -37,7 +37,7 @@ module Refinery
               format.js { render "download_cv", locals: {cv_url: cv_url} }
             end
           else
-            render js: 'alert("Please remain phone number or email")'
+            render js: 'alert("Please remain correct information")'
           end
         end
       end
