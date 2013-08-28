@@ -20,6 +20,7 @@
 #= require overlay
 #= require masthead
 #= require custom_boxes
+#= require ga
 
 window.App = App =
   $menu: null
