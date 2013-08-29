@@ -13,7 +13,7 @@ class Refinery::BoxesController < ApplicationController
   def create
     @box = Box.new(params[:box])
     @box.set_template
-    #@box.add_position
+    @box.set_position
     respond_to do |format|
       if @box.save
         flash[:notice] = "create box successful !"
@@ -41,6 +41,15 @@ class Refinery::BoxesController < ApplicationController
     end
   end
 
+  def update_positions
+    boxes_params = params[:boxes]
+    boxes_params.values.each do |box_params|
+      box = Box.find(box_params["id"])
+      box.update_attributes(position: box_params["position"])
+    end
+    flash[:notice] = "set boxes successful"
+    render nothing: true, status: 200, content_type: 'text/html'
+  end
 
   def destroy
     @box = Box.find(params[:id])
