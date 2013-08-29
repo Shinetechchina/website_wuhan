@@ -1,0 +1,11 @@
+<% content_for :body do %>
+  <ul id="modals">
+    <% @modals.each do |modal| %>
+      <li>
+        <%= link_to modal.title, refinery.modals_modal_path(modal) %>
+      </li>
+    <% end %>
+  </ul>
+<% end %>
+
+<%= render '/refinery/content_page' %>

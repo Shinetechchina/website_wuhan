@@ -11,7 +11,9 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130828065542) do
+ActiveRecord::Schema.define(:version => 20130829070812) do
+
+  add_extension "hstore"
 
   create_table "authentications", :force => true do |t|
     t.string   "provider"
@@ -83,6 +85,15 @@ ActiveRecord::Schema.define(:version => 20130828065542) do
     t.integer  "staff_id"
     t.string   "phone_number"
     t.string   "company"
+  end
+
+  create_table "refinery_modals", :force => true do |t|
+    t.string   "title"
+    t.string   "path"
+    t.text     "content"
+    t.integer  "position"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "refinery_page_part_translations", :force => true do |t|
@@ -265,5 +276,9 @@ ActiveRecord::Schema.define(:version => 20130828065542) do
 
   add_index "seo_meta", ["id"], :name => "index_seo_meta_on_id"
   add_index "seo_meta", ["seo_meta_id", "seo_meta_type"], :name => "index_seo_meta_on_seo_meta_id_and_seo_meta_type"
+
+  create_table "tags", :force => true do |t|
+    t.string "name"
+  end
 
 end

@@ -1,0 +1,29 @@
+en:
+  refinery:
+    plugins:
+      modals:
+        title: Modals
+    modals:
+      admin:
+        modals:
+          actions:
+            create_new: Add New Modal
+            reorder: Reorder Modals
+            reorder_done: Done Reordering Modals
+          records:
+            title: Modals
+            sorry_no_results: Sorry! There are no results found.
+            no_items_yet: There are no Modals yet. Click "Add New Modal" to add your first modal.
+          modal:
+            view_live_html: View this modal live <br/><em>(opens in a new window)</em>
+            edit: Edit this modal
+            delete: Remove this modal forever
+      modals:
+        show:
+          other: Other Modals
+  activerecord:
+    attributes:
+      'refinery/modals/modal':
+        title: Title
+        url: Url
+        content: Content

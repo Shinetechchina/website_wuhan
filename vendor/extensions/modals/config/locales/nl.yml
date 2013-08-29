@@ -1,0 +1,29 @@
+nl:
+  refinery:
+    plugins:
+      modals:
+        title: Modals
+    modals:
+      admin:
+        modals:
+          actions:
+            create_new: Maak een nieuwe Modal
+            reorder: Wijzig de volgorde van de Modals
+            reorder_done: Klaar met het wijzingen van de volgorde van de Modals
+          records:
+            title: Modals
+            sorry_no_results: Helaas! Er zijn geen resultaten gevonden.
+            no_items_yet: Er zijn nog geen Modals. Druk op 'Maak een nieuwe Modal' om de eerste aan te maken.
+          modal:
+            view_live_html: Bekijk deze modal op de website <br/><em>(opent een nieuw venster)</em>
+            edit: Bewerk deze modal
+            delete: Verwijder deze modal voor eeuwig
+      modals:
+        show:
+          other: Andere Modals
+  activerecord:
+    attributes:
+      'refinery/modals/modal':
+        title: Title
+        url: Url
+        content: Content

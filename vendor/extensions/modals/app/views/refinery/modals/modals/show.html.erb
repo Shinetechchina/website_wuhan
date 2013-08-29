@@ -1,0 +1,39 @@
+<% content_for :body_content_title do %>
+  <%= @modal.title %>
+<% end %>
+
+<% content_for :body do %>
+  <section>
+    <h1>Title</h1>
+    <p>
+      <%=raw @modal.title %>
+    </p>
+  </section>
+  <section>
+    <h1>Path</h1>
+    <p>
+      <%=raw @modal.path %>
+    </p>
+  </section>
+  <section>
+    <h1>Content</h1>
+    <p>
+      <%=raw @modal.content %>
+    </p>
+  </section>
+<% end %>
+
+<% content_for :side_body do %>
+  <aside>
+    <h2><%= t('.other') %></h2>
+    <ul id="modals">
+      <% @modals.each do |modal| %>
+        <li>
+          <%= link_to modal.title, refinery.modals_modal_path(modal) %>
+        </li>
+      <% end %>
+    </ul>
+  </aside>
+<% end %>
+
+<%= render '/refinery/content_page' %>

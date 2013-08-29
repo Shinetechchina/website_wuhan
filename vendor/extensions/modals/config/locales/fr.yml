@@ -1,0 +1,29 @@
+fr:
+  refinery:
+    plugins:
+      modals:
+        title: Modals
+    modals:
+      admin:
+        modals:
+          actions:
+            create_new: Créer un(e) nouve(au/l/lle) Modal
+            reorder: Réordonner les Modals
+            reorder_done: Fin de réordonnancement des Modals
+          records:
+            title: Modals
+            sorry_no_results: "Désolé ! Aucun résultat."
+            no_items_yet: 'Il n''y a actuellement aucun(e) Modal. Cliquer sur "Créer un(e) nouve(au/l/lle) Modal" pour créer votre premi(er/ère) modal.'
+          modal:
+            view_live_html: Voir ce(t/tte) modal <br/><em>(Ouvre une nouvelle fenêtre)</em>
+            edit: Modifier ce(t/tte) modal
+            delete: Supprimer définitivement ce(t/tte) modal
+      modals:
+        show:
+          other: Autres Modals
+  activerecord:
+    attributes:
+      'refinery/modals/modal':
+        title: Title
+        url: Url
+        content: Content
