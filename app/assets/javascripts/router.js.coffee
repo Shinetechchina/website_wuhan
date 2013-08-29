@@ -24,19 +24,25 @@ App.Router =
     return unless Modernizr.history
     self = @
 
-    $('body').on 'click.route', 'a.route', (e) ->
+    $('body').on 'click.route', 'a', (e) ->
       e.preventDefault()
       el = $(@)
       url = el.attr('href')
-      crossroads.parse(url, [false])
-      App.Masthead.collapseHeader()
-      App.CustomBoxes.hideEditBoxIcons()
-      # if you want to redirct to back, url is "#back" or "/#back"
-      if (url == "#back" or url == "/#back")
-        history.back()
-        return self.reload()
-      else if url
-        history.pushState(null, null, url)
+
+      if el.hasClass('route')
+        crossroads.parse(url, [false])
+        App.Masthead.collapseHeader()
+        App.CustomBoxes.hideEditBoxIcons()
+        # if you want to redirct to back, url is "#back" or "/#back"
+        if (url == "#back" or url == "/#back")
+          history.back()
+          return self.reload()
+        else if url
+          history.pushState(null, null, url)
+
+      else if url.match(/^#/)
+        $.get("/modals/show_by_path", {path: url}).success =>
+          $('#linkModal').modal('show')
 
     $(window).on 'popstate', ->
       crossroads.parse(location.pathname, [false])

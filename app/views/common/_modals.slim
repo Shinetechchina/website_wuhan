@@ -34,6 +34,5 @@
   .modal-header
     a.pull-right.close.pointer data-dismiss="modal" aria-hidden="true" style="color:#ccc!important"
       i.icon-remove
-    h3 =@modal.try(:title)
+    h3
   .modal-body
-    =raw @modal.try(:content)
