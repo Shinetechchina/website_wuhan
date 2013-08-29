@@ -9,11 +9,12 @@ App.Router =
   initRoutes: ->
     pageRoute = crossroads.addRoute '/:page*:'
 
+    trackUtmParameter()
     onRouteChange = (reload, page) =>
       page = if page then "/#{page}" else '/'
       [page, hashtag] = page.split('#')
 
-      gatAccessPage(page.replace(/\//, ''))
+      trackAccessPage(page.replace(/\//, ''))
       @activeMenuItem(page)
       App.BoxManager.render(page, reload)
 

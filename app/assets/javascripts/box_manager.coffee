@@ -34,6 +34,7 @@ App.BoxManager =
   # 展开box，只有class为box-expandable的box才会响应这个方法
   expandBox: (el) ->
     $el = if typeof el == 'string' then @$container.find(".box[data-box-id=#{el}]") else $(el)
+    trackAccessBox($el)
     return if $el.is('a')
     expandCols = $el.data('expand-cols')
     return if $el.hasClass('box-expanded')
