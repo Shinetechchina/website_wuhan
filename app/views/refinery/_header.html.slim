@@ -38,7 +38,7 @@
       h3 Please create page or delete pages.
     .modal-body
       - BoxSet.all.each do |box_set|
-        = render 'box_sets/modal_li', box_set: box_set
+        = render 'refinery/box_sets/modal_li', box_set: box_set
 
       = form_for BoxSet.new, url: '/box_sets', method: 'post', remote: true do |f|
         .field.pull-left

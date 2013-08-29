@@ -11,7 +11,6 @@ module Refinery
       validates_uniqueness_of :name, :number, :email
       validates_presence_of :name, :email, :image
       validates_numericality_of :number, greater_than: 0
-      validates_length_of :description, maximum: 1000
       validates_length_of :signature, maximum: 160
       validates_format_of :email, with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i
 
