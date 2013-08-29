@@ -1,0 +1,29 @@
+sk:
+  refinery:
+    plugins:
+      modals:
+        title: Modals
+    modals:
+      admin:
+        modals:
+          actions:
+            create_new: Pridať Modal
+            reorder: Preusporiadať Modals
+            reorder_done: Koniec radenia Modals
+          records:
+            title: Modals
+            sorry_no_results: Ľutujeme, ale neboli nájdené žiadne výsledky.
+            no_items_yet: Nie sú vytvorené žiadne Modals. Kliknite na "Pridať Modal" pre pridanie prvého modal.
+          modal:
+            view_live_html: Zobraziť náhľad modal<br/><em>(otvorí sa v novom okne)</em>
+            edit: Upraviť modal
+            delete: Zmazať modal
+      modals:
+        show:
+          other: Daľšie Modals
+  activerecord:
+    attributes:
+      'refinery/modals/modal':
+        title: Title
+        url: Url
+        content: Content

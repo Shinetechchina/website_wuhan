@@ -1,0 +1,30 @@
+es:
+  refinery:
+    plugins:
+      modals:
+        title: Modals
+#        article: masculino/femenino
+    modals:
+      admin:
+        modals:
+          actions:
+            create_new: Crear nuevo modal
+            reorder: Reordenar modals
+            reorder_done: Reordenación de modals completada
+          records:
+            title: Modals
+            sorry_no_results: Lo siento, no hay resultados
+            no_items_yet: No hay modals todavía. Pulsa en "Crear nuevo Modal" para crear tu primer modal.
+          modal:
+            view_live_html: Ver este modal como abierto al público <br/><em>(abre en ventana nueva)</em>
+            edit: Editar este modal
+            delete: Borrar este modal para siempre
+      modals:
+        show:
+          other: Otros modals
+  activerecord:
+    attributes:
+      'refinery/modals/modal':
+        title: Title
+        url: Url
+        content: Content

@@ -1,0 +1,39 @@
+#editPagesModal.modal.hide.fade tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"
+  .modal-header
+    a.pull-right.close.pointer data-dismiss="modal" aria-hidden="true" style="color:#ccc!important"
+      i.icon-remove
+    h3 Please create page or delete pages.
+  .modal-body
+    - BoxSet.all.each do |box_set|
+      = render 'refinery/box_sets/modal_li', box_set: box_set
+
+    = form_for BoxSet.new, url: '/box_sets', method: 'post', remote: true do |f|
+      .field.pull-left
+        = f.label :url, "Page URL"
+        | &nbsp;&nbsp;
+        = f.text_field :url
+
+      .field.pull-right
+        = f.submit "Create Page"
+
+#editBoxesModal.modal.hide.fade tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"
+  .modal-header
+    a.pull-right.close.pointer data-dismiss="modal" aria-hidden="true" style="color:#ccc!important"
+      i.icon-remove
+    h3 Please select redirect URL.
+  .modal-body
+
+#downloadCVModal.modal.hide.fade tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"
+  .modal-header
+    a.pull-right.close.pointer data-dismiss="modal" aria-hidden="true" style="color:#ccc!important"
+      i.icon-remove
+    h3 Please remain your information before dowload CV.
+  .modal-body
+
+#linkModal.modal.hide.fade tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"
+  .modal-header
+    a.pull-right.close.pointer data-dismiss="modal" aria-hidden="true" style="color:#ccc!important"
+      i.icon-remove
+    h3 =@modal.try(:title)
+  .modal-body
+    =raw @modal.try(:content)

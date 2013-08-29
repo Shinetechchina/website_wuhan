@@ -1,0 +1,25 @@
+<ul>
+  <% if ::Refinery::Modals::Admin::ModalsController.searchable? %>
+    <li>
+      <%= render '/refinery/admin/search', :url => refinery.modals_admin_modals_path %>
+    </li>
+  <% end %>
+  <li>
+    <%= link_to t('.create_new'), refinery.new_modals_admin_modal_path,
+                 :class => "add_icon" %>
+  </li>
+<% if !searching? && ::Refinery::Modals::Admin::ModalsController.sortable? && ::Refinery::Modals::Modal.any? %>
+  <li>
+    <%= link_to t('.reorder', :what => "Modals"),
+                 refinery.modals_admin_modals_path,
+                 :id => "reorder_action",
+                 :class => "reorder_icon" %>
+
+    <%= link_to t('.reorder_done', :what => "Modals"),
+                 refinery.modals_admin_modals_path,
+                 :id => "reorder_action_done",
+                 :style => "display: none;",
+                 :class => "reorder_icon" %>
+  </li>
+<% end %>
+</ul>

@@ -1,0 +1,29 @@
+nb:
+  refinery:
+    plugins:
+      modals:
+        title: Modals
+    modals:
+      admin:
+        modals:
+          actions:
+            create_new: Lag en ny Modal
+            reorder: Endre rekkefølgen på Modals
+            reorder_done: Ferdig å endre rekkefølgen Modals
+          records:
+            title: Modals
+            sorry_no_results: Beklager! Vi fant ikke noen resultater.
+            no_items_yet: Det er ingen Modals enda. Klikk på "Lag en ny Modal" for å legge til din første modal.
+          modal:
+            view_live_html: Vis hvordan denne modal ser ut offentlig <br/><em>(åpner i et nytt vindu)</em>
+            edit: Rediger denne modal
+            delete: Fjern denne modal permanent
+      modals:
+        show:
+          other: Andre Modals
+  activerecord:
+    attributes:
+      'refinery/modals/modal':
+        title: Title
+        url: Url
+        content: Content
