@@ -22,6 +22,9 @@
           | &nbsp;&nbsp;
           = select_box_name_by Box::BOXABLE_TYPES.first
           = f.hidden_field :box_set_id, value: @box_set.id
-
+        .field
+          = f.label :expanded, "Expanded"
+          | &nbsp;&nbsp;
+          = f.select :expanded, [false, true]
         .field.pull-right
           = f.submit
