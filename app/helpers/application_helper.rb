@@ -29,7 +29,6 @@ module ApplicationHelper
         if box.expanded?
           options[:class] << 'box-expanded'
           options[:data]['ss-colspan'] = expand_cols
-          options[:data]['collapse'] = false
         end
       end
 
