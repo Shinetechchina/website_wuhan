@@ -15,6 +15,8 @@ module ApplicationHelper
       if box.boxable
         options[:class] << "box-#{box.boxable_type.demodulize.underscore.dasherize}"
         options[:data]['boxable-id'] = box.boxable_id
+        options[:data]['boxable-name'] = box.boxable_title
+        options[:data]['boxable-type'] = box.boxable_type_name
       end
 
       # expandable
