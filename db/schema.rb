@@ -13,8 +13,6 @@
 
 ActiveRecord::Schema.define(:version => 20130828065542) do
 
-  add_extension "hstore"
-
   create_table "authentications", :force => true do |t|
     t.string   "provider"
     t.string   "uid"
@@ -267,9 +265,5 @@ ActiveRecord::Schema.define(:version => 20130828065542) do
 
   add_index "seo_meta", ["id"], :name => "index_seo_meta_on_id"
   add_index "seo_meta", ["seo_meta_id", "seo_meta_type"], :name => "index_seo_meta_on_seo_meta_id_and_seo_meta_type"
-
-  create_table "tags", :force => true do |t|
-    t.string "name"
-  end
 
 end

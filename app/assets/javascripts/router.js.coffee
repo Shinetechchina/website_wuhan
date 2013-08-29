@@ -13,6 +13,7 @@ App.Router =
       page = if page then "/#{page}" else '/'
       [page, hashtag] = page.split('#')
 
+      gatAccessPage(page.replace(/\//, ''))
       @activeMenuItem(page)
       App.BoxManager.render(page, reload)
 
