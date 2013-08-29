@@ -1,4 +1,4 @@
-class BoxSetsController < ApplicationController
+class Refinery::BoxSetsController < ApplicationController
   def create
     @box_set = BoxSet.new(params[:box_set])
     if @box_set.save

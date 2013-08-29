@@ -5,7 +5,7 @@ class BoxSet < ActiveRecord::Base
 
   has_many :boxes, order: 'position', dependent: :destroy
 
-  before_save :improve_url
+  before_validation :improve_url
 
   def improve_url
     url = self.url
