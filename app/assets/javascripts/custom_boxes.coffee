@@ -3,6 +3,7 @@ App.CustomBoxes =
   init: ->
     @selectBoxableType()
     @toggleEditBoxIcons()
+    @rearrangedBoxes()
 
   selectBoxableType: ->
     $('#box_boxable_type').on 'change', ->
@@ -64,3 +65,34 @@ App.CustomBoxes =
       ajaxLink = "/boxes/#{boxId}/select_url"
       $.get(ajaxLink).success =>
         $('#editBoxesModal').modal('show')
+
+  rearrangedBoxes: ->
+    self = @
+    $('#edit-boxes').on 'click', ->
+      if not $(".edit-box-icons").is(":visible")
+        $container = $('#box-container')
+        $boxes = $('.box').not('.new-box')
+        boxesJson = {}
+
+        i = 0
+        while i < $boxes.length
+          $box = $($boxes[i])
+          boxesJson[i] =  self.boxJson($box)
+          i+=1
+        boxesJson = {boxes: boxesJson}
+
+        ajaxLink = "/boxes/update_positions"
+        #$.update(ajaxLink).success =>
+
+        $.ajax({
+          url: ajaxLink,
+          type: "PUT",
+          contentType: 'application/json',
+          data: JSON.stringify(boxesJson)
+          dataType: 'json'
+        })
+
+  boxJson: (box)->
+      id = box.attr('id').split('-').pop()
+      position = box.index()
+      hash = {id: id, position: position}

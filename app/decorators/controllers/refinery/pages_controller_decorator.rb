@@ -50,7 +50,7 @@ Refinery::PagesController.class_eval do
   def find_boxes(url)
     @box_set = BoxSet.find_by_url(url)
     if @box_set.present?
-      @boxes = @box_set.boxes
+      @boxes = @box_set.boxes.arranged
       render 'boxes'
     else
       render '404'

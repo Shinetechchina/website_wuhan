@@ -12,6 +12,7 @@ WebsiteWuhan::Application.routes.draw do
     resources :boxes, only: [:create, :destroy] do
       collection do
         post :select_type
+        put :update_positions
       end
       member do
         put :update_url

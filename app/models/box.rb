@@ -17,7 +17,8 @@ class Box < ActiveRecord::Base
   # validates_uniqueness_of :boxable_id, scope: :boxable_type, allow_nil: true, message: "box is has already been taken"
   # validates_inclusion_of :boxable_type, in: BOXABLE_TYPES
 
-  scope :arranged, where("position IS NOT NULL").order(:position)
+  scope :arranged, order(:position)
+  scope :have_position, where("position IS NOT NULL")
 
   def boxable_type_name
     if (boxable_type = self.boxable_type).present?
@@ -35,12 +36,13 @@ class Box < ActiveRecord::Base
     end
   end
 
-  def add_position
-    #if Box.last.present?
-    #  self.position = Box.last.position + 1
-    #else
-    #  self.position = 1
-    #end
+  def set_position
+    last_box = self.box_set.boxes.have_position.last
+    if last_box.present?
+      self.position = last_box.position + 1
+    else
+      self.position = 0
+    end
   end
 
   def set_template
