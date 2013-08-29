@@ -2,7 +2,7 @@ Refinery::Core::Engine.routes.append do
 
   # Frontend routes
   namespace :modals do
-    resources :modals, :path => '', :only => [:index] do
+    resources :modals, :path => '', :only => [:index, :show] do
       collection do
         get 'show_by_path'
       end
