@@ -11,12 +11,23 @@ module Refinery
         present(@page)
       end
 
-      def show
-        @modal = Modal.find(params[:id])
+      #def show
+      #  @modal = Modal.find(params[:id])
 
-        # you can use meta fields from your model instead (e.g. browser_title)
-        # by swapping @page for @modal in the line below:
-        present(@page)
+      #  # you can use meta fields from your model instead (e.g. browser_title)
+      #  # by swapping @page for @modal in the line below:
+      #  present(@page)
+      #end
+
+      def show_by_path
+        @modal = Modal.find_by_path(params[:path])
+        if @modal.present?
+          respond_to do |format|
+            format.js {render 'show'}
+          end
+        else
+          render nothing: true, status: 404, content_type: 'text/html'
+        end
       end
 
     protected

@@ -29,3 +29,6 @@ Refinery::Messages::Engine.load_seed
 
 # Added by Refinery CMS Customs extension
 Refinery::Customs::Engine.load_seed
+
+# Added by Refinery CMS Modals extension
+Refinery::Modals::Engine.load_seed
