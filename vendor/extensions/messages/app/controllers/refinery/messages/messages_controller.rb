@@ -14,7 +14,11 @@ module Refinery
       def new
         @staff = Refinery::Staffs::Staff.find(params[:staff_id])
         respond_to do |format|
-          format.js {render "new_download_cv_modal"}
+          if leave_message?
+            format.js {render "download_cv", locals: {cv_url: @staff.cv_url}}
+          else
+            format.js {render "new_download_cv_modal"}
+          end
         end
       end
 
@@ -24,6 +28,7 @@ module Refinery
         if @message.comment?
           respond_to do |format|
             if @message.save
+              leave_message
               format.js { render js: "alert('Guest successful, we will contact you.'); $('#guest-bar').click();" }
             else
               format.js { render js: "alert('Guest failed, please input correctly format.')" }
@@ -32,6 +37,7 @@ module Refinery
         else
         #remain contact way
           if @message.save
+            leave_message
             respond_to do |format|
               cv_url = @message.staff.cv_url
               format.js { render "download_cv", locals: {cv_url: cv_url} }
@@ -60,6 +66,13 @@ module Refinery
         @page = ::Refinery::Page.where(:link_url => "/messages").first
       end
 
+      def leave_message?
+        !!session[:leave_message]
+      end
+
+      def leave_message
+        session[:leave_message] = true
+      end
     end
   end
 end
