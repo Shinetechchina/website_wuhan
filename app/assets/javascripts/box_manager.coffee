@@ -15,6 +15,7 @@ App.BoxManager =
     @$container.shapeshift
       colWidth: @boxWidth
       #columns: 4
+      animationSpeed: 320
       gutterX: @gutter
       gutterY: @gutter
       paddingX: 0
