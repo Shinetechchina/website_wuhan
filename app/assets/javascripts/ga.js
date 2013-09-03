@@ -11,19 +11,21 @@ _gaq.push(['_trackPageview']);
 
 var gaEvents = {
   VisitPageParameter: 'VisitPageParameter',
-  AccessPage: 'AccessPage',
-  AccessBox: 'AccessBox'
+  sessionId: $.cookie('ga_session_id')
+}
+
+function trackBySessionId(operation) {
+  _gaq.push(['_trackEvent', gaEvents.sessionId, operation, new Date().toString()]);
 }
 
 function trackAccessPage(page){
   page = page === '' ? 'home' : page
-  _gaq.push(['_trackEvent', gaEvents['AccessPage'], page]);
+  trackBySessionId(page);
 }
 
 function trackAccessBox(element){
   var boxMarker = element.attr('data-boxable-type') + '/' + element.attr('data-boxable-name');
-  
-  _gaq.push(['_trackEvent', gaEvents['AccessBox'], boxMarker]);
+  trackBySessionId(boxMarker);
 }
 
 function trackUtmParameter(){
@@ -52,7 +54,7 @@ function trackUtmParameter(){
   if(typeof(utmCampaign) != 'undefined'){
     utmParams += 'utm_id: '+ utmCampaign;
   }
-  _gaq.push(['_trackEvent', gaEvents['VisitPageParameter'], utmParams]);
+  trackBySessionId(utmParams);
 }
 
 var getUtmParameter = function(term) {
