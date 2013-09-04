@@ -21,3 +21,12 @@ ul
   - if boxable.weibo_url?
     li
       a href="#{boxable.weibo_url}" target="_blank": i.icon-weibo.icon-large &nbsp;Weibo
+  - if boxable.google_plus_url?
+    li
+      a href="#{boxable.google_plus_url}" target="_blank": i.icon-google-plus.icon-large &nbsp;Google +
+  - if boxable.qq_weibo_url?
+    li
+      a href="#{boxable.qq_weibo_url}" target="_blank": i.icon-pinterest.icon-large &nbsp;QQ weibo
+  - if boxable.instagram_url?
+    li
+      a href="#{boxable.instagram_url}" target="_blank": i.icon-instagram.icon-large &nbsp;Instagram

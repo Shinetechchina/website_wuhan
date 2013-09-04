@@ -11,9 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130830095323) do
-
-  add_extension "hstore"
+ActiveRecord::Schema.define(:version => 20130904073915) do
 
   create_table "authentications", :force => true do |t|
     t.string   "provider"
@@ -225,6 +223,9 @@ ActiveRecord::Schema.define(:version => 20130830095323) do
     t.string   "cv_url"
     t.integer  "quote"
     t.string   "signature"
+    t.string   "google_plus_url"
+    t.string   "qq_weibo_url"
+    t.string   "instagram_url"
   end
 
   create_table "refinery_technologies", :force => true do |t|
@@ -277,9 +278,5 @@ ActiveRecord::Schema.define(:version => 20130830095323) do
 
   add_index "seo_meta", ["id"], :name => "index_seo_meta_on_id"
   add_index "seo_meta", ["seo_meta_id", "seo_meta_type"], :name => "index_seo_meta_on_seo_meta_id_and_seo_meta_type"
-
-  create_table "tags", :force => true do |t|
-    t.string "name"
-  end
 
 end

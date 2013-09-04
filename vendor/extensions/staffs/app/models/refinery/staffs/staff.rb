@@ -4,7 +4,11 @@ module Refinery
       self.table_name = 'refinery_staffs'
       has_many :refinery_messages
 
-      attr_accessible :tags, :name, :email, :number, :title, :quote, :signature, :image_id, :second_image_id, :description, :position, :cv_url, :facebook_url, :github_url, :linkedin_url, :twitter_url, :weibo_url
+      attr_accessible :tags, :name, :email, :number, :title,
+                      :quote, :signature, :image_id, :second_image_id,
+                      :description, :position, :cv_url, :facebook_url,
+                      :github_url, :linkedin_url, :twitter_url, :weibo_url,
+                      :google_plus_url, :qq_weibo_url, :instagram_url
 
       acts_as_indexed :fields => [:name, :email, :title]
 
@@ -13,6 +17,10 @@ module Refinery
       validates_numericality_of :number, greater_than: 0
       validates_length_of :signature, maximum: 160
       validates_format_of :email, with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i
+      validates_format_of :cv_url, :facebook_url, :weibo_url,
+                          :github_url, :linkedin_url, :twitter_url,
+                          :google_plus_url, :qq_weibo_url, :instagram_url,
+                          with: /^(http|ftp|https):\/\/?/, allow_blank: true
 
       belongs_to :image, :class_name => '::Refinery::Image'
       belongs_to :second_image, :class_name => '::Refinery::Image'
