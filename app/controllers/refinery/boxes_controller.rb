@@ -47,7 +47,7 @@ class Refinery::BoxesController < ApplicationController
       box = Box.find(box_params["id"])
       box.update_attributes(position: box_params["position"])
     end
-    flash[:notice] = "sort boxes successful"
+    flash[:notice] = "set boxes successful"
     render nothing: true, status: 200, content_type: 'text/html'
   end
 
