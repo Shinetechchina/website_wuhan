@@ -11,7 +11,14 @@ class Blog
   end
 
   def self.all
-    ::Authentication.weibo_list
+    json_list = ::Authentication.weibo_list + ::Authentication.instagram_list
+    if json_list.present?
+      json_list.map do |json_data|
+        [self.new(json_data)]
+      end.inject(:+)
+    else
+      []
+    end
   end
 
   def self.filte_topic(topic)

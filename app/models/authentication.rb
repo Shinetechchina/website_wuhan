@@ -8,10 +8,6 @@ class Authentication < ActiveRecord::Base
   scope :weibo, where(provider: 'weibo')
   scope :instagram, where(provider: 'instagram')
 
-  def auth_params
-    {uid: self.uid, access_token: self.access_token }
-  end
-
   def self.find_or_create_from_auth_hash(auth_hash)
     provider = auth_hash[:provider]
     uid = auth_hash[:uid].to_s
@@ -46,15 +42,14 @@ class Authentication < ActiveRecord::Base
     return self
   end
 
-  def weibo_timeline
-    weibo_data('/statuses/user_timeline', {count: 50})["statuses"]
-  end
-
   def self.instagram_list
     if self.instagram.present?
       self.instagram.map do |authentication|
-        json_data = HTTParty.get("https://api.instagram.com/v1/users/#{authentication.uid}/media/recent?access_token=#{authentication.access_token}")
-        [json_data]
+        json_data = HTTParty.get("https://api.instagram.com/v1/users/#{authentication.uid}/media/recent",
+                                  query: {access_token: authentication.access_token})
+        json_data['data'].map do |i|
+          i.merge({'provider' => 'instagram'})
+        end
       end.inject(:+)
     else
       []
@@ -66,24 +61,12 @@ class Authentication < ActiveRecord::Base
       self.weibo.map do |authentication|
         json_data = HTTParty.get("https://api.weibo.com/2/statuses/user_timeline.json",
                                  query: {access_token: authentication.access_token, uid: authentication.uid})
-                                 #, query: {access_token: authentication.access_token})
-        [json_data["statuses"]]
-        #if (weibo_timeline = self.all.map(&:weibo_timeline).inject(:+)).present?
-        #  weibo_timeline.sort_by{|weibo| weibo["id"]}.reverse
-        #else
-        #  []
-        #end
-      end.inject(:+).inject(:+)
+        json_data["statuses"].map do |w|
+          w.merge({'provider' => 'weibo'})
+        end
+      end.inject(:+)
     else
       []
-    end
-  end
-
-  def weibo_data(interface, options={})
-    if self.weibo?
-      HTTParty.get("https://api.weibo.com/2#{interface}.json", query: self.auth_params.merge(options))
-    else
-      false
     end
   end
 
