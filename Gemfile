@@ -13,6 +13,7 @@ gem 'httparty'
 # weibo omniauth
 gem 'omniauth'
 gem 'omniauth-weibo-oauth2'
+gem 'omniauth-instagram'
 
 # postgres array for Rails 3
 gem 'postgres_ext'

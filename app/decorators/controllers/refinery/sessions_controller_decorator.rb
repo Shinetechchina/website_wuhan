@@ -3,7 +3,7 @@ Refinery::SessionsController.class_eval do
     auth_hash = request.env['omniauth.auth']
     ::Authentication.find_or_create_from_auth_hash(auth_hash)
     auth_hash["credentials"]["token"]
-    flash[:message] = "Welcome #{auth_hash['info']['name']}, weibo authenticate successful"
+    flash[:message] = "Welcome #{auth_hash['info']['name']}, #{params[:provider]} authenticate successful"
     redirect_to '/'
   end
 

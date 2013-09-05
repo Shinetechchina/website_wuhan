@@ -2,22 +2,16 @@ class Blog
 
   attr_reader :name, :created_at, :image_url, :text, :profile_link
 
-  def initialize(weibo)
-    @name = weibo["user"]["name"]
-    @created_at = weibo["user"]["created_at"].to_date
-    @image_url = Blog.select_image_url(weibo)
-    @text = weibo["text"]
+  def initialize(provider)
+    @name = provider["user"]["name"]
+    @created_at = provider["user"]["created_at"].to_date
+    @image_url = Blog.select_image_url(provider)
+    @text = provider["text"]
     @profile_link =  "http://weibo.com/" + weibo["user"]["domain"]
   end
 
   def self.all
-    if (weibo_list = ::Authentication.weibo_list).present?
-      weibo_list.map do |weibo|
-        [Blog.new(weibo)]
-      end.inject(:+)
-    else
-      []
-    end
+    ::Authentication.weibo_list
   end
 
   def self.filte_topic(topic)
