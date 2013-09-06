@@ -19,7 +19,7 @@ class Blog
 
   def instagram_init(json_data)
     self.name = json_data['caption']['from']['username']
-    self.created_at = json_data["created_at"]
+    self.created_at = Time.at(json_data["created_time"].to_i).to_date
     self.image_url = json_data['images']['low_resolution']['url']
     self.text = json_data['caption']["text"]
     self.profile_link =  "http://instagram.com/" + self.name
