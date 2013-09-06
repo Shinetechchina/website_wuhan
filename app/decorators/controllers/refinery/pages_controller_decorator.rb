@@ -34,7 +34,7 @@ Refinery::PagesController.class_eval do
   end
 
   def blog
-    @blogs = Blog.all#filte_topic('ShineNext')
+    @blogs = Blog.filte_topic('ShineNext')
   end
 
   def post_cache_path
