@@ -11,7 +11,7 @@ class Blog
 
   def weibo_init(json_data)
     self.name = json_data["user"]["name"]
-    self.created_at = json_data["user"]["created_at"].to_date
+    self.created_at = json_data["created_at"].to_date
     self.image_url = Blog.weibo_select_image_url(json_data)
     self.text = json_data["text"]
     self.profile_link =  "http://weibo.com/" + json_data["user"]["domain"]
