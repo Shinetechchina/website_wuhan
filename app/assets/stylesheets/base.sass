@@ -120,11 +120,10 @@ a
     color: $color-font
 
 #menu
-  float: left
+  float: right
   margin: 0 auto
   height: $header-height
   line-height: $header-height + 5px
-  color: $color-font
   text-transform: uppercase
 
   li
@@ -133,7 +132,8 @@ a
     a
       display: block
       padding: 2px 12px
-      color: lighten($color-font, 20%)
+      color: rgb(172,177,170)
+      //color: lighten($color-font, 20%)
       @include transition(all .5s)
 
       &:hover

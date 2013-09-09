@@ -5,6 +5,17 @@
         a href="#" ShineNeXT
 
       /= render partial: "/refinery/menu", locals: {dom_id: 'menu', css: 'menu'}
+      - if current_refinery_user.present?
+        div#edit-pages.edit-button data-toggle="modal" href="#editPagesModal"
+          span EDIT PAGES
+          | &nbsp;&nbsp;
+          i.icon-cogs
+
+        div#edit-boxes.edit-button
+          span EDIT BOXES
+          | &nbsp;&nbsp;
+          i.icon-cogs
+
       nav#menu.menu
         ul
           li.first
@@ -20,14 +31,4 @@
           li.last
             a.route href="/blog" BLOG
 
-      - if current_refinery_user.present?
-        div#edit-pages.edit-button data-toggle="modal" href="#editPagesModal"
-          span EDIT PAGES
-          | &nbsp;&nbsp;
-          i.icon-cogs
-
-        div#edit-boxes.edit-button
-          span EDIT BOXES
-          | &nbsp;&nbsp;
-          i.icon-cogs
   = render 'common/modals'
