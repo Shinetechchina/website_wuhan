@@ -40,6 +40,11 @@ App.Router =
         else if url
           history.pushState(null, null, url)
 
+        if (url == '/')
+          $('#guest-book').hide()
+        else
+          $('#guest-book').show()
+
       else if url.match(/^#/) and url!= '#newBoxModal'
         $.get("/modals/show_by_path", {path: url}).success =>
           $('#linkModal').modal('show')
