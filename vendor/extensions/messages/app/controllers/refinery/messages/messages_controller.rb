@@ -29,7 +29,10 @@ module Refinery
           respond_to do |format|
             if @message.save
               leave_message
-              format.js { render js: "alert('Guest successful, we will contact you.'); $('#guest-bar').click();" }
+              format.js { render js: "
+                          $('#guest-box').find('input[type=text], textarea').val('');
+                          alert('Guest successful, we will contact you.');
+                          $('#guest-bar').click();" }
             else
               format.js { render js: "alert('Guest failed, please input correctly format.')" }
             end
