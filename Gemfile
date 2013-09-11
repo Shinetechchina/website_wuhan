@@ -15,6 +15,9 @@ gem 'omniauth'
 gem 'omniauth-weibo-oauth2'
 gem 'omniauth-instagram'
 
+#nested form
+gem "nested_form"
+
 # postgres array for Rails 3
 gem 'postgres_ext'
 

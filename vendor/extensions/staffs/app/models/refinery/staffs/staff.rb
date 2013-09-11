@@ -10,7 +10,7 @@ module Refinery
                       :quote, :signature, :image_id, :second_image_id,
                       :description, :position, :cv_url, :facebook_url,
                       :github_url, :linkedin_url, :twitter_url, :weibo_url,
-                      :google_plus_url, :qq_weibo_url, :instagram_url
+                      :google_plus_url, :qq_weibo_url, :instagram_url, :icons_attributes
 
       acts_as_indexed :fields => [:name, :email, :title]
 

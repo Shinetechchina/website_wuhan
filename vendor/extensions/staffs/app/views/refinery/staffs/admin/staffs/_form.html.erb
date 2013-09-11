@@ -1,4 +1,4 @@
-<%= form_for [refinery, :staffs_admin, @staff] do |f| -%>
+<%= nested_form_for [refinery, :staffs_admin, @staff] do |f| -%>
   <%= render '/refinery/admin/error_messages',
               :object => @staff,
               :include_object_name => true %>
@@ -20,9 +20,11 @@
   <%= f.label :technoloies -%>
   <%= f.fields_for :icons do |builder| %>
     <div class='field'>
-      <%= builder.object.title %>
+      <%= builder.text_field :title %>
+      <%= builder.link_to_remove "Remove this" %>
     </div>
   <% end %>
+  <p><%= f.link_to_add "Add a icon", :icons %></p>
 
   <div class='field'>
     <%= f.label :number -%>

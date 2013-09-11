@@ -47,6 +47,7 @@ Refinery::Core.configure do |config|
   # Register extra javascript for backend
   config.register_javascript "codemirror_bundle"
   config.register_javascript "jquery.tagsinput"
+  config.register_javascript "jquery_nested_form"
   config.register_javascript "backend"
 
   # Register extra stylesheet for backend (optional options)
