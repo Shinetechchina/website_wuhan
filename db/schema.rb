@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130904073915) do
+ActiveRecord::Schema.define(:version => 20130911085222) do
 
   create_table "authentications", :force => true do |t|
     t.string   "provider"
@@ -39,6 +39,13 @@ ActiveRecord::Schema.define(:version => 20130904073915) do
     t.integer  "box_set_id"
     t.boolean  "expanded",     :default => false
     t.integer  "expand_cols"
+  end
+
+  create_table "icons", :force => true do |t|
+    t.string   "title"
+    t.integer  "staff_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "refinery_custom_boxes", :force => true do |t|

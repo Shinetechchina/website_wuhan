@@ -3,6 +3,8 @@ module Refinery
     class Staff < Refinery::Core::BaseModel
       self.table_name = 'refinery_staffs'
       has_many :refinery_messages
+      has_many :icons, dependent: :destroy
+      accepts_nested_attributes_for :icons, :allow_destroy => true
 
       attr_accessible :tags, :name, :email, :number, :title,
                       :quote, :signature, :image_id, :second_image_id,

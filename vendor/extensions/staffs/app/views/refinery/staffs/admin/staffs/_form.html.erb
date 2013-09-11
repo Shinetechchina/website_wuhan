@@ -16,7 +16,14 @@
       <%= f.text_field attr -%>
     </div>
   <% end %>
-  
+
+  <%= f.label :technoloies -%>
+  <%= f.fields_for :icons do |builder| %>
+    <div class='field'>
+      <%= builder.object.title %>
+    </div>
+  <% end %>
+
   <div class='field'>
     <%= f.label :number -%>
     <%= f.number_field :number  -%>
