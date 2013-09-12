@@ -9,7 +9,6 @@
 # require masonry.pkgd.min
 #= require jquery-ui-1.10.3.custom
 #= require shapeshift/jquery.shapeshift
-#= require jquery_nested_form
 #= require signals.min
 #= require crossroads.min
 #= require_self
@@ -29,8 +28,8 @@ window.App = App =
   init: ->
     App.BoxManager.init()
     App.CustomBoxes.init()
-    App.Staff.init()
     App.Router.init()
+    App.Staff.init()
     App.DropdownTagList.init()
     App.Masthead.init()
 
