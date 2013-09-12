@@ -1,8 +1,9 @@
 App.Staff =
   init: ->
     self = @
-    $('body').on 'click', '.box-staff', ->
-      self.switchStaff($(this))
+    $('body').on 'click', '.box-staff', (e)->
+      unless $(e.target).parents('.show-staff-details').length > 0
+        self.switchStaff($(this))
 
   switchStaff: (box)->
     if box.find('.maxi').is(":visible")

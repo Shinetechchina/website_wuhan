@@ -30,8 +30,3 @@ ul
   - if boxable.instagram_url?
     li
       a href="#{boxable.instagram_url}" target="_blank": i.icon-instagram.icon-large &nbsp;Instagram
-  - if boxable.icons.present?
-    - boxable.icons.each do |icon|
-      li
-        span.icon-thumbs-up.icon-large &nbsp; #{icon.title}
-

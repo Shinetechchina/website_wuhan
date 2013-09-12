@@ -20,6 +20,7 @@
           - if boxable.signature?
               =raw boxable.signature
       = link_to details_staffs_staff_path(boxable, box_id: box.id), class: "show-staff-details", remote: true do
-        | Show Staff Details
+        strong
+          | Details
       //a.show-staff-details data-toggle="modal" href="#staffDetailsModal"
       //.staff-thumb style="background-image: url('#{boxable.second_image_url||boxable.image_url}');"

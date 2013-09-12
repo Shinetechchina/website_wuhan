@@ -1,4 +1,3 @@
 $('#staffDetailsModal .modal-header h3').text('<%= j @staff.name %>')
-$('#staffDetailsModal .modal-body').html('<%=j raw @staff.description %>')
+$('#staffDetailsModal .modal-body').html('<%= j render 'boxes/staff_icons', boxable: @staff%>').append('<%=j raw @staff.description %>')
 $('#staffDetailsModal').modal('show');
-App.Staff.switchMaxi($('<%= "#box-#{@box_id}"%>'))

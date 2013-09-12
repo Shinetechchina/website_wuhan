@@ -1,0 +1,8 @@
+- if boxable.icons.present?
+  .social-links
+    ul
+      - boxable.icons.each do |icon|
+        li
+          span.icon-thumbs-up.icon-large #{icon.title}
+          |&nbsp;&nbsp;
+  hr
