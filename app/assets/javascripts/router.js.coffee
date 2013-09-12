@@ -45,7 +45,7 @@ App.Router =
         else
           $('#guest-book').show()
 
-      else if url.match(/^#/) and url!= '#newBoxModal'
+      else if url.match(/^#/) and url!= '#newBoxModal' and el.hasClass('modal-link')
         $.get("/modals/show_by_path", {path: url}).success =>
           $('#linkModal').modal('show')
 
