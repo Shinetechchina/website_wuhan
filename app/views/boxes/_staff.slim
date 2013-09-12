@@ -19,7 +19,7 @@
         .staff-description
           - if boxable.signature?
               =raw boxable.signature
-      = link_to details_staffs_staff_path(boxable, box_id: box.id), class: "show-staff-details", remote: true do
+      = link_to details_staffs_staff_path(boxable), class: "show-staff-details", remote: true do
         strong
           | Details
       //a.show-staff-details data-toggle="modal" href="#staffDetailsModal"

@@ -12,7 +12,6 @@ module Refinery
 
       def details
         @staff = Staff.find(params[:id])
-        @box_id = params[:box_id]
         respond_to do |format|
           format.js
         end

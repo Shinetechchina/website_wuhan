@@ -1,32 +1,38 @@
-ul
-  - if boxable.email?
-    li
-      a href="mailto:#{boxable.email}" target="_blank": i.icon.icon-envelope &nbsp;Email
-  - if boxable.cv_url?
-    li
-      = link_to new_messages_message_path(staff_id: boxable.id), remote: true do
-        i.icon-file-text-alt.icon-large &nbsp;CV
-  - if boxable.facebook_url?
-    li
-      a href="#{boxable.facebook_url}" target="_blank": i.icon-facebook.icon-large &nbsp;Facebook
-  - if boxable.github_url?
-    li
-      a href="#{boxable.github_url}" target="_blank": i.icon-github.icon-large &nbsp;Github
-  - if boxable.linkedin_url?
-    li
-      a href="#{boxable.linkedin_url}" target="_blank": i.icon-linkedin.icon-large &nbsp;LinkedIn
-  - if boxable.twitter_url?
-    li
-      a href="#{boxable.twitter_url}" target="_blank": i.icon-twitter.icon-large &nbsp;Twitter
-  - if boxable.weibo_url?
-    li
-      a href="#{boxable.weibo_url}" target="_blank": i.icon-weibo.icon-large &nbsp;Weibo
-  - if boxable.google_plus_url?
-    li
-      a href="#{boxable.google_plus_url}" target="_blank": i.icon-google-plus.icon-large &nbsp;Google +
-  - if boxable.qq_weibo_url?
-    li
-      a href="#{boxable.qq_weibo_url}" target="_blank": i.icon-pinterest.icon-large &nbsp;QQ weibo
-  - if boxable.instagram_url?
-    li
-      a href="#{boxable.instagram_url}" target="_blank": i.icon-instagram.icon-large &nbsp;Instagram
+.social-links
+  ul
+    - if boxable.email?
+      li
+        a href="mailto:#{boxable.email}" target="_blank": i.icon.icon-envelope &nbsp;Email
+    - if boxable.cv_url?
+      li
+        = link_to new_messages_message_path(staff_id: boxable.id), remote: true do
+          i.icon-file-text-alt.icon-large &nbsp;CV
+    - if boxable.facebook_url?
+      li
+        a href="#{boxable.facebook_url}" target="_blank": i.icon-facebook.icon-large &nbsp;Facebook
+    - if boxable.github_url?
+      li
+        a href="#{boxable.github_url}" target="_blank": i.icon-github.icon-large &nbsp;Github
+    - if boxable.linkedin_url?
+      li
+        a href="#{boxable.linkedin_url}" target="_blank": i.icon-linkedin.icon-large &nbsp;LinkedIn
+    - if boxable.twitter_url?
+      li
+        a href="#{boxable.twitter_url}" target="_blank": i.icon-twitter.icon-large &nbsp;Twitter
+    - if boxable.weibo_url?
+      li
+        a href="#{boxable.weibo_url}" target="_blank": i.icon-weibo.icon-large &nbsp;Weibo
+    - if boxable.google_plus_url?
+      li
+        a href="#{boxable.google_plus_url}" target="_blank": i.icon-google-plus.icon-large &nbsp;Google +
+    - if boxable.qq_weibo_url?
+      li
+        a href="#{boxable.qq_weibo_url}" target="_blank": i.icon-pinterest.icon-large &nbsp;QQ weibo
+    - if boxable.instagram_url?
+      li
+        a href="#{boxable.instagram_url}" target="_blank": i.icon-instagram.icon-large &nbsp;Instagram
+    - if boxable.icons.present?
+      - boxable.icons.each do |icon|
+        li
+          span.icon-thumbs-up.icon-large &nbsp; #{icon.title}
+          |&nbsp;&nbsp;
