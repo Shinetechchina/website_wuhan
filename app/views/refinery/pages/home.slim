@@ -1,3 +1,20 @@
+div id="myCarousel" class="carousel slide"
+  ol class="carousel-indicators"
+    li data-target="#myCarousel" data-slide-to="0" class="active"
+    li data-target="#myCarousel" data-slide-to="1"
+    li data-target="#myCarousel" data-slide-to="2"
+  div class="carousel-inner"
+    div class="active item"
+      | 1
+    div class="item"
+      | 2
+    div class="item"
+      | 3
+  a class="carousel-control left" href="#myCarousel" data-slide="prev"
+      | &lsaquo;
+  a class="carousel-control right" href="#myCarousel" data-slide="next"
+      | &rsaquo;
+
 - if @boxes.present?
   - @boxes.each do |box|
     =render partial: box.template, locals: {box: box, boxable: box.boxable}

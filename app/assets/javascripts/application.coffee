@@ -28,8 +28,8 @@ window.App = App =
   init: ->
     App.BoxManager.init()
     App.CustomBoxes.init()
-    App.Staff.init()
     App.Router.init()
+    App.Staff.init()
     App.DropdownTagList.init()
     App.Masthead.init()
 
