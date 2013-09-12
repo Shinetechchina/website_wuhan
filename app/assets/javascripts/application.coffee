@@ -9,7 +9,6 @@
 # require masonry.pkgd.min
 #= require jquery-ui-1.10.3.custom
 #= require shapeshift/jquery.shapeshift
-#= require jquery_nested_form
 #= require signals.min
 #= require crossroads.min
 #= require_self
