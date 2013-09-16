@@ -1,9 +1,9 @@
 = box_tag box do
-  .mini
+  .mini.pointer
     .staff-thumb style="background-image: url('#{boxable.image_url}');"
       .staff-name = boxable.name
   - if box.url.blank?
-    .maxi
+    .maxi.pointer
       .staff-info
         .staff-info-inner
           h1 = boxable.name

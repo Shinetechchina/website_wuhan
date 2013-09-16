@@ -11,7 +11,6 @@ module Refinery
 
       validates_presence_of :title, :width, :height, :content
       validates_uniqueness_of :title
-      validates_inclusion_of :width, :height, in: [1, 2, 3, 4]
 
       def real_height
         height = self.height
