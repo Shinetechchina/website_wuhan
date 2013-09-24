@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130911085222) do
+ActiveRecord::Schema.define(:version => 20130924092002) do
 
   create_table "authentications", :force => true do |t|
     t.string   "provider"
@@ -243,6 +243,7 @@ ActiveRecord::Schema.define(:version => 20130911085222) do
     t.datetime "created_at",                :null => false
     t.datetime "updated_at",                :null => false
     t.string   "tags",        :limit => 30,                 :array => true
+    t.integer  "height"
   end
 
   create_table "refinery_user_plugins", :force => true do |t|
