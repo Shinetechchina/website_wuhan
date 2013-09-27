@@ -36,7 +36,6 @@ App.Router =
         # if you want to redirct to back, url is "#back" or "/#back"
         if (url == "#back" or url == "/#back")
           history.back()
-          return self.reload()
         else if url
           history.pushState(null, null, url)
 
