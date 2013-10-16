@@ -9,7 +9,7 @@ App.Masthead =
 
   init: ->
     @el = $('.masthead')
-    @bindEvents()
+    #@bindEvents()
     @doubleTopBrowser()
     @cancelShowByMouseWheel()
 
