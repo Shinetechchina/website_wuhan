@@ -2,7 +2,7 @@
   #guest-bar.pointer
     | Comment with us
     i.icon-chevron-up.pull-right#toogle-guest
-  #guest-form
+  #guest-form.hide
     = form_for Refinery::Messages::Message.new, url: '/messages', remote: true do |f|
       .pull-left
         = f.label 'Your Name*'

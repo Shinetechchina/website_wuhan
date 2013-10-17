@@ -29,12 +29,12 @@ module Refinery
           respond_to do |format|
             if @message.save
               leave_message
-              format.js { render js: "
-                          $('#guest-box').find('input[type=text], textarea').val('');
-                          alert('Guest successful, we will contact you.');
-                          $('#guest-bar').click();" }
+              flash[:notice] = 'Guest successful, we will contact you.'
+              format.js
             else
-              format.js { render js: "alert('Guest failed, please input correctly format.')" }
+              error_message = @message.errors.messages.first.join(' ')
+              flash[:error] = error_message
+              format.js
             end
           end
         else
@@ -46,7 +46,9 @@ module Refinery
               format.js { render "download_cv", locals: {cv_url: cv_url} }
             end
           else
-            render js: 'alert("Please remain correct information")'
+            error_message = @message.errors.messages.first.join(' ')
+            flash[:error] = error_message
+            format.js
           end
         end
       end
