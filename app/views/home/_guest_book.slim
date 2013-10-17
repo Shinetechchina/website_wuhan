@@ -4,7 +4,7 @@
     i.icon-chevron-up.pull-right#toogle-guest
   #guest-form.hide
     = form_for Refinery::Messages::Message.new, url: '/messages', remote: true do |f|
-      .pull-left
+      .pull-left.form-left
         = f.label 'Your Name*'
         .field
           = f.text_field :name
