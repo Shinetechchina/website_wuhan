@@ -12,6 +12,19 @@ App.Masthead =
     #@bindEvents()
     @doubleTopBrowser()
     @cancelShowByMouseWheel()
+    #  @modalScrollNotTriggerWindowScroll()
+    #
+    #  modalScrollNotTriggerWindowScroll: ->
+    #    self = @
+    #    $('.modal').on 'shown', ->
+    #      self.disableScroll()
+    #    $('.modal').on 'hidden', ->
+    #
+    #
+    #  disableScroll: ->
+    #    if (window.addEventListener)
+    #      window.addEventListener('DOMMouseScroll', wheel, false)
+    #    window.onmousewheel = document.onmousewheel = wheel
 
   hide: ->
     @el.fadeOut()

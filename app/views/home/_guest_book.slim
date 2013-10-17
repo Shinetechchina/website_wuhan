@@ -2,26 +2,28 @@
   #guest-bar.pointer
     | Comment with us
     i.icon-chevron-up.pull-right#toogle-guest
-  #guest-form.hide
+  #guest-form
     = form_for Refinery::Messages::Message.new, url: '/messages', remote: true do |f|
-      = f.label 'Your Name*'
-      .field
-        = f.text_field :name
+      .pull-left
+        = f.label 'Your Name*'
+        .field
+          = f.text_field :name
 
-      = f.label 'Your Company*'
-      .field
-        = f.text_field :company
+        = f.label 'Your Company*'
+        .field
+          = f.text_field :company
 
-      = f.label 'Your email*'
-      .field
-        = f.text_field :email
+        = f.label 'Your email*'
+        .field
+          = f.text_field :email
 
-      = f.label 'Your phone number'
-      .field
-        = f.text_field :phone_number
+        = f.label 'Your phone number'
+        .field
+          = f.text_field :phone_number
 
-      = f.label 'Content*'
-      .field
-        = f.text_area :content, rows: 5
-
-      =f.submit 'Submit', id: 'message_submit', disable_with: "loading..."
+      .form-right
+        = f.label 'Content*'
+        .field
+          = f.text_area :content, rows: 9, cols: 30
+        .pull-right
+          =f.submit 'Submit', id: 'message_submit', disable_with: "loading..."
