@@ -1,4 +1,7 @@
 $('#linkModal .modal-header h3').html('<%= j @modal.title %>');
 $('#linkModal .modal-body').html('<%= j raw @modal.content %>');
 $('#linkModal').css('width', '<%= "#{@modal.width}px" %>')
+<% if @modal.height > 200 %>
+  $('#linkModal').css('height', '<%= "#{@modal.height}px" %>')
+<% end %>
 $('#linkModal').css('margin-left', '<%= "-#{@modal.width.to_i/2}px" %>')

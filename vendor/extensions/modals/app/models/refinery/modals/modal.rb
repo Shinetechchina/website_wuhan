@@ -3,7 +3,7 @@ module Refinery
     class Modal < Refinery::Core::BaseModel
       self.table_name = 'refinery_modals'
 
-      attr_accessible :title, :path, :width, :content, :position
+      attr_accessible :title, :path, :width, :height, :content, :position
 
       acts_as_indexed :fields => [:title, :path, :content]
 

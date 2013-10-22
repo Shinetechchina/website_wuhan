@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130924092002) do
+ActiveRecord::Schema.define(:version => 20131022081310) do
 
   create_table "authentications", :force => true do |t|
     t.string   "provider"
@@ -100,6 +100,7 @@ ActiveRecord::Schema.define(:version => 20130924092002) do
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
     t.integer  "width"
+    t.integer  "height"
   end
 
   create_table "refinery_page_part_translations", :force => true do |t|
