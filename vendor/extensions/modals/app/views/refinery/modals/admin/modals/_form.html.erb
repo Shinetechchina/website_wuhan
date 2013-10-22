@@ -12,13 +12,13 @@
   
   <div class='field'>
     <%= f.label :width -%>
-    <%= f.number_field :width, value: 562  -%>
+    <%= f.number_field :width, value: (@modal.width or 562)  -%>
 
   </div>
 
   <div class='field'>
     <%= f.label :height -%>
-    <%= f.number_field :height, value: 400  -%>
+    <%= f.number_field :height, value: (@modal.height)  -%>
 
   </div>
 
