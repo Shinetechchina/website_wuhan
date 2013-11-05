@@ -7,6 +7,7 @@ PATH
       refinerycms-core (~> 2.0.10)
     refinerycms-messages (1.0)
       refinerycms-core (~> 2.0.10)
+      useragent (~> 0.9.0)
     refinerycms-modals (1.0)
       refinerycms-core (~> 2.0.10)
     refinerycms-services (1.0)
@@ -300,6 +301,7 @@ GEM
       kgio (~> 2.6)
       rack
       raindrops (~> 0.7)
+    useragent (0.9.0)
     warden (1.1.1)
       rack (>= 1.0)
     websocket (1.0.7)
