@@ -4,7 +4,7 @@ module Refinery
       belongs_to :staff, foreign_key: :staff_id, class_name: 'Refinery::Staffs::Staff'
       self.table_name = 'refinery_messages'
 
-      attr_accessible :name, :email, :content, :position, :phone_number, :staff_id, :company
+      attr_accessible :name, :email, :content, :position, :phone_number, :staff_id, :company, :from_ip, :platform, :browser
 
       acts_as_indexed :fields => [:name, :email, :content]
 
