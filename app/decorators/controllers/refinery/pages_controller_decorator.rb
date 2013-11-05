@@ -26,7 +26,6 @@ Refinery::PagesController.class_eval do
     #   render layout: false
     # end
 
-    flash[:notice] = "Our site uses your cookies for analytics and improve user experiences."
     find_boxes('/')
   end
 

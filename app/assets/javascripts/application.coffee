@@ -36,11 +36,12 @@ window.App = App =
     @initSlide()
     @initGuest()
     @initMessage()
+    @initCookieNotice()
 
   initMenu: ->
 
   initMessage: ->
-     $("#message_container").slideDown().delay(3000).slideUp()
+     $("#message_container").slideDown().delay(5000).slideUp()
 
   initSlide: ->
     $(document.body).on 'click', '.slide .tabs li, .slide .bullets li', ->
@@ -73,6 +74,13 @@ window.App = App =
       else
         $('#guest-form').hide()
         $(@).find('i').addClass('.icon-chevron-up').removeClass('icon-chevron-down')
+
+  initCookieNotice: ->
+    #cookie can not set its value to boolean, so I set it with string "true", do not change it to boolean value true.
+    if $.cookie("firstAccess") != "true"
+      $('#message_container').html('<div class="alert alert-success">Our site uses your cookies for analytics and improve user experiences.</div>')
+      @initMessage()
+      $.cookie("firstAccess", "true")
 
 $ ->
   App.init()
