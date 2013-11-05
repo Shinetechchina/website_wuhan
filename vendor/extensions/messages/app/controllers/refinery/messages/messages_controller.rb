@@ -1,3 +1,5 @@
+require "useragent"
+
 module Refinery
   module Messages
     class MessagesController < ::ApplicationController
@@ -23,6 +25,8 @@ module Refinery
       end
 
       def create
+        prepare_user_agent!
+
         @message = Message.new(params[:message])
         #remain comment
         if @message.comment?
@@ -77,6 +81,14 @@ module Refinery
 
       def leave_message
         session[:leave_message] = true
+      end
+
+      def prepare_user_agent!
+        user_agent = ::UserAgent.parse request.env['HTTP_USER_AGENT']
+        platform = user_agent.platform
+        from_ip  = request.env["REMOTE_ADDR"]
+        browser = "#{user_agent.browser} #{user_agent.version}"
+        params[:message].merge!(from_ip: from_ip, browser: browser, platform: platform)
       end
     end
   end
