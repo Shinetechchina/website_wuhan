@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131022081310) do
+ActiveRecord::Schema.define(:version => 20131105101829) do
 
   create_table "authentications", :force => true do |t|
     t.string   "provider"
@@ -90,6 +90,9 @@ ActiveRecord::Schema.define(:version => 20131022081310) do
     t.integer  "staff_id"
     t.string   "phone_number"
     t.string   "company"
+    t.string   "from_ip"
+    t.string   "browser"
+    t.string   "platform"
   end
 
   create_table "refinery_modals", :force => true do |t|
