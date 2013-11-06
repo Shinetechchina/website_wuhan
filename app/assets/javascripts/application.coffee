@@ -3,6 +3,7 @@
 #= require jquery.cookie
 #= require bootstrap-dropdown
 #= require bootstrap-modal
+#= require bootstrap-modal-patch
 #= require bootstrap-carousel
 #= require jquery.tagsinput
 #
