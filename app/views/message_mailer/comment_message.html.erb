@@ -1,0 +1,10 @@
+<h1><%= @message.name %> comment a Message</h1>
+
+<p><strong>Name:</strong> <%= @message.name %></p>
+<p><strong>Email:</strong> <%= @message.email %></p>
+<p><strong>Company:</strong> <%= @message.company %></p>
+<% if @message.phone_number.present? %>
+  <p><strong>Phone Number:</strong> <%= @message.phone_number %></p>
+<% end %>
+<strong>Content:</strong>
+<p><%= @message.content %></p>

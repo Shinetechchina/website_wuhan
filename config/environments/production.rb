@@ -55,7 +55,19 @@ WebsiteWuhan::Application.configure do
   ]
 
   # Disable delivery errors, bad email addresses will be ignored
-  # config.action_mailer.raise_delivery_errors = false
+  config.action_mailer.default_url_options = { :host => '192.168.1.39' }
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.perform_deliveries = true
+  config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.default :charset => "utf-8"
+  config.action_mailer.smtp_settings = {
+    :address              => "smtp.163.com",
+    :port                 => 25,
+    :domain               => '163.com',
+    :user_name            => 'shinetech_wuhan@163.com',
+    :password             => 'password',
+    :authentication       => :login,
+    :enable_starttls_auto => true  }
 
   # Enable threaded mode
   # config.threadsafe!
