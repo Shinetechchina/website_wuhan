@@ -1,6 +1,6 @@
 = box_tag box do
   .mini.pointer
-    .staff-thumb style="background-image: url('#{boxable.image_url}');"
+    .staff-thumb.lazy style="background-image: url('#{boxable.image_url}');"
       .staff-name = boxable.name
   - if box.url.blank?
     .maxi.pointer
@@ -24,3 +24,8 @@
           | Read Me More
       //a.show-staff-details data-toggle="modal" href="#staffDetailsModal"
       //.staff-thumb style="background-image: url('#{boxable.second_image_url||boxable.image_url}');"
+
+javascript:
+  $(function() {
+    $(".staff-thumb.lazy").lazyload()
+  });
