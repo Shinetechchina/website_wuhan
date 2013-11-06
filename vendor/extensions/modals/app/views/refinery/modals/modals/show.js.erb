@@ -1,3 +1,9 @@
+$('#linkModal').modal().on('show', function(){
+  $('body').css('overflow', 'hidden');
+}).on('hide', function(){
+  $('body').css('overflow', 'auto');
+})
+
 $('#linkModal .modal-header h3').html('<%= j @modal.title %>');
 $('#linkModal .modal-body').html('<%= j raw @modal.content %>');
 $('#linkModal').css('width', '<%= "#{@modal.width}px" %>')
