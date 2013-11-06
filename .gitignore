@@ -73,6 +73,7 @@ nbproject
 # Vim
 *.swp
 *.swo
+tags
 
 # RubyMine
 .idea
