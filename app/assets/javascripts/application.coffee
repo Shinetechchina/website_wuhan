@@ -1,6 +1,7 @@
 #= require jquery
 #= require jquery_ujs
 #= require jquery.cookie
+#= require jquery.lazyload.min
 #= require bootstrap-dropdown
 #= require bootstrap-modal
 #= require bootstrap-modal-patch
