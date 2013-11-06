@@ -5,3 +5,11 @@
   .box.new-box
     a.new-box-inner data-toggle="modal" href="#newBoxModal"
       i.icon-plus
+
+javascript:
+  $(function() {
+    $("img.staff-thumb").lazyload({
+      placeholder: "assets/rails.png",
+      effect: "fadeIn"
+    })
+  });
