@@ -79,7 +79,7 @@ namespace :unicorn do
   set :unicorn_pid, "#{app_path}/tmp/pids/unicorn.pid"
   set :start_unicorn, %{
     cd #{app_path}
-    bundle exec unicorn -c #{app_path}/config/unicorn/production.rb -E production -D
+    bundle exec unicorn -c #{app_path}/config/unicorn.rb -E production -D
   }
  
   #                                                                    Start task
