@@ -11,7 +11,7 @@ require 'mina/rvm'    # for rvm support. (http://rvm.io)
 #   repository   - Git repo to clone from. (needed by mina/git)
 #   branch       - Branch name to deploy. (needed by mina/git)
 
-set :domain, '192.168.1.39'
+set :domain, '54.219.164.116'
 set :deploy_to, '/apps/website_wuhan'
 set :repository, 'https://github.com/Shinetechchina/website_wuhan.git'
 set :branch, 'master'
@@ -24,7 +24,7 @@ set :shared_paths, ['config/database.yml', 'log', 'tmp', 'public/system']
 # Optional settings:
 #   set :user, 'foobar'    # Username in the server to SSH to.
 #   set :port, '30000'     # SSH port number.
-set :user, 'david'
+set :user, 'ubuntu'
 
 # This task is the environment that is loaded for most commands, such as
 # `mina deploy` or `mina rake`.
