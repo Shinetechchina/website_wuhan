@@ -1,2 +1,7 @@
 $('#message_container').replaceWith('<%= j render 'common/message' %>')
+
 App.initMessage()
+
+<% if @message.persisted? %>
+  $("#message_submit").closest('form').find("input[type=text], textarea").val("");
+<% end %>
