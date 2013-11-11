@@ -5,6 +5,7 @@ Gem::Specification.new do |s|
   s.name              = 'refinerycms-messages'
   s.version           = '1.0'
   s.description       = 'Ruby on Rails Messages extension for Refinery CMS'
+  s.authors           = ['David Chen', 'Aaron Liu']
   s.date              = '2013-07-26'
   s.summary           = 'Messages extension for Refinery CMS'
   s.require_paths     = %w(lib)

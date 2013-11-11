@@ -5,6 +5,7 @@ Gem::Specification.new do |s|
   s.name              = 'refinerycms-modals'
   s.version           = '1.0'
   s.description       = 'Ruby on Rails Modals extension for Refinery CMS'
+  s.authors           = ['David Chen', 'Aaron Liu']
   s.date              = '2013-08-29'
   s.summary           = 'Modals extension for Refinery CMS'
   s.require_paths     = %w(lib)

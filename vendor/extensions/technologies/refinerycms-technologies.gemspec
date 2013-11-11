@@ -5,6 +5,7 @@ Gem::Specification.new do |s|
   s.name              = 'refinerycms-technologies'
   s.version           = '1.0'
   s.description       = 'Ruby on Rails Technologies extension for Refinery CMS'
+  s.authors           = ['David Chen', 'Aaron Liu']
   s.date              = '2013-07-12'
   s.summary           = 'Technologies extension for Refinery CMS'
   s.require_paths     = %w(lib)
