@@ -38,7 +38,7 @@ window.App = App =
     @initSlide()
     @initGuest()
     @initMessage()
-    @initCookieNotice()
+    # @initCookieNotice()
 
   initMenu: ->
 
