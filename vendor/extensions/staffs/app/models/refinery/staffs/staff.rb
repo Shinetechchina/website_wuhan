@@ -34,6 +34,9 @@ module Refinery
       include ImageExt
       include Taggable
 
+      def all_tags
+        tags.blank? ? nil : tags.join(",")
+      end
     end
   end
 end
