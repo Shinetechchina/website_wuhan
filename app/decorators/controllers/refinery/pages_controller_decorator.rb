@@ -51,11 +51,11 @@ Refinery::PagesController.class_eval do
 
   protected
 
-  def find_boxes(url, options={})
+  def find_boxes(url, boxable_ids=nil)
     @box_set = BoxSet.find_by_url(url)
     if @box_set.present?
-      if options[:ids]
-        @boxes = @box_set.boxes.where(boxable_id: options[:ids])
+      if boxable_ids
+        @boxes = @box_set.boxes.find_all_by_boxable_id(boxable_ids).index_by(&:boxable_id).slice(*boxable_ids).values
       else
         @boxes = @box_set.boxes.arranged
       end
@@ -67,7 +67,7 @@ Refinery::PagesController.class_eval do
 
   def find_tagged_boxes(url)
     staff_ids = Refinery::Staffs::Staff.ordered_ids_by_tag(tag)
-    find_boxes(url, { ids: staff_ids })
+    find_boxes(url, staff_ids)
   end
 
   def view_golden_page?
