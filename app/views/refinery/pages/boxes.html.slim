@@ -6,10 +6,11 @@
     a.new-box-inner data-toggle="modal" href="#newBoxModal"
       i.icon-plus
 
-javascript:
-  $(function() {
-    $("img.staff-thumb").lazyload({
-      placeholder: "assets/default-user.png",
-      effect: "fadeIn"
-    })
-  });
+- if view_golden_page?
+  javascript:
+    $(function() {
+      $("img.staff-thumb").lazyload({
+        placeholder: "assets/default-user.png",
+        effect: "fadeIn"
+      })
+    });

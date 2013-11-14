@@ -55,7 +55,8 @@ Refinery::PagesController.class_eval do
     @box_set = BoxSet.find_by_url(url)
     if @box_set.present?
       if boxable_ids
-        @boxes = @box_set.boxes.find_all_by_boxable_id(boxable_ids).index_by(&:boxable_id).slice(*boxable_ids).values
+        @boxes = @box_set.boxes.find_all_by_boxable_id(boxable_ids)
+        @boxes = @boxes.index_by(&:boxable_id).slice(*boxable_ids).values
       else
         @boxes = @box_set.boxes.arranged
       end
@@ -73,5 +74,6 @@ Refinery::PagesController.class_eval do
   def view_golden_page?
     params[:path] == "golden"
   end
+  helper_method :view_golden_page?
 
 end
