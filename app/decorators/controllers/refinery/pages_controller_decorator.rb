@@ -30,7 +30,11 @@ Refinery::PagesController.class_eval do
   end
 
   def show
-    find_boxes("/#{params[:path]}")
+    if view_golden_page? && has_tag?
+      find_tagged_boxes("/#{params[:path]}")
+    else
+      find_boxes("/#{params[:path]}")
+    end
   end
 
   def blog
@@ -47,14 +51,27 @@ Refinery::PagesController.class_eval do
 
   protected
 
-  def find_boxes(url)
+  def find_boxes(url, options={})
     @box_set = BoxSet.find_by_url(url)
     if @box_set.present?
-      @boxes = @box_set.boxes.arranged
+      if options[:ids]
+        @boxes = @box_set.boxes.where(boxable_id: options[:ids])
+      else
+        @boxes = @box_set.boxes.arranged
+      end
       render 'boxes'
     else
       render '404'
     end
+  end
+
+  def find_tagged_boxes(url)
+    staff_ids = Refinery::Staffs::Staff.ordered_ids_by_tag(tag)
+    find_boxes(url, { ids: staff_ids })
+  end
+
+  def view_golden_page?
+    params[:path] == "golden"
   end
 
 end

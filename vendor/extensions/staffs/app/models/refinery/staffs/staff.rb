@@ -34,6 +34,10 @@ module Refinery
       include ImageExt
       include Taggable
 
+      def self.ordered_ids_by_tag(tag)
+        order_by_tag(tag).pluck(:id)
+      end
+
       def all_tags
         tags.blank? ? nil : tags.join(",")
       end
